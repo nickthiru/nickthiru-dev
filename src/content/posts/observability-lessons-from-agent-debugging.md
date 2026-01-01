@@ -44,18 +44,34 @@ After dozens of debugging sessions, I've settled on logging three things religio
 
 Every time the agent makes a choice, log the complete state:
 
-```python
-def log_decision_point(state: AgentState, decision: str, alternatives: list[str]):
-    logger.info({
-        "event": "decision",
-        "trace_id": state["trace_id"],
-        "decision": decision,
-        "alternatives": alternatives,
-        "context_keys": list(state["context"].keys()),
-        "message_count": len(state["messages"]),
-        "last_message_preview": state["messages"][-1]["content"][:200],
-        "token_budget_remaining": calculate_remaining_tokens(state)
-    })
+```ts
+type AgentState = {
+  traceId: string;
+  context: Record<string, unknown>;
+  messages: Array<{ role: string; content: string }>;
+};
+
+export function logDecisionPoint(params: {
+  logger: { info: (obj: unknown) => void };
+  state: AgentState;
+  decision: string;
+  alternatives: string[];
+  tokenBudgetRemaining: number;
+}) {
+  const { logger, state, decision, alternatives, tokenBudgetRemaining } =
+    params;
+
+  logger.info({
+    event: "decision",
+    traceId: state.traceId,
+    decision,
+    alternatives,
+    contextKeys: Object.keys(state.context),
+    messageCount: state.messages.length,
+    lastMessagePreview: state.messages.at(-1)?.content.slice(0, 200) ?? "",
+    tokenBudgetRemaining,
+  });
+}
 ```
 
 This sounds expensive. It is. But when something goes wrong at 2 AM, you'll thank yourself.
@@ -64,60 +80,83 @@ This sounds expensive. It is. But when something goes wrong at 2 AM, you'll than
 
 Don't summarize. Log exactly what went into the tool and what came out:
 
-```python
-def traced_tool_call(tool_name: str, tool_input: dict) -> dict:
-    start = time.time()
+```ts
+type Logger = {
+  info: (obj: unknown) => void;
+  error: (obj: unknown) => void;
+};
 
+export async function tracedToolCall<
+  TInput extends Record<string, unknown>,
+  TOutput
+>(params: {
+  logger: Logger;
+  toolName: string;
+  toolInput: TInput;
+  execute: (toolName: string, toolInput: TInput) => Promise<TOutput>;
+}): Promise<TOutput> {
+  const { logger, toolName, toolInput, execute } = params;
+  const start = performance.now();
+
+  logger.info({ event: "tool_call_start", tool: toolName, input: toolInput });
+
+  try {
+    const output = await execute(toolName, toolInput);
     logger.info({
-        "event": "tool_call_start",
-        "tool": tool_name,
-        "input": tool_input  # Full input, not summarized
-    })
-
-    try:
-        result = execute_tool(tool_name, tool_input)
-
-        logger.info({
-            "event": "tool_call_success",
-            "tool": tool_name,
-            "output": result,  # Full output
-            "duration_ms": (time.time() - start) * 1000
-        })
-
-        return result
-    except Exception as e:
-        logger.error({
-            "event": "tool_call_error",
-            "tool": tool_name,
-            "error": str(e),
-            "error_type": type(e).__name__
-        })
-        raise
+      event: "tool_call_success",
+      tool: toolName,
+      output,
+      durationMs: performance.now() - start,
+    });
+    return output;
+  } catch (e) {
+    logger.error({
+      event: "tool_call_error",
+      tool: toolName,
+      error: e instanceof Error ? e.message : String(e),
+      errorType: e instanceof Error ? e.name : "Unknown",
+    });
+    throw e;
+  }
+}
 ```
 
 ### 3. The prompt (every time)
 
 The prompt is code. Log it like code:
 
-```python
-def log_llm_call(prompt: str, response: str, model: str, usage: dict):
-    logger.info({
-        "event": "llm_call",
-        "model": model,
-        "prompt_hash": hashlib.md5(prompt.encode()).hexdigest(),
-        "prompt_length": len(prompt),
-        "response_length": len(response),
-        "input_tokens": usage["input_tokens"],
-        "output_tokens": usage["output_tokens"],
-        "cost_usd": calculate_cost(model, usage)
-    })
+```ts
+export async function logLLMCall(params: {
+  logger: Logger;
+  prompt: string;
+  response: string;
+  model: string;
+  usage: { inputTokens: number; outputTokens: number };
+  costUsd: number;
+  store: (data: {
+    prompt: string;
+    response: string;
+    metadata: Record<string, unknown>;
+  }) => Promise<void>;
+}) {
+  const { logger, prompt, response, model, usage, costUsd, store } = params;
 
-    # Store full prompt/response separately (too large for log aggregators)
-    store_llm_interaction(
-        prompt=prompt,
-        response=response,
-        metadata={...}
-    )
+  logger.info({
+    event: "llm_call",
+    model,
+    promptLength: prompt.length,
+    responseLength: response.length,
+    inputTokens: usage.inputTokens,
+    outputTokens: usage.outputTokens,
+    costUsd,
+  });
+
+  await store({
+    prompt,
+    response,
+    metadata: { model, usage, costUsd },
+  });
+}
 ```
 
 ## The debugging workflow

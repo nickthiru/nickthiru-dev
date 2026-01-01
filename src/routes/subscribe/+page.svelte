@@ -16,7 +16,7 @@
     </p>
     
     <div class="max-w-md mx-auto">
-      <SubscribeForm />
+      <SubscribeForm tag="site" helper="email-only" />
     </div>
 
     <p class="text-secondary mt-12">

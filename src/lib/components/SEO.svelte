@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { page } from '$app/stores';
   import { siteConfig } from '$lib/config';
 
   interface Props {
@@ -21,7 +22,7 @@
 
   let fullTitle = $derived(title === siteConfig.title ? title : `${title} | ${siteConfig.title}`);
   let imageUrl = $derived(image.startsWith('http') ? image : `${siteConfig.url}${image}`);
-  let canonicalUrl = $derived(canonical || siteConfig.url);
+  let canonicalUrl = $derived(canonical || `${siteConfig.url}${$page.url.pathname}`);
 </script>
 
 <svelte:head>

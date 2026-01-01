@@ -1,10 +1,10 @@
 <script lang="ts">
-  import type { Post } from '$lib/utils/posts';
+  import type { PostMeta } from '$lib/utils/posts';
   import { formatDateShort } from '$lib/utils/date';
   import TrackBadge from './TrackBadge.svelte';
 
   interface Props {
-    post: Post;
+    post: PostMeta;
   }
 
   let { post }: Props = $props();

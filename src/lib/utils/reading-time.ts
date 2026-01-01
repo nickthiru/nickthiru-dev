@@ -1,7 +1,34 @@
-const WORDS_PER_MINUTE = 200;
+import readingTime from "reading-time";
 
-export function calculateReadingTime(content: string): string {
-  const words = content.trim().split(/\s+/).length;
-  const minutes = Math.ceil(words / WORDS_PER_MINUTE);
-  return `${minutes} min read`;
+function stripFrontmatter(markdown: string): string {
+  return markdown.replace(/^---[\s\S]*?---\s*/m, "");
+}
+
+function stripCodeBlocks(markdown: string): string {
+  return markdown.replace(/```[\s\S]*?```/g, " ");
+}
+
+function stripInlineCode(markdown: string): string {
+  return markdown.replace(/`[^`]*`/g, " ");
+}
+
+function stripLinks(markdown: string): string {
+  return markdown.replace(/\[([^\]]+)\]\(([^)]+)\)/g, "$1");
+}
+
+function stripMarkdownFormatting(markdown: string): string {
+  return markdown
+    .replace(/[#>*_~]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+export function calculateReadingTime(markdownOrText: string): string {
+  const cleaned = stripMarkdownFormatting(
+    stripLinks(
+      stripInlineCode(stripCodeBlocks(stripFrontmatter(markdownOrText)))
+    )
+  );
+
+  return readingTime(cleaned).text;
 }

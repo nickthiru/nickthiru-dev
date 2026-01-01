@@ -1,5 +1,6 @@
 <script lang="ts">
   import SEO from '$lib/components/SEO.svelte';
+  import { siteConfig } from '$lib/config';
 </script>
 
 <SEO 
@@ -42,6 +43,16 @@
 
       <h2>Location</h2>
       <p>Working remotely.</p>
+
+      <h2>Follow</h2>
+      <p>
+        If you want to keep up with what I'm building, the best places to follow along are:
+      </p>
+      <ul>
+        <li><a href={siteConfig.social.twitter} target="_blank" rel="noopener noreferrer">Twitter/X</a></li>
+        <li><a href={siteConfig.social.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href={siteConfig.social.github} target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      </ul>
     </div>
   </div>
 </section>

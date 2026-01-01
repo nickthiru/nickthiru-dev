@@ -14,6 +14,7 @@
   type="article"
   publishedAt={data.post.publishedAt}
   image={data.post.image}
+  canonical={data.post.canonical}
 />
 
 <article class="mx-auto max-w-page px-6 md:px-8 py-12 md:py-16">
@@ -57,6 +58,6 @@
     <p class="text-secondary mb-6">
       If this was useful, subscribe for more posts on building agentic AI systems.
     </p>
-    <SubscribeForm />
+    <SubscribeForm tag={data.post.track} />
   </footer>
 </article>

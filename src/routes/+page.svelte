@@ -2,6 +2,8 @@
   import SEO from '$lib/components/SEO.svelte';
   import PostCard from '$lib/components/PostCard.svelte';
   import ProjectCard from '$lib/components/ProjectCard.svelte';
+  import SubscribeForm from '$lib/components/SubscribeForm.svelte';
+  import { siteConfig } from '$lib/config';
   import type { PageData } from './$types';
 
   let { data }: { data: PageData } = $props();
@@ -54,6 +56,23 @@
     {#each data.recentPosts as post}
       <PostCard {post} />
     {/each}
+  </div>
+</section>
+
+<!-- Subscribe Section -->
+<section class="mx-auto max-w-page px-6 md:px-8 py-12">
+  <div class="bg-accent/5 border border-accent/20 rounded-lg p-8 md:p-10">
+    <div class="grid gap-8 md:gap-12 md:grid-cols-[1fr,420px] md:items-center">
+      <div class="max-w-prose">
+        <h2 class="text-h3 text-primary mb-3">Subscribe</h2>
+        <p class="text-secondary">
+          Get new posts in your inbox. No spam, unsubscribe anytime. Or <a href="mailto:{siteConfig.author.email}" class="text-accent hover:underline">email me directly</a>.
+        </p>
+      </div>
+      <div class="w-full">
+        <SubscribeForm tag="home" helper="none" />
+      </div>
+    </div>
   </div>
 </section>
 

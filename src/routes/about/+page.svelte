@@ -43,7 +43,7 @@
 
       <h2>What I'm working on now</h2>
       <p>
-        See my <a href="/now">/now page</a> for current projects and focus areas.
+        See my <a href="/now">now page</a> for current projects and focus areas.
       </p>
 
       <h2>Get in touch</h2>

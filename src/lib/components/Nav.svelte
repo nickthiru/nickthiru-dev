@@ -33,6 +33,11 @@
           </a>
         </li>
       {/each}
+      <li>
+        <a href="/subscribe" class="btn-primary">
+          Subscribe
+        </a>
+      </li>
     </ul>
 
     <!-- Mobile menu button -->

@@ -33,6 +33,11 @@ const postModules = import.meta.glob<PostModule>("/src/content/posts/*.md", {
   eager: true,
 });
 
+const rawPostModules = import.meta.glob<string>("/src/content/posts/*.md", {
+  eager: true,
+  as: "raw",
+});
+
 export async function getPostsMeta(): Promise<PostMeta[]> {
   const posts: PostMeta[] = [];
 
@@ -50,7 +55,9 @@ export async function getPostsMeta(): Promise<PostMeta[]> {
 
     posts.push({
       ...metadata,
-      readingTime: calculateReadingTime(metadata.description || ""),
+      readingTime: calculateReadingTime(
+        rawPostModules[path] || metadata.description || ""
+      ),
     });
   }
 
@@ -71,7 +78,9 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
       }
       return {
         ...metadata,
-        readingTime: calculateReadingTime(metadata.description || ""),
+        readingTime: calculateReadingTime(
+          rawPostModules[path] || metadata.description || ""
+        ),
         content: file.default,
       };
     }

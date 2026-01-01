@@ -15,6 +15,7 @@ export const GET: RequestHandler = async () => {
     "/projects",
     "/about",
     "/now",
+    "/contact",
     "/subscribe",
   ];
 

@@ -1,11 +1,12 @@
 <script lang="ts">
-  import { PUBLIC_PLAUSIBLE_DOMAIN, PUBLIC_PLAUSIBLE_SCRIPT_SRC } from '$env/static/public';
+  import { env } from '$env/dynamic/public';
 
-  const src = PUBLIC_PLAUSIBLE_SCRIPT_SRC || 'https://plausible.io/js/script.js';
+  const domain = env.PUBLIC_PLAUSIBLE_DOMAIN;
+  const src = env.PUBLIC_PLAUSIBLE_SCRIPT_SRC || 'https://plausible.io/js/script.js';
 </script>
 
 <svelte:head>
-  {#if PUBLIC_PLAUSIBLE_DOMAIN}
-    <script defer data-domain={PUBLIC_PLAUSIBLE_DOMAIN} src={src}></script>
+  {#if domain}
+    <script defer data-domain={domain} src={src}></script>
   {/if}
 </svelte:head>

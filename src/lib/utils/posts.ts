@@ -35,7 +35,8 @@ const postModules = import.meta.glob<PostModule>("/src/content/posts/*.md", {
 
 const rawPostModules = import.meta.glob<string>("/src/content/posts/*.md", {
   eager: true,
-  as: "raw",
+  query: "?raw",
+  import: "default",
 });
 
 export async function getPostsMeta(): Promise<PostMeta[]> {

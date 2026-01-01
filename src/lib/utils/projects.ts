@@ -28,7 +28,6 @@ export const projects: Project[] = [
     description:
       "This site—built with SvelteKit, markdown-in-repo, and deployed on Vercel. Open-source and documented.",
     status: "Live",
-    url: "https://nickthiru.dev",
     featured: true,
   },
   {

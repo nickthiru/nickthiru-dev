@@ -1,5 +1,3 @@
-import readingTime from "reading-time";
-
 function stripFrontmatter(markdown: string): string {
   return markdown.replace(/^---[\s\S]*?---\s*/m, "");
 }
@@ -30,5 +28,9 @@ export function calculateReadingTime(markdownOrText: string): string {
     )
   );
 
-  return readingTime(cleaned).text;
+  const words = cleaned.split(/\s+/).filter(Boolean).length;
+  const wordsPerMinute = 200;
+  const minutes = Math.max(1, Math.ceil(words / wordsPerMinute));
+
+  return `${minutes} min read`;
 }

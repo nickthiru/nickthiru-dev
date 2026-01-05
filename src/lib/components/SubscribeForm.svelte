@@ -2,8 +2,8 @@
   import { siteConfig } from '$lib/config';
   
   let email = $state('');
-  let status = $state<'idle' | 'loading' | 'success'>('idle');
-  let pendingSubmit = $state(false);
+  let status = $state<'idle' | 'loading' | 'success' | 'error'>('idle');
+  let errorMessage = $state('');
 
   interface Props {
     tag?: string;
@@ -12,17 +12,30 @@
 
   let { tag, helper = 'default' }: Props = $props();
 
-  const actionUrl = `https://buttondown.com/api/emails/embed-subscribe/${siteConfig.newsletter.username}`;
-
-  function handleSubmit() {
+  async function handleSubmit(e: Event) {
+    e.preventDefault();
     status = 'loading';
-    pendingSubmit = true;
-  }
+    errorMessage = '';
 
-  function handleIframeLoad() {
-    if (!pendingSubmit) return;
-    pendingSubmit = false;
-    status = 'success';
+    try {
+      const tags = tag ? [tag] : [];
+      const response = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, tags })
+      });
+
+      if (!response.ok) {
+        const data = await response.json().catch(() => ({ error: 'Failed to subscribe' }));
+        throw new Error(data.error || 'Failed to subscribe');
+      }
+
+      status = 'success';
+      email = '';
+    } catch (error) {
+      status = 'error';
+      errorMessage = error instanceof Error ? error.message : 'Something went wrong';
+    }
   }
 </script>
 
@@ -34,7 +47,7 @@
     </p>
   </div>
 {:else}
-  <form action={actionUrl} method="post" target="buttondown-iframe" onsubmit={handleSubmit} class="flex flex-col sm:flex-row gap-3" novalidate>
+  <form onsubmit={handleSubmit} class="flex flex-col sm:flex-row gap-3" novalidate>
     <label for="email" class="sr-only">Email address</label>
     <input
       type="email"
@@ -46,20 +59,13 @@
       class="flex-grow min-w-0 px-4 py-2.5 rounded-md border border-border bg-surface text-primary 
              placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
     />
-    <input type="hidden" name="embed" value="1" />
-    {#if tag}
-      <input type="hidden" name="tag" value={tag} />
-    {/if}
     <button type="submit" class="btn-primary shrink-0" disabled={status === 'loading'}>
       {status === 'loading' ? 'Subscribing...' : 'Subscribe'}
     </button>
   </form>
-  <iframe
-    name="buttondown-iframe"
-    title="Buttondown subscription"
-    class="hidden"
-    onload={handleIframeLoad}
-  ></iframe>
+  {#if status === 'error'}
+    <p class="text-small text-red-600 mt-2">{errorMessage}</p>
+  {/if}
   {#if helper !== 'none'}
     <p class="text-small text-muted mt-3">
       {#if helper === 'email-only'}

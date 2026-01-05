@@ -514,11 +514,14 @@ Use Tailwind's default spacing scale. Key values:
    - Title: "Subscribe"
    - Copy: "Get new posts in your inbox. No spam, unsubscribe anytime."
    - Email input + Submit button
-   - Note: Use Buttondown's `embed-subscribe` endpoint so the site can remain static.
-     - POST to: `https://buttondown.com/api/emails/embed-subscribe/YOUR-BUTTONDOWN-USERNAME`
-     - Required field: `email`
-     - Required hidden field: `embed=1`
-     - Optional: `tag` hidden input to segment subscribers (e.g., `technical`, `operator`, `site`)
+   - **Implementation:** Server-side API endpoint for secure Buttondown integration
+     - Client form POSTs to `/api/subscribe` (SvelteKit server endpoint)
+     - Server endpoint POSTs to Buttondown v1 API: `https://api.buttondown.com/v1/subscribers`
+     - Required server env var: `BUTTONDOWN_API_KEY` (never expose to client)
+     - Request body: `{ email_address: string, tags: string[] }`
+     - Optional: `tags` array to segment subscribers (e.g., `["technical"]`, `["operator"]`, `["site"]`)
+     - Success: Show confirmation message
+     - Error: Display user-friendly error message
 3. **Footer**
 
 ---

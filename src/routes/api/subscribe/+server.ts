@@ -1,5 +1,5 @@
 import { json } from "@sveltejs/kit";
-import { BUTTONDOWN_API_KEY } from "$env/static/private";
+import { env } from "$env/dynamic/private";
 import type { RequestHandler } from "./$types";
 
 export const POST: RequestHandler = async ({ request }) => {
@@ -9,7 +9,8 @@ export const POST: RequestHandler = async ({ request }) => {
     return json({ error: "Email is required" }, { status: 400 });
   }
 
-  if (!BUTTONDOWN_API_KEY) {
+  const apiKey = env.BUTTONDOWN_API_KEY;
+  if (!apiKey) {
     console.error("BUTTONDOWN_API_KEY is not set");
     return json(
       { error: "Newsletter service not configured" },
@@ -21,7 +22,7 @@ export const POST: RequestHandler = async ({ request }) => {
     const response = await fetch("https://api.buttondown.com/v1/subscribers", {
       method: "POST",
       headers: {
-        Authorization: `Token ${BUTTONDOWN_API_KEY}`,
+        Authorization: `Token ${apiKey}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({

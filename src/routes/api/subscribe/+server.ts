@@ -1,4 +1,5 @@
 import { json } from "@sveltejs/kit";
+import { BUTTONDOWN_API_KEY } from "$env/static/private";
 import type { RequestHandler } from "./$types";
 
 export const POST: RequestHandler = async ({ request }) => {
@@ -8,8 +9,7 @@ export const POST: RequestHandler = async ({ request }) => {
     return json({ error: "Email is required" }, { status: 400 });
   }
 
-  const apiKey = process.env.BUTTONDOWN_API_KEY;
-  if (!apiKey) {
+  if (!BUTTONDOWN_API_KEY) {
     console.error("BUTTONDOWN_API_KEY is not set");
     return json(
       { error: "Newsletter service not configured" },
@@ -21,7 +21,7 @@ export const POST: RequestHandler = async ({ request }) => {
     const response = await fetch("https://api.buttondown.com/v1/subscribers", {
       method: "POST",
       headers: {
-        Authorization: `Token ${apiKey}`,
+        Authorization: `Token ${BUTTONDOWN_API_KEY}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
@@ -33,10 +33,9 @@ export const POST: RequestHandler = async ({ request }) => {
     if (!response.ok) {
       const errorData = await response.json().catch(() => ({}));
       console.error("Buttondown API error:", response.status, errorData);
-      return json(
-        { error: "Failed to subscribe" },
-        { status: response.status }
-      );
+      const errorMessage =
+        errorData.detail || errorData.error || "Failed to subscribe";
+      return json({ error: errorMessage }, { status: response.status });
     }
 
     const data = await response.json();

@@ -2,7 +2,7 @@
 title: "Testing RSS-to-Email Integration"
 slug: "testing-rss-email-integration"
 description: "A test post to verify that the RSS-to-email workflow is working correctly with Buttondown."
-publishedAt: "2026-01-07"
+publishedAt: "2026-01-08"
 track: "technical"
 tags: ["testing", "rss", "email"]
 draft: false

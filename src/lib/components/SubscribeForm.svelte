@@ -2,6 +2,7 @@
   import { siteConfig } from '$lib/config';
   
   let email = $state('');
+  let firstName = $state('');
   let status = $state<'idle' | 'loading' | 'success' | 'error'>('idle');
   let errorMessage = $state('');
 
@@ -19,10 +20,11 @@
 
     try {
       const tags = tag ? [tag] : [];
+      const metadata = firstName ? { first_name: firstName } : {};
       const response = await fetch('/api/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, tags })
+        body: JSON.stringify({ email, tags, metadata })
       });
 
       if (!response.ok) {
@@ -32,6 +34,7 @@
 
       status = 'success';
       email = '';
+      firstName = '';
     } catch (error) {
       status = 'error';
       errorMessage = error instanceof Error ? error.message : 'Something went wrong';
@@ -47,32 +50,44 @@
     </p>
   </div>
 {:else}
-  <form onsubmit={handleSubmit} class="flex flex-col sm:flex-row gap-3" novalidate>
-    <label for="email" class="sr-only">Email address</label>
-    <input
-      type="email"
-      id="email"
-      bind:value={email}
-      placeholder="you@example.com"
-      required
-      disabled={status === 'loading'}
-      class="flex-grow min-w-0 px-4 py-2.5 rounded-md border border-border bg-surface text-primary 
-             placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
-    />
-    <button type="submit" class="btn-primary shrink-0" disabled={status === 'loading'}>
+  <form onsubmit={handleSubmit} class="flex flex-col gap-3" novalidate>
+    <div class="flex flex-col sm:flex-row gap-3">
+      <div class="flex-grow">
+        <label for="firstName" class="sr-only">First name (optional)</label>
+        <input
+          type="text"
+          id="firstName"
+          bind:value={firstName}
+          placeholder="First name (optional)"
+          disabled={status === 'loading'}
+          class="w-full px-4 py-2.5 rounded-md border border-border bg-surface text-primary 
+                 placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+        />
+      </div>
+      <div class="flex-grow">
+        <label for="email" class="sr-only">Email address</label>
+        <input
+          type="email"
+          id="email"
+          bind:value={email}
+          placeholder="Email"
+          required
+          disabled={status === 'loading'}
+          class="w-full px-4 py-2.5 rounded-md border border-border bg-surface text-primary 
+                 placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+        />
+      </div>
+    </div>
+    <button type="submit" class="btn-primary w-full sm:w-auto flex items-center justify-center" disabled={status === 'loading'}>
       {status === 'loading' ? 'Subscribing...' : 'Subscribe'}
     </button>
   </form>
   {#if status === 'error'}
     <p class="text-small text-red-600 mt-2">{errorMessage}</p>
   {/if}
-  {#if helper !== 'none'}
+  {#if helper !== 'none' && helper !== 'email-only'}
     <p class="text-small text-muted mt-3">
-      {#if helper === 'email-only'}
-        Or <a href="mailto:{siteConfig.author.email}" class="text-accent hover:underline">email me directly</a>.
-      {:else}
-        No spam, unsubscribe anytime. Or <a href="mailto:{siteConfig.author.email}" class="text-accent hover:underline">email me directly</a>.
-      {/if}
+      No spam, unsubscribe anytime.
     </p>
   {/if}
 {/if}

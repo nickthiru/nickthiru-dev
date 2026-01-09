@@ -1,6 +1,4 @@
 <script lang="ts">
-  import WaitlistForm from './WaitlistForm.svelte';
-
   interface Props {
     tags?: string[];
   }
@@ -23,7 +21,15 @@
         Voice notes → authentic LinkedIn posts. Style learning, quality gates, and scheduling. 
         Built for founders who want to post consistently without sounding like corporate AI.
       </p>
-      <WaitlistForm product="linkedin-ghostwriter" />
+      <a 
+        href="https://thiruailabs.com/products/linkedin-ghostwriter" 
+        class="btn-primary inline-flex items-center gap-2"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Learn more and join the waitlist
+        <span aria-hidden="true">→</span>
+      </a>
     </div>
   </div>
 {/if}

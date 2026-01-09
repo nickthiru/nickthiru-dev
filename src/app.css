@@ -70,6 +70,10 @@
     @apply bg-pink-lighter text-pink-darker;
   }
 
+  .track-badge-product {
+    @apply bg-accent/10 text-accent;
+  }
+
   .tag {
     @apply text-small text-muted hover:text-accent transition-colors;
   }

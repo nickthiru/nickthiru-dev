@@ -13,7 +13,7 @@ export const projects: Project[] = [
     description:
       "Turn voice notes into authentic LinkedIn posts. Style learning, quality gates, and scheduling built-in. For founders who want to post consistently without sounding like corporate AI.",
     status: "In Progress",
-    url: "/waitlist",
+    url: "https://thiruailabs.com/products/linkedin-ghostwriter",
     featured: true,
   },
 ];

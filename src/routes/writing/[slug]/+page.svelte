@@ -2,6 +2,7 @@
   import SEO from '$lib/components/SEO.svelte';
   import TrackBadge from '$lib/components/TrackBadge.svelte';
   import SubscribeForm from '$lib/components/SubscribeForm.svelte';
+  import ProductWaitlistCTA from '$lib/components/ProductWaitlistCTA.svelte';
   import { formatDate } from '$lib/utils/date';
   import type { PageData } from './$types';
 
@@ -49,7 +50,12 @@
   <div class="max-w-prose mx-auto prose prose-lg">
     <data.post.content />
   </div>
+roduct Waitlist CTA (conditional on tags) -->
+  <div class="max-w-prose mx-auto">
+    <ProductWaitlistCTA tags={data.post.tags} />
+  </div>
 
+  <!-- P
   <!-- Post Footer -->
   <footer class="max-w-prose mx-auto mt-16 pt-8 border-t border-border">
     <h3 class="text-h4 text-primary mb-4">

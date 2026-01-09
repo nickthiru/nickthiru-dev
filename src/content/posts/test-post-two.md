@@ -3,7 +3,7 @@ title: "Test Post Two: Verifying Email Delivery"
 slug: "test-post-two"
 description: "Second test post to confirm multiple posts appear correctly in the RSS-to-email digest format."
 publishedAt: "2026-01-08"
-track: "operator"
+track: "business"
 tags: ["testing", "email"]
 draft: false
 ---

@@ -3,7 +3,7 @@ title: "Why I price monthly (even when annual makes more sense)"
 slug: "why-i-price-monthly"
 description: "The case for monthly pricing when you're still figuring out product-market fit, and why the 'best practice' advice might not apply to you."
 publishedAt: "2025-01-15"
-track: "operator"
+track: "business"
 tags: ["pricing", "saas", "strategy"]
 draft: false
 ---

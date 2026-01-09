@@ -22,7 +22,7 @@
       </p>
 
       <p>
-        I publish two tracks of content: <strong>engineering</strong> deep-dives (architecture patterns, benchmarks, build logs, postmortems) and <strong>operating</strong> insights (positioning, pricing, distribution experiments, customer learnings). Both are written for indie founders, operators, and builders who care about shipping, not just prototyping.
+        I publish two tracks of content: <strong>engineering</strong> deep-dives (architecture patterns, benchmarks, build logs, postmortems) and <strong>business</strong> insights (positioning, pricing, distribution experiments, customer learnings). Both are written for indie founders, operators, and builders who care about shipping, not just prototyping.
       </p>
 
       <p>

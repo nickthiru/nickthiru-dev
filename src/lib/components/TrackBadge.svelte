@@ -1,16 +1,16 @@
 <script lang="ts">
   interface Props {
-    track: 'technical' | 'operator';
+    track: 'technical' | 'business';
   }
 
   let { track }: Props = $props();
 
   const labels = {
     technical: 'Engineering',
-    operator: 'Operating'
+    business: 'Business'
   };
 </script>
 
-<span class="track-badge {track === 'technical' ? 'track-badge-technical' : 'track-badge-operator'}">
+<span class="track-badge {track === 'technical' ? 'track-badge-technical' : 'track-badge-business'}">
   {labels[track]}
 </span>

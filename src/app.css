@@ -55,7 +55,7 @@
 
   .post-card {
     @apply bg-surface border border-border rounded-lg p-6
-           hover:-translate-y-0.5 hover:shadow-md transition-all duration-200;
+           hover:-translate-y-0.5 hover:shadow-md transition-[transform,box-shadow] duration-300 ease-out;
   }
 
   .track-badge {
@@ -66,7 +66,7 @@
     @apply bg-blue-lighter text-blue-darker;
   }
 
-  .track-badge-operator {
+  .track-badge-business {
     @apply bg-pink-lighter text-pink-darker;
   }
 

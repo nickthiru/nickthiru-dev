@@ -37,7 +37,7 @@
       </div>
       <div class="bg-accent/10 border border-accent/20 rounded-lg p-5">
         <h2 class="text-h5 text-primary mb-2 flex items-center gap-2">
-          <span class="text-small font-medium text-accent">Product</span>
+          <span class="track-badge" style="background-color: var(--color-accent-lighter, #e0f2fe); color: var(--color-accent-darker, #0c4a6e);">Product</span>
         </h2>
         <p class="text-secondary text-body">
           Build logs, learnings, and updates from shipping AI products—currently building LinkedIn Ghostwriter.

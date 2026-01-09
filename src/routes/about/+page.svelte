@@ -33,11 +33,6 @@
         I work remotely and share my journey publicly on this website.
       </p>
 
-      <h2>What I'm working on now</h2>
-      <p>
-        See my <a href="/now">now page</a> for current projects and focus areas.
-      </p>
-
       <h2>Get in touch</h2>
       <p>
         The best way to reach me is via email at <a href="mailto:{siteConfig.author.email}">{siteConfig.author.email}</a>.

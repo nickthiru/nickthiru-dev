@@ -9,32 +9,11 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    name: "LinkedIn Ghostwriter Agent",
+    name: "LinkedIn Ghostwriter",
     description:
-      "AI-powered LinkedIn content assistant for busy founders. Generates posts, comments, and engagement strategies.",
+      "Turn voice notes into authentic LinkedIn posts. Style learning, quality gates, and scheduling built-in. For founders who want to post consistently without sounding like corporate AI.",
     status: "In Progress",
-    featured: true,
-  },
-  {
-    name: "Thiru AI Labs",
-    description:
-      "Solo studio for agentic micro-SaaS and automation systems. Building the future of AI-first software.",
-    status: "Live",
-    url: "https://thiruailabs.com",
-    featured: true,
-  },
-  {
-    name: "nickthiru.dev",
-    description:
-      "This site—built with SvelteKit, markdown-in-repo, and deployed on Vercel. Open-source and documented.",
-    status: "Live",
-    featured: true,
-  },
-  {
-    name: "Agent Observability Toolkit",
-    description:
-      "Lightweight observability layer for LangGraph agents. Traces, metrics, and debugging tools.",
-    status: "In Progress",
+    url: "/waitlist",
     featured: true,
   },
 ];

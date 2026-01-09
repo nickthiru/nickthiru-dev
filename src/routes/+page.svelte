@@ -16,11 +16,16 @@
   <div class="grid md:grid-cols-[1fr,auto] gap-16 items-center">
     <div class="max-w-prose">
       <h1 class="text-h1 text-primary mb-6">
-        Building agentic systems that ship.
+        Building AI agentic systems that ship.
       </h1>
-      <p class="text-xl text-secondary leading-relaxed mb-8">
+      <p class="text-xl text-secondary leading-relaxed mb-6">
         I'm an AI systems architect designing LangGraph-powered micro-SaaS and automation products. 
         I write about the engineering and the business of making AI agents work in production.
+      </p>
+      <p class="text-large text-muted mb-8">
+        <a href="/writing/what-are-ai-agents" class="text-accent hover:underline">
+          What are AI agents and agentic systems, anyway? →
+        </a>
       </p>
       <div class="flex flex-wrap gap-4">
         <a href="/writing" class="btn-primary">

@@ -4,7 +4,8 @@
   const filters = [
     { label: 'All', href: '/writing' },
     { label: 'Engineering', href: '/engineering' },
-    { label: 'Business', href: '/business' }
+    { label: 'Business', href: '/business' },
+    { label: 'Product', href: '/product' }
   ];
 </script>
 

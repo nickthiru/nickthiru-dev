@@ -75,7 +75,7 @@
   }
 
   .tag {
-    @apply text-small text-muted hover:text-accent transition-colors;
+    @apply text-small text-muted;
   }
 
   .nav-link {

@@ -56,7 +56,25 @@
       </div>
     </div>
 
-    <div class="mt-8 pt-8 border-t border-border">
+    <div class="mt-8 pt-8 border-t border-border flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+      <!-- Thiru AI Labs branding -->
+      <a 
+        href="https://thiruailabs.com" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="flex items-center gap-3 group"
+      >
+        <img 
+          src="/thiru-ai-labs-icon.png" 
+          alt="Thiru AI Labs" 
+          class="h-12 w-12 transition-transform group-hover:scale-105"
+        />
+        <span class="text-small text-secondary group-hover:text-accent transition-colors">
+          Built by Thiru AI Labs
+        </span>
+      </a>
+
+      <!-- Copyright -->
       <p class="text-small text-muted">
         © {new Date().getFullYear()} {siteConfig.author.name}. All rights reserved.
       </p>

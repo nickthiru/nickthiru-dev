@@ -84,7 +84,7 @@
 <!-- Projects Section -->
 <section class="mx-auto max-w-page px-6 md:px-8 py-12">
   <div class="flex items-center justify-between mb-8">
-    <h2 class="text-h2 text-primary">Projects</h2>
+    <h2 class="text-h2 text-primary">Current projects</h2>
     <a href="/projects" class="text-accent hover:underline font-medium">
       View all <span aria-hidden="true">→</span>
     </a>

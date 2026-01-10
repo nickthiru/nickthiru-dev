@@ -14,7 +14,15 @@
 
     <div class="prose prose-lg">
       <p>
-        I'm an AI systems architect building at the intersection of modern web infrastructure and agentic AI. I run Thiru AI Labs, a solo studio where I design, build, and operate production-grade micro-SaaS products and automation systems powered by LangGraph agent workflows.
+        I'm an AI systems architect building at the intersection of modern web infrastructure and agentic AI. I run 
+        <a
+        href="https://thiruailabs.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-accent hover:underline inline-flex items-center gap-1"
+      >
+        Thiru AI Labs
+      </a>, a solo AI systems studio where I design, build, and operate production-grade micro-SaaS products and automation systems powered by LangGraph agent workflows.
       </p>
 
       <p>

@@ -2,7 +2,7 @@
 title: "How I structure LangGraph agents for production"
 slug: "langgraph-production-structure"
 description: "A walkthrough of the patterns I use to keep LangGraph agents maintainable, testable, and observable in production."
-publishedAt: "2025-01-20"
+publishedAt: "2025-12-15"
 track: "technical"
 tags: ["langgraph", "architecture", "agents"]
 draft: false

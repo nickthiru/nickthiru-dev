@@ -5,7 +5,7 @@ description: "The case for monthly pricing when you're still figuring out produc
 publishedAt: "2025-01-15"
 track: "business"
 tags: ["pricing", "saas", "strategy"]
-draft: false
+draft: true
 ---
 
 Every SaaS pricing guide tells you the same thing: offer annual plans with a discount. Lock in revenue. Reduce churn. It's the smart move.

@@ -2,7 +2,7 @@
 title: "What debugging AI agents taught me about observability"
 slug: "observability-lessons-from-agent-debugging"
 description: "Three months of production agent incidents changed how I think about logging, tracing, and the data you actually need when things go wrong."
-publishedAt: "2025-01-10"
+publishedAt: "2025-12-08"
 track: "technical"
 tags: ["observability", "debugging", "agents", "langgraph"]
 draft: false

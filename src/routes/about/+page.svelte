@@ -37,7 +37,11 @@
       </p>
 
       <p>
-        Before going solo, I worked across full-stack web development and cloud infrastructure. I now spend my time building products, writing about the process, and occasionally consulting for teams who need help shipping agentic systems.
+        Before going solo, I worked across full-stack web development and cloud infrastructure. I now spend my time building products and writing about the process.
+      </p>
+
+      <p>
+        I also offer consulting services for teams building agentic AI systems through <a href="https://thiruailabs.com/consult" target="_blank" rel="noopener noreferrer">Thiru AI Labs</a>.
       </p>
 
       <p>

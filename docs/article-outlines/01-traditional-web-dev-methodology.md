@@ -13,8 +13,8 @@
 > **Part of a Series**: This is Article 1 of 3 in the "Development Methodology Series"
 >
 > - **Article 1**: The Web Dev Methodology That Still Works (For Traditional Apps) _(you are here)_
-> - **Article 2**: [Why Traditional Development Methodology Breaks for AI Agentic Systems](./02-why-traditional-breaks-for-ai.md)
-> - **Article 3**: [A Lean Methodology for AI Agentic Development](./03-lean-ai-methodology.md)
+> - **Article 2**: [Why Traditional Development Methodology Breaks for Agentic AI Systems](./02-why-traditional-breaks-for-ai.md)
+> - **Article 3**: [A Lean Methodology for Agentic AI Development](./03-lean-ai-methodology.md)
 
 ---
 
@@ -24,7 +24,7 @@ For years, I built full-stack web applications using a structured, 4-phase devel
 
 Then AI agents came along.
 
-The methodology that served me so well suddenly didn't fit. Not because it was bad, but because **AI agentic systems are fundamentally different beasts**.
+The methodology that served me so well suddenly didn't fit. Not because it was bad, but because **Agentic AI systems are fundamentally different beasts**.
 
 Before I explain what broke and why, let me share what worked. Because if you're building traditional web apps (and many of us still are), this methodology still delivers.
 
@@ -38,13 +38,13 @@ Before I explain what broke and why, let me share what worked. Because if you're
 
 - Brief personal journey: Years of building full-stack apps
 - The methodology evolved from real-world pain points and integrating best practices from established sources
-- It's not "obsolete"—it's just **not applicable to AI agentic apps**
+- It's not "obsolete"—it's just **not applicable to Agentic AI apps**
 - For traditional full-stack web apps, it still works (with AI assisting within the guided methodology)
 - **Attribution**: The design phases were heavily influenced by two foundational books:
   - _Microservices: Up and Running_ by Ronnie Mitra and Irakli Nadareishvili (for service design and API contracts)
   - _The DynamoDB Book_ by Alex DeBrie (for NoSQL data modeling)
 - These books, combined with years of picking up practices from various disciplines, formed the backbone of this integrated approach
-- Teaser: "But when I started building AI agentic systems, I had to rethink everything. More on that in Article 2."
+- Teaser: "But when I started building Agentic AI systems, I had to rethink everything. More on that in Article 2."
 
 ### 2. The Problem This Methodology Solves
 
@@ -452,7 +452,7 @@ Before implementation begins, verify:
 
 **Goal**: Transition to the next article
 
-This methodology works beautifully for **deterministic, predictable systems**. But AI agentic systems are:
+This methodology works beautifully for **deterministic, predictable systems**. But Agentic AI systems are:
 
 - **Non-deterministic**: Same input, different outputs
 - **Emergent**: Behavior emerges from agent interactions
@@ -468,7 +468,7 @@ This methodology works beautifully for **deterministic, predictable systems**. B
 
 **The realization**: I needed a different approach.
 
-**Transition**: "In Article 2, I'll explain exactly why this methodology breaks for AI agentic systems, and what I learned from trying to force-fit it."
+**Transition**: "In Article 2, I'll explain exactly why this methodology breaks for Agentic AI systems, and what I learned from trying to force-fit it."
 
 ---
 
@@ -518,7 +518,7 @@ I'm deeply grateful to these authors for their contributions to the craft of sof
 > - Story bundling balances discovery granularity with implementation efficiency
 > - Definition of Ready/Done provides clear quality gates
 > - This methodology still works for full-stack web apps (with AI assisting)
-> - But it breaks for AI agentic systems (see Article 2)
+> - But it breaks for Agentic AI systems (see Article 2)
 > - Built on foundations from _Microservices: Up and Running_ and _The DynamoDB Book_
 
 ---
@@ -534,8 +534,8 @@ I'm deeply grateful to these authors for their contributions to the craft of sof
 
 ## Internal Links
 
-- Link to Article 2: Why Traditional Development Methodology Breaks for AI Agentic Systems
-- Link to Article 3: A Lean Methodology for AI Agentic Development
+- Link to Article 2: Why Traditional Development Methodology Breaks for Agentic AI Systems
+- Link to Article 3: A Lean Methodology for Agentic AI Development
 - Link to full methodology docs (once public repo is ready)
 
 ---

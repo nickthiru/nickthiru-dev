@@ -1,4 +1,4 @@
-# Article 3: A Lean Methodology for AI Agentic Development
+# Article 3: A Lean Methodology for Agentic AI Development
 
 **Part of Series:** "From Web Apps to AI Agents: A Developer's Journey"
 
@@ -16,8 +16,8 @@
 > **Part of a 3-article series:** From Web Apps to AI Agents
 >
 > 1. [The Web Dev Methodology That Still Works](#)
-> 2. [Why Traditional Methodology Breaks for AI Agentic Systems](#)
-> 3. **A Lean Methodology for AI Agentic Development** (you are here)
+> 2. [Why Traditional Methodology Breaks for Agentic AI Systems](#)
+> 3. **A Lean Methodology for Agentic AI Development** (you are here)
 ```
 
 ---
@@ -32,7 +32,7 @@ I chose the latter.
 
 This isn't a complete reinvention. The traditional methodology still works for 20% of the system (infrastructure, auth, payments). But the 80% that's AI requires a fundamentally different approach—one that embraces iteration, experimentation, and discovery.
 
-This is that methodology: lean, practical, and built from real experience shipping AI agentic products."
+This is that methodology: lean, practical, and built from real experience shipping Agentic AI products."
 
 ---
 
@@ -933,7 +933,7 @@ So I can turn it into a LinkedIn post
 
 **Use this lean methodology when:**
 
-✅ **Building AI agentic systems**
+✅ **Building Agentic AI systems**
 
 - LLM-powered applications
 - Conversational interfaces
@@ -985,7 +985,7 @@ So I can turn it into a LinkedIn post
 
 **Summary:**
 
-- AI agentic development requires a different approach
+- Agentic AI development requires a different approach
 - Keep what works (requirements, infrastructure, documentation)
 - Change what doesn't (upfront design → rapid iteration)
 - Use the 4-phase lean process (Discovery → Prototyping → Refinement → Hardening)
@@ -994,7 +994,7 @@ So I can turn it into a LinkedIn post
 **The key insight:**
 "Traditional methodology and lean AI methodology aren't competitors—they're complementary. Use traditional for infrastructure (20%), lean for AI layer (80%). Know which is which, and apply the right approach to each.
 
-This is how you build AI agentic systems that actually work."
+This is how you build Agentic AI systems that actually work."
 
 **CTA:**
 "Ready to build? Start with Phase 1: Define your job stories and acceptance criteria. Then build a prototype and start learning.
@@ -1046,7 +1046,7 @@ This is how you build AI agentic systems that actually work."
 
 - AI development methodology
 - Lean AI development
-- AI agentic systems development
+- Agentic AI systems development
 - Building AI agents
 
 **Secondary:**
@@ -1058,7 +1058,7 @@ This is how you build AI agentic systems that actually work."
 
 **Long-tail:**
 
-- "How to build AI agentic systems"
+- "How to build Agentic AI systems"
 - "AI development process step by step"
 - "Lean methodology for AI agents"
 

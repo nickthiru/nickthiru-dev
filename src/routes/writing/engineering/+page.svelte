@@ -14,8 +14,8 @@
 
 <section class="mx-auto max-w-page px-6 md:px-8 py-12 md:py-16">
   <header class="mb-12">
-    <h1 class="text-h1 text-primary mb-4">Engineering</h1>
-    <p class="text-xl text-secondary mb-8">
+    <h1 class="text-h1 text-primary dark:text-[#FAFAFA] mb-4">Engineering</h1>
+    <p class="text-xl text-secondary dark:text-[#D4D4D4] mb-8">
       Architecture patterns, build logs, benchmarks, and postmortems.
     </p>
     <FilterPills />
@@ -25,7 +25,7 @@
     {#each data.posts as post}
       <PostCard {post} />
     {:else}
-      <p class="text-secondary">No engineering posts yet. Check back soon!</p>
+      <p class="text-secondary dark:text-[#D4D4D4]">No engineering posts yet. Check back soon!</p>
     {/each}
   </div>
 </section>

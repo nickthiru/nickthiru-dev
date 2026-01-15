@@ -22,7 +22,8 @@ export interface Post extends PostMeta {
   content: Component;
 }
 
-const isDev = import.meta.env.DEV;
+// Always hide draft posts, even in dev mode, for consistency with production
+const isDev = false;
 
 type PostModule = {
   metadata: PostFrontmatter;

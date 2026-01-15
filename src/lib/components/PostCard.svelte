@@ -14,16 +14,16 @@
   <a href="/writing/{post.slug}" class="block group">
     <div class="flex items-center gap-3 mb-3">
       <TrackBadge track={post.track} />
-      <span class="text-small text-muted">{formatDateShort(post.publishedAt)}</span>
-      <span class="text-small text-muted">·</span>
-      <span class="text-small text-muted">{post.readingTime}</span>
+      <span class="text-small text-muted dark:text-[#A3A3A3]">{formatDateShort(post.publishedAt)}</span>
+      <span class="text-small text-muted dark:text-[#A3A3A3]">·</span>
+      <span class="text-small text-muted dark:text-[#A3A3A3]">{post.readingTime}</span>
     </div>
     
-    <h3 class="text-h4 text-primary group-hover:text-accent transition-colors mb-2">
+    <h3 class="text-h4 text-primary dark:text-[#FAFAFA] group-hover:text-accent transition-colors mb-2">
       {post.title}
     </h3>
     
-    <p class="text-secondary line-clamp-2">
+    <p class="text-secondary dark:text-[#D4D4D4] line-clamp-2">
       {post.description}
     </p>
     

@@ -2,7 +2,7 @@
   import { siteConfig } from '$lib/config';
 </script>
 
-<footer class="border-t border-border bg-background mt-16">
+<footer class="border-t border-border bg-background dark:bg-[#1A1A2E] dark:border-[#262626] mt-16">
   <div class="mx-auto max-w-page px-6 py-12 md:px-8">
     <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
       <!-- Nav links -->
@@ -10,7 +10,7 @@
         <ul class="flex flex-wrap gap-6 text-small">
           {#each siteConfig.footerNav as item}
             <li>
-              <a href={item.href} class="text-secondary hover:text-accent transition-colors">
+              <a href={item.href} class="text-secondary dark:text-[#D4D4D4] hover:text-accent transition-colors">
                 {item.label}
               </a>
             </li>
@@ -24,7 +24,7 @@
           href={siteConfig.social.twitter}
           target="_blank"
           rel="noopener noreferrer"
-          class="text-secondary hover:text-accent transition-colors"
+          class="text-secondary dark:text-[#D4D4D4] hover:text-accent transition-colors"
           aria-label="Twitter"
         >
           <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
@@ -35,7 +35,7 @@
           href={siteConfig.social.github}
           target="_blank"
           rel="noopener noreferrer"
-          class="text-secondary hover:text-accent transition-colors"
+          class="text-secondary dark:text-[#D4D4D4] hover:text-accent transition-colors"
           aria-label="GitHub"
         >
           <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
@@ -46,7 +46,7 @@
           href={siteConfig.social.linkedin}
           target="_blank"
           rel="noopener noreferrer"
-          class="text-secondary hover:text-accent transition-colors"
+          class="text-secondary dark:text-[#D4D4D4] hover:text-accent transition-colors"
           aria-label="LinkedIn"
         >
           <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
@@ -56,7 +56,7 @@
       </div>
     </div>
 
-    <div class="mt-8 pt-8 border-t border-border flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+    <div class="mt-8 pt-8 border-t border-border dark:border-[#262626] flex flex-col md:flex-row md:items-center md:justify-between gap-6">
       <!-- Thiru AI Labs branding -->
       <a 
         href="https://thiruailabs.com" 
@@ -69,13 +69,13 @@
           alt="Thiru AI Labs" 
           class="h-12 w-12 transition-transform group-hover:scale-105"
         />
-        <span class="text-small text-secondary group-hover:text-accent transition-colors">
+        <span class="text-small text-secondary dark:text-[#D4D4D4] group-hover:text-accent transition-colors">
           Built by Thiru AI Labs
         </span>
       </a>
 
       <!-- Copyright -->
-      <p class="text-small text-muted">
+      <p class="text-small text-muted dark:text-[#A3A3A3]">
         © {new Date().getFullYear()} {siteConfig.author.name}. All rights reserved.
       </p>
     </div>

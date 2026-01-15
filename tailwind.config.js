@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./src/**/*.{html,js,svelte,ts,md}"],
-  darkMode: "class",
+  darkMode: ["selector", '[data-theme="dark"]'],
   theme: {
     extend: {
       colors: {
@@ -106,6 +106,30 @@ export default {
               borderRadius: "0.5rem",
               padding: "1rem",
               overflowX: "auto",
+            },
+          },
+        },
+        invert: {
+          css: {
+            color: "#E5E5E5",
+            a: {
+              color: theme("colors.accent.DEFAULT"),
+            },
+            "h1, h2, h3, h4": {
+              color: "#FAFAFA",
+            },
+            strong: {
+              color: "#FAFAFA",
+            },
+            code: {
+              backgroundColor: theme("colors.code.dark"),
+              color: "#E5E5E5",
+            },
+            blockquote: {
+              color: "#D4D4D4",
+            },
+            pre: {
+              backgroundColor: theme("colors.code.dark"),
             },
           },
         },

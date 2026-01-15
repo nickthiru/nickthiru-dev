@@ -1,4 +1,4 @@
-# Article 2: Why Traditional Development Methodology Breaks for AI Agentic Systems
+# Article 2: Why Traditional Development Methodology Breaks for Agentic AI Systems
 
 **Part of Series:** "From Web Apps to AI Agents: A Developer's Journey"
 
@@ -16,8 +16,8 @@
 > **Part of a 3-article series:** From Web Apps to AI Agents
 > 
 > 1. [The Web Dev Methodology That Still Works](#)
-> 2. **Why Traditional Methodology Breaks for AI Agentic Systems** (you are here)
-> 3. [A Lean Methodology for AI Agentic Development](#)
+> 2. **Why Traditional Methodology Breaks for Agentic AI Systems** (you are here)
+> 3. [A Lean Methodology for Agentic AI Development](#)
 ```
 
 ---
@@ -30,7 +30,7 @@
 
 Not because the methodology was bad—it's excellent for what it was designed for. I failed because I was trying to use an engineering framework for a discovery problem.
 
-This is the story of what broke, why it broke, and what I learned about the fundamental difference between building traditional applications and AI agentic systems."
+This is the story of what broke, why it broke, and what I learned about the fundamental difference between building traditional applications and Agentic AI systems."
 
 ---
 
@@ -192,7 +192,7 @@ Every step is predictable. You can design this completely before writing code.
 
 ---
 
-#### AI Agentic Systems: Discovery Problems
+#### Agentic AI Systems: Discovery Problems
 
 **Characteristics:**
 - **Non-deterministic:** Same input → Variable output
@@ -509,7 +509,7 @@ Conversational, dynamic, not diagrammable upfront.
 - **Predictability:** High
 - **Iteration:** After deployment
 
-**AI Agentic Development:**
+**Agentic AI Development:**
 - **Problem type:** Discovery
 - **Approach:** "Find what works"
 - **Process:** Hypothesis → Build → Test → Learn
@@ -532,7 +532,7 @@ Conversational, dynamic, not diagrammable upfront.
 - Implement to spec
 - This works great
 
-**If you're building AI agentic systems:**
+**If you're building Agentic AI systems:**
 - Use lean methodology
 - Build to learn
 - Iterate rapidly
@@ -551,18 +551,18 @@ Conversational, dynamic, not diagrammable upfront.
 
 **Summary:**
 - Traditional methodology assumes predictable, deterministic systems
-- AI agentic systems are non-deterministic with emergent behavior
+- Agentic AI systems are non-deterministic with emergent behavior
 - What works for engineering problems doesn't work for discovery problems
 - The methodology isn't obsolete—it's just not universal
 - Different problems require different approaches
 
 **The realization:**
-"After weeks of trying to force my methodology to fit, I finally accepted the truth: I needed a different approach for AI agentic systems. Not a complete reinvention—I could keep the parts that worked (requirements, infrastructure, documentation). But I needed a lean, iterative process for the AI layer.
+"After weeks of trying to force my methodology to fit, I finally accepted the truth: I needed a different approach for Agentic AI systems. Not a complete reinvention—I could keep the parts that worked (requirements, infrastructure, documentation). But I needed a lean, iterative process for the AI layer.
 
 That's what I'll share in the next article."
 
 **CTA:**
-"Next in this series: A lean methodology for AI agentic development—what to keep from traditional approaches, what to change, and how to build AI agents that actually work.
+"Next in this series: A lean methodology for Agentic AI development—what to keep from traditional approaches, what to change, and how to build AI agents that actually work.
 
 [Subscribe to get notified](#) | [Read Article 3 →](#)"
 
@@ -608,7 +608,7 @@ That's what I'll share in the next article."
 - AI development methodology
 - AI agent development
 - Traditional vs AI development
-- Building AI agentic systems
+- Building Agentic AI systems
 
 **Secondary:**
 - Prompt engineering workflow
@@ -619,7 +619,7 @@ That's what I'll share in the next article."
 **Long-tail:**
 - "Why traditional development doesn't work for AI"
 - "How to build AI agents"
-- "AI agentic systems development process"
+- "Agentic AI systems development process"
 
 ---
 

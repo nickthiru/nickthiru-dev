@@ -79,7 +79,13 @@
       </div>
     </div>
     <button type="submit" class="btn-primary w-full sm:w-auto flex items-center justify-center" disabled={status === 'loading'}>
-      {status === 'loading' ? 'Subscribing...' : 'Subscribe'}
+      {#if status === 'loading'}
+        <span class="inline-flex items-center">
+          Subscribing<span class="loading-dots inline-block w-6 text-left"></span>
+        </span>
+      {:else}
+        Subscribe
+      {/if}
     </button>
   </form>
   {#if status === 'error'}

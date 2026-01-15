@@ -10,9 +10,9 @@
 
 <section class="mx-auto max-w-page px-6 md:px-8 py-12 md:py-16">
   <div class="max-w-prose mx-auto">
-    <h1 class="text-h1 text-primary mb-8">Contact</h1>
+    <h1 class="text-h1 text-primary dark:text-[#FAFAFA] mb-8">Contact</h1>
 
-    <div class="prose prose-lg">
+    <div class="prose prose-lg dark:prose-invert">
       <p>
         The best way to reach me is by email:
         <a href="mailto:{siteConfig.author.email}">{siteConfig.author.email}</a>.

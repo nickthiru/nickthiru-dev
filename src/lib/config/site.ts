@@ -16,7 +16,7 @@ export const siteConfig = {
     linkedin: "nick-thiru",
   },
   social: {
-    twitter: "https://twitter.com/intent/follow?screen_name=nickthiru",
+    twitter: "https://twitter.com/nickthiru",
     github: "https://github.com/nickthiru",
     linkedin: "https://linkedin.com/in/nick-thiru",
   },

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Project } from '$lib/utils/projects';
+  import type { Project } from '$lib/config';
 
   interface Props {
     project: Project;
@@ -8,16 +8,16 @@
   let { project }: Props = $props();
 
   const statusColors = {
-    Live: 'bg-green-100 text-green-800',
-    'In Progress': 'bg-blue-100 text-blue-800',
-    Archived: 'bg-gray-100 text-gray-800',
-    Idea: 'bg-black text-white'
+    live: 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-100',
+    building: 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-100',
+    archived: 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200',
+    idea: 'bg-black text-white dark:bg-white dark:text-black'
   };
 </script>
 
 <article class="post-card h-full flex flex-col">
   <div class="flex items-start justify-between gap-4 mb-3">
-    <h3 class="text-h4 text-primary">
+    <h3 class="text-h4 text-primary dark:text-[#FAFAFA]">
       {project.name}
     </h3>
     <span class="track-badge {statusColors[project.status]} shrink-0">
@@ -25,12 +25,12 @@
     </span>
   </div>
   
-  <p class="text-secondary flex-grow">
+  <p class="text-secondary dark:text-[#D4D4D4] flex-grow">
     {project.description}
   </p>
   
   {#if project.url}
-    <div class="mt-4 pt-4 border-t border-border">
+    <div class="mt-4 pt-4 border-t border-border dark:border-[#262626]">
       <a
         href={project.url}
         target="_blank"

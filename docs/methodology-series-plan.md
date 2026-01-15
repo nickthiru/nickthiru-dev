@@ -19,14 +19,14 @@
    - Sets up the contrast with AI development
    - **Outline:** `docs/article-outlines/01-traditional-web-dev-methodology.md`
 
-2. **Why Traditional Development Methodology Breaks for AI Agentic Systems**
+2. **Why Traditional Development Methodology Breaks for Agentic AI Systems**
 
    - Shows real failures and learnings
    - Explains the paradigm shift (engineering vs discovery)
    - Builds trust through vulnerability
    - **Outline:** `docs/article-outlines/02-why-traditional-breaks-for-ai.md`
 
-3. **A Lean Methodology for AI Agentic Development**
+3. **A Lean Methodology for Agentic AI Development**
    - Provides the solution (hybrid approach)
    - Actionable, practical guidance
    - Real examples from LinkedIn Ghostwriter
@@ -48,8 +48,8 @@ Every article will include this at the top:
 > **Part of a 3-article series:** From Web Apps to AI Agents: A Developer's Journey
 >
 > 1. [The Web Dev Methodology That Still Works](#) ← Update with actual URLs
-> 2. [Why Traditional Methodology Breaks for AI Agentic Systems](#)
-> 3. [A Lean Methodology for AI Agentic Development](#)
+> 2. [Why Traditional Methodology Breaks for Agentic AI Systems](#)
+> 3. [A Lean Methodology for Agentic AI Development](#)
 ```
 
 **Implementation:**
@@ -165,13 +165,13 @@ Every article will include this at the top:
 - AI development methodology
 - AI agent development
 - Traditional vs AI development
-- Building AI agentic systems
+- Building Agentic AI systems
 
 **Article 3:**
 
 - AI development methodology
 - Lean AI development
-- AI agentic systems development
+- Agentic AI systems development
 - Building AI agents
 
 ### Long-tail Keywords
@@ -191,7 +191,7 @@ Every article will include this at the top:
 "I tried to apply my web dev methodology to building an AI agent. Here's what broke, why it broke, and what I learned about the fundamental differences between traditional and AI development."
 
 **Article 3:**
-"A lean methodology for AI agentic development: what to keep from traditional approaches, what to change, and how to build AI agents that actually work. Practical, actionable guidance."
+"A lean methodology for agentic AI development: what to keep from traditional approaches, what to change, and how to build AI agents that actually work. Practical, actionable guidance."
 
 ---
 
@@ -256,7 +256,7 @@ I spent 3 years building a web dev methodology.
 
 Then I tried to apply it to AI agents. It failed spectacularly.
 
-Here's what I learned about the fundamental difference between building traditional apps and AI agentic systems:
+Here's what I learned about the fundamental difference between building traditional apps and agentic AI systems:
 
 [Key insight 1]
 [Key insight 2]
@@ -279,7 +279,7 @@ It didn't work. Here's why 🧵
 - Predictable outcomes
 - Design upfront, implement to spec
 
-3/ AI agentic systems are discovery problems:
+3/ Agentic AI systems are discovery problems:
 - Non-deterministic outputs
 - Emergent behavior
 - Build to learn, iterate to improve

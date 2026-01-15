@@ -4,9 +4,25 @@
   import SubscribeForm from '$lib/components/SubscribeForm.svelte';
   import ProductWaitlistCTA from '$lib/components/ProductWaitlistCTA.svelte';
   import { formatDate } from '$lib/utils/date';
+  import { onMount } from 'svelte';
   import type { PageData } from './$types';
 
   let { data }: { data: PageData } = $props();
+
+  onMount(() => {
+    // Add target="_blank" and rel="noopener noreferrer" to all external links in post content
+    const proseContent = document.querySelector('.prose');
+    if (proseContent) {
+      const links = proseContent.querySelectorAll('a[href^="http"]');
+      links.forEach((link) => {
+        const href = link.getAttribute('href');
+        if (href && !href.includes('nickthiru.dev')) {
+          link.setAttribute('target', '_blank');
+          link.setAttribute('rel', 'noopener noreferrer');
+        }
+      });
+    }
+  });
 </script>
 
 <SEO 

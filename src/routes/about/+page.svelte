@@ -10,9 +10,9 @@
 
 <section class="mx-auto max-w-page px-6 md:px-8 py-12 md:py-16">
   <div class="max-w-prose mx-auto">
-    <h1 class="text-h1 text-primary mb-8">About</h1>
+    <h1 class="text-h1 text-primary dark:text-[#FAFAFA] mb-8">About</h1>
 
-    <div class="prose prose-lg">
+    <div class="prose prose-lg dark:prose-invert">
       <p>
         I'm an AI systems architect building at the intersection of modern web infrastructure and agentic AI. I run 
         <a
@@ -22,9 +22,6 @@
         class="text-accent hover:underline inline-flex items-center gap-1"
       >
         Thiru AI Labs
-        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-        </svg>
       </a>, a solo AI systems studio where I design, build, and operate production-grade micro-SaaS products and automation systems powered by LangGraph agent workflows.
       </p>
 

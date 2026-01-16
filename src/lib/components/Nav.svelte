@@ -2,6 +2,7 @@
   import { page } from '$app/stores';
   import { siteConfig } from '$lib/config';
   import ThemeToggle from './ThemeToggle.svelte';
+  import { slide } from 'svelte/transition';
 
   let mobileMenuOpen = $state(false);
 
@@ -70,7 +71,7 @@
 
   <!-- Mobile menu -->
   {#if mobileMenuOpen}
-    <div id="mobile-menu" class="md:hidden border-t border-border bg-[#FDFBFF] dark:bg-[#16213E] dark:border-[#262626]">
+    <div id="mobile-menu" class="md:hidden border-t border-b border-border bg-[#fbf6ff] dark:bg-[#16213E] dark:border-[#6362626c]" transition:slide={{ duration: 200 }}>
       <ul class="px-6 py-4 space-y-4">
         {#each siteConfig.nav as item}
           <li>
@@ -83,11 +84,8 @@
             </a>
           </li>
         {/each}
-        <li class="pt-4 border-t border-border dark:border-[#262626]">
+        <li class="pt-4 border-t border-border dark:border-[#6362626c]">
           <a href="/subscribe" class="block nav-link" onclick={closeMenu}>Subscribe</a>
-        </li>
-        <li>
-          <a href="/rss.xml" class="block nav-link" onclick={closeMenu}>RSS</a>
         </li>
       </ul>
     </div>

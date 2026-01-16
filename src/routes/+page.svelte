@@ -28,7 +28,7 @@
         Building agentic AI systems that ship.
       </h1>
       <p class="text-xl text-secondary dark:text-[#D4D4D4] leading-relaxed mb-6">
-        I'm an AI systems architect designing LangGraph-powered AI agentic systems and SaaS products. 
+        I'm an AI systems architect building complete production systems for agentic AI—from LangGraph orchestration to AWS infrastructure, custom dashboards, and everything needed to ship reliably. 
         I also write about and share my expertise on the engineering and the business of making AI agents work in production.
       </p>
       <p class="text-large text-muted dark:text-[#A3A3A3] mb-8">
@@ -60,7 +60,7 @@
 </section>
 
 <!-- Recent Posts Section -->
-<section class="mx-auto max-w-page px-6 md:px-8 py-12">
+<section class="mx-auto max-w-page px-6 md:px-8 py-12 border-t border-border dark:border-[#262626]" >
   <div class="flex items-center justify-between mb-8">
     <h2 class="text-h2 text-primary dark:text-[#FAFAFA]">Recent writing</h2>
     <a href="/writing" class="text-accent hover:underline font-medium">
@@ -76,7 +76,7 @@
 </section>
 
 <!-- Subscribe Section -->
-<section class="mx-auto max-w-page px-6 md:px-8 py-12">
+<section class="mx-auto max-w-page px-6 md:px-8 py-12 border-t border-border dark:border-[#262626]">
   <div class="bg-accent/5 border border-accent/20 rounded-lg p-8 md:p-10 dark:bg-accent/10 dark:border-accent/30">
     <div class="grid gap-8 md:gap-12 md:grid-cols-[1fr,420px] md:items-center">
       <div class="max-w-prose">
@@ -93,7 +93,7 @@
 </section>
 
 <!-- Projects Section -->
-<section class="mx-auto max-w-page px-6 md:px-8 py-12">
+<section class="mx-auto max-w-page px-6 md:px-8 py-12 border-t border-border dark:border-[#262626]">
   <div class="flex items-center justify-between mb-8">
     <h2 class="text-h2 text-primary dark:text-[#FAFAFA]">Current projects</h2>
     <a href="/projects" class="text-accent hover:underline font-medium">

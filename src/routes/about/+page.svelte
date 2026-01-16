@@ -22,7 +22,7 @@
         class="text-accent hover:underline inline-flex items-center gap-1"
       >
         Thiru AI Labs
-      </a>, a solo AI systems studio where I design, build, and operate production-grade micro-SaaS products and automation systems powered by LangGraph agent workflows.
+      </a>, a solo AI systems studio where I design, build, and operate production-grade agentic AI systems and SaaS products—combining LangGraph orchestration with modern web infrastructure (SvelteKit, AWS, full observability).
       </p>
 
       <p>

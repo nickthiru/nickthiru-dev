@@ -24,7 +24,7 @@
           <span class="track-badge track-badge-technical">Engineering</span>
         </h2>
         <p class="text-secondary dark:text-[#D4D4D4] text-body">
-          Technical deep-dives on LangGraph architecture, prompt engineering, quality gates, and production patterns for AI agents.
+          Technical deep-dives on full agentic AI architecture, prompt engineering, quality gates, production patterns, and more.
         </p>
       </div>
       <div class="bg-pink-lighter/30 border border-pink-lighter rounded-lg p-5 dark:bg-pink-darker/20 dark:border-pink-darker/40">
@@ -32,7 +32,7 @@
           <span class="track-badge track-badge-business">Business</span>
         </h2>
         <p class="text-secondary dark:text-[#D4D4D4] text-body">
-          Practical insights on pricing, distribution, building in public, and running a portfolio of AI products as a solo founder.
+          Practical insights on pricing, distribution, building in public, and running a portfolio of AI products as a solo founder, and more.
         </p>
       </div>
       <div class="bg-accent/10 border border-accent/20 rounded-lg p-5 dark:bg-accent/20 dark:border-accent/40">
@@ -40,7 +40,7 @@
           <span class="track-badge track-badge-product">Product</span>
         </h2>
         <p class="text-secondary dark:text-[#D4D4D4] text-body">
-          Build logs, learnings, and updates from shipping AI products—currently building LinkedIn Ghostwriter.
+          Build logs, learnings, and updates on AI products developed and shipped for Thiru AI Labs, and more.
         </p>
       </div>
     </div>

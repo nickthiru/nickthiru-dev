@@ -35,13 +35,14 @@
           </a>
         </li>
       {/each}
-      <li>
-        <ThemeToggle />
-      </li>
+      
       <li>
         <a href="/subscribe" class="btn-primary">
           Subscribe
         </a>
+      </li>
+      <li>
+        <ThemeToggle />
       </li>
     </ul>
 

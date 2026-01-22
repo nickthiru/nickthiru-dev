@@ -101,7 +101,7 @@ Examples:
 
 Agents choose what to do next based on context and results.
 
-Example: “If quality score < 7/10, regenerate with a different angle.”
+Example: “If quality score is less than 7/10, regenerate with a different angle.”
 
 ### 4. State management
 

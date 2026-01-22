@@ -9,7 +9,12 @@ draft: true # Set to false when ready to publish
 ---
 
 <!--
-Refer to docs/writing-guide.md for detailed guidelines on writing posts and using this template
+Refer to src/content/posts/AGENTS.md for comprehensive voice guidance, storytelling frameworks, and writing standards
+
+For category-specific content structure:
+- track: "technical" → Use _engineering-template.md structure
+- track: "business" → Use _business-template.md structure
+- track: "product" → Use _product-template.md structure
 -->
 
 Your post content starts here.
@@ -45,3 +50,5 @@ const example = "like this";
 3. Include code examples where relevant
 4. Add a strong call-to-action at the end
 5. Preview locally before publishing (set draft: false)
+6. Follow the voice and style guidelines in AGENTS.md
+7. Use the appropriate category template for content structure

@@ -1,42 +1,49 @@
 ---
 title: "What are AI agents and agentic systems, anyway?"
-slug: "what-are-ai-agents"
-description: "A plain-English explanation of AI agents, agentic systems, and why they're different from chatbots—for founders, operators, and anyone curious about what 'agentic AI' actually means."
+slug: "what-are-ai-agents-v2"
+description: "A plain-English explanation of AI agents, agentic systems, and what makes them different from chatbots—plus the production lessons people skip."
 publishedAt: "2026-01-09"
 track: "technical"
 tags: ["ai-agents", "explainer", "langgraph"]
-draft: false
+draft: true
 ---
 
-If you've been hearing "AI agents" and "agentic systems" everywhere but aren't quite sure what makes them different from regular AI tools, you're not alone. Let me break it down in plain English.
+A few times this month someone has asked me, in basically the same tone:
+
+“Wait… what’s an AI agent? Isn’t this just ChatGPT with extra steps?”
+
+Fair question.
+
+Because the internet has done a great job turning the word _agent_ into a vibes-based marketing term.
+
+So let me try to make this simple.
 
 ## The short version
 
-**AI agents** are AI systems that can take multi-step actions to accomplish a goal, make decisions along the way, and use tools—without you micromanaging every step.
+- An **AI agent** is an AI system that can take **multi-step actions** to accomplish a goal.
+- An **agentic system** is an application built around agents to handle real workflows end-to-end.
 
-**Agentic systems** are applications built around these agents, designed to handle real workflows end-to-end.
+Think: less “chatbot,” more “assistant that actually does things.”
 
-Think: less chatbot, more autonomous assistant.
+## The core difference: questions vs goals
 
-## What makes something "agentic"?
+Here’s the mental model that helped me:
 
-Here's the key difference between a chatbot and an agent:
-
-**A chatbot:**
+### A chatbot
 
 - You ask a question
-- It gives you an answer
+- It answers
 - Done
 
-**An agent:**
+### An agent
 
 - You give it a goal
-- It figures out the steps needed
-- It takes those steps (using tools, making decisions)
-- It handles errors and adjusts
-- It gives you the result
+- It figures out the steps
+- It uses tools
+- It handles errors
+- It returns a result
 
-### Example: Booking a flight
+## Example: booking a flight
 
 **Chatbot approach:**
 
@@ -63,212 +70,142 @@ Result: "Booked! You're on the 2:15pm flight.
          Confirmation in your email."
 ```
 
-The agent **does the work**, not just provides information.
+The key is that the agent **does the work**, not just the talking.
 
 ## Key characteristics of AI agents
 
-### 1. **Multi-step reasoning**
+### 1. Multi-step reasoning
 
-Agents can break down complex tasks into steps and execute them in sequence.
+Agents break down a goal into steps and execute them.
 
-Example: "Generate a LinkedIn post from this voice note"
+Example: “Generate a LinkedIn post from this voice note”
 
-- Step 1: Transcribe audio
-- Step 2: Extract key ideas
-- Step 3: Generate post variations
-- Step 4: Check quality
-- Step 5: Return best version
+- Transcribe
+- Extract key ideas
+- Draft 2-3 versions
+- Check quality
+- Return the best draft
 
-### 2. **Tool use**
+### 2. Tool use
 
-Agents can call external tools and APIs to get things done.
+Agents call APIs and tools.
 
 Examples:
 
 - Search the web
-- Query databases
+- Query a database
 - Send emails
-- Make API calls
-- Run code
-- Access files
+- Trigger workflows
 
-### 3. **Decision-making**
+### 3. Decision-making
 
-Agents make choices based on context and results.
+Agents choose what to do next based on context and results.
 
-Example: "If the quality score is below 7/10, regenerate the post with different tone"
+Example: “If quality score < 7/10, regenerate with a different angle.”
 
-### 4. **State management**
+### 4. State management
 
-Agents remember what they've done and adjust based on progress.
+Agents maintain state so they can resume, loop, and avoid repeating work.
 
-Example: An agent building a report might:
+### 5. Error handling
 
-- Remember which sections are complete
-- Skip redundant API calls
-- Resume if interrupted
+Agents need to recover gracefully.
 
-### 5. **Error handling**
+Because in the real world:
 
-Agents can recover from failures and try alternative approaches.
-
-Example: If an API call fails, retry with exponential backoff, or use a fallback method.
+- APIs time out
+- tools fail
+- users give messy inputs
 
 ## Real-world examples
 
-### **LinkedIn Ghostwriter (what I'm building)**
+### LinkedIn Ghostwriter (what I’m building)
 
-**Goal:** Turn voice notes into authentic LinkedIn posts
+**Goal:** turn voice notes into authentic LinkedIn posts.
 
-**What the agent does:**
+At a high level, it’s an agentic workflow because it:
 
-1. Receives voice note via Telegram
-2. Transcribes using Whisper API
-3. Analyzes user's writing style (from past posts)
-4. Generates 3 post variations
-5. Scores each for quality (hook, readability, style match)
-6. Regenerates if score too low
-7. Returns best options
+1. Receives a voice note
+2. Transcribes it
+3. Analyzes the user’s writing style
+4. Generates multiple drafts
+5. Scores each draft (hook, readability, style match)
+6. Regenerates if the best draft doesn’t meet the bar
 
-**Why it's agentic:** Multi-step workflow, quality gates, decision-making, tool use (Whisper, LLM, database).
+### Customer support agent
 
-### **Customer support agent**
+**Goal:** resolve customer issues autonomously.
 
-**Goal:** Resolve customer issues autonomously
+A real system might:
 
-**What the agent does:**
+- search a knowledge base
+- propose a solution
+- escalate with context when confidence is low
 
-1. Reads incoming ticket
-2. Searches knowledge base
-3. If found: Sends solution, closes ticket
-4. If not found: Escalates to human with context
-5. Learns from human responses
+### Code review agent
 
-**Why it's agentic:** Decision tree, tool use, state tracking, error handling.
+**Goal:** review a PR and suggest improvements.
 
-### **Code review agent**
+A real workflow:
 
-**Goal:** Review pull requests and suggest improvements
+- reads the diff
+- checks for security/performance issues
+- runs tests
+- writes review comments
 
-**What the agent does:**
+## What’s NOT an agent?
 
-1. Reads PR diff
-2. Checks for common issues (security, performance, style)
-3. Runs tests
-4. Generates review comments
-5. Suggests specific fixes
-6. Re-checks after changes
+A few things people call “agents” that really aren’t:
 
-**Why it's agentic:** Multi-step analysis, tool use (linters, tests), iterative feedback.
+- simple chatbots
+- autocomplete
+- classification models
+- basic RAG systems (retrieve + generate, but no multi-step action)
 
-## What's NOT an agent?
-
-To clarify, these are **not** agentic systems:
-
-- **Simple chatbots** - Just answer questions, no actions
-- **Autocomplete** - Predicts text, doesn't take steps
-- **Classification models** - Label data, don't execute workflows
-- **RAG systems** - Retrieve and generate, but no multi-step actions
-
-These are useful AI tools, but they're not agents because they don't autonomously execute multi-step workflows.
+Useful tools, but not agentic.
 
 ## Why agents matter now
 
-Three things have made agents practical:
+Three shifts made agents practical:
 
-### 1. **Better LLMs**
+1. LLMs got better at reasoning
+2. Tool/function calling became reliable
+3. Frameworks like LangGraph made control flow and state manageable
 
-Models like GPT-4 and Claude can reason through complex tasks and use tools reliably.
+## The production challenge (the part people skip)
 
-### 2. **Frameworks like LangGraph**
-
-Purpose-built tools for building agent workflows with state management, loops, and error handling.
-
-### 3. **Function calling**
-
-LLMs can now reliably call external functions/APIs, making tool use practical.
-
-Before these, agents were too unreliable for production. Now they're ready.
-
-## The production challenge
-
-Building a demo agent is easy. Building a **production** agent is hard.
+This is where most teams get stuck.
 
 **Demo agent:**
 
-- Works 80% of the time
-- No error handling
-- No observability
-- No quality gates
+- works 80% of the time
+- has no observability
+- has no quality gates
 
 **Production agent:**
 
-- Works 95%+ of the time
-- Handles errors gracefully
-- Logs everything for debugging
-- Validates quality before returning results
-- Costs are monitored and optimized
+- works 95%+ of the time
+- handles errors gracefully
+- logs enough to debug
+- validates output quality
+- keeps an eye on cost
 
-This gap—between demo and production—is where most teams get stuck. It's also where I focus my work.
-
-## Common patterns
-
-### **Linear agents**
-
-Simple step-by-step workflows. Good for predictable tasks.
-
-Example: Voice note → Transcribe → Generate → Return
-
-### **Branching agents**
-
-Make decisions and take different paths.
-
-Example:
-
-- If quality is greater than 7 → Return result
-- If quality is less than 7 → Regenerate with different approach
-
-### **Loop agents**
-
-Iterate until a condition is met.
-
-Example: Keep refining a draft until it passes quality checks (max 3 attempts).
-
-### **Multi-agent systems**
-
-Multiple specialized agents working together.
-
-Example:
-
-- Research agent: Gathers information
-- Writing agent: Creates content
-- Editor agent: Reviews and refines
+That gap between demo and production is the real work.
 
 ## Getting started
 
-If you're thinking about building an agent:
+If you’re thinking about building an agent, here’s what I’d do if I were starting today:
 
-1. **Start simple** - Pick one workflow that's repetitive and rule-based
-2. **Define success clearly** - What does "good enough" look like?
-3. **Build quality gates** - Don't let bad outputs reach users
-4. **Add observability** - Log everything so you can debug
-5. **Iterate based on real use** - Agents improve with feedback
+1. Start with one workflow that’s repetitive and rule-based
+2. Define success clearly (what does “good” look like?)
+3. Add quality gates before you ship
+4. Add observability earlier than feels necessary
+5. Iterate with real users
 
-## What I'm working on
+## Your turn
 
-I'm building production-grade agentic systems using LangGraph and AWS. Currently shipping:
+What’s your best definition of an “AI agent”? And what’s the most confusing part of the agent hype right now?
 
-- **LinkedIn Ghostwriter** - Voice notes → authentic LinkedIn posts
-- Writing about the engineering and business of making agents work in production
+If you want more posts like this (and the unglamorous production lessons), you can subscribe here:
 
-If you're building agents or thinking about it, [follow along](/writing) or [get in touch](/contact).
-
-## Further reading
-
-- [LangGraph documentation](https://langchain-ai.github.io/langgraph/) - Best framework for building agents
-- [Anthropic's tool use guide](https://docs.anthropic.com/claude/docs/tool-use) - How LLMs call functions
-- My writing on [agent architecture patterns](/engineering) and [building in public](/business)
-
----
-
-**Questions?** Hit me up on [Twitter](https://twitter.com/nickthiru) or [email me](mailto:contact@nickthiru.dev).
+https://nickthiru.dev/subscribe

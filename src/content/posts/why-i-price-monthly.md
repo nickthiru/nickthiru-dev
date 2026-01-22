@@ -1,73 +1,113 @@
 ---
 title: "Why I price monthly (even when annual makes more sense)"
-slug: "why-i-price-monthly"
-description: "The case for monthly pricing when you're still figuring out product-market fit, and why the 'best practice' advice might not apply to you."
+slug: "why-i-price-monthly-v2"
+description: "Why I’m choosing monthly pricing while I’m still learning—and the framework I use to decide when to introduce annual."
 publishedAt: "2025-01-15"
 track: "business"
 tags: ["pricing", "saas", "strategy"]
 draft: true
 ---
 
-Every SaaS pricing guide tells you the same thing: offer annual plans with a discount. Lock in revenue. Reduce churn. It's the smart move.
+Every SaaS pricing guide tells you the same thing:
 
-I'm doing the opposite. Here's why.
+“Offer annual. Give a discount. Lock in cash.”
 
-## The standard advice
+And if you’re already at product-market fit, that advice is hard to argue with.
 
-The argument for annual billing is compelling:
+But I’m doing the opposite right now.
 
-- **Upfront cash**: 12 months of revenue today instead of dripped over a year
-- **Lower churn**: People who pay annually are less likely to cancel (sunk cost)
-- **Predictability**: Easier to forecast when you know revenue is locked in
+Not because I don’t like money. Because I like **clean learning signals** more.
 
-For established products, this makes total sense. If you know your product works and customers stick around, annual billing is free money.
+## The standard advice (and why it’s usually right)
 
-But I'm not there yet.
+Annual billing has real benefits:
 
-## The early-stage reality
+- **Upfront cash**: 12 months of revenue today
+- **Lower churn**: annual customers cancel less (sunk cost is real)
+- **Predictability**: forecasting gets easier
 
-When you're still finding product-market fit, annual billing creates problems:
+For mature products, annual is basically an optimization cheat code.
 
-**You can't iterate fast enough**. If someone pays for a year and your product changes significantly, you've got a mismatch. They paid for Thing A, you're now building Thing B.
+## The early-stage reality (the part people skip)
 
-**Feedback loops slow down**. Monthly subscribers vote with their feet every 30 days. That's painful, but it's also honest signal. Annual subscribers might be silently unhappy for months.
+When you’re still finding product-market fit, annual billing can create distortions.
 
-**Refund requests hurt more**. A monthly subscriber who cancels costs you $20. An annual subscriber who demands a refund after 3 months costs you the full amount plus the support overhead.
+### 1. You can’t iterate fast enough
 
-**Price discovery is harder**. Want to raise prices? With monthly billing, new subscribers pay the new rate. With annual, you've got cohorts locked in at different prices for a year.
+If someone pays for a year and you change the product significantly, you get misalignment:
+
+- they paid for Thing A
+- you’re now building Thing B
+
+That’s a recipe for refunds, frustration, and awkward conversations.
+
+### 2. Your feedback loop slows down
+
+Monthly customers vote every 30 days.
+
+That’s painful… but it’s honest.
+
+Annual customers can be unhappy for months without telling you.
+
+### 3. Refund requests hurt more
+
+A monthly cancel is a small hit.
+
+An annual refund after 3 months is a big hit plus support overhead.
+
+### 4. Price discovery gets messy
+
+If you change pricing, monthly lets you adjust for new customers quickly.
+
+Annual locks cohorts into old pricing for a long time.
 
 ## My current approach
 
-Right now, I offer monthly only:
+Right now I’m keeping it simple:
 
 - **$29/month** for the core product
-- No annual option
-- Cancel anytime, no questions asked
+- no annual option
+- cancel anytime
 
-This hurts my metrics. My MRR growth looks worse than it would with annual billing. My churn rate looks higher.
+This makes my metrics look worse than they could:
 
-But I'm learning faster.
+- MRR growth is slower
+- churn looks higher
 
-Every month, I see exactly how many people think the product is worth $29. When someone cancels, I reach out and ask why. That feedback loop is tight enough to act on.
+But the signal is clean.
 
-## When I'll switch
+Every month, I learn one thing: **is this product worth $29 to enough people?**
 
-I'll add annual billing when:
+## When I’ll add annual
 
-1. **Retention stabilizes**: Month 3+ retention above 85%
-2. **Core features stabilize**: I'm iterating on edges, not foundations
-3. **Customer requests**: Multiple people asking for annual (signal of commitment)
+Here’s the decision framework I’m using.
 
-Until then, the monthly pain is worth the learning speed.
+I’ll introduce annual billing when:
+
+1. **Retention stabilizes**
+   - month 3+ retention consistently > 85%
+2. **The core stops moving**
+   - I’m iterating on edges, not foundations
+3. **Customers ask for it**
+   - multiple customers request annual (signal of commitment)
+
+Until then, I’m optimizing for learning speed.
 
 ## The uncomfortable truth
 
-Annual billing is an optimization. Optimizing too early is a trap.
+Annual billing is an optimization.
 
-If your product isn't working, annual billing won't save it—it'll just delay the reckoning. Better to know now that something's wrong than to find out in 12 months when a cohort doesn't renew.
+Optimizing too early is a trap.
 
-The best practice advice assumes you've got the basics right. If you're still figuring that out, optimize for learning, not revenue.
+If your product isn’t working, annual billing won’t save it — it’ll just delay the reckoning.
 
----
+## Your turn
 
-_Disagree? I'd love to hear counter-arguments—especially from folks who went annual early and it worked. Hit me up on [Twitter](https://twitter.com/nickthiru)._
+If you introduced annual early:
+
+- did it help you learn faster or slower?
+- did it reduce churn or hide churn?
+
+I’d love the counter-arguments. Reply on X:
+
+https://x.com/nickthiru

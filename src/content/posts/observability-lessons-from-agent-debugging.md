@@ -1,48 +1,72 @@
 ---
 title: "What debugging AI agents taught me about observability"
-slug: "observability-lessons-from-agent-debugging"
-description: "Three months of production agent incidents changed how I think about logging, tracing, and the data you actually need when things go wrong."
+slug: "observability-lessons-from-agent-debugging-v2"
+description: "What changed in my logging and tracing after months of production agent incidents (and what I wish I’d logged from day one)."
 publishedAt: "2025-12-08"
 track: "technical"
 tags: ["observability", "debugging", "agents", "langgraph"]
-draft: false
+draft: true
 ---
 
-Three months ago, I shipped my first production LangGraph agent. Since then, I've spent more time debugging than building.
+The first time I got a “your agent did something weird” message from a user, I did the usual thing:
 
-That's not a complaint—it's where the real learning happens. Here's what I've learned about observability when your "code" includes an LLM that makes decisions you can't fully predict.
+- Pull logs
+- Search for an error
+- Find nothing useful
 
-## The problem with traditional logging
+And then I hit the wall: agents don’t fail like normal code.
 
-Standard application logging assumes deterministic behavior:
+When an LLM is making decisions, “INFO: tool called” is basically the same as saying “something happened.”
+
+This is what debugging agents taught me about observability.
+
+## The Problem with Traditional Logging
+
+Traditional apps are mostly deterministic. You log:
 
 ```
-INFO: User requested action X
-INFO: Fetched data from API
-INFO: Returned result Y
+INFO: user requested action X
+INFO: fetched data from API
+INFO: returned result Y
 ```
 
-With agents, this tells you almost nothing:
+That gives you a narrative.
+
+With agents, the naive version looks like:
 
 ```
-INFO: Agent received task
-INFO: Agent called tool
-INFO: Agent returned response
+INFO: agent received task
+INFO: agent called tool
+INFO: agent returned response
 ```
 
-What's missing? Everything that matters:
+…and it tells you nothing that helps you answer the question you actually care about:
 
-- Why did the agent choose that tool?
-- What was in the context when it made that decision?
-- What alternatives did it consider?
+**Why did it do that?**
 
-## What you actually need
+## The First Mistake I Made
 
-After dozens of debugging sessions, I've settled on logging three things religiously:
+I treated “agent logging” like normal application logging. I tried to keep it minimal.
+
+I was worried about:
+
+- log volume
+- cost
+- privacy
+
+Those are real concerns.
+
+But the tradeoff is harsh: when you don’t log enough, you pay for it later in debugging time and customer trust.
+
+## What You Actually Need (My Current Baseline)
+
+After enough incidents, I now log three things religiously.
 
 ### 1. Full state at decision points
 
-Every time the agent makes a choice, log the complete state:
+Every time the agent makes a decision, I want enough data to reconstruct the context.
+
+Here’s a pattern that’s worked well for me:
 
 ```ts
 type AgentState = {
@@ -74,11 +98,21 @@ export function logDecisionPoint(params: {
 }
 ```
 
-This sounds expensive. It is. But when something goes wrong at 2 AM, you'll thank yourself.
+This is expensive. It’s also the difference between:
+
+- “we have no idea what happened”
+- “we can replay the exact moment things diverged”
 
 ### 2. Tool inputs and outputs (verbatim)
 
-Don't summarize. Log exactly what went into the tool and what came out:
+I don’t summarize tool calls anymore.
+
+If a tool call matters, I log:
+
+- the input payload
+- the output payload
+- timing
+- errors
 
 ```ts
 type Logger = {
@@ -88,7 +122,7 @@ type Logger = {
 
 export async function tracedToolCall<
   TInput extends Record<string, unknown>,
-  TOutput
+  TOutput,
 >(params: {
   logger: Logger;
   toolName: string;
@@ -123,7 +157,11 @@ export async function tracedToolCall<
 
 ### 3. The prompt (every time)
 
-The prompt is code. Log it like code:
+This is the one I avoided the longest.
+
+But the prompt is code.
+
+If you can’t reproduce the prompt, you can’t reproduce the behavior.
 
 ```ts
 export async function logLLMCall(params: {
@@ -159,49 +197,39 @@ export async function logLLMCall(params: {
 }
 ```
 
-## The debugging workflow
+## The Debugging Workflow
 
-When something breaks, I follow this process:
+When something breaks, here’s the workflow that prevents me from flailing:
 
-1. **Find the trace ID** from the error or user report
-2. **Reconstruct the state timeline** from decision point logs
-3. **Identify the divergence point** where behavior went wrong
-4. **Replay with the exact prompt** that caused the issue
+1. Find the trace ID
+2. Reconstruct the state timeline from decision logs
+3. Identify the divergence point
+4. Replay using the exact prompt + model
 
-Step 4 is the key. With deterministic code, you can reproduce bugs with inputs. With LLMs, you need the exact prompt and often the exact model version.
+Step 4 is the real unlock. Inputs alone are not enough.
 
-## Tools that help
+## The Privacy Tradeoff (And How I Think About It)
 
-- **LangSmith**: Great for tracing LangChain/LangGraph specifically
-- **Weights & Biases**: Good for tracking experiments and model behavior over time
-- **Simple JSON logs + Loki/Elasticsearch**: Sometimes the best tool is the boring one
+Logging prompts and tool payloads can easily become “logging user data.”
 
-I use a combination: LangSmith for development, JSON logs + Grafana for production.
+My current approach is:
 
-## The cost question
+- log everything in dev/staging
+- in prod, be deliberate about:
+  - retention windows
+  - redaction (PII)
+  - access controls
+  - sampling strategies
 
-Yes, this level of logging is expensive:
+It’s not perfect. It’s a moving target.
 
-- Storage costs for full prompts/responses
-- Ingestion costs for high-cardinality data
-- Query costs when you're debugging
+## Your Turn
 
-But compare that to:
+If you’re running agents in production:
 
-- Hours spent debugging without context
-- Customer trust lost to unexplained failures
-- The cost of shipping a broken agent fix
+- What’s the one thing you wish you logged earlier?
+- How are you balancing observability vs privacy?
 
-For me, the observability investment pays for itself after one serious incident.
+If you want more production agent lessons (including the failures), I share weekly notes here:
 
-## What I'm still figuring out
-
-- **Sampling strategies**: Can't log everything forever. What's the right retention policy?
-- **Privacy concerns**: Full logging means logging user data. How to balance observability with privacy?
-- **Alert fatigue**: What actually deserves a page vs. what's just noise?
-
-These are open problems. If you've got good solutions, I'd love to hear them.
-
----
-
-_Building something similar? Let's compare notes—find me on [Twitter](https://twitter.com/nickthiru) or [email me](mailto:nick@nickthiru.dev)._
+https://nickthiru.dev/subscribe

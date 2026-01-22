@@ -1,68 +1,94 @@
 ---
 title: "Building LinkedIn Ghostwriter: From Voice Notes to Authentic Posts"
-slug: "building-linkedin-ghostwriter"
-description: "How we're building an AI agent that turns voice notes into authentic LinkedIn posts while preserving your unique voice and style."
+slug: "building-linkedin-ghostwriter-v2"
+description: "How I'm building an AI agent that turns voice notes into authentic LinkedIn posts while preserving your unique voice and style."
 publishedAt: "2026-01-15"
 track: "product"
 tags: ["linkedin-ghostwriter", "product", "building-in-public", "saas"]
-draft: false
+draft: true
 ---
 
-I'm building LinkedIn Ghostwriter—an AI agent that transforms voice notes into authentic LinkedIn posts.
+A couple weeks ago I caught myself doing the same ridiculous thing again: staring at the LinkedIn text box, rewriting the first sentence five times, and still not liking it.
 
-## The Problem
+Meanwhile, if you asked me the same question on a walk? I'd explain it clearly in two minutes.
 
-Most founders know they should post consistently on LinkedIn. But writing feels like a chore:
+That gap is why I’m building **LinkedIn Ghostwriter**.
 
-- Staring at a blank text box
-- Overthinking every word
-- Sounding too corporate or too casual
-- Spending 30+ minutes per post
+## What I Built
 
-Meanwhile, explaining your ideas out loud? That's natural. That's where your authentic voice lives.
+LinkedIn Ghostwriter is an AI agent that transforms voice notes into LinkedIn posts that still sound like _you_.
 
-## The Solution
-
-LinkedIn Ghostwriter lets you:
+The workflow I’m aiming for is simple:
 
 1. Record a voice note (2-5 minutes)
 2. Get a draft that sounds like you
-3. Review, edit if needed
-4. Schedule or post immediately
+3. Make a quick pass (optional)
+4. Post or schedule
 
-The agent learns your style over time—your sentence structure, your vocabulary, your tone. It's not generic AI writing. It's your voice, captured and refined.
+## How It Works
 
-## What We're Building
+At a high level, the system is a pipeline with a few “quality gates”:
 
-**Core features:**
+1. **Transcribe** the voice note
+2. **Extract** the key points and intent
+3. **Draft** 2-3 candidate posts
+4. **Score** each draft for:
+   - Hook strength
+   - Readability
+   - Style match (does this sound like the user?)
+   - "AI slop" detection (generic phrases, empty claims)
+5. **Refine** if the best draft doesn’t meet the bar
 
-- Voice-to-text with style learning
-- Quality gates (no generic fluff)
-- Scheduling system
-- Analytics on what resonates
+I’m building it in a way that can evolve into a real agentic workflow (not just a one-shot prompt):
 
-**Technical approach:**
+- LangGraph for orchestration
+- A style analysis layer that learns from prior posts
+- Feedback loops so the system improves over time
 
-- LangGraph for agent orchestration
-- Custom style analysis pipeline
-- Feedback loops for continuous improvement
+## Why It Matters
+
+Most people who _should_ be posting consistently don’t have a “writing problem.” They have a:
+
+- **time problem**
+- **energy problem**
+- **voice problem**
+
+They can explain their ideas out loud. They just don’t want to spend 30 minutes editing a post into something that still feels stiff.
+
+And to be blunt: a lot of AI writing tools solve the time problem by creating a bigger voice problem.
+
+## The Challenge
+
+The hard part isn’t generating a LinkedIn post.
+
+The hard part is generating a post that passes these tests:
+
+- It doesn’t sound corporate
+- It doesn’t sound like the internet
+- It still sounds like the person who recorded the voice note
+
+The second hardest part is building the quality gates so the agent catches bad drafts _before_ you see them.
 
 ## Current Status
 
-We're in early development. The core voice-to-draft pipeline is working. Now we're focused on:
+The core voice-note to draft loop is working end-to-end.
 
-- Style learning accuracy
-- Quality gate refinement
-- Building the scheduling system
+Right now I’m focused on:
 
-## Why This Matters
+- Improving style learning accuracy
+- Tightening quality gates
+- Building a lightweight scheduling workflow
 
-LinkedIn is where technical founders build their audience. But most tools either:
+## Next Up
 
-- Generate generic AI slop
-- Require too much manual work
-- Don't preserve your voice
+Next milestones:
 
-We're building something different. Something that amplifies your voice, not replaces it.
+- A "review queue" flow for drafts that don’t meet the bar
+- Better feedback capture (so edits make the system smarter)
+- A simple waitlist so I can start onboarding early users intentionally
 
-Want to follow along? I'll be sharing build logs, technical decisions, and early results as we go.
+If you want to follow along, I’ll keep sharing build logs, technical decisions, and what I’m learning.
+
+If you want early access when it’s ready, join the waitlist:
+
+https://thiruailabs.com/products

@@ -507,6 +507,49 @@ async function solveRealWorldProblem(input: string) {
 - [ ] Examples reflect current best practices
 - [ ] Error handling is demonstrated
 
+## Technical Content Templates
+
+### Use `templates/_engineering-template.md` structure:
+
+1. **Problem Context** → Failed Attempts → Breakthrough → Step-by-Step Solution → Testing → Production Considerations → Lessons Learned
+
+### Key Technical Elements:
+
+- **Problem Context**: Real technical challenge and its impact
+- **Failed Attempts**: Honest debugging journey and mistakes
+- **Breakthrough**: The "aha!" moment that changed everything
+- **Step-by-Step Solution**: Clear, actionable implementation guide
+- **Production Considerations**: Real-world deployment and scaling
+- **Lessons Learned**: Technical wisdom and insights
+
+## Voice Application for Technical Content
+
+- **Technical precision**: Accurate code and technical details
+- **Educational focus**: Explain WHY things work, not just THAT they work
+- **Honest about complexity**: Share real struggles and debugging process
+- **Business connection**: Link technical topics to practical benefits
+
+## Quality Standards
+
+### Technical Excellence Checklist:
+
+- [ ] Code examples tested and verified working
+- [ ] Debugging process shown, not just final solution
+- [ ] Error handling and edge cases included
+- [ ] Technical explanations connect to business benefits
+- [ ] Real-world production considerations addressed
+
+### SEO Optimization:
+
+- [ ] Meta description under 160 characters
+- [ ] Technical keywords included naturally
+- [ ] Internal links to relevant technical content
+- [ ] Mobile-friendly formatting for technical readers
+
+---
+
+**Remember**: Technical content builds credibility through authentic problem-solving. Share your real debugging journey, including the mistakes and breakthroughs, to help others avoid the same pitfalls. Focus on practical implementation that works in real applications.
+
 ---
 
 **Content creation completed!** Your technical blog post is now ready with authentic voice, practical value, and optimized for both readers and search engines.

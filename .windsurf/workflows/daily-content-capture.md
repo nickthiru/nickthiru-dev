@@ -24,7 +24,7 @@ This workflow implements the proven 15-30 minute daily routine for building in p
 
 - [ ] **Reply to comments** on yesterday's posts (LinkedIn, Twitter, blog)
 - [ ] **Save 1-3 good posts** from your niche for inspiration
-- [ ] **Add 1 bullet** to your running build log: what you're trying to ship today
+- [ ] **Add 1 bullet** to today's build log (`build-logs/YYYY-MM-DD.md`): what you're trying to ship today
 
 **Why it works:**
 
@@ -42,7 +42,7 @@ This workflow implements the proven 15-30 minute daily routine for building in p
 - Architecture sketch
 - Before/after comparison
 
-**Add 3 bullets to build log:**
+**Add 3 bullets to today's build log** (`build-logs/YYYY-MM-DD.md`):
 
 - **Build:** What changed/what you implemented
 - **Why:** User value or problem solved
@@ -58,7 +58,7 @@ This workflow implements the proven 15-30 minute daily routine for building in p
 
 **Tasks:**
 
-- [ ] **Choose ONE** build-log item from today
+- [ ] **Choose ONE** item from today's build log
 - [ ] **Draft ONE post** (LinkedIn is the default platform)
 - [ ] **Post it** or schedule for tomorrow morning
 - [ ] **Optional:** Adapt into short X post/thread

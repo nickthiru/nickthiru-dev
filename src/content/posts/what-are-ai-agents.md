@@ -1,6 +1,6 @@
 ---
 title: "What are AI agents and agentic systems, anyway?"
-slug: "what-are-ai-agents-v2"
+slug: "what-are-ai-agents"
 description: "A plain-English explanation of AI agents, agentic systems, and what makes them different from chatbots—plus the production lessons people skip."
 publishedAt: "2026-01-09"
 track: "technical"

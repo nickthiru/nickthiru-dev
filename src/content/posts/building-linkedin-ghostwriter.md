@@ -1,11 +1,11 @@
 ---
 title: "Building LinkedIn Ghostwriter: From Voice Notes to Authentic Posts"
-slug: "building-linkedin-ghostwriter-v2"
+slug: "building-linkedin-ghostwriter"
 description: "How I'm building an AI agent that turns voice notes into authentic LinkedIn posts while preserving your unique voice and style."
 publishedAt: "2026-01-15"
 track: "product"
 tags: ["linkedin-ghostwriter", "product", "building-in-public", "saas"]
-draft: true
+draft: false
 ---
 
 A couple weeks ago I caught myself doing the same ridiculous thing again: staring at the LinkedIn text box, rewriting the first sentence five times, and still not liking it.

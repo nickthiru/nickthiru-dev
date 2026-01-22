@@ -5,7 +5,7 @@ description: "A plain-English explanation of AI agents, agentic systems, and wha
 publishedAt: "2026-01-09"
 track: "technical"
 tags: ["ai-agents", "explainer", "langgraph"]
-draft: true
+draft: false
 ---
 
 A few times this month someone has asked me, in basically the same tone:

@@ -1,11 +1,11 @@
 ---
 title: "Why I Build Production AI Systems with Code, Not Drag-and-Drop"
-slug: "why-i-use-langgraph-vs-low-code-v2"
+slug: "why-i-use-langgraph-vs-low-code"
 description: "Why code-first beats no/low-code once reliability, observability, and cost start to matter (and when I still use the visual tools)."
 publishedAt: "2026-01-16"
 track: "technical"
 tags: ["ai-agents", "langgraph", "production-systems", "architecture"]
-draft: true
+draft: false
 ---
 
 I get asked this a lot:

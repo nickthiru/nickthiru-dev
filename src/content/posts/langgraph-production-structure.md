@@ -1,11 +1,11 @@
 ---
 title: "How I structure LangGraph agents for production"
-slug: "langgraph-production-structure-v2"
+slug: "langgraph-production-structure"
 description: "The patterns I use to keep LangGraph agents maintainable, testable, and observable in production (including what I got wrong at first)."
 publishedAt: "2025-12-15"
 track: "technical"
 tags: ["langgraph", "architecture", "agents"]
-draft: true
+draft: false
 ---
 
 The first time I shipped a LangGraph agent “to production,” I thought I was done.

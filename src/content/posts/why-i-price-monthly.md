@@ -1,6 +1,6 @@
 ---
 title: "Why I price monthly (even when annual makes more sense)"
-slug: "why-i-price-monthly-v2"
+slug: "why-i-price-monthly"
 description: "Why I’m choosing monthly pricing while I’m still learning—and the framework I use to decide when to introduce annual."
 publishedAt: "2025-01-15"
 track: "business"

@@ -1,11 +1,11 @@
 ---
 title: "What debugging AI agents taught me about observability"
-slug: "observability-lessons-from-agent-debugging-v2"
+slug: "observability-lessons-from-agent-debugging"
 description: "What changed in my logging and tracing after months of production agent incidents (and what I wish I’d logged from day one)."
 publishedAt: "2025-12-08"
 track: "technical"
 tags: ["observability", "debugging", "agents", "langgraph"]
-draft: true
+draft: false
 ---
 
 The first time I got a “your agent did something weird” message from a user, I did the usual thing:

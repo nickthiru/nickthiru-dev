@@ -32,7 +32,7 @@ This guide defines my authentic voice and writing style for creating blog posts 
 
 **Focus**: Technical deep-dives, architecture, debugging, production systems
 
-**Structure**: Use `_engineering-template.md`
+**Structure**: Use `templates/_engineering-template.md`
 
 - Problem Context → Failed Attempts → Breakthrough → Step-by-Step Solution → Testing → Production Considerations → Lessons Learned
 
@@ -42,7 +42,7 @@ This guide defines my authentic voice and writing style for creating blog posts 
 
 **Focus**: Pricing, growth, building in public, strategy, solo founder operations
 
-**Structure**: Use `_business-template.md`
+**Structure**: Use `templates/_business-template.md`
 
 - Transparency Decision → What I Shared → Business Impact → The Scary Part → What Happened → Guidelines for Others
 
@@ -52,7 +52,7 @@ This guide defines my authentic voice and writing style for creating blog posts 
 
 **Focus**: Build logs, feature launches, product updates, user feedback
 
-**Structure**: Use `_product-template.md`
+**Structure**: Use `templates/_product-template.md`
 
 - What I Built → How It Works → Why It Matters → The Challenge → Next Up
 
@@ -389,13 +389,33 @@ This guide defines my authentic voice and writing style for creating blog posts 
 
 ### Template Usage Guide
 
-1. **Start with `_template.md`** for frontmatter and basic setup
+1. **Start with `templates/_template.md`** for frontmatter and basic setup
 2. **Choose category template** based on your `track:` value:
-   - `track: "technical"` → Use `_engineering-template.md` structure
-   - `track: "business"` → Use `_business-template.md` structure
-   - `track: "product"` → Use `_product-template.md` structure
+   - `track: "technical"` → Use `templates/_engineering-template.md` structure
+   - `track: "business"` → Use `templates/_business-template.md` structure
+   - `track: "product"` → Use `templates/_product-template.md` structure
 3. **Apply voice guidelines** from this comprehensive style guide
 4. **Follow category-specific rules** from `.windsurf/rules/` files
+
+### Directory Structure
+
+```
+src/content/
+├── AGENTS.md                 # This style guide (you are here)
+├── posts/                    # Published blog posts only
+│   ├── building-linkedin-ghostwriter.md
+│   ├── langgraph-production-structure.md
+│   └── [other published posts...]
+├── templates/                # Content templates for new posts
+│   ├── _template.md          # Basic frontmatter and structure
+│   ├── _engineering-template.md
+│   ├── _business-template.md
+│   └── _product-template.md
+└── todo/                     # Personal content ideas (excluded from AI processing)
+    └── [your draft ideas...]
+```
+
+**Note**: The `todo/` directory is excluded from AI processing. When you want the AI model to work on content from this directory, explicitly mention the specific file or blog post idea.
 
 ### Quality Checklist
 

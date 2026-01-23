@@ -17,7 +17,7 @@
     <!-- Mobile photo - appears first on mobile -->
     <div class="md:hidden flex justify-center mb-4">
       <img 
-        src="/home-profile.png" 
+        src="/profile-picture.jpeg" 
         alt="Nick Thiru" 
         class="w-32 border-4 border-accent/20 rounded-lg"
       />
@@ -51,7 +51,7 @@
     <!-- Desktop photo - appears on right side -->
     <div class="hidden md:block">
       <img 
-        src="/home-profile.png" 
+        src="/profile-picture.jpeg" 
         alt="Nick Thiru" 
         class="w-56 border-4 border-accent/20 rounded-lg"
       />

@@ -1,26 +1,40 @@
 ---
-name: technical-writer
-description: Create compelling technical content including blog posts, tutorials, and documentation with authentic voice, proper structure, and SEO optimization. Use when writing technical articles, creating tutorials, or developing documentation.
+name: blog-writer
+description: Create compelling blog content (technical, business, product) with authentic voice, clear structure, and SEO optimization. Use when drafting or revising blog posts across tracks.
 license: MIT
 metadata:
   author: nickthiru-dev
   version: "1.0"
 ---
 
-# Technical Writer Skill
+# Blog Writer Skill
 
 ## Overview
 
-This skill provides comprehensive guidance for creating authentic, engaging technical content that resonates with technical founders, operators, and AI engineers while maintaining a personal, conversational voice.
+This skill provides guidance for creating authentic, engaging blog content across three tracks:
+
+- Technical (engineering deep-dives)
+- Business (pricing, strategy, building in public)
+- Product (build logs, launches, user feedback)
+
+It focuses on voice, structure, SEO, and engagement patterns. For track-specific structure, follow the dedicated workflows.
 
 ## When to Use
 
 - Writing technical blog posts and articles
+- Writing business blog posts (pricing, growth, strategy)
+- Writing product blog posts (build logs, feature launches, updates)
 - Creating tutorials and how-to guides
 - Developing technical documentation
 - Crafting "building in public" content
 - Optimizing content for SEO and readability
 - Developing personal brand content
+
+## Recommended Workflows (Track-Specific)
+
+- `write-technical-blog-post`
+- `write-business-blog-post`
+- `write-product-blog-post`
 
 ## Step-by-Step Implementation
 
@@ -28,7 +42,7 @@ This skill provides comprehensive guidance for creating authentic, engaging tech
 
 ```typescript
 // Content structure interface
-interface TechnicalContent {
+interface BlogContent {
   title: string;
   hook: string;
   problem: string;
@@ -150,11 +164,11 @@ But hey, that's part of the journey, right?`;
 }
 ```
 
-### 3. Technical Content Creation
+### 3. Blog Content Creation
 
 ```typescript
-// Technical content generator
-export class TechnicalContentGenerator {
+// Blog content generator
+export class BlogContentGenerator {
   static createTutorial(topic: string, codeExamples: CodeExample[]): string {
     return `# ${this.generateTutorialTitle(topic)}
 
@@ -282,7 +296,7 @@ ${this.suggestNextSteps()}
 ### 4. SEO Optimization
 
 ```typescript
-// SEO optimization for technical content
+// SEO optimization for blog content
 export class SEOOptimizer {
   static optimizeContent(content: string, targetKeywords: string[]): string {
     let optimized = content;
@@ -391,7 +405,7 @@ A: Yes, but I recommend adding [specific production considerations] first.`;
 ```typescript
 // Pre-built content templates
 export const ContentTemplates = {
-  technicalTutorial: {
+  tutorial: {
     structure: `# [Compelling Title]
 
 [Personal hook that relates to the reader's experience]
@@ -699,8 +713,8 @@ export class DailyContentCapture {
 
 // Usage Examples
 
-// Creating a Technical Tutorial
-const tutorial = TechnicalContentGenerator.createTutorial('LangGraph Agents', [
+// Creating a Tutorial
+const tutorial = BlogContentGenerator.createTutorial('LangGraph Agents', [
   {
     title: 'Basic Agent Setup',
     code: 'from langgraph import StateGraph\n\ndef create_agent():\n    # Implementation here',
@@ -805,4 +819,4 @@ export const ContentCalendar = {
 - **Get feedback** from peers before publishing
 - **Track metrics** and iterate based on performance
 
-This comprehensive technical writing skill provides everything needed to create authentic, engaging technical content that builds your personal brand while providing genuine value to your audience.
+This comprehensive blog writing skill provides everything needed to create authentic, engaging content that builds your personal brand while providing genuine value to your audience.

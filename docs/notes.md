@@ -1,1 +1,0 @@
-# nickthiru.dev Notes

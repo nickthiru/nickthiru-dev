@@ -1,6 +1,6 @@
 ---
 name: write-product-blog-post
-description: Write a complete product blog post with development focus, user-centric messaging, and progress-oriented storytelling. Use when creating content about build logs, feature launches, product updates, or user feedback.
+description: Write a complete product blog post with development focus, user-centric messaging, and progress-oriented storytelling. Use when creating content from workspace build logs (thiru-ai-labs/BUILD_LOG.md), feature launches, product updates, or user feedback.
 ---
 
 # Write Product Blog Post

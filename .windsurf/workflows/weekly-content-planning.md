@@ -12,7 +12,7 @@ This workflow structures the 60-120 minute weekly process for creating canonical
 ## When to Use
 
 - Weekly planning session for strategic content creation
-- When you have build log content to synthesize into deeper insights
+- When you have workspace build log content (thiru-ai-labs/BUILD_LOG.md) to synthesize into deeper insights
 - For creating SEO-optimized blog posts that drive long-term traffic
 - To maintain consistent content schedule across all platforms
 
@@ -22,7 +22,7 @@ This workflow structures the 60-120 minute weekly process for creating canonical
 
 **Review Week's Build Logs:**
 
-- Scan all build log entries from the past week
+- Scan all build log entries from workspace BUILD_LOG.md (thiru-ai-labs/build-logs/)
 - Identify strongest themes or patterns
 - Look for connected insights or lessons
 - Note any significant milestones or breakthroughs
@@ -318,7 +318,7 @@ Create content around these core themes:
 
 ### Challenge: "I don't have enough content for a full post"
 
-**Solution**: Combine related build log entries, expand on smaller insights, or create a "lessons learned" roundup from the week.
+**Solution**: Combine related workspace build log entries (thiru-ai-labs/build-logs/), expand on smaller insights, or create a "lessons learned" roundup from the week.
 
 ### Challenge: "My content isn't getting traffic"
 
@@ -326,11 +326,11 @@ Create content around these core themes:
 
 ### Challenge: "I'm running out of topic ideas"
 
-**Solution**: Your build log is endless content. Also look at audience questions, competitor content, and industry trends for inspiration.
+**Solution**: Your workspace build log (thiru-ai-labs/BUILD_LOG.md) is endless content. Also look at audience questions, competitor content, and industry trends for inspiration.
 
 ### Challenge: "Content creation takes too much time"
 
-**Solution**: Use the templates and systems outlined here. Batch similar tasks together and leverage your daily build log capture.
+**Solution**: Use the templates and systems outlined here. Batch similar tasks together and leverage your daily workspace build log capture (thiru-ai-labs/build-logs/).
 
 ## Success Metrics & Goals
 

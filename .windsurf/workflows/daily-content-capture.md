@@ -24,7 +24,7 @@ This workflow implements the proven 15-30 minute daily routine for building in p
 
 - [ ] **Reply to comments** on yesterday's posts (LinkedIn, Twitter, blog)
 - [ ] **Save 1-3 good posts** from your niche for inspiration
-- [ ] **Add 1 bullet** to today's build log (`build-logs/YYYY-MM-DD.md`): what you're trying to ship today
+- [ ] **Add 1 bullet** to today's build log (`thiru-ai-labs/build-logs/YYYY-MM-DD.md` at workspace root): what you're trying to ship today
 
 **Why it works:**
 
@@ -42,7 +42,7 @@ This workflow implements the proven 15-30 minute daily routine for building in p
 - Architecture sketch
 - Before/after comparison
 
-**Add 3 bullets to today's build log** (`build-logs/YYYY-MM-DD.md`):
+**Add 3 bullets to today's build log** (`thiru-ai-labs/build-logs/YYYY-MM-DD.md` at workspace root):
 
 - **Build:** What changed/what you implemented
 - **Why:** User value or problem solved
@@ -58,7 +58,7 @@ This workflow implements the proven 15-30 minute daily routine for building in p
 
 **Tasks:**
 
-- [ ] **Choose ONE** item from today's build log
+- [ ] **Choose ONE** item from today's build log (from workspace BUILD_LOG.md)
 - [ ] **Draft ONE post** (LinkedIn is the default platform)
 - [ ] **Post it** or schedule for tomorrow morning
 - [ ] **Optional:** Adapt into short X post/thread
@@ -282,13 +282,13 @@ If you [struggle with problem], reply "beta".
 
 - **Screenshot tool**: Clean, annotated screenshots
 - **Loom**: Short screen recordings (1-2 minutes)
-- **Note-taking app**: Running build log (Notion, Obsidian, etc.)
+- **Build log system**: Workspace-level BUILD_LOG.md in thiru-ai-labs/
 - **Scheduling tool**: Buffer, Later, or native platform scheduling
 - **Analytics**: Basic tracking to see what resonates
 
 ### Build Log Setup
 
-Create one running document with:
+Use workspace-level BUILD_LOG.md (thiru-ai-labs/BUILD_LOG.md) with:
 
 - Date headers for each day
 - Template sections for easy entry
@@ -349,7 +349,7 @@ Simple tracking of:
 
 ### Pitfall: "I don't have anything to share"
 
-**Solution:** Your daily development work IS the content. Use the build log templates to capture it systematically.
+**Solution:** Your daily development work IS the content. Use the workspace build log templates (thiru-ai-labs/build-logs/) to capture it systematically.
 
 ### Pitfall: "This takes too much time"
 
@@ -381,7 +381,7 @@ Simple tracking of:
 
 ## Next Steps
 
-1. **Set up your build log** document with templates
+1. **Use workspace build log** (thiru-ai-labs/BUILD_LOG.md) with templates
 2. **Schedule daily 15-30 minute blocks** for content routine
 3. **Create social media profiles** if not already done
 4. **Write your first "I'm building this" post** to re-engage audience

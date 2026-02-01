@@ -245,7 +245,7 @@ AGENTS.md files provide a simple way to give Cascade context-aware instructions 
 
 ### content-strategist
 
-**Invoke with:** "Plan my content calendar" or "Analyze my audience engagement"
+**Invoke with:** "Plan my content calendar" or "Analyze my audience engagement" or "Create AI content strategy"
 
 **Expertise:**
 
@@ -255,6 +255,9 @@ AGENTS.md files provide a simple way to give Cascade context-aware instructions 
 - **Building in Public Systems:** Systematic content creation from workspace build logs
 - **Privacy Guidelines:** Safe transparency, what to share vs keep private
 - **Channel-Specific Strategies:** LinkedIn, Twitter, blog, newsletter optimization
+- **AI Content Strategy:** AI audience analysis, automation, and distribution for MSMEs
+- **AI Content Automation:** Transform thiru-ai-labs AI development into automated content
+- **AI Performance Tracking:** Specialized analytics for AI content effectiveness
 
 **Features:**
 
@@ -264,6 +267,10 @@ AGENTS.md files provide a simple way to give Cascade context-aware instructions 
 - Engagement tactics
 - Monetization planning
 - Performance tracking
+- **AI Audience Segmentation:** MSME AI adoption patterns and content preferences
+- **AI Content Generators:** Automated LinkedIn, Twitter, blog content from AI development
+- **AI Distribution Strategy:** Platform-specific optimization for AI content
+- **AI Analytics:** AI-specific performance tracking and business impact measurement
 
 **When to Use:**
 
@@ -272,6 +279,9 @@ AGENTS.md files provide a simple way to give Cascade context-aware instructions 
 - Optimizing distribution
 - Growing newsletter subscribers
 - Building community engagement
+- **Creating AI-focused content strategies for MSMEs**
+- **Automating AI content generation from development work**
+- **Analyzing AI content performance and business impact**
 
 ---
 

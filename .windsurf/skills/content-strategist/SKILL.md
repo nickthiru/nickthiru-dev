@@ -1,10 +1,10 @@
 ---
 name: content-strategist
-description: Develop comprehensive content strategies, editorial calendars, and audience growth plans for technical founders and MSMEs building in public. Use when planning content, analyzing audience engagement, or optimizing content distribution.
+description: Develop comprehensive content strategies, editorial calendars, and audience growth plans for technical founders and MSMEs building in public. Specializes in AI content strategy, automation, and distribution. Use when planning content, analyzing audience engagement, optimizing content distribution, or creating AI-focused content strategies.
 license: MIT
 metadata:
   author: nickthiru-dev
-  version: "1.0"
+  version: "1.1"
 ---
 
 # Content Strategist Skill
@@ -21,6 +21,636 @@ This skill provides comprehensive guidance for developing content strategies tha
 - Optimizing content for platform-specific audiences
 - Building community engagement strategies
 - Creating monetization and partnership plans
+- **AI Content Strategy**: Planning AI-focused content for MSMEs
+- **AI Content Automation**: Setting up systems for AI content generation
+- **AI Audience Analysis**: Understanding AI adoption patterns in businesses
+
+---
+
+## AI Content Strategy Specialization
+
+### AI Audience Analysis for MSMEs
+
+Understanding how different segments approach AI adoption and content consumption:
+
+```typescript
+// AI-specific audience analysis
+interface AIAudienceSegment extends AudienceSegment {
+  aiAdoptionStage: "exploring" | "implementing" | "scaling" | "advanced";
+  aiPainPoints: string[];
+  aiContentPreferences: AIContentPreference[];
+  aiTechnicalLevel: "non-technical" | "semi-technical" | "technical";
+  aiBusinessContext: "b2c" | "b2b" | "internal" | "mixed";
+}
+
+interface AIContentPreference {
+  aiTopics: string[];
+  complexity: "basic" | "intermediate" | "advanced";
+  format: "case-study" | "tutorial" | "news" | "analysis";
+  businessFocus: "roi" | "implementation" | "strategy" | "trends";
+}
+
+export class AIAudienceAnalyzer {
+  static analyzeAIAudience(metrics: {
+    aiContentEngagement: number;
+    aiTopicPerformance: Record<string, number>;
+    msmeInquiries: number;
+    technicalFeedback: number;
+  }): AIAudienceAnalysis {
+    const segments = this.identifyAISegments(metrics);
+    const contentGaps = this.identifyAIContentGaps(segments);
+    const opportunities = this.findAIGrowthOpportunities(segments);
+
+    return {
+      segments,
+      contentGaps,
+      opportunities,
+      recommendations: this.generateAIRecommendations(segments),
+    };
+  }
+
+  private static identifyAISegments(metrics: any): AIAudienceSegment[] {
+    return [
+      {
+        segment: "AI-Curious MSMEs",
+        aiAdoptionStage: "exploring",
+        characteristics: [
+          "1-50 employees, non-technical founders",
+          "Heard about AI but don't know where to start",
+          "Concerned about costs and complexity",
+          "Need practical, business-focused guidance",
+        ],
+        aiPainPoints: [
+          "AI seems overwhelming and technical",
+          "Unclear ROI for their specific business",
+          "Fear of making expensive mistakes",
+          "Don't know which AI solutions to trust",
+        ],
+        aiContentPreferences: [
+          {
+            aiTopics: [
+              "AI basics",
+              "business AI tools",
+              "cost-benefit analysis",
+            ],
+            complexity: "basic",
+            format: "case-study",
+            businessFocus: "roi",
+          },
+        ],
+        aiTechnicalLevel: "non-technical",
+        aiBusinessContext: "mixed",
+        growthPotential: 9,
+      },
+      {
+        segment: "AI-Implementing SMEs",
+        aiAdoptionStage: "implementing",
+        characteristics: [
+          "50-249 employees, some technical capacity",
+          "Currently using basic AI tools",
+          "Looking to scale AI adoption",
+          "Focus on practical implementation",
+        ],
+        aiPainPoints: [
+          "Integration with existing systems",
+          "Measuring AI effectiveness",
+          "Team training and adoption",
+          "Choosing right AI solutions",
+        ],
+        aiContentPreferences: [
+          {
+            aiTopics: [
+              "AI implementation",
+              "integration strategies",
+              "team training",
+            ],
+            complexity: "intermediate",
+            format: "tutorial",
+            businessFocus: "implementation",
+          },
+        ],
+        aiTechnicalLevel: "semi-technical",
+        aiBusinessContext: "b2b",
+        growthPotential: 8,
+      },
+      {
+        segment: "AI-Technical Founders",
+        aiAdoptionStage: "advanced",
+        characteristics: [
+          "Building AI-powered products",
+          "Deep technical expertise",
+          "Need business growth strategies",
+          "Looking for scaling insights",
+        ],
+        aiPainPoints: [
+          "Go-to-market for AI products",
+          "Customer education and onboarding",
+          "Competitive differentiation",
+          "Production AI challenges",
+        ],
+        aiContentPreferences: [
+          {
+            aiTopics: [
+              "production AI",
+              "AI product strategy",
+              "scaling challenges",
+            ],
+            complexity: "advanced",
+            format: "analysis",
+            businessFocus: "strategy",
+          },
+        ],
+        aiTechnicalLevel: "technical",
+        aiBusinessContext: "b2b",
+        growthPotential: 7,
+      },
+    ];
+  }
+
+  private static identifyAIContentGaps(
+    segments: AIAudienceSegment[],
+  ): string[] {
+    return [
+      "Limited practical AI implementation guides for non-technical users",
+      "Missing ROI-focused AI content for MSME decision-makers",
+      "Few AI team training and adoption resources",
+      "Underdeveloped AI product go-to-market content",
+      "Limited AI integration case studies for existing businesses",
+    ];
+  }
+
+  private static findAIGrowthOpportunities(
+    segments: AIAudienceSegment[],
+  ): string[] {
+    return [
+      'Create "AI for Non-Technical Founders" series',
+      "Develop AI ROI calculator and case studies",
+      "Build AI implementation template library",
+      "Create AI team adoption playbook",
+      "Partner with AI tool companies for authentic reviews",
+    ];
+  }
+
+  private static generateAIRecommendations(
+    segments: AIAudienceSegment[],
+  ): AIContentStrategyRecommendation[] {
+    return [
+      {
+        priority: "high",
+        action: "Launch AI Basics for Business series",
+        rationale: "Addresses largest segment (AI-curious MSMEs)",
+        expectedImpact: "High engagement and lead generation",
+        effort: "Medium",
+        targetSegment: "AI-Curious MSMEs",
+      },
+      {
+        priority: "medium",
+        action: "Create AI Implementation Playbook",
+        rationale: "Serves growing SME implementation market",
+        expectedImpact: "Thought leadership and product opportunities",
+        effort: "High",
+        targetSegment: "AI-Implementing SMEs",
+      },
+    ];
+  }
+}
+```
+
+### AI Content Automation System
+
+Transform AI development work from thiru-ai-labs into automated content:
+
+```typescript
+// AI content automation from build logs
+export class AIContentAutomation {
+  private buildLogPath = "/home/dev/projects/thiru-ai-labs/BUILD_LOG.md";
+
+  async generateAIContentFromBuildLog(): Promise<AIContentPlan> {
+    const buildLogEntries = await this.parseAIBuildLog();
+    const contentIdeas = this.identifyAIContentIdeas(buildLogEntries);
+    const calendarPlan = this.createAIContentCalendar(contentIdeas);
+    const automationSetup = this.setupAIAutomation(calendarPlan);
+
+    return {
+      contentIdeas,
+      calendarPlan,
+      automationSetup,
+      nextSteps: this.getNextSteps(calendarPlan),
+    };
+  }
+
+  private async parseAIBuildLog(): Promise<AIBuildLogEntry[]> {
+    // Parse thiru-ai-labs BUILD_LOG.md for AI-specific entries
+    const entries: AIBuildLogEntry[] = [];
+
+    // Extract AI features, improvements, learnings
+    // This would read from the actual build log file
+
+    return entries;
+  }
+
+  private identifyAIContentIdeas(entries: AIBuildLogEntry[]): AIContentIdea[] {
+    return entries.map((entry) => ({
+      type: this.categorizeAIContent(entry),
+      title: this.generateAITitle(entry),
+      platforms: this.selectAIPlatforms(entry),
+      angle: this.determineAIAngle(entry),
+      priority: this.assignAIPriority(entry),
+      estimatedEffort: this.estimateAIEffort(entry),
+    }));
+  }
+
+  private categorizeAIContent(entry: AIBuildLogEntry): AIContentType {
+    if (entry.aiFeature) return "ai-feature";
+    if (entry.aiLearning) return "ai-insight";
+    if (entry.aiChallenge) return "ai-challenge";
+    if (entry.aiMetrics) return "ai-results";
+    return "ai-update";
+  }
+
+  private createAIContentCalendar(ideas: AIContentIdea[]): AIContentCalendar {
+    return {
+      weekly: {
+        monday: this.selectAIContent(ideas, "technical-deep-dive"),
+        wednesday: this.selectAIContent(ideas, "business-insight"),
+        friday: this.selectAIContent(ideas, "quick-ai-tip"),
+      },
+      monthly: {
+        week1: "AI Implementation Case Study",
+        week2: "AI Tool Comparison",
+        week3: "AI Results Analysis",
+        week4: "AI Future Trends",
+      },
+      quarterly: this.planQuarterlyAIThemes(ideas),
+    };
+  }
+
+  private setupAIAutomation(calendar: AIContentCalendar): AIAutomationSetup {
+    return {
+      contentGenerators: {
+        linkedin: new AILinkedInGenerator(),
+        twitter: new AITwitterGenerator(),
+        blog: new AIBlogGenerator(),
+        newsletter: new AINewsletterGenerator(),
+      },
+      scheduling: {
+        tool: "Buffer",
+        postingTimes: this.getAIOptimalTimes(),
+        queueManagement: "auto-queue high-performing content",
+      },
+      analytics: {
+        tracking: "AI-specific metrics",
+        reporting: "Weekly AI content performance",
+        optimization: "A/B test AI content angles",
+      },
+    };
+  }
+}
+
+// AI Content Generators (moved from thiru-ai-labs)
+export class AILinkedInGenerator {
+  generateFromBuildLog(entry: AIBuildLogEntry): LinkedInPost {
+    const hook = this.generateAIHook(entry);
+    const body = this.generateAIBody(entry);
+    const cta = this.generateAICTA(entry);
+    const hashtags = this.generateAIHashtags(entry);
+
+    return {
+      content: `${hook}\n\n${body}\n\n${cta}\n\n${hashtags}`,
+      media: entry.artifacts,
+      scheduling: this.optimalAITiming(entry.type),
+    };
+  }
+
+  private generateAIHook(entry: AIBuildLogEntry): string {
+    const hooks = [
+      `Just shipped ${entry.aiFeature}! 🚀`,
+      `The real cost of building ${entry.aiComponent}?`,
+      `Here's what nobody tells you about ${entry.aiTechnology}:`,
+      `2 weeks debugging ${entry.aiIssue}. Here's what I learned:`,
+      `From idea to AI production in ${entry.timeline}:`,
+    ];
+
+    return hooks[Math.floor(Math.random() * hooks.length)];
+  }
+
+  private generateAIBody(entry: AIBuildLogEntry): string {
+    return `
+${entry.aiDescription}
+
+The AI tech stack:
+• ${entry.aiTechStack.join("\n• ")}
+
+Key AI decisions:
+• ${entry.aiDecisions.map((d) => `**${d.title}**: ${d.reason}`).join("\n• ")}
+
+${entry.aiInsights ? `\nBiggest AI insight: ${entry.aiInsights}` : ""}
+
+${entry.aiMetrics ? `\nAI Results so far:\n${entry.aiMetrics.map((m) => `• ${m.metric}: ${m.value}`).join("\n")}` : ""}
+    `.trim();
+  }
+}
+
+export class AITwitterGenerator {
+  generateThread(entry: AIBuildLogEntry): TwitterThread {
+    const tweets = this.createAITweets(entry);
+
+    return {
+      tweets,
+      scheduling: this.aiThreadScheduling(entry.type),
+      hashtags: ["#BuildInPublic", "#AI", "#DevCommunity", "#IndieHackers"],
+    };
+  }
+
+  private createAITweets(entry: AIBuildLogEntry): string[] {
+    return [
+      // Tweet 1: Hook
+      `1/8 Just shipped ${entry.aiAchievement} and learned something valuable about ${entry.aiTopic} 🧵`,
+
+      // Tweet 2: Problem
+      `2/8 The AI problem: ${entry.aiProblem}\n\nTraditional AI approaches weren't working because...`,
+
+      // Tweet 3: Solution approach
+      `3/8 Here's the AI architecture I came up with:\n${entry.aiTechStack
+        .slice(0, 3)
+        .map((t) => `• ${t}`)
+        .join("\n")}`,
+
+      // Tweet 4: Key decision
+      `4/8 The biggest AI decision was choosing ${entry.aiKeyDecision}\n\nWhy? ${entry.aiDecisionReason}`,
+
+      // Tweet 5: Implementation details
+      `5/8 AI implementation took ${entry.aiTimeline}.\n\nHardest part was ${entry.aiHardestPart}`,
+
+      // Tweet 6: Results
+      `6/8 AI Results so far:\n${
+        entry.aiMetrics
+          ?.slice(0, 3)
+          .map((m) => `• ${m.metric}: ${m.value}`)
+          .join("\n") || "• Still testing with early AI users"
+      }`,
+
+      // Tweet 7: Lessons learned
+      `7/8 Biggest AI lessons:\n• ${entry.aiLessons?.slice(0, 2).join("\n• ") || "• AI patience is key\n• Test AI assumptions early"}`,
+
+      // Tweet 8: CTA
+      `8/8 Building AI in public means sharing the wins AND the losses.\n\nWhat AI are you building? Let's connect! 🚀`,
+    ];
+  }
+}
+```
+
+### AI Content Distribution Strategy
+
+Platform-specific optimization for AI content:
+
+```typescript
+// AI content distribution across platforms
+export class AIDistributionStrategy {
+  static createAIDistributionPlan(content: AIContentPiece): AIDistributionPlan {
+    return {
+      primary: this.selectPrimaryAIPlatform(content),
+      secondary: this.planSecondaryAIPlatforms(content),
+      timing: this.getAIOptimalTiming(content),
+      amplification: this.planAIAmplification(content),
+      metrics: this.defineAIMetrics(content),
+    };
+  }
+
+  private static selectPrimaryAIPlatform(content: AIContentPiece): string {
+    switch (content.type) {
+      case "ai-technical":
+        return "blog"; // Long-form AI technical content
+      case "ai-business":
+        return "linkedin"; // AI business insights for MSMEs
+      case "ai-update":
+        return "twitter"; // Quick AI updates
+      case "ai-case-study":
+        return "newsletter"; // Detailed AI case studies
+      default:
+        return "linkedin";
+    }
+  }
+
+  private static planSecondaryAIPlatforms(
+    content: AIContentPiece,
+  ): SecondaryPlatform[] {
+    const platforms: SecondaryPlatform[] = [];
+
+    // Always repurpose AI content for LinkedIn
+    if (content.type !== "ai-business") {
+      platforms.push({
+        platform: "linkedin",
+        adaptation: "Extract key AI insights for professional audience",
+        timing: "24-48 hours after primary",
+      });
+    }
+
+    // Create Twitter threads from AI insights
+    if (content.type === "ai-technical" || content.type === "ai-business") {
+      platforms.push({
+        platform: "twitter",
+        adaptation: "Convert to 7-10 tweet thread with key AI takeaways",
+        timing: "Same day as primary",
+      });
+    }
+
+    // Newsletter for deep AI content
+    if (content.type === "ai-case-study" || content.type === "ai-technical") {
+      platforms.push({
+        platform: "newsletter",
+        adaptation: "Expand with exclusive AI insights and behind-the-scenes",
+        timing: "Weekly newsletter",
+      });
+    }
+
+    return platforms;
+  }
+
+  private static getAIOptimalTiming(content: AIContentPiece): AITimingStrategy {
+    return {
+      linkedin: {
+        times: ["8-10 AM", "12-1 PM", "5-7 PM"],
+        bestDays: ["Tuesday", "Wednesday", "Thursday"],
+        reasoning: "MSME decision makers check LinkedIn during business hours",
+      },
+      twitter: {
+        times: ["9-11 AM", "2-4 PM", "8-10 PM"],
+        bestDays: ["Monday", "Wednesday", "Friday"],
+        reasoning: "AI developers and founders active throughout day",
+      },
+      blog: {
+        times: ["8-10 AM"],
+        bestDays: ["Tuesday", "Thursday"],
+        reasoning: "AI technical content best consumed during work hours",
+      },
+    };
+  }
+
+  private static planAIAmplification(
+    content: AIContentPiece,
+  ): AIAmplificationPlan {
+    return {
+      aiCommunities: [
+        "Share in AI-focused Discord/Slack communities",
+        "Post in AI subreddits (r/MachineLearning, r/LocalLLaMA)",
+        "Engage with AI thought leaders in comments",
+      ],
+      crossPromotion: [
+        "Partner with AI tool companies for content sharing",
+        "Collaborate with AI creators for mutual promotion",
+        "Submit to AI newsletters and publications",
+      ],
+      seoOptimization: [
+        "Target AI-related keywords with business intent",
+        "Build internal links to other AI content",
+        "Optimize for 'AI for small business' long-tail terms",
+      ],
+    };
+  }
+
+  private static defineAIMetrics(content: AIContentPiece): AIMetrics {
+    return {
+      engagement: {
+        target: "5-10% engagement rate for AI content",
+        track: ["comments", "shares", "saves"],
+        benchmark: "Compare to non-AI content performance",
+      },
+      business: {
+        target: "3-5% conversion to AI-related inquiries",
+        track: ["waitlist signups", "demo requests", "consultation inquiries"],
+        benchmark: "Track AI content vs business impact",
+      },
+      authority: {
+        target: "Increase AI thought leadership mentions",
+        track: ["backlinks", "mentions", "speaking inquiries"],
+        benchmark: "Measure AI content authority building",
+      },
+    };
+  }
+}
+```
+
+### AI Content Performance Tracking
+
+Specialized analytics for AI content performance:
+
+```typescript
+// AI content performance analytics
+export class AIContentAnalytics {
+  async trackAIPerformance(contentId: string): Promise<AIContentMetrics> {
+    const baseMetrics = await this.getBaseMetrics(contentId);
+    const aiSpecificMetrics = await this.getAISpecificMetrics(contentId);
+    const businessImpact = await this.getBusinessImpact(contentId);
+
+    return {
+      ...baseMetrics,
+      aiSpecific: aiSpecificMetrics,
+      businessImpact,
+      recommendations: this.generateAIRecommendations(
+        baseMetrics,
+        aiSpecificMetrics,
+      ),
+    };
+  }
+
+  private async getAISpecificMetrics(
+    contentId: string,
+  ): Promise<AISpecificMetrics> {
+    return {
+      aiEngagement: {
+        aiTechnicalComments: await this.countAITechnicalComments(contentId),
+        aiBusinessQuestions: await this.countAIBusinessQuestions(contentId),
+        aiImplementationDiscussions:
+          await this.countAIImplementationDiscussions(contentId),
+      },
+      aiAudience: {
+        msmeEngagement: await this.calculateMSMEEngagement(contentId),
+        technicalFounderReach:
+          await this.calculateTechnicalFounderReach(contentId),
+        aiPractitionerInteraction:
+          await this.calculateAIPractitionerInteraction(contentId),
+      },
+      aiContent: {
+        aiTopicResonance: await this.calculateAITopicResonance(contentId),
+        aiComplexityAppropriateness:
+          await this.analyzeAIComplexityFeedback(contentId),
+        aiActionability: await this.measureAIActionability(contentId),
+      },
+    };
+  }
+
+  async generateAIWeeklyReport(): Promise<string> {
+    const topAIContent = await this.getTopAIContent();
+    const aitrends = await this.analyzeAITrends();
+    const msmeEngagement = await this.analyzeMSMEEngagement();
+
+    return `
+# AI Content Performance Report - ${new Date().toLocaleDateString()}
+
+## Top Performing AI Content
+${topAIContent
+  .map(
+    (content) => `
+### ${content.title}
+- Platform: ${content.platform}
+- AI Topic: ${content.aiTopic}
+- MSME Engagement: ${content.metrics.msmeEngagement}%
+- AI Technical Comments: ${content.metrics.aiTechnicalComments}
+- Business Inquiries: ${content.metrics.businessInquiries}
+`,
+  )
+  .join("\n")}
+
+## AI Content Trends
+${aitrends.map((trend) => `- ${trend}`).join("\n")}
+
+## MSME AI Engagement Insights
+${msmeEngagement.map((insight) => `- ${insight}`).join("\n")}
+
+## AI Content Recommendations for Next Week
+${this.generateAIContentRecommendations(topAIContent, aitrends)
+  .map((rec) => `- ${rec}`)
+  .join("\n")}
+    `.trim();
+  }
+
+  private generateAIContentRecommendations(
+    topContent: any[],
+    trends: string[],
+  ): string[] {
+    const recommendations: string[] = [];
+
+    // Analyze what AI topics resonate with MSMEs
+    const msmeWinningTopics = topContent
+      .filter((c) => c.metrics.msmeEngagement > 5)
+      .map((c) => c.aiTopic);
+
+    if (msmeWinningTopics.length > 0) {
+      recommendations.push(
+        `Create more "AI for ${msmeWinningTopics[0]}" content for MSMEs`,
+      );
+    }
+
+    // Check if technical AI content needs business angle
+    const technicalContent = topContent.filter(
+      (c) => c.aiComplexity === "high",
+    );
+    if (technicalContent.some((c) => c.metrics.businessInquiries < 2)) {
+      recommendations.push("Add business ROI angle to technical AI content");
+    }
+
+    // Identify AI content gaps
+    if (trends.includes("AI implementation questions")) {
+      recommendations.push(
+        "Create AI implementation guide for non-technical users",
+      );
+    }
+
+    return recommendations;
+  }
+}
+```
 
 ## Step-by-Step Implementation
 

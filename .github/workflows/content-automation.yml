@@ -1,0 +1,40 @@
+name: Content Automation
+
+on:
+  push:
+    paths:
+      - "build-logs/*.md" # Monitor thiru-ai-labs build logs
+  schedule:
+    - cron: "0 9 * * 1-5" # Weekdays at 9 AM
+
+jobs:
+  generate-content:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Generate content from build logs
+        run: node scripts/content-transform.js
+
+      - name: Create content draft
+        run: |
+          echo "## Content Draft $(date)" >> content-draft.md
+          echo "### LinkedIn Post" >> content-draft.md
+          cat artifacts/latest-linkedin-post.md >> content-draft.md
+          echo "" >> content-draft.md
+          echo "### Twitter Thread" >> content-draft.md
+          cat artifacts/latest-twitter-thread.txt >> content-draft.md
+
+      - name: Save content draft
+        uses: actions/upload-artifact@v3
+        with:
+          name: content-draft
+          path: content-draft.md

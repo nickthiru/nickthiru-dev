@@ -6,7 +6,12 @@
     "dev": "vite dev",
     "build": "svelte-kit sync && vite build",
     "preview": "vite preview",
-    "postinstall": "svelte-kit sync"
+    "postinstall": "svelte-kit sync",
+    "content:transform": "node scripts/content-transform.js",
+    "content:daily": "bash scripts/daily-content.sh",
+    "content:privacy-check": "node scripts/privacy-check.js",
+    "content:calendar": "node scripts/content-calendar.js",
+    "content:blog-weekly": "node scripts/weekly-blog.js"
   },
   "devDependencies": {
     "@sveltejs/adapter-static": "^3.0.0",

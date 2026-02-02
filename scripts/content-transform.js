@@ -25,15 +25,15 @@ class ContentTransformer {
       .filter((f) => f.endsWith(".md"))
       .sort()
       .reverse();
-    
+
     if (files.length === 0) return null;
-    
+
     const latestFile = files[0];
     const buildLog = fs.readFileSync(
       path.join(this.buildLogPath, latestFile),
-      "utf8"
+      "utf8",
     );
-    
+
     return { filename: latestFile, content: buildLog };
   }
 
@@ -110,8 +110,14 @@ Building in public, one step at a time 🚀
       .map((entry, index) => {
         const date = entry.match(/\[(\d{4}-\d{2}-\d{2})\]/)?.[1] || "";
         const milestone = entry.split(" - ")[1] || "";
-        const buildSection = this.extractSection(entry.split("\n"), "**Build:**");
-        const lessonSection = this.extractSection(entry.split("\n"), "**Lesson:**");
+        const buildSection = this.extractSection(
+          entry.split("\n"),
+          "**Build:**",
+        );
+        const lessonSection = this.extractSection(
+          entry.split("\n"),
+          "**Lesson:**",
+        );
 
         return `
 ## ${index + 1}. ${milestone}
@@ -153,7 +159,7 @@ If you're building in public or interested in following along, you can:
 
     return `---
 title: "${title}"
-date: "${new Date().toISOString().split('T')[0]}"
+date: "${new Date().toISOString().split("T")[0]}"
 description: "${introduction}"
 tags: ["building-in-public", "startup", "lessons"]
 ---
@@ -175,9 +181,11 @@ ${conclusion}`;
     }
 
     // Extract the latest entry (assuming one entry per file)
-    const entries = latestLog.content.split("\n\n").filter(section => 
-      section.startsWith("## [") && section.includes("] - ")
-    );
+    const entries = latestLog.content
+      .split("\n\n")
+      .filter(
+        (section) => section.startsWith("## [") && section.includes("] - "),
+      );
 
     if (entries.length === 0) {
       console.log("❌ No valid entries found in build log");
@@ -191,36 +199,63 @@ ${conclusion}`;
     const twitterThread = this.generateTwitterThread(latestEntry);
     const blogPost = this.generateBlogPost(entries);
 
-    // Save content to artifacts directory
-    const artifactsDir = "/home/dev/projects/nickthiru-dev/artifacts";
-    
-    if (!fs.existsSync(artifactsDir)) {
-      fs.mkdirSync(artifactsDir, { recursive: true });
+    // Dual artifact storage strategy
+    const nickthiruDevArtifacts = "/home/dev/projects/nickthiru-dev/artifacts";
+    const thiruAiLabsArtifacts = "/home/dev/projects/thiru-ai-labs/artifacts";
+
+    // Ensure both directories exist
+    if (!fs.existsSync(nickthiruDevArtifacts)) {
+      fs.mkdirSync(nickthiruDevArtifacts, { recursive: true });
+    }
+    if (!fs.existsSync(thiruAiLabsArtifacts)) {
+      fs.mkdirSync(thiruAiLabsArtifacts, { recursive: true });
     }
 
+    // Save to nickthiru-dev (website assets)
     fs.writeFileSync(
-      path.join(artifactsDir, "latest-linkedin-post.md"),
-      linkedinPost
+      path.join(nickthiruDevArtifacts, "latest-linkedin-post.md"),
+      linkedinPost,
     );
     fs.writeFileSync(
-      path.join(artifactsDir, "latest-twitter-thread.txt"),
-      twitterThread.join("\n\n---\n\n")
+      path.join(nickthiruDevArtifacts, "latest-twitter-thread.txt"),
+      twitterThread.join("\n\n---\n\n"),
     );
     fs.writeFileSync(
-      path.join(artifactsDir, "latest-blog-post.md"),
-      blogPost
+      path.join(nickthiruDevArtifacts, "latest-blog-post.md"),
+      blogPost,
+    );
+
+    // Save to thiru-ai-labs (development context)
+    fs.writeFileSync(
+      path.join(thiruAiLabsArtifacts, "latest-linkedin-post.md"),
+      linkedinPost,
+    );
+    fs.writeFileSync(
+      path.join(thiruAiLabsArtifacts, "latest-twitter-thread.txt"),
+      twitterThread.join("\n\n---\n\n"),
+    );
+    fs.writeFileSync(
+      path.join(thiruAiLabsArtifacts, "latest-blog-post.md"),
+      blogPost,
     );
 
     console.log("✅ Content transformation complete:");
-    console.log("  📝 LinkedIn post: artifacts/latest-linkedin-post.md");
-    console.log("  🐦 Twitter thread: artifacts/latest-twitter-thread.txt");
-    console.log("  📄 Blog post: artifacts/latest-blog-post.md");
+    console.log("  📝 LinkedIn posts saved to both artifacts directories");
+    console.log("  🐦 Twitter threads saved to both artifacts directories");
+    console.log("  📄 Blog posts saved to both artifacts directories");
+    console.log(
+      "  🔄 Dual storage: thiru-ai-labs (dev) + nickthiru-dev (website)",
+    );
 
     return {
       linkedinPost,
       twitterThread,
       blogPost,
       sourceFile: latestLog.filename,
+      storageLocations: {
+        development: thiruAiLabsArtifacts,
+        website: nickthiruDevArtifacts,
+      },
     };
   }
 }

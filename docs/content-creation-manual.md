@@ -624,6 +624,52 @@ _Source: nickthiru-dev/.windsurf/skills/blog-writer/SKILL.md_
    - Verify technical accuracy
    - Final quality check
 
+### **🤖 Content Automation Enhancement (NEW!)**
+
+_Source: nickthiru-dev/.windsurf/skills/content-strategist/SKILL.md_
+
+#### **Available Automation Scripts:**
+
+- **`scripts/content-transform.js`** - Main transformation logic with ContentTransformer class
+- **`scripts/privacy-check.js`** - Content safety validation and sensitive information detection
+- **`scripts/daily-content.sh`** - Daily automation routine for scheduled content generation
+
+#### **Key Capabilities:**
+
+- **Build Log Parsing**: Automatically reads thiru-ai-labs/build-logs/\*.md files
+- **Content Generation**: Creates LinkedIn posts, Twitter threads, and blog posts
+- **Privacy Checking**: Validates content safety before publishing
+- **Artifact Management**: Organized content storage for review
+- **Cross-Workspace Integration**: Bridges thiru-ai-labs (source) → nickthiru-dev (processing)
+
+#### **Usage Instructions:**
+
+```bash
+# Daily automation - checks for new build logs and generates content
+npm run content:daily
+
+# Manual transformation - process latest build log immediately
+npm run content:transform
+
+# Privacy checking - validate content safety
+npm run content:privacy-check
+```
+
+#### **GitHub Actions Automation:**
+
+- **Scheduled Content Generation**: Weekdays at 9 AM + when build logs change
+- **Process**: Transforms build logs → creates content drafts
+- **Output**: Artifacts saved to `/artifacts/` directory
+- **Review**: Content drafts available for manual review
+
+#### **Enhanced Pipeline Integration:**
+
+```
+Strategy (Skill) → Automation (Scripts) → Execution (Workflows) → Distribution → Analysis
+```
+
+**Note**: The content-strategist skill now includes both strategic expertise AND working automation code for seamless content transformation from development work.
+
 ### **Blog Post Creation Process**
 
 _Source: nickthiru-dev/docs/writing-guide.md_

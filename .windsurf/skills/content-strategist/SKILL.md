@@ -1632,7 +1632,52 @@ export class ChannelStrategy {
 
 ### Build Log Integration Scripts
 
-The following JavaScript automation scripts transform thiru-ai-labs build logs into platform-specific content:
+The content-strategist skill now includes working automation scripts that transform thiru-ai-labs build logs into platform-specific content:
+
+#### Available Automation Scripts
+
+**Primary Scripts:**
+
+- `scripts/content-transform.js` - Main transformation logic with ContentTransformer class
+- `scripts/privacy-check.js` - Content safety validation and sensitive information detection
+- `scripts/daily-content.sh` - Daily automation routine for scheduled content generation
+
+**Key Capabilities:**
+
+- **Build Log Parsing**: Automatically reads thiru-ai-labs/build-logs/\*.md files
+- **Content Generation**: Creates LinkedIn posts, Twitter threads, and blog posts
+- **Privacy Checking**: Validates content safety before publishing
+- **Artifact Management**: Organized content storage for review
+- **Cross-Workspace Integration**: Bridges thiru-ai-labs (source) → nickthiru-dev (processing)
+
+#### ContentTransformer Class Interface
+
+```typescript
+class ContentTransformer {
+  constructor();
+  extractSection(lines: string[], header: string): string;
+  getLatestBuildLog(): { filename: string; content: string } | null;
+  generateLinkedInPost(buildEntry: string): string;
+  generateTwitterThread(buildEntry: string): string[];
+  generateBlogPost(entries: string[]): string;
+  transformLatestContent(): Promise<ContentResult>;
+}
+```
+
+#### Usage Instructions
+
+```bash
+# Daily automation - checks for new build logs and generates content
+npm run content:daily
+
+# Manual transformation - process latest build log immediately
+npm run content:transform
+
+# Privacy checking - validate content safety
+npm run content:privacy-check
+```
+
+**Note**: Full automation code is available in the `/scripts/` directory. This skill provides the strategic expertise and interfaces, while the scripts contain the working implementation.
 
 #### Content Transformation Script
 

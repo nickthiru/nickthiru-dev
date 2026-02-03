@@ -662,6 +662,88 @@ npm run content:privacy-check
 - **Output**: Artifacts saved to `/artifacts/` directory
 - **Review**: Content drafts available for manual review
 
+#### **🎛️ GitHub Actions Control (IMPORTANT)**
+
+**Current Status**: DISABLED (manual trigger only)
+
+**Control Methods Available:**
+
+##### **Method 1: File-Based Control (Current Setup)**
+
+- **Location**: `.github/workflows/content-automation.yml`
+- **Current State**: Only `workflow_dispatch` (manual) enabled
+- **Automatic Triggers**: Commented out (`push` + `schedule`)
+- **To Re-enable**: Uncomment the push and schedule sections
+
+##### **Method 2: GitHub UI Control**
+
+1. Go to Repository → Actions tab
+2. Select "Content Automation" workflow
+3. Click "..." menu → "Disable workflow" or "Enable workflow"
+4. **Pros**: Immediate effect, no code changes
+5. **Cons**: Not version controlled, easy to forget state
+
+##### **Method 3: Manual Trigger Only (Current)**
+
+**How to Run Manually:**
+
+1. Go to Repository → Actions tab
+2. Select "Content Automation" workflow
+3. Click "Run workflow" button
+4. Add reason (optional): "Manual content generation"
+5. Click "Run workflow"
+
+**API Method (Advanced):**
+
+```bash
+curl -X POST \
+  -H "Authorization: token YOUR_TOKEN" \
+  -H "Accept: application/vnd.github.v3+json" \
+  https://api.github.com/repos/nickthiru/nickthiru-dev/actions/workflows/content-automation.yml/dispatches \
+  -d '{"ref":"main","inputs":{"reason":"Manual content generation"}}'
+```
+
+##### **⚠️ Implications to Consider:**
+
+**Cross-Workspace Impact:**
+
+- thiru-ai-labs changes won't automatically trigger content generation
+- Manual process required after build log updates
+- No more automatic weekday morning generation
+
+**Content Pipeline Impact:**
+
+- Content generation becomes on-demand vs scheduled
+- More manual oversight (good for quality control)
+- Less predictable but more controlled timing
+
+**Workflow Dependencies:**
+
+- Scripts and npm packages still required when manually triggered
+- Artifact storage still works when manually triggered
+- Need repo write access to trigger manually
+
+##### **🔄 Future Re-enabling:**
+
+When ready to automate again, uncomment these lines in `.github/workflows/content-automation.yml`:
+
+```yaml
+on:
+  workflow_dispatch: # Manual trigger
+    inputs:
+      reason:
+        description: "Reason for running content automation"
+        required: false
+        default: "Manual content generation"
+  push: # UNCOMMENT THIS
+    paths:
+      - "build-logs/*.md"
+  schedule: # UNCOMMENT THIS
+    - cron: "0 9 * * 1-5"
+```
+
+**Recommendation**: Current manual-only setup provides complete control while preserving automation capability for future use.
+
 #### **Enhanced Pipeline Integration:**
 
 ```

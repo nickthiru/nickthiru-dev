@@ -1,11 +1,17 @@
 name: Content Automation
 
 on:
-  push:
-    paths:
-      - "build-logs/*.md" # Monitor thiru-ai-labs build logs
-  schedule:
-    - cron: "0 9 * * 1-5" # Weekdays at 9 AM
+  workflow_dispatch: # Manual trigger only - DISABLED for now
+    inputs:
+      reason:
+        description: "Reason for running content automation"
+        required: false
+        default: "Manual content generation"
+  # push:
+  #   paths:
+  #     - "build-logs/*.md" # Monitor thiru-ai-labs build logs
+  # schedule:
+  #   - cron: "0 9 * * 1-5" # Weekdays at 9 AM
 
 jobs:
   generate-content:

@@ -2,7 +2,7 @@
 
 ## Content Creation Context
 
-**For detailed voice specifications, storytelling frameworks, and authentic writing guidance, see the comprehensive style guide in [/src/content/posts/AGENTS.md](cci:7://file:///home/dev/projects/nickthiru-dev/src/content/posts/AGENTS.md:0:0-0:0).**
+**For detailed voice specifications, storytelling frameworks, and authentic writing guidance, see the comprehensive style guide in [/skills/content-creator/SKILL.md](cci:7://file:///home/dev/projects/nickthiru-dev/.windsurf/skills/content-creator/SKILL.md:0:0-0:0).**
 
 This file provides business-specific writing standards, strategic content frameworks, and business audience engagement guidelines. Use these in combination with the voice and style guidelines from the comprehensive style guide.
 

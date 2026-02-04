@@ -1,6 +1,6 @@
 ---
 name: write-business-blog-post
-description: Write a complete business blog post with authentic voice, transparency focus, and strategic insights. Use when creating business content about pricing, growth, building in public, strategy, or solo founder operations.
+description: Write a complete business blog post with authentic voice, transparency focus, and strategic insights. This is the business content engine that transforms business decisions into transparent insights for other founders. Use when creating business content about pricing, growth, building in public, strategy, or solo founder operations.
 ---
 
 # Write Business Blog Post
@@ -8,6 +8,15 @@ description: Write a complete business blog post with authentic voice, transpare
 ## Overview
 
 This workflow guides you through creating authentic business content that balances transparency with strategic insights, focusing on real metrics, decision frameworks, and the "why" behind business choices.
+
+**Business Role**: This workflow is the business content engine that transforms business decisions into transparent, valuable insights for other founders. It extracts repeatable frameworks from specific business experiences while respecting privacy boundaries.
+
+**Content Creation Integration**:
+
+- **Voice guidance**: Use [/skills/content-creator/SKILL.md](cci:7://file:///home/dev/projects/nickthiru-dev/.windsurf/skills/content-creator/SKILL.md:0:0-0:0) for authentic voice and transparency storytelling
+- **Technical implementation**: Use [/skills/blog-writer/SKILL.md](cci:7://file:///home/dev/projects/nickthiru-dev/.windsurf/skills/blog-writer/SKILL.md:0:0-0:0) for SEO optimization and business templates
+- **Build log connection**: Business milestones from thiru-ai-labs/build-logs/ can inform business decisions and metrics
+- **Template usage**: Leverages business-template.md for structured business content
 
 ## Prerequisites
 
@@ -31,7 +40,7 @@ echo "Ask yourself:
 - What's the transparency decision here?"
 
 # Check privacy guidelines
-echo "Review AGENTS.md privacy rules:
+echo "Review content-creator skill privacy rules:
 - Is this safe to share? (metrics, process, learnings)
 - Am I sharing patterns, not exploitable details?
 - Would this help competitors or create risk?"
@@ -175,7 +184,7 @@ echo "Plan business-focused distribution:
 
 ## Business Content Templates
 
-### Use `templates/_business-template.md` structure:
+### Use `templates/business-template.md` structure:
 
 1. **Transparency Decision** → What I Shared → Business Impact → The Scary Part → What Happened → Guidelines for Others
 

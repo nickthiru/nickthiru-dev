@@ -1,6 +1,6 @@
 ---
 name: blog-writer
-description: Create compelling blog content (technical, business, product) with authentic voice, clear structure, and SEO optimization. Use when drafting or revising blog posts across tracks.
+description: Technical implementation expertise for blog content creation. Provides TypeScript interfaces, automated SEO optimization, content templates, and quality assurance for blog posts. Use for technical execution of blog content structure, SEO automation, and template-based content generation.
 license: MIT
 metadata:
   author: nickthiru-dev
@@ -11,26 +11,21 @@ metadata:
 
 ## Overview
 
-This skill provides guidance for creating authentic, engaging blog content across three tracks:
+This skill provides technical implementation capabilities for blog content creation. It focuses on TypeScript interfaces, automated SEO optimization, content templates, and quality assurance.
 
-- Technical (engineering deep-dives)
-- Business (pricing, strategy, building in public)
-- Product (build logs, launches, user feedback)
-
-It focuses on voice, structure, SEO, and engagement patterns. For track-specific structure, follow the dedicated workflows.
+**For authentic voice guidance, storytelling frameworks, and personal style, use the [/skills/content-creator/SKILL.md](cci:7://file:///home/dev/projects/nickthiru-dev/.windsurf/skills/content-creator/SKILL.md:0:0-0:0) skill.**
 
 ## When to Use
 
-- Writing technical blog posts and articles
-- Writing business blog posts (pricing, growth, strategy)
-- Writing product blog posts (build logs, feature launches, updates)
-- Creating tutorials and how-to guides
-- Developing technical documentation
-- Crafting "building in public" content
-- Optimizing content for SEO and readability
-- Developing personal brand content
+- **Technical implementation** of blog content structure and templates
+- **SEO optimization** and automated content enhancement
+- **Content template generation** for different blog post types
+- **Quality assurance** and technical review of blog posts
+- **Automated content generation** using TypeScript interfaces
 
-## Recommended Workflows (Track-Specific)
+**Note:** This skill focuses on technical implementation. For authentic voice guidance, storytelling frameworks, and personal style, use the [/skills/content-creator/SKILL.md](cci:7://file:///home/dev/projects/nickthiru-dev/.windsurf/skills/content-creator/SKILL.md:0:0-0:0) skill.
+
+## Recommended Workflows
 
 - `write-technical-blog-post`
 - `write-business-blog-post`
@@ -77,94 +72,40 @@ interface ContentMetadata {
 }
 ```
 
-### 2. Authentic Voice Development
+### 2. Content Structure Implementation
 
-```typescript
-// Voice and tone guidelines
-export class VoiceCoach {
-  static generateAuthenticContent(topic: string, experience: string): string {
-    return `# ${this.generateCompellingTitle(topic)}
-
-${this.createPersonalHook(experience)}
-
-## The Problem I Faced
-
-${this.describeProblemPersonally(experience)}
-
-## How I Approached It
-
-${this.shareThoughtProcess()}
-
-## The Solution
-
-${this.provideTechnicalSolution()}
-
-## What I Learned
-
-${this.shareAuthenticLearnings()}
-
-## What I'd Do Differently
-
-${this.shareVulnerability()}`;
+````typescript
+// Blog content generation framework
+export class BlogContentGenerator {
+  static generateStructure(type: "tutorial" | "business" | "product"): BlogContent {
+    const templates = {
+      tutorial: this.getTutorialStructure(),
+      business: this.getBusinessStructure(),
+      product: this.getProductStructure()
+    };
+    return templates[type];
   }
 
-  private static generateCompellingTitle(topic: string): string {
-    const titlePatterns = [
-      `How I Built ${topic} Without Losing My Mind`,
-      `The ${topic} Mistake That Cost Me Weeks`,
-      `Building ${topic}: The Real Story`,
-      `${topic}: What They Don't Tell You`,
-      `My Journey with ${topic}: Wins and Fails`,
-    ];
-
-    return titlePatterns[Math.floor(Math.random() * titlePatterns.length)];
-  }
-
-  private static createPersonalHook(experience: string): string {
-    return `Last Tuesday at 2 AM, I was staring at my screen, wondering if ${experience} was even possible. My coffee was cold, my code was broken, and I was seriously considering a career change.
-
-Sound familiar?`;
-  }
-
-  private static describeProblemPersonally(experience: string): string {
-    return `I thought ${experience} would be straightforward. I mean, I've built complex systems before, right? Wrong.
-
-The issue wasn't just technical—it was emotional. I felt like I was missing something obvious that everyone else seemed to understand.`;
-  }
-
-  private static shareThoughtProcess(): string {
-    return `Here's what was going through my head:
-
-1. "Maybe I'm just not smart enough for this"
-2. "Surely someone has solved this before"
-3. "What if I'm approaching this completely wrong?"
-
-Spoiler alert: None of these thoughts were helpful, but they were real.`;
-  }
-
-  private static shareAuthenticLearnings(): string {
-    return `The biggest lesson wasn't technical—it was about embracing the struggle.
-
-I learned that:
-- It's okay to admit when you're stuck
-- The "obvious" solution isn't always obvious
-- Sharing failures helps others learn faster
-- Imposter syndrome doesn't disappear, you just learn to work with it`;
-  }
-
-  private static shareVulnerability(): string {
-    return `Looking back, I spent way too much time pretending I knew what I was doing. If I could go back, I'd:
-
-1. Ask for help earlier (like, day 1, not week 3)
-2. Document my dead ends so others could avoid them
-3. Celebrate small wins instead of focusing on what wasn't working
-
-But hey, that's part of the journey, right?`;
+  private static getTutorialStructure(): BlogContent {
+    return {
+      title: "",
+      hook: "",
+      problem: "",
+      solution: "",
+      code: [],
+      results: { outcomes: [] },
+      learnings: [],
+      metadata: {
+        readingTime: 0,
+        difficulty: "intermediate",
+        tags: [],
+        relatedPosts: []
+      }
+    };
   }
 }
-```
 
-### 3. Blog Content Creation
+### 3. SEO Optimization Implementation
 
 ```typescript
 // Blog content generator
@@ -291,7 +232,7 @@ ${this.suggestNextSteps()}
     return prereqs[topic] || "basic programming concepts";
   }
 }
-```
+````
 
 ### 4. SEO Optimization
 
@@ -400,94 +341,129 @@ A: Yes, but I recommend adding [specific production considerations] first.`;
 }
 ```
 
-### 5. Content Templates
+### 5. Template Integration
+
+The blog-writer skill integrates with the existing template system in `src/content/templates/`:
 
 ```typescript
-// Pre-built content templates
-export const ContentTemplates = {
-  tutorial: {
-    structure: `# [Compelling Title]
-
-[Personal hook that relates to the reader's experience]
-
-## The Challenge
-
-[Describe the real problem you faced]
-
-## Initial Approach (The Wrong Way)
-
-[Share your first failed attempt - this builds trust]
-
-## The Breakthrough
-
-[Explain how you discovered the right approach]
-
-## Step-by-Step Implementation
-
-[Detailed tutorial with code examples]
-
-## Results and Metrics
-
-[Share actual outcomes, numbers, screenshots]
-
-## Lessons Learned
-
-[What you discovered through the process]
-
-## What I'd Do Differently
-
-[Show vulnerability and share mistakes]
-
-## Next Steps
-
-[Guide reader on what to do next]`,
-
-    voiceGuidelines: {
-      tone: "Conversational yet technical",
-      perspective: 'First person ("I", "we")',
-      authenticity: "Share struggles and failures",
-      expertise: "Demonstrate without gatekeeping",
-    },
+// Template reference system
+export const TemplateSystem = {
+  getTemplatePath: (track: "technical" | "business" | "product") => {
+    const templatePaths = {
+      technical: "src/content/templates/engineering-template.md",
+      business: "src/content/templates/business-template.md",
+      product: "src/content/templates/product-template.md",
+    };
+    return templatePaths[track];
   },
 
-  buildingInPublic: {
-    structure: `# [Update Title with Specific Metrics]
+  getBaseTemplate: () => "src/content/templates/_template.md",
 
-## This Week's Progress
-
-[Concrete achievements with numbers]
-
-## What Didn't Work
-
-[Honest discussion of failures]
-
-## What I Learned
-
-[Insights from the week]
-
-## Behind the Scenes
-
-[Share the messy reality]
-
-## Next Week's Goals
-
-[Specific, measurable objectives]
-
-## Ask the Community
-
-[Engage readers with specific questions]`,
-
-    voiceGuidelines: {
-      tone: "Transparent and vulnerable",
-      perspective: "First person journey",
-      authenticity: "Share real numbers and emotions",
-      engagement: "Ask for help and feedback",
-    },
+  generateContentFromTemplate: (track: string, contentData: any) => {
+    // Logic to populate template with content data
+    const templatePath = this.getTemplatePath(track as any);
+    // Implementation would read template and substitute variables
+    return `Content generated using ${templatePath}`;
   },
 };
 ```
 
-### 6. Performance Tracking
+### Template Structure Reference
+
+**Base Template (`_template.md`):**
+
+- Frontmatter structure (title, slug, description, track, tags)
+- Markdown formatting guidelines
+- References to category-specific templates
+
+**Category-Specific Templates:**
+
+- **Engineering**: Problem → Failed Attempts → Breakthrough → Solution → Testing → Production → Lessons
+- **Business**: Transparency Decision → What Shared → Impact → Scary Part → Outcomes → Guidelines
+- **Product**: What Built → How Works → Why Matters → Challenge → Next Up
+
+**Note:** For detailed template content, see the actual files in `src/content/templates/`. This skill provides the technical implementation to work with those templates.
+
+## Quality Assurance
+
+### Content Review Process
+
+```typescript
+// Quality assurance for blog content
+export class ContentQA {
+  static validateStructure(content: string, track: string): ValidationResult {
+    const template = TemplateSystem.getTemplatePath(track as any);
+    // Validate against template structure
+    return {
+      isValid: true,
+      issues: [],
+      suggestions: [],
+    };
+  }
+
+  static checkSEO(content: string): SEOCheckResult {
+    // SEO validation
+    return {
+      hasHeadings: true,
+      hasInternalLinks: false,
+      hasMetaDescription: true,
+      wordCount: content.split(" ").length,
+    };
+  }
+}
+```
+
+interface ValidationResult {
+isValid: boolean;
+issues: string[];
+suggestions: string[];
+}
+
+interface SEOCheckResult {
+hasHeadings: boolean;
+hasInternalLinks: boolean;
+hasMetaDescription: boolean;
+wordCount: number;
+}
+
+## Usage Examples
+
+### Basic Content Generation
+
+```typescript
+// Example: Generate technical blog post
+const technicalPost = BlogContentGenerator.generateStructure("tutorial");
+const optimizedContent = SEOOptimizer.optimizeContent(content, [
+  "typescript",
+  "react",
+]);
+const qaResult = ContentQA.validateStructure(optimizedContent, "technical");
+```
+
+### Template Integration
+
+```typescript
+// Example: Use existing template system
+const templatePath = TemplateSystem.getTemplatePath("technical");
+// Returns: "src/content/templates/engineering-template.md"
+
+const baseTemplate = TemplateSystem.getBaseTemplate();
+// Returns: "src/content/templates/_template.md"
+```
+
+## Integration with Content Workflow
+
+This blog-writer skill integrates seamlessly with the existing content creation workflow:
+
+1. **Template Selection** - Choose from `src/content/templates/`
+2. **Content Generation** - Use TypeScript interfaces for structure
+3. **SEO Optimization** - Apply automated SEO enhancements
+4. **Quality Assurance** - Validate structure and content quality
+5. **Voice Application** - Apply content-creator skill for authentic voice
+
+**Note:** This skill provides the technical implementation. For authentic voice guidance and storytelling frameworks, use the [/skills/content-creator/SKILL.md](cci:7://file:///home/dev/projects/nickthiru-dev/.windsurf/skills/content-creator/SKILL.md:0:0-0:0) skill.
+
+## Performance Tracking
 
 ````typescript
 // Content performance tracking

@@ -1,6 +1,6 @@
 ---
-name: weekly-content-planning
-description: Plan and execute weekly content creation for blog posts, social media, and newsletter. Use for strategic content distribution and audience growth.
+name: plan-weekly-content
+description: Plan and execute weekly content creation for blog posts, social media, and newsletter. This is the strategic engine that synthesizes thiru-ai-labs build logs into high-quality, SEO-optimized content for nickthiru.dev and strategic distribution across platforms. Use for strategic content distribution and audience growth.
 ---
 
 # Weekly Content Planning Workflow
@@ -8,6 +8,15 @@ description: Plan and execute weekly content creation for blog posts, social med
 ## Overview
 
 This workflow structures the 60-120 minute weekly process for creating canonical blog content and repurposing across platforms for maximum reach and impact.
+
+**Strategic Role**: This workflow is the strategic engine that maximizes the value of build log content, synthesizing thiru-ai-labs development work into high-quality, SEO-optimized content for nickthiru.dev and strategic distribution across platforms.
+
+**Content Creation Integration**:
+
+- **Voice guidance**: Use [/skills/content-creator/SKILL.md](cci:7://file:///home/dev/projects/nickthiru-dev/.windsurf/skills/content-creator/SKILL.md:0:0-0:0) for authentic voice and storytelling
+- **Technical implementation**: Use [/skills/blog-writer/SKILL.md](cci:7://file:///home/dev/projects/nickthiru-dev/.windsurf/skills/blog-writer/SKILL.md:0:0-0:0) for SEO optimization and templates
+- **Build log source**: Synthesizes development work from thiru-ai-labs/build-logs/ into strategic content
+- **Daily workflow connection**: Builds on content captured via [/workflows/capture-daily-content.md](cci:7://file:///home/dev/projects/nickthiru-dev/.windsurf/workflows/capture-daily-content.md:0:0-0:0)
 
 ## When to Use
 
@@ -88,7 +97,7 @@ This workflow structures the 60-120 minute weekly process for creating canonical
 **Write the Blog Post:**
 
 - Follow your outline exactly
-- Write in your authentic voice (refer to voice guide)
+- Write in your authentic voice (refer to [/skills/content-creator/SKILL.md](cci:7://file:///home/dev/projects/nickthiru-dev/.windsurf/skills/content-creator/SKILL.md:0:0-0:0) for comprehensive voice guidance)
 - Include specific numbers, dates, and details
 - Add code examples or screenshots where relevant
 - Ensure SEO optimization (keywords, meta description)

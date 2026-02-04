@@ -2,7 +2,7 @@
 
 ## Content Creation Context
 
-**For detailed voice specifications, storytelling frameworks, and authentic writing guidance, see the comprehensive style guide in `/src/content/posts/AGENTS.md`.**
+**For detailed voice specifications, storytelling frameworks, and authentic writing guidance, see the comprehensive style guide in `/skills/content-creator/SKILL.md`.**
 
 This file provides product-specific writing standards, build log frameworks, and product development storytelling guidelines. Use these in combination with the voice and style guidelines from the comprehensive style guide.
 

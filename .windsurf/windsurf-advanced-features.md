@@ -26,9 +26,9 @@ Workflows enable users to define a series of steps to guide Cascade through a re
 
 **Ref:** https://docs.windsurf.com/windsurf/cascade/workflows
 
-### 🤖 AGENTS.md
+### 🤖 Skills
 
-AGENTS.md files provide a simple way to give Cascade context-aware instructions that automatically apply based on where the file is located in your project. This is particularly useful for providing directory-specific coding guidelines, architectural decisions, or project conventions.
+Skills files provide expertise and capabilities for specific domains like content creation, AI development, and strategic planning.
 
 **Ref:** https://docs.windsurf.com/windsurf/cascade/agents-md
 
@@ -39,7 +39,7 @@ AGENTS.md files provide a simple way to give Cascade context-aware instructions 
 ```
 /home/dev/projects/nickthiru-dev/
 ├── src/content/
-│   └── AGENTS.md                 # Personal style guide (content directory)
+│   └── AGENTS.md                 # Personal style guide (legacy - moved to skills/content-creator/SKILL.md)
 ├── .windsurf/
 │   ├── global_rules.md           # Constructive feedback & critical thinking
 │   ├── rules/                    # Content & brand guidelines
@@ -52,8 +52,8 @@ AGENTS.md files provide a simple way to give Cascade context-aware instructions 
 │   │   ├── blog-writer/
 │   │   └── content-strategist/
 │   └── workflows/                # Content creation processes
-│       ├── daily-content-capture.md
-│       ├── weekly-content-planning.md
+│       ├── capture-daily-content.md
+│       ├── plan-weekly-content.md
 │       ├── write-business-blog-post.md
 │       ├── write-product-blog-post.md
 │       └── write-technical-blog-post.md
@@ -63,11 +63,11 @@ AGENTS.md files provide a simple way to give Cascade context-aware instructions 
 
 ## 🎯 Root & Content-Level Features
 
-### src/content/AGENTS.md
+### skills/content-creator/SKILL.md
 
-**Location:** `/home/dev/projects/nickthiru-dev/src/content/AGENTS.md`
+**Location:** `/home/dev/projects/nickthiru-dev/.windsurf/skills/content-creator/SKILL.md`
 
-**Purpose:** Comprehensive personal style guide defining authentic voice and writing style for blog posts.
+**Purpose:** Comprehensive personal branding and content creation expertise defining authentic voice, storytelling frameworks, and quality standards.
 
 **Key Sections:**
 
@@ -287,7 +287,7 @@ AGENTS.md files provide a simple way to give Cascade context-aware instructions 
 
 ## ⚙️ Workflows (Content Creation Processes)
 
-### `/daily-content-capture`
+### `/capture-daily-content`
 
 **Purpose:** Implement 15-30 minute daily routine for building in public content creation.
 
@@ -314,7 +314,7 @@ AGENTS.md files provide a simple way to give Cascade context-aware instructions 
 - Authentic, detailed content
 - Privacy compliance built-in
 
-### `/weekly-content-planning`
+### `/plan-weekly-content`
 
 **Purpose:** Plan and execute weekly content creation for blog posts, social media, and newsletter.
 
@@ -438,13 +438,13 @@ AGENTS.md files provide a simple way to give Cascade context-aware instructions 
 
 ### Daily Content Creation
 
-1. `/daily-content-capture` - 15-30 min routine
+1. `/capture-daily-content` - 15-30 min routine
 2. Reference workspace build logs (thiru-ai-labs/BUILD_LOG.md)
 3. Use **blog-writer** skill for optimization
 
 ### Weekly Content Strategy
 
-1. `/weekly-content-planning` - Review week's build logs
+1. `/plan-weekly-content` - Review week's build logs
 2. Use **content-strategist** skill for planning
 3. Create blog post with appropriate workflow:
    - `/write-technical-blog-post` for technical content
@@ -475,12 +475,12 @@ AGENTS.md files provide a simple way to give Cascade context-aware instructions 
 
 1. Use **content-strategist** skill for analysis
 2. Reference **audience-guidelines.md** for targeting
-3. `/weekly-content-planning` for distribution
-4. `/daily-content-capture` for consistency
+3. `/plan-weekly-content` for distribution
+4. `/capture-daily-content` for consistency
 
 ### Voice & Quality
 
-1. Reference **src/content/AGENTS.md** for complete style guide
+1. Reference **skills/content-creator/SKILL.md** for complete style guide
 2. Check **content-standards.md** for quality checklist
 3. Use **blog-writer** skill for voice consistency
 
@@ -499,7 +499,7 @@ AGENTS.md files provide a simple way to give Cascade context-aware instructions 
 - Use **blog-writer** skill for blog post creation
 - Apply appropriate writing rule (**technical-writing.md**, **business-writing.md**, or **product-writing.md**)
 - Follow **content-standards.md** for voice and authenticity
-- Reference **src/content/AGENTS.md** for complete style guide
+- Reference **skills/content-creator/SKILL.md** for complete style guide
 
 ### 3. Publication Phase
 
@@ -562,18 +562,18 @@ Custom documentation files like `windsurf-advanced-features.md` are ignored by W
 - Technical → `/write-technical-blog-post`
 - Business → `/write-business-blog-post`
 - Product → `/write-product-blog-post`
-- Voice check → **src/content/AGENTS.md**
+- Voice check → **skills/content-creator/SKILL.md**
 
 **For Content Strategy:**
 
-- Daily → `/daily-content-capture`
-- Weekly → `/weekly-content-planning`
+- Daily → `/capture-daily-content`
+- Weekly → `/plan-weekly-content`
 - Planning → **content-strategist** skill
 - Audience → **audience-guidelines.md**
 
 **For Voice & Quality:**
 
-- Complete guide → **src/content/AGENTS.md**
+- Complete guide → **skills/content-creator/SKILL.md**
 - Standards → **content-standards.md**
 - Category-specific → **technical-writing.md**, **business-writing.md**, **product-writing.md**
 
@@ -581,7 +581,7 @@ Custom documentation files like `windsurf-advanced-features.md` are ignored by W
 
 - Strategy → **content-strategist** skill
 - Guidelines → **audience-guidelines.md**
-- Distribution → `/weekly-content-planning`
+- Distribution → `/plan-weekly-content`
 
 ---
 
@@ -589,7 +589,7 @@ Custom documentation files like `windsurf-advanced-features.md` are ignored by W
 
 ### Authentic Voice Maintenance
 
-- **Personal stories:** Share real experiences and struggles (reference **src/content/AGENTS.md**)
+- **Personal stories:** Share real experiences and struggles (reference **skills/content-creator/SKILL.md**)
 - **Vulnerability:** Admit mistakes and learning moments
 - **Technical depth:** Provide real value without gatekeeping
 - **Conversational style:** Write like talking to a peer
@@ -610,4 +610,4 @@ Custom documentation files like `windsurf-advanced-features.md` are ignored by W
 
 ---
 
-This guide provides quick access to all Windsurf advanced features for Nick Thiru Dev. For detailed information on any feature, open the corresponding file in `.windsurf/` or reference **src/content/AGENTS.md** for the complete personal style guide.
+This guide provides quick access to all Windsurf advanced features for Nick Thiru Dev. For detailed information on any feature, open the corresponding file in `.windsurf/` or reference **skills/content-creator/SKILL.md** for the complete personal style guide.

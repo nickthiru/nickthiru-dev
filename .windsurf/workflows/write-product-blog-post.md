@@ -1,6 +1,6 @@
 ---
 name: write-product-blog-post
-description: Write a complete product blog post with development focus, user-centric messaging, and progress-oriented storytelling. Use when creating content from workspace build logs (thiru-ai-labs/BUILD_LOG.md), feature launches, product updates, or user feedback.
+description: Write a complete product blog post with development focus, user-centric messaging, and progress-oriented storytelling. This is the product content engine that transforms thiru-ai-labs build log development progress into compelling user stories. Use when creating content from workspace build logs (thiru-ai-labs/BUILD_LOG.md), feature launches, product updates, or user feedback.
 ---
 
 # Write Product Blog Post
@@ -8,6 +8,15 @@ description: Write a complete product blog post with development focus, user-cen
 ## Overview
 
 This workflow guides you through creating product-focused content that showcases development progress, highlights user value, and maintains momentum while sharing authentic build experiences.
+
+**Product Role**: This workflow is the product content engine that transforms thiru-ai-labs build log development progress into compelling user-centric product stories. It combines authentic development storytelling with user value communication for maximum engagement.
+
+**Content Creation Integration**:
+
+- **Voice guidance**: Use [/skills/content-creator/SKILL.md](cci:7://file:///home/dev/projects/nickthiru-dev/.windsurf/skills/content-creator/SKILL.md:0:0-0:0) for authentic voice and progress storytelling
+- **Technical implementation**: Use [/skills/blog-writer/SKILL.md](cci:7://file:///home/dev/projects/nickthiru-dev/.windsurf/skills/blog-writer/SKILL.md:0:0-0:0) for SEO optimization and product templates
+- **Build log source**: Direct transformation of development progress from thiru-ai-labs/build-logs/ into user stories
+- **Template usage**: Leverages product-template.md for structured product content
 
 ## Prerequisites
 
@@ -210,7 +219,7 @@ echo "Encourage user interaction:
 
 ## Product Content Templates
 
-### Use `templates/_product-template.md` structure:
+### Use `templates/product-template.md` structure:
 
 1. **What I Built** → How It Works → Why It Matters → The Challenge → Next Up
 

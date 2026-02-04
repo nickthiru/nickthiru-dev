@@ -1,6 +1,19 @@
-# Nick Thiru Personal Style Guide
+---
+name: content-creator
+description: Comprehensive personal branding and content creation expertise focused on authentic voice, storytelling frameworks, and content philosophy. Defines personal voice characteristics, storytelling patterns, privacy guidelines, and quality standards. Use as foundational expertise for authentic content creation across all platforms.
+license: MIT
+metadata:
+  author: nickthiru-dev
+  version: "1.0"
+---
 
-This guide defines my authentic voice and writing style for creating blog posts that sound like me, not an AI. Use this as the definitive reference for all content creation.
+# Content Creator Skill
+
+## Overview
+
+This skill provides comprehensive personal branding and content creation expertise that enables transformation of thiru-ai-labs build logs into compelling nickthiru.dev content. It's the foundational skill that all content creation rules reference and depend upon.
+
+**This guide defines my authentic voice and writing style for creating blog posts that sound like me, not an AI. Use this as the definitive reference for all content creation.**
 
 ## 🎭 My Voice & Personality
 
@@ -28,11 +41,21 @@ This guide defines my authentic voice and writing style for creating blog posts 
 
 ## 📝 Content Categories & Templates
 
+### Base Template Foundation
+
+All content starts with the **base template** at `src/content/templates/_template.md`, which provides:
+
+- Frontmatter structure (title, slug, description, track, tags, draft status)
+- Markdown formatting guidelines
+- References to category-specific templates
+
+**For technical implementation of template usage and automation, see the [/skills/blog-writer/SKILL.md](cci:7://file:///home/dev/projects/nickthiru-dev/.windsurf/skills/blog-writer/SKILL.md:0:0-0:0) skill.**
+
 ### Engineering Content (track: "technical")
 
 **Focus**: Technical deep-dives, architecture, debugging, production systems
 
-**Structure**: Use `templates/_engineering-template.md`
+**Structure**: Use `templates/engineering-template.md`
 
 - Problem Context → Failed Attempts → Breakthrough → Step-by-Step Solution → Testing → Production Considerations → Lessons Learned
 
@@ -42,7 +65,7 @@ This guide defines my authentic voice and writing style for creating blog posts 
 
 **Focus**: Pricing, growth, building in public, strategy, solo founder operations
 
-**Structure**: Use `templates/_business-template.md`
+**Structure**: Use `templates/business-template.md`
 
 - Transparency Decision → What I Shared → Business Impact → The Scary Part → What Happened → Guidelines for Others
 
@@ -52,7 +75,7 @@ This guide defines my authentic voice and writing style for creating blog posts 
 
 **Focus**: Build logs, feature launches, product updates, user feedback
 
-**Structure**: Use `templates/_product-template.md`
+**Structure**: Use `templates/product-template.md`
 
 - What I Built → How It Works → Why It Matters → The Challenge → Next Up
 
@@ -401,19 +424,21 @@ This guide defines my authentic voice and writing style for creating blog posts 
 
 ```
 src/content/
-├── AGENTS.md                 # This style guide (you are here)
+├── AGENTS.md                 # Legacy location (moved to skills/content-creator/SKILL.md)
 ├── posts/                    # Published blog posts only
 │   ├── building-linkedin-ghostwriter.md
 │   ├── langgraph-production-structure.md
 │   └── [other published posts...]
 ├── templates/                # Content templates for new posts
-│   ├── _template.md          # Basic frontmatter and structure
-│   ├── _engineering-template.md
-│   ├── _business-template.md
-│   └── _product-template.md
+│   ├── _template.md          # Basic frontmatter and structure (base template)
+│   ├── engineering-template.md    # Technical deep-dives and architecture
+│   ├── business-template.md       # Business insights and strategy
+│   └── product-template.md        # Product updates and build logs
 └── todo/                     # Personal content ideas (excluded from AI processing)
     └── [your draft ideas...]
 ```
+
+**Note:** For technical implementation of templates and automated content generation, use the [/skills/blog-writer/SKILL.md](cci:7://file:///home/dev/projects/nickthiru-dev/.windsurf/skills/blog-writer/SKILL.md:0:0-0:0) skill.
 
 **Note**: The `todo/` directory is excluded from AI processing. When you want the AI model to work on content from this directory, explicitly mention the specific file or blog post idea.
 

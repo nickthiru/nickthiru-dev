@@ -1,6 +1,6 @@
 ---
 name: daily-content-capture
-description: Implement the 15-30 minute daily routine for building in public content creation. Use for consistent content capture from development work.
+description: Implement the 15-30 minute daily routine for building in public content creation. This is the critical engine that transforms thiru-ai-labs build logs into consistent content for nickthiru.dev and social platforms. Use for consistent content capture from development work.
 ---
 
 # Daily Content Capture Workflow
@@ -8,6 +8,38 @@ description: Implement the 15-30 minute daily routine for building in public con
 ## Overview
 
 This workflow implements the proven 15-30 minute daily routine for building in public, turning development work into content systematically.
+
+**Critical Role**: This workflow is the engine that drives the entire content generation pipeline, transforming thiru-ai-labs build logs into consistent content for nickthiru.dev and social platforms.
+
+**Content Creation Integration**:
+
+- **Voice guidance**: Use [/skills/content-creator/SKILL.md](cci:7://file:///home/dev/projects/nickthiru-dev/.windsurf/skills/content-creator/SKILL.md:0:0-0:0) for authentic voice
+- **Technical implementation**: Use [/skills/blog-writer/SKILL.md](cci:7://file:///home/dev/projects/nickthiru-dev/.windsurf/skills/blog-writer/SKILL.md:0:0-0:0) for template automation
+- **Build log source**: Captures development work from thiru-ai-labs/build-logs/
+
+## Content Generation Pipeline
+
+This workflow operates at the critical intersection of:
+
+### Input Sources
+
+- **thiru-ai-labs/build-logs/** - Daily development work and insights
+- **Personal experiences** - Learning moments and challenges
+- **Technical discoveries** - Solutions and breakthroughs
+
+### Output Destinations
+
+- **LinkedIn posts** - Professional network engagement
+- **X/Twitter threads** - Real-time updates and insights
+- **nickthiru.dev blog** - Canonical content and tutorials
+- **Newsletter content** - Behind-the-scenes updates
+
+### Transformation Process
+
+1. **Capture during development** - Zero-effort build log entries
+2. **Daily transformation** - 15-30 minute content creation
+3. **Multi-platform distribution** - Optimized templates for each platform
+4. **Weekly synthesis** - Build log review → canonical blog posts
 
 ## When to Use
 

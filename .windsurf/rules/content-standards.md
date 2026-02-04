@@ -38,7 +38,7 @@
 
 ### Voice & Tone
 
-**For comprehensive voice specifications, personality characteristics, and post structure templates, see the detailed style guide in [/src/content/posts/AGENTS.md](cci:7://file:///home/dev/projects/nickthiru-dev/src/content/posts/AGENTS.md:0:0-0:0).**
+**For comprehensive voice specifications, personality characteristics, and post structure templates, see the detailed style guide in [/skills/content-creator/SKILL.md](cci:7://file:///home/dev/projects/nickthiru-dev/.windsurf/skills/content-creator/SKILL.md:0:0-0:0).**
 
 This file provides high-level voice philosophy and brand standards:
 

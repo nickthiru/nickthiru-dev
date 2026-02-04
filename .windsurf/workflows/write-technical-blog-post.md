@@ -1,6 +1,6 @@
 ---
 name: write-technical-blog-post
-description: Write a complete technical blog post with authentic voice, proper structure, SEO optimization, and engagement elements. Use when creating new technical content for the blog.
+description: Write a complete technical blog post with authentic voice, proper structure, SEO optimization, and engagement elements. This is the technical content engine that transforms thiru-ai-labs build log challenges into comprehensive tutorials. Use when creating new technical content for the blog.
 ---
 
 # Write Technical Blog Post
@@ -8,6 +8,15 @@ description: Write a complete technical blog post with authentic voice, proper s
 ## Overview
 
 This workflow guides you through creating an authentic, engaging technical blog post that resonates with technical founders while maintaining personal voice and maximizing SEO impact.
+
+**Technical Role**: This workflow is the technical content engine that transforms thiru-ai-labs build log challenges into comprehensive, authentic technical blog posts. It combines deep technical expertise with conversational storytelling for maximum educational value.
+
+**Content Creation Integration**:
+
+- **Voice guidance**: Use [/skills/content-creator/SKILL.md](cci:7://file:///home/dev/projects/nickthiru-dev/.windsurf/skills/content-creator/SKILL.md:0:0-0:0) for authentic voice and storytelling frameworks
+- **Technical implementation**: Use [/skills/blog-writer/SKILL.md](cci:7://file:///home/dev/projects/nickthiru-dev/.windsurf/skills/blog-writer/SKILL.md:0:0-0:0) for SEO optimization and technical templates
+- **Build log source**: Transforms technical challenges from thiru-ai-labs/build-logs/ into comprehensive tutorials
+- **Template usage**: Leverages engineering-template.md for structured technical content
 
 ## Prerequisites
 
@@ -509,7 +518,7 @@ async function solveRealWorldProblem(input: string) {
 
 ## Technical Content Templates
 
-### Use `templates/_engineering-template.md` structure:
+### Use `templates/engineering-template.md` structure:
 
 1. **Problem Context** → Failed Attempts → Breakthrough → Step-by-Step Solution → Testing → Production Considerations → Lessons Learned
 

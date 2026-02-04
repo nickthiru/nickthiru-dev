@@ -2,7 +2,7 @@
 
 ## Content Creation Context
 
-**For complete voice guidance, personality characteristics, and authentic writing style, refer to the comprehensive style guide in `/src/content/posts/AGENTS.md`.**
+**For complete voice guidance, personality characteristics, and authentic writing style, refer to the comprehensive style guide in `/skills/content-creator/SKILL.md`.**
 
 This file focuses on **Engineering** content standards, SEO optimization, and content creation processes. Combine these guidelines with the voice specifications from the style guide for optimal results.
 

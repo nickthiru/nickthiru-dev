@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Thin wrapper to run the asi CLI without installation
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PYTHONPATH="${SCRIPT_DIR}/src" exec python3 -m asi.cli "$@"

@@ -1,0 +1,20 @@
+{
+  "topic": "nickthiru-dev content creation skills",
+  "status": "complete",
+  "steps_completed": [
+    "init",
+    "schema",
+    "plan",
+    "run",
+    "read_entrypoints",
+    "produce_notes",
+    "produce_sources"
+  ],
+  "entrypoints_read": 12,
+  "asi_sources_read": 17,
+  "artifacts": [
+    ".asi/onboard/NOTES.md",
+    ".asi/onboard/SOURCES.md",
+    ".asi/onboard/STATE.json"
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "ask_set": {
+    "iteration_id": "525f7e42509e2dbb52a7ff7b64d674a437b4d9f8bf878b02a7f392afb539e754",
+    "questions": [
+      {
+        "answer_kind": "string",
+        "context": "Name must be explicit and canonical (no inference).",
+        "decision_key": "skill_name",
+        "id": "creator.skill_name",
+        "options": [
+          {
+            "description": "Keep existing name, matches current skill being replaced",
+            "impact": "Zero confusion, direct replacement",
+            "label": "content-creator",
+            "value": "content-creator"
+          },
+          {
+            "description": "Emphasizes voice + pipeline responsibility",
+            "impact": "New name, may confuse existing references",
+            "label": "voice-pipeline",
+            "value": "voice-pipeline"
+          },
+          {
+            "description": "Emphasizes foundational role for other content skills",
+            "impact": "New name, clearer hierarchy",
+            "label": "content-foundation",
+            "value": "content-foundation"
+          },
+          {
+            "description": "Provide your own answer",
+            "impact": "User-provided value",
+            "label": "Respond with an alternative",
+            "value": "__alternative__"
+          }
+        ],
+        "prompt": "What is the skill name?",
+        "recommended": 1,
+        "value_constraints": {
+          "max_length": 80,
+          "min_length": 1,
+          "regex": "^[a-z0-9][a-z0-9-]*$"
+        }
+      },
+      {
+        "answer_kind": "string",
+        "context": "Purpose must be explicit and scoped to a single skill capability.",
+        "decision_key": "skill_purpose",
+        "id": "creator.skill_purpose",
+        "options": [
+          {
+            "description": "Covers voice, pipeline, and privacy as foundational policies",
+            "impact": "Broad foundational scope, other content skills depend on this",
+            "label": "Voice + pipeline + privacy",
+            "value": "Define authentic voice characteristics, content creation pipeline, and privacy policies for all content produced on nickthiru.dev"
+          },
+          {
+            "description": "Narrowly scoped to voice and style only",
+            "impact": "Narrower scope, pipeline and privacy would need separate skills",
+            "label": "Voice only",
+            "value": "Define and enforce authentic voice characteristics and writing style for all content on nickthiru.dev"
+          },
+          {
+            "description": "Broad orchestrator covering everything",
+            "impact": "Too broad, violates single-responsibility",
+            "label": "Full content orchestration",
+            "value": "Orchestrate all content creation including voice, pipeline, strategy, SEO, and distribution for nickthiru.dev"
+          },
+          {
+            "description": "Provide your own answer",
+            "impact": "User-provided value",
+            "label": "Respond with an alternative",
+            "value": "__alternative__"
+          }
+        ],
+        "prompt": "What is the primary purpose of the skill?",
+        "recommended": 1,
+        "value_constraints": {
+          "max_length": 200,
+          "min_length": 1
+        }
+      },
+      {
+        "answer_kind": "path_repo_relative",
+        "context": "Provide a repo-relative directory path.",
+        "decision_key": "target_directory",
+        "id": "creator.target_directory",
+        "options": [
+          {
+            "description": "Standard Windsurf skills location, replaces existing monolithic skill",
+            "impact": "Direct replacement of current skill directory",
+            "label": ".windsurf/skills/content-creator",
+            "value": ".windsurf/skills/content-creator"
+          },
+          {
+            "description": "Nested under asi/ subdirectory to separate from tooling",
+            "impact": "New directory structure, requires Windsurf config update",
+            "label": ".windsurf/skills/asi/content-creator",
+            "value": ".windsurf/skills/asi/content-creator"
+          },
+          {
+            "description": "Top-level skills directory outside .windsurf",
+            "impact": "Non-standard location, Windsurf may not auto-detect",
+            "label": "skills/content-creator",
+            "value": "skills/content-creator"
+          },
+          {
+            "description": "Provide your own answer",
+            "impact": "User-provided value",
+            "label": "Respond with an alternative",
+            "value": "__alternative__"
+          }
+        ],
+        "prompt": "Where should the skill live in the repo?",
+        "recommended": 1,
+        "value_constraints": {
+          "max_length": 200,
+          "min_length": 1,
+          "must_not_contain": [
+            ".."
+          ],
+          "must_not_start_with": [
+            "/",
+            "~"
+          ]
+        }
+      }
+    ]
+  },
+  "ask_set_id": "dfb4523787ebcb8accf132a884c952196c22ccd3d98d47d4cdf69332c3031da8"
+}

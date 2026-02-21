@@ -1,0 +1,41 @@
+{
+  "answers": [
+    {
+      "alternative_text": null,
+      "question_id": "creator.skill_name",
+      "selection": 1,
+      "user_confirmation": false
+    },
+    {
+      "alternative_text": null,
+      "question_id": "creator.skill_purpose",
+      "selection": 1,
+      "user_confirmation": false
+    },
+    {
+      "alternative_text": null,
+      "question_id": "creator.target_directory",
+      "selection": 1,
+      "user_confirmation": false
+    }
+  ],
+  "applied_at": "2026-02-12T08:39:51.514111+00:00",
+  "ask_set_id": "dfb4523787ebcb8accf132a884c952196c22ccd3d98d47d4cdf69332c3031da8",
+  "decisions": {
+    "skill_name": {
+      "ask_set_id": "dfb4523787ebcb8accf132a884c952196c22ccd3d98d47d4cdf69332c3031da8",
+      "source": "option",
+      "value": "content-creator"
+    },
+    "skill_purpose": {
+      "ask_set_id": "dfb4523787ebcb8accf132a884c952196c22ccd3d98d47d4cdf69332c3031da8",
+      "source": "option",
+      "value": "Define authentic voice characteristics, content creation pipeline, and privacy policies for all content produced on nickthiru.dev"
+    },
+    "target_directory": {
+      "ask_set_id": "dfb4523787ebcb8accf132a884c952196c22ccd3d98d47d4cdf69332c3031da8",
+      "source": "option",
+      "value": ".windsurf/skills/content-creator"
+    }
+  }
+}

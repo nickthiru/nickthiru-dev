@@ -37,11 +37,6 @@
       {/each}
       
       <li>
-        <a href="/subscribe" class="btn-primary">
-          Subscribe
-        </a>
-      </li>
-      <li>
         <ThemeToggle />
       </li>
     </ul>
@@ -85,9 +80,6 @@
             </a>
           </li>
         {/each}
-        <li class="pt-4 border-t border-border dark:border-[#6362626c]">
-          <a href="/subscribe" class="block nav-link" onclick={closeMenu}>Subscribe</a>
-        </li>
       </ul>
     </div>
   {/if}

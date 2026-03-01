@@ -59,7 +59,7 @@
 
   .btn-primary {
     @apply inline-flex items-center gap-2 bg-accent text-white px-5 py-2.5 rounded-md font-medium
-           hover:bg-accent-hover hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2
+           hover:bg-accent-hover hover:gap-3 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2
            transition-all duration-200
            dark:bg-accent dark:hover:bg-accent-hover dark:ring-offset-[#1A1A2E];
   }
@@ -73,7 +73,7 @@
 
   .post-card {
     @apply bg-surface border border-border rounded-lg p-6
-           hover:-translate-y-0.5 hover:shadow-md transition-[transform,box-shadow] duration-300 ease-out
+           hover:shadow-lg transition-all duration-300 ease-out
            dark:bg-[#16213E] dark:border-[#262626];
   }
 

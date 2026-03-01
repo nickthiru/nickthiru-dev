@@ -8,7 +8,7 @@ interface BaseProject {
   id: string;
   name: string;
   description: string;
-  status: "building" | "live" | "idea" | "archived";
+  status: "Building" | "Live" | "Idea" | "Archived";
   url?: string;
   featured?: boolean;
 }
@@ -42,7 +42,7 @@ export const projects: Project[] = [
     tagline: "Now Building",
     description:
       "Turn voice notes into authentic LinkedIn posts. Style learning, quality gates, and scheduling built-in. For founders who want to post consistently without sounding like corporate AI.",
-    status: "building",
+    status: "Building",
     url: "https://thiruailabs.com/products/linkedin-ghostwriter",
     productUrl: "https://thiruailabs.com/products/linkedin-ghostwriter",
     blogPostTags: [
@@ -61,7 +61,7 @@ export const projects: Project[] = [
     name: "Competitor Intelligence Agent",
     description:
       "Automated competitor monitoring and analysis. Track product changes, pricing updates, and market positioning. Get weekly intelligence reports without manual research.",
-    status: "idea",
+    status: "Idea",
     featured: false,
   },
   {
@@ -70,7 +70,7 @@ export const projects: Project[] = [
     name: "VC Due Diligence Agent",
     description:
       "Streamline investment due diligence with automated research, document analysis, and risk assessment. Built for venture capital firms evaluating early-stage startups.",
-    status: "idea",
+    status: "Idea",
     featured: false,
   },
 ];

@@ -12,11 +12,15 @@
 
 <article class="post-card h-full">
   <a href="/writing/{post.slug}" class="flex flex-col h-full group">
-    <div class="flex flex-wrap items-center gap-x-3 gap-y-2 mb-3">
-      <TrackBadge track={post.track} />
-      <span class="text-small text-muted dark:text-[#A3A3A3] whitespace-nowrap">{formatDateShort(post.publishedAt)}</span>
-      <span class="text-small text-muted dark:text-[#A3A3A3] hidden sm:inline">·</span>
-      <span class="text-small text-muted dark:text-[#A3A3A3] whitespace-nowrap">{post.readingTime}</span>
+    <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-3">
+      <div class="self-start sm:self-auto shrink-0">
+        <TrackBadge track={post.track} />
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="text-small text-muted dark:text-[#A3A3A3] whitespace-nowrap">{formatDateShort(post.publishedAt)}</span>
+        <span class="text-small text-muted dark:text-[#A3A3A3]">·</span>
+        <span class="text-small text-muted dark:text-[#A3A3A3] whitespace-nowrap">{post.readingTime}</span>
+      </div>
     </div>
     
     <h3 class="text-h4 text-primary dark:text-[#FAFAFA] group-hover:text-accent transition-colors mb-2">

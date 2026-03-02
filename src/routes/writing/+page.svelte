@@ -16,9 +16,9 @@
   <header class="mb-12">
     <h1 class="text-h1 text-primary dark:text-[#FAFAFA] mb-4">Writing</h1>
     <p class="text-xl text-secondary dark:text-[#D4D4D4] mb-6">
-      I write about building agentic AI systems from three perspectives:
+      I write about building agentic AI systems from three main perspectives: Engineering, business, and product.
     </p>
-    <div class="grid md:grid-cols-3 gap-6 mb-8 items-start">
+    <div class="grid md:grid-cols-3 gap-6 mt-8 mb-12 items-start">
       <div class="bg-blue-lighter/30 border border-blue-lighter rounded-lg p-5 dark:bg-blue-darker/20 dark:border-blue-darker/40 h-full">
         <h2 class="text-h5 text-primary dark:text-[#FAFAFA] mb-4 flex items-center gap-2">
           <span class="track-badge track-badge-technical">Engineering</span>

@@ -9,23 +9,23 @@
 
 <SEO 
   title="Engineering"
-  description="Architecture patterns, build logs, benchmarks, and postmortems."
+  description="Architecture decisions, implementation challenges, and general insights on agentic AI systems."
 />
 
 <section class="mx-auto max-w-page px-6 md:px-8 py-12 md:py-16">
   <header class="mb-12">
     <h1 class="text-h1 text-primary dark:text-[#FAFAFA] mb-4">Engineering</h1>
     <p class="text-xl text-secondary dark:text-[#D4D4D4] mb-8">
-      Architecture patterns, build logs, benchmarks, and postmortems.
+      Detailed technical breakdowns of architecture decisions, implementation challenges, and general insights on agentic AI systems and industry trends.
     </p>
     <FilterPills />
   </header>
 
-  <div class="space-y-6">
+  <div class="grid gap-6 md:grid-cols-2">
     {#each data.posts as post}
       <PostCard {post} />
     {:else}
-      <p class="text-secondary dark:text-[#D4D4D4]">No engineering posts yet. Check back soon!</p>
+      <p class="text-secondary dark:text-[#D4D4D4] md:col-span-2">No engineering posts yet. Check back soon!</p>
     {/each}
   </div>
 </section>

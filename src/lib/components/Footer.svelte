@@ -4,10 +4,10 @@
 
 <footer class="border-t border-border bg-background dark:bg-[#1A1A2E] dark:border-[#262626] mt-16">
   <div class="mx-auto max-w-page px-6 py-12 md:px-8">
-    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+    <div class="flex flex-col items-center md:flex-row md:items-center md:justify-between gap-8">
       <!-- Nav links -->
       <nav aria-label="Footer navigation">
-        <ul class="flex flex-wrap gap-6 text-small">
+        <ul class="flex flex-wrap justify-center gap-6 text-small">
           {#each siteConfig.footerNav as item}
             <li>
               <a href={item.href} class="text-secondary dark:text-[#D4D4D4] hover:text-accent transition-colors">
@@ -56,7 +56,7 @@
       </div>
     </div>
 
-    <div class="mt-8 pt-8 border-t border-border dark:border-[#262626] flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+    <div class="mt-8 pt-8 border-t border-border dark:border-[#262626] flex flex-col items-center md:flex-row md:items-center md:justify-between gap-6">
       <!-- Thiru AI Labs branding -->
       <a 
         href="https://thiruailabs.com" 

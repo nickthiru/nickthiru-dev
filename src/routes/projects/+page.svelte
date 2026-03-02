@@ -17,9 +17,9 @@
 
 <section class="mx-auto max-w-page px-6 md:px-8 py-12 md:py-16">
   <header class="mb-12">
-    <h1 class="text-h1 text-primary dark:text-[#FAFAFA] mb-4">Projects</h1>
+    <h1 class="text-h1 text-primary dark:text-[#FAFAFA] mb-8">Projects</h1>
     <p class="text-xl text-secondary dark:text-[#D4D4D4]">
-      Products and systems I am building through my solo AI systems studio, <a 
+      Products and systems I build through my solo AI systems studio, <a 
         href="https://thiruailabs.com/products"
         target="_blank"
         rel="noopener noreferrer"

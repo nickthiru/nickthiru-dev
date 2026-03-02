@@ -23,9 +23,11 @@
       {post.title}
     </h3>
     
-    <p class="text-secondary dark:text-[#D4D4D4] line-clamp-2 flex-grow">
-      {post.description}
-    </p>
+    <div class="flex-grow">
+      <p class="text-secondary dark:text-[#D4D4D4] line-clamp-2">
+        {post.description}
+      </p>
+    </div>
     
     {#if post.tags && post.tags.length > 0}
       <div class="flex flex-wrap gap-2 mt-4 pt-2">

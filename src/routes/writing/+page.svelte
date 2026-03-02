@@ -18,30 +18,51 @@
     <p class="text-xl text-secondary dark:text-[#D4D4D4] mb-6">
       I write about building agentic AI systems from three perspectives:
     </p>
-    <div class="grid md:grid-cols-3 gap-6 mb-8">
-      <div class="bg-blue-lighter/30 border border-blue-lighter rounded-lg p-5 dark:bg-blue-darker/20 dark:border-blue-darker/40">
-        <h2 class="text-h5 text-primary dark:text-[#FAFAFA] mb-2 flex items-center gap-2">
+    <div class="grid md:grid-cols-3 gap-6 mb-8 items-start">
+      <div class="bg-blue-lighter/30 border border-blue-lighter rounded-lg p-5 dark:bg-blue-darker/20 dark:border-blue-darker/40 h-full">
+        <h2 class="text-h5 text-primary dark:text-[#FAFAFA] mb-4 flex items-center gap-2">
           <span class="track-badge track-badge-technical">Engineering</span>
         </h2>
-        <p class="text-secondary dark:text-[#D4D4D4] text-body">
-          Technical deep-dives on full agentic AI architecture, prompt engineering, quality gates, production patterns, and more.
-        </p>
+        <div class="space-y-4">
+          <div>
+            <span class="block font-medium text-primary dark:text-[#FAFAFA] text-sm">Engineering Deep-Dives</span>
+            <span class="text-secondary dark:text-[#D4D4D4] text-sm leading-relaxed block mt-1">Architecture decisions, implementation challenges, and solutions.</span>
+          </div>
+          <div>
+            <span class="block font-medium text-primary dark:text-[#FAFAFA] text-sm">Technical Writing</span>
+            <span class="text-secondary dark:text-[#D4D4D4] text-sm leading-relaxed block mt-1">General agentic AI insights, industry trends, and emerging patterns.</span>
+          </div>
+        </div>
       </div>
-      <div class="bg-pink-lighter/30 border border-pink-lighter rounded-lg p-5 dark:bg-pink-darker/20 dark:border-pink-darker/40">
-        <h2 class="text-h5 text-primary dark:text-[#FAFAFA] mb-2 flex items-center gap-2">
+      <div class="bg-pink-lighter/30 border border-pink-lighter rounded-lg p-5 dark:bg-pink-darker/20 dark:border-pink-darker/40 h-full">
+        <h2 class="text-h5 text-primary dark:text-[#FAFAFA] mb-4 flex items-center gap-2">
           <span class="track-badge track-badge-business">Business</span>
         </h2>
-        <p class="text-secondary dark:text-[#D4D4D4] text-body">
-          Practical insights on pricing, distribution, building in public, and running a portfolio of AI products as a solo founder, and more.
-        </p>
+        <div class="space-y-4">
+          <div>
+            <span class="block font-medium text-primary dark:text-[#FAFAFA] text-sm">Business & Operations</span>
+            <span class="text-secondary dark:text-[#D4D4D4] text-sm leading-relaxed block mt-1">Practical insights on pricing, distribution, and running a portfolio.</span>
+          </div>
+          <div>
+            <span class="block font-medium text-primary dark:text-[#FAFAFA] text-sm">Metrics & Progress</span>
+            <span class="text-secondary dark:text-[#D4D4D4] text-sm leading-relaxed block mt-1">Real numbers and honest updates on what's working and what's not.</span>
+          </div>
+        </div>
       </div>
-      <div class="bg-accent/10 border border-accent/20 rounded-lg p-5 dark:bg-accent/20 dark:border-accent/40">
-        <h2 class="text-h5 text-primary dark:text-[#FAFAFA] mb-2 flex items-center gap-2">
+      <div class="bg-accent/10 border border-accent/20 rounded-lg p-5 dark:bg-accent/20 dark:border-accent/40 h-full">
+        <h2 class="text-h5 text-primary dark:text-[#FAFAFA] mb-4 flex items-center gap-2">
           <span class="track-badge track-badge-product">Product</span>
         </h2>
-        <p class="text-secondary dark:text-[#D4D4D4] text-body">
-          Build logs, learnings, and updates on AI products developed and shipped for Thiru AI Labs, and more.
-        </p>
+        <div class="space-y-4">
+          <div>
+            <span class="block font-medium text-primary dark:text-[#FAFAFA] text-sm">Product News</span>
+            <span class="text-secondary dark:text-[#D4D4D4] text-sm leading-relaxed block mt-1">Build logs, learnings, and updates on shipped AI products.</span>
+          </div>
+          <div>
+            <span class="block font-medium text-primary dark:text-[#FAFAFA] text-sm">Community Feedback</span>
+            <span class="text-secondary dark:text-[#D4D4D4] text-sm leading-relaxed block mt-1">Iterating on products based on user requests and collaboration.</span>
+          </div>
+        </div>
       </div>
     </div>
     <FilterPills />

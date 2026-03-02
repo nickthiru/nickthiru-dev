@@ -28,7 +28,14 @@
         Building agentic AI systems that ship.
       </h1>
       <p class="text-xl text-secondary dark:text-[#D4D4D4] leading-relaxed mb-6">
-        I'm an AI systems architect building complete production systems for agentic AI—from LangGraph orchestration to AWS infrastructure, custom dashboards, and everything needed to ship reliably. 
+        I am the founder of, and AI systems architect & engineer at, <a
+        href="https://thiruailabs.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-accent hover:underline inline-flex items-center gap-1"
+      >
+        Thiru AI Labs
+      </a>. I build complete production systems for agentic AI—from LangGraph orchestration to AWS infrastructure, custom dashboards, and everything else needed to ship reliably. 
         I also write about and share my expertise on the engineering and the business of making AI agents work in production.
       </p>
     </div>

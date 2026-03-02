@@ -14,7 +14,7 @@
 
 <section class="mx-auto max-w-page px-6 md:px-8 py-12 md:py-16">
   <header class="mb-12">
-    <h1 class="text-h1 text-primary dark:text-[#FAFAFA] mb-4">Product</h1>
+    <h1 class="text-h1 text-primary dark:text-[#FAFAFA] mb-6">Product</h1>
     <p class="text-xl text-secondary dark:text-[#D4D4D4] mb-8">
       Build logs, learnings, updates on shipped AI products, and iterating based on community feedback.
     </p>

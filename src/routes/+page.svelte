@@ -13,7 +13,7 @@
 
 <!-- Hero Section -->
 <section class="mx-auto max-w-page px-6 md:px-8 py-16 md:py-24">
-  <div class="grid md:grid-cols-[1fr,auto] gap-8 md:gap-16 items-center">
+  <div class="flex flex-col md:flex-row gap-8 md:gap-16 items-center">
     <!-- Mobile photo - appears first on mobile -->
     <div class="md:hidden flex justify-center mb-4">
       <img 
@@ -23,20 +23,22 @@
       />
     </div>
     
-    <div class="max-w-prose">
+    <div class="max-w-2xl">
       <h1 class="text-h1 text-primary dark:text-[#FAFAFA] mb-6">
         Building agentic AI systems that ship.
       </h1>
-      <p class="text-xl text-secondary dark:text-[#D4D4D4] leading-relaxed mb-6">
-        I am the founder of, and AI systems architect & engineer at, <a
+      <p class="text-xl text-secondary dark:text-[#D4D4D4] leading-relaxed mb-4">
+        I'm the Founder and AI Systems Architect & Engineer at <a
         href="https://thiruailabs.com"
         target="_blank"
         rel="noopener noreferrer"
         class="text-accent hover:underline inline-flex items-center gap-1"
       >
         Thiru AI Labs
-      </a>. I build complete production systems for agentic AI—from LangGraph orchestration to AWS infrastructure, custom dashboards, and everything else needed to ship reliably. 
-        I also write about and share my expertise on the engineering and the business of making AI agents work in production.
+      </a>, building full-stack, agentic AI SaaS products and bespoke systems—secure, data-isolated, reliable, and production-grade—for the real world.
+      </p>
+      <p class="text-xl text-secondary dark:text-[#D4D4D4] leading-relaxed mb-6">
+        I also write about the engineering, product, and business lessons from my journey.
       </p>
     </div>
     

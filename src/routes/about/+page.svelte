@@ -38,25 +38,12 @@
       </p>
 
       <p>
-        I also offer consulting services for teams building agentic AI systems through <a href="https://thiruailabs.com/consult" target="_blank" rel="noopener noreferrer">Thiru AI Labs</a>.
+        I also offer <a href="https://thiruailabs.com/consult" target="_blank" rel="noopener noreferrer">consulting</a> services for teams building agentic AI systems.
       </p>
 
       <p>
         I work remotely and share my journey publicly on this website.
       </p>
-
-      <h2>Get in touch</h2>
-      <p>
-        The best way to reach me is via email at <a href="mailto:{siteConfig.author.email}">{siteConfig.author.email}</a>.
-      </p>
-      <p>
-        You can also find me on:
-      </p>
-      <ul>
-        <li><a href={siteConfig.social.twitter} target="_blank" rel="noopener noreferrer">Twitter/X</a></li>
-        <li><a href={siteConfig.social.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-        <li><a href={siteConfig.social.github} target="_blank" rel="noopener noreferrer">GitHub</a></li>
-      </ul>
     </div>
   </div>
 </section>

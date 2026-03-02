@@ -60,7 +60,7 @@
           bind:value={firstName}
           placeholder="First name (optional)"
           disabled={status === 'loading'}
-          class="w-full px-3 py-2 text-sm rounded-md border border-border bg-surface text-primary placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+          class="w-full px-3 py-2 text-base rounded-md border border-border bg-surface text-primary placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
         />
       </div>
       <div class="flex-grow">
@@ -72,11 +72,11 @@
           placeholder="Email"
           required
           disabled={status === 'loading'}
-          class="w-full px-3 py-2 text-sm rounded-md border border-border bg-surface text-primary placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+          class="w-full px-3 py-2 text-base rounded-md border border-border bg-surface text-primary placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
         />
       </div>
     </div>
-    <button type="submit" class="btn-primary !py-2 !px-4 text-sm w-full sm:w-auto flex items-center justify-center" disabled={status === 'loading'}>
+    <button type="submit" class="btn-primary !py-2 !px-4 text-base w-full sm:w-auto flex items-center justify-center" disabled={status === 'loading'}>
       {#if status === 'loading'}
         <span class="inline-flex items-center">
           Subscribing<span class="loading-dots inline-block w-6 text-left"></span>

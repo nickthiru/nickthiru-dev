@@ -19,7 +19,7 @@
       <img 
         src="/profile-picture.jpeg" 
         alt="Nick Thiru" 
-        class="w-32 border-4 border-accent/20 rounded-lg"
+        class="w-32 rounded-lg shadow-xl"
       />
     </div>
     
@@ -31,21 +31,6 @@
         I'm an AI systems architect building complete production systems for agentic AI—from LangGraph orchestration to AWS infrastructure, custom dashboards, and everything needed to ship reliably. 
         I also write about and share my expertise on the engineering and the business of making AI agents work in production.
       </p>
-      <p class="text-large text-muted dark:text-[#A3A3A3] mb-8">
-        <a href="/writing/what-are-ai-agents" class="text-accent hover:underline">
-          What are AI agents and agentic systems, anyway? →
-        </a>
-      </p>
-      <div class="flex flex-wrap gap-4">
-        <a href="/writing" class="btn-primary">
-          Read my writing
-          <span aria-hidden="true">→</span>
-        </a>
-        <a href="/projects" class="btn-secondary">
-          See what I'm building
-          <span aria-hidden="true">→</span>
-        </a>
-      </div>
     </div>
     
     <!-- Desktop photo - appears on right side -->
@@ -53,7 +38,7 @@
       <img 
         src="/profile-picture.jpeg" 
         alt="Nick Thiru" 
-        class="w-56 border-4 border-accent/20 rounded-lg"
+        class="w-56 rounded-lg shadow-xl"
       />
     </div>
   </div>
@@ -77,15 +62,15 @@
 
 <!-- Subscribe Section -->
 <section class="mx-auto max-w-page px-6 md:px-8 py-12 border-t border-border dark:border-[#262626]">
-  <div class="bg-accent/5 border border-accent/20 rounded-lg p-8 md:p-10 dark:bg-accent/10 dark:border-accent/30">
-    <div class="grid gap-8 md:gap-12 md:grid-cols-[1fr,420px] md:items-center">
+  <div class="bg-accent/5 border border-accent/20 rounded-lg p-8 md:p-10 dark:bg-accent/10 dark:border-accent/30 max-w-3xl mx-auto">
+    <div class="flex flex-col gap-6 text-center items-center">
       <div class="max-w-prose">
         <h2 class="text-h3 text-primary dark:text-[#FAFAFA] mb-3">Subscribe</h2>
         <p class="text-secondary dark:text-[#D4D4D4]">
-          Get new posts in your inbox. No spam, unsubscribe anytime. Or <a href="mailto:{siteConfig.author.email}" class="text-accent hover:underline">email me directly</a>.
+          Get new posts in your inbox. No spam, unsubscribe anytime.
         </p>
       </div>
-      <div class="w-full">
+      <div class="w-full max-w-md">
         <SubscribeForm tag="home" helper="none" />
       </div>
     </div>

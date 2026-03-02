@@ -55,7 +55,7 @@
 
 <!-- Recent Posts Section -->
 <section class="mx-auto max-w-page px-6 md:px-8 py-12 border-t border-border dark:border-[#262626]" >
-  <div class="flex items-center justify-between mb-8">
+  <div class="flex items-baseline justify-between mb-8">
     <h2 class="text-h2 text-primary dark:text-[#FAFAFA]">Recent writing</h2>
     <a href="/writing" class="hover:text-accent font-medium">
       View all <span aria-hidden="true">→</span>
@@ -88,7 +88,7 @@
 
 <!-- Projects Section -->
 <section class="mx-auto max-w-page px-6 md:px-8 py-12 border-t border-border dark:border-[#262626]">
-  <div class="flex items-center justify-between mb-8">
+  <div class="flex items-baseline justify-between mb-8">
     <h2 class="text-h2 text-primary dark:text-[#FAFAFA]">Current projects</h2>
     <a href="/projects" class="hover:text-accent font-medium">
       View all <span aria-hidden="true">→</span>

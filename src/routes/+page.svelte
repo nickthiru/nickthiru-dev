@@ -12,18 +12,18 @@
 <SEO />
 
 <!-- Hero Section -->
-<section class="mx-auto max-w-page px-6 md:px-8 py-16 md:py-24">
-  <div class="flex flex-col md:flex-row gap-8 md:gap-16 items-center">
-    <!-- Mobile photo - appears first on mobile -->
-    <div class="md:hidden flex justify-center mb-4">
+<section class="mx-auto max-w-page px-6 md:px-8 py-16 lg:py-24">
+  <div class="flex flex-col lg:flex-row gap-8 lg:gap-32 items-center">
+    <!-- Mobile/Tablet photo - appears first on smaller screens -->
+    <div class="lg:hidden flex justify-center mb-4">
       <img 
         src="/profile-picture.jpeg" 
         alt="Nick Thiru" 
-        class="w-32 rounded-lg shadow-xl"
+        class="w-32 md:w-48 rounded-lg shadow-xl"
       />
     </div>
     
-    <div class="max-w-2xl">
+    <div class="max-w-2xl text-center lg:text-left">
       <h1 class="text-h1 text-primary dark:text-[#FAFAFA] mb-6">
         Building agentic AI systems that ship.
       </h1>
@@ -43,7 +43,7 @@
     </div>
     
     <!-- Desktop photo - appears on right side -->
-    <div class="hidden md:block">
+    <div class="hidden lg:block shrink-0">
       <img 
         src="/profile-picture.jpeg" 
         alt="Nick Thiru" 

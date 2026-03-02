@@ -47,11 +47,11 @@
     <FilterPills />
   </header>
 
-  <div class="space-y-6">
+  <div class="grid gap-6 md:grid-cols-2">
     {#each data.posts as post}
       <PostCard {post} />
     {:else}
-      <p class="text-secondary dark:text-[#D4D4D4]">No posts yet. Check back soon!</p>
+      <p class="text-secondary dark:text-[#D4D4D4] md:col-span-2">No posts yet. Check back soon!</p>
     {/each}
   </div>
 </section>

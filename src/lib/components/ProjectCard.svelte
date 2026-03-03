@@ -25,7 +25,7 @@
     </span>
   </div>
   
-  <p class="text-secondary dark:text-[#D4D4D4] flex-grow">
+  <p class="text-base text-secondary dark:text-[#D4D4D4] flex-grow">
     {project.description}
   </p>
   

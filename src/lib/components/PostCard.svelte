@@ -28,7 +28,7 @@
     </h3>
     
     <div class="flex-grow">
-      <p class="text-secondary dark:text-[#D4D4D4] line-clamp-2">
+      <p class="text-base text-secondary dark:text-[#D4D4D4] line-clamp-2">
         {post.description}
       </p>
     </div>

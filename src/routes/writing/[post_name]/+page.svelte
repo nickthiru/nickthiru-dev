@@ -63,7 +63,7 @@
   </header>
 
   <!-- Article Body -->
-  <div class="max-w-prose mx-auto prose prose-lg">
+  <div class="max-w-prose mx-auto prose prose">
     <data.post.content />
   </div>
 

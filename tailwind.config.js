@@ -64,7 +64,7 @@ export default {
         h2: ["1.75rem", { lineHeight: "1.3", fontWeight: "700" }],
         h3: ["1.375rem", { lineHeight: "1.4", fontWeight: "700" }],
         h4: ["1.125rem", { lineHeight: "1.4", fontWeight: "700" }],
-        body: ["1.0625rem", { lineHeight: "1.7", fontWeight: "500" }],
+        body: ["1rem", { lineHeight: "1.7", fontWeight: "500" }],
         small: ["0.875rem", { lineHeight: "1.5", fontWeight: "500" }],
         code: ["0.9375rem", { lineHeight: "1.6", fontWeight: "400" }],
       },

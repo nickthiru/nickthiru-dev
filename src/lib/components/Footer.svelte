@@ -6,12 +6,12 @@
   <div class="mx-auto max-w-page px-6 py-12 md:px-8">
     <div class="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8 mb-12">
       <!-- Branding & Socials -->
-      <div class="md:col-span-4 flex flex-col gap-6">
+      <div class="md:col-span-6 lg:col-span-4 flex flex-col gap-6">
         <div>
-          <a href="/" class="text-h4 text-primary dark:text-[#FAFAFA] hover:text-accent transition-colors">
+          <a href="/" class="text-md font-semibold text-primary dark:text-[#FAFAFA] hover:text-accent transition-colors">
             {siteConfig.name}
           </a>
-          <p class="text-secondary dark:text-[#D4D4D4] mt-2">
+          <p class="text-sm text-secondary dark:text-[#D4D4D4] mt-2">
             Building agentic AI systems that ship.
           </p>
         </div>
@@ -55,8 +55,8 @@
       </div>
 
       <!-- Navigation Links -->
-      <div class="md:col-span-4 lg:col-span-2">
-        <h3 class="text-h5 text-primary dark:text-[#FAFAFA] mb-4">Navigation</h3>
+      <div class="md:col-span-3 lg:col-span-2 lg:col-start-9">
+        <h3 class="text-sm text-primary dark:text-[#FAFAFA] mb-4">Navigation</h3>
         <nav aria-label="Footer navigation">
           <ul class="flex flex-col gap-3 text-small">
             {#each siteConfig.footerNav as item}
@@ -71,8 +71,8 @@
       </div>
 
       <!-- Legal Links -->
-      <div class="md:col-span-4 lg:col-span-2">
-        <h3 class="text-h5 text-primary dark:text-[#FAFAFA] mb-4">Legal</h3>
+      <div class="md:col-span-3 lg:col-span-2">
+        <h3 class="text-sm text-primary dark:text-[#FAFAFA] mb-4">Legal</h3>
         <ul class="flex flex-col gap-3 text-small">
           <li>
             <a href="/legal/privacy" class="text-secondary dark:text-[#D4D4D4] hover:text-accent transition-colors">

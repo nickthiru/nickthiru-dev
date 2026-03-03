@@ -30,7 +30,7 @@
   </p>
   
   {#if project.url}
-    <div class="mt-4 pt-4 border-border dark:border-[#262626]">
+    <div class="pt-4 border-border dark:border-[#262626]">
       <a
         href={project.url}
         target="_blank"

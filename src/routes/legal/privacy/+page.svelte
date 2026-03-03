@@ -12,7 +12,7 @@
     <h1 class="text-h1 text-primary dark:text-[#FAFAFA] mb-4">Privacy Policy</h1>
     <p class="text-muted dark:text-[#A3A3A3] mb-8">Last updated: December 29, 2025</p>
 
-    <div class="prose prose dark:prose-invert">
+    <div class="prose dark:prose-invert">
       <div class="space-y-8">
         <section>
           <h2>Introduction</h2>

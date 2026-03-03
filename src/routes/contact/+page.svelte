@@ -12,7 +12,7 @@
   <div class="max-w-prose mx-auto">
     <h1 class="text-h2 text-primary dark:text-[#FAFAFA] mb-8">Contact</h1>
 
-    <div class="prose prose dark:prose-invert">
+    <div class="prose dark:prose-invert">
       <p>
         The best way to reach me is by email:
         <a href="mailto:{siteConfig.author.email}">{siteConfig.author.email}</a>

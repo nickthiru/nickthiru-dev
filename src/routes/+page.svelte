@@ -38,7 +38,7 @@
       </a>, building full-stack, agentic AI SaaS products and bespoke systems—secure, data-isolated, reliable, and production-grade—for the real world.
       </p>
       <p class="text-xl text-secondary dark:text-[#D4D4D4] leading-relaxed mb-6">
-         I also share my hard-won lessons and expertise across engineering, products, and business, through my writing.
+         I also share my hard-won lessons and expertise across engineering, product, and business, through my writing.
       </p>
     </div>
     

@@ -12,7 +12,7 @@
   <div class="max-w-prose mx-auto">
     <h1 class="text-h2 text-primary dark:text-[#FAFAFA] mb-8">About</h1>
 
-    <div class="prose prose dark:prose-invert">
+    <div class="prose dark:prose-invert">
       <p>
         I'm an AI systems architect building at the intersection of modern web infrastructure and agentic AI. I run 
         <a

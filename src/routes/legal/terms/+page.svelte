@@ -15,7 +15,7 @@
     <div class="prose prose-lg dark:prose-invert">
       <div class="space-y-8">
         <section>
-          <h2>Agreement to Terms</h2>
+          <h2>Terms of Service</h2>
           <p>
             By accessing or using the nickthiru.dev website and services, you agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from using or accessing our services.
           </p>

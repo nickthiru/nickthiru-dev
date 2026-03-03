@@ -19,10 +19,10 @@
       <SubscribeForm tag="site" helper="email-only" />
     </div>
 
-    <p class="text-secondary dark:text-[#D4D4D4] mt-12">
-      I write about building agentic AI systems and SaaS products — both the technical deep-dives and the business realities of shipping them — for <a href="https://thiru.ai" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline inline-flex items-center gap-1">Thiru AI Labs</a>.
+    <p class="text-secondary dark:text-[#D4D4D4] mt-12 text-balance mx-auto">
+      As the Founder and AI Systems Architect & Engineer at <a href="https://thiruailabs.com" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline inline-flex items-center gap-1">Thiru AI Labs</a>, I write about building and shipping production-grade agentic AI products and bespoke systems—sharing hard-won lessons and expertise across engineering, products, and business.
     </p>
-    <p class="text-secondary dark:text-[#D4D4D4] mt-3">
+    <p class="text-secondary dark:text-[#D4D4D4] mt-4">
       Expect 1–2 posts per week when I'm in writing mode.
     </p>
   </div>

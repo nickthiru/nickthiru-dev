@@ -25,6 +25,7 @@ export const siteConfig = {
     { label: "Writing", href: "/writing" },
     { label: "Projects", href: "/projects" },
     { label: "Contact", href: "/contact" },
+    { label: "Subscribe", href: "/subscribe" },
   ],
   footerNav: [
     { label: "About", href: "/about" },

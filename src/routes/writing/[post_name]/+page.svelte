@@ -41,7 +41,7 @@
       <TrackBadge track={data.post.track} />
     </div>
     
-    <h1 class="text-h1 text-primary mb-4">
+    <h1 class="text-h2 text-primary mb-4">
       {data.post.title}
     </h1>
     
@@ -63,7 +63,7 @@
   </header>
 
   <!-- Article Body -->
-  <div class="max-w-prose mx-auto prose">
+<div class="max-w-prose mx-auto prose dark:prose-invert">
     <data.post.content />
   </div>
 
@@ -78,7 +78,7 @@
       Thanks for reading
     </h3>
     <p class="text-secondary mb-6">
-      If this was useful, subscribe for more posts on building agentic AI systems.
+      If this was useful, subscribe for more posts on the engineering, productization, and business, of agentic AI systems.
     </p>
     <SubscribeForm tag={data.post.track} />
   </footer>

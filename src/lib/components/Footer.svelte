@@ -88,7 +88,7 @@
       </div>
     </div>
 
-    <div class="pt-8 border-t border-border dark:border-[#262626] flex flex-col items-start md:flex-row md:items-center md:justify-between gap-6">
+    <div class="pt-8 border-t border-border dark:border-[#262626] flex flex-col items-center md:flex-row md:items-center md:justify-between gap-6">
       <!-- Thiru AI Labs branding -->
       <a 
         href="https://thiruailabs.com" 

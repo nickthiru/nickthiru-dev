@@ -3,7 +3,6 @@
   import PostCard from '$lib/components/PostCard.svelte';
   import ProjectCard from '$lib/components/ProjectCard.svelte';
   import SubscribeForm from '$lib/components/SubscribeForm.svelte';
-  import { siteConfig } from '$lib/config';
   import type { PageData } from './$types';
 
   let { data }: { data: PageData } = $props();

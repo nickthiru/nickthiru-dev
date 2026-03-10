@@ -14,9 +14,9 @@ metadata:
     - references/02_INTENT.md
     - references/03_POLICIES.md
     - references/04_PROCEDURE.md
+    - references/05_TEMPLATES.md
   artifacts:
     - src/content/posts/
-    - src/content/templates/
   keywords:
     - blog
     - seo

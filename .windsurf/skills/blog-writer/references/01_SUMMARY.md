@@ -10,7 +10,7 @@ index:
 
 ## Identity
 
-`blog-writer` is the execution skill for blog content on nickthiru.dev. It handles template selection, track-specific writing procedures, SEO optimization, quality assurance, and publication setup. It depends on `content-creator` for voice characteristics and privacy policies.
+`blog-writer` is the execution skill for blog content on nickthiru.dev. It handles template selection, track-specific writing procedures, SEO optimization, quality assurance, and publication setup. It depends on `voice-and-style` for voice characteristics and privacy policies.
 
 ## Scope
 
@@ -25,15 +25,15 @@ It performs:
 
 It does NOT:
 
-- Define voice or writing style (use `content-creator`)
-- Define privacy or sharing policies (use `content-creator`)
+- Define voice or writing style (use `voice-and-style`)
+- Define privacy or sharing policies (use `voice-and-style`)
 - Plan content calendars or daily capture routines (use `content-planner`)
-- Handle cross-platform distribution strategy (use `content-planner`)
+- Handle cross-platform distribution strategy (use `content-distributor`)
 
 ## Constraints
 
-- Every blog post must use a template from `src/content/templates/`
+- Every blog post must use a template from `references/05_TEMPLATES.md`
 - SEO policies are non-negotiable — all posts must pass the quality checklist
-- Voice application always defers to `content-creator` policies
+- Voice application always defers to `voice-and-style` policies
 - Track must be explicitly identified: engineering, business, or product
 - Word count target: 800–1500 words per post

@@ -17,7 +17,7 @@ index:
 1. Topic Validation     → Confirm topic, track, and source material
 2. Create Outline       → Use track-specific template structure
 3. Write First Draft    → Follow outline with real content
-4. Apply Voice Rewrite  → Use content-creator Step 3 process
+4. Apply Voice Rewrite  → Use voice-and-style Step 3 process
 5. Track Enhancement    → Apply track-specific standards
 6. SEO Optimization     → Apply SEO policies from 03_POLICIES.md
 7. Add Engagement       → CTA, related links, questions
@@ -38,24 +38,24 @@ index:
 
 Select template based on track:
 
-| Track | Template | Path |
-|---|---|---|
-| engineering | Engineering template | `src/content/templates/engineering-template.md` |
-| business | Business template | `src/content/templates/business-template.md` |
-| product | Product template | `src/content/templates/product-template.md` |
+| Track       | Template             | Location                                                  |
+| ----------- | -------------------- | --------------------------------------------------------- |
+| engineering | Engineering template | `references/05_TEMPLATES.md` → Engineering Track Template |
+| business    | Business template    | `references/05_TEMPLATES.md` → Business Track Template    |
+| product     | Product template     | `references/05_TEMPLATES.md` → Product Track Template     |
 
 Follow the track-specific outline structure below.
 
 ### Step 3: Write First Draft
 
 1. Follow outline exactly.
-2. Apply voice from `content-creator` policies.
+2. Apply voice from `voice-and-style` policies.
 3. Include specific numbers, dates, and details.
 4. Target 800–1500 words.
 
 ### Step 4: Apply Voice & Style Rewrite
 
-Use `content-creator` 4-step pipeline Step 3:
+Use `voice-and-style` 4-step pipeline Step 3:
 
 1. Rewrite using casual, conversational language.
 2. Add personal stories and specific details.
@@ -162,11 +162,12 @@ Run quality checklist from `03_POLICIES.md`.
 
 ## Publication and Distribution
 
-### Step 9: Distribution
+### Step 9: Hand Off to Distribution
 
-| Platform | Format | Length |
-|---|---|---|
-| LinkedIn | Professional insights | 150–300 words |
-| X/Twitter | Thread | 7–10 tweets: Hook → Process → Lessons → CTA |
-| Newsletter | Behind-the-scenes + blog summary | Variable |
-| Product channels | In-app notifications, user emails (product track only) | Variable |
+After publication, delegate to `content-distributor` for multi-platform repurposing:
+
+- LinkedIn post (150–300 words)
+- X/Twitter thread (7–10 tweets)
+- Newsletter segment (blog summary + link)
+
+See `content-distributor` skill for the full distribution procedure.

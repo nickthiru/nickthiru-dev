@@ -26,7 +26,7 @@
       <h1 class="text-h1 text-primary dark:text-[#FAFAFA] mb-6">
         Building agentic AI systems that ship.
       </h1>
-      <p class="font-[100] text-xl text-secondary dark:text-[#D4D4D4] leading-relaxed mb-4">
+      <p class="font-[100] text-lg text-secondary dark:text-[#D4D4D4] leading-relaxed mb-4">
         I'm the Founder and AI Systems Architect & Engineer at <a
         href="https://thiruailabs.com"
         target="_blank"
@@ -36,7 +36,7 @@
         Thiru AI Labs
       </a>, building full-stack, agentic AI SaaS products and bespoke systems—secure, data-isolated, reliable, and production-grade—for the real world.
       </p>
-      <p class="font-[100] text-xl text-secondary dark:text-[#D4D4D4] leading-relaxed mb-6">
+      <p class="font-[100] text-lg text-secondary dark:text-[#D4D4D4] leading-relaxed mb-6">
          I also share my hard-won lessons and expertise across engineering, product, and business, through my writing.
       </p>
     </div>
@@ -46,7 +46,7 @@
       <img 
         src="/profile-picture.jpeg" 
         alt="Nick Thiru" 
-        class="w-56 rounded-lg shadow-xl"
+        class="w-52 rounded-lg shadow-xl"
       />
     </div>
   </div>

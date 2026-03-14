@@ -41,11 +41,11 @@
       <TrackBadge track={data.post.track} />
     </div>
     
-    <h1 class="text-h2 text-primary mb-4">
+    <h1 class="text-h2 text-primary mb-4s dark:prose-invert">
       {data.post.title}
     </h1>
     
-    <div class="flex items-center gap-2 text-secondary">
+    <div class="flex items-center gap-2 text-secondary dark:text-[#A3A3A3]">
       <time datetime={data.post.publishedAt}>
         {formatDate(data.post.publishedAt)}
       </time>
@@ -73,13 +73,17 @@
   </div>
 
   <!-- Post Footer -->
-  <footer class="max-w-prose mx-auto mt-16 pt-8 border-t border-border">
-    <h3 class="text-h4 text-primary mb-4">
-      Thanks for reading
-    </h3>
-    <p class="text-secondary mb-6">
-      If this was useful, subscribe for more posts on the engineering, productization, and business, of agentic AI systems.
-    </p>
-    <SubscribeForm tag={data.post.track} />
+  <footer class="max-w-prose dark:prose-invert mx-auto mt-16 pt-8">
+    <div class="bg-accent/5 border border-accent/20 rounded-lg p-8 md:p-10 dark:bg-accent/10 dark:border-accent/30 text-center">
+      <h3 class="text-h3 text-primary dark:text-[#FAFAFA] mb-4">
+        Thanks for reading
+      </h3>
+      <p class="text-secondary dark:text-[#D4D4D4] mb-8">
+        If this was useful, subscribe for more posts on the engineering, productization, and business, of agentic AI systems.
+      </p>
+      <div class="w-full max-w-md mx-auto">
+        <SubscribeForm tag={data.post.track} />
+      </div>
+    </div>
   </footer>
 </article>

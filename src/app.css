@@ -128,15 +128,15 @@
   background-color: var(--shiki-light-bg, transparent);
 }
 
-.dark .shiki,
-.dark .shiki span {
-  color: var(--shiki-dark, inherit);
-  background-color: var(--shiki-dark-bg, transparent);
+html[data-theme="dark"] .shiki,
+html[data-theme="dark"] .shiki span {
+  color: var(--shiki-dark, inherit) !important;
+  background-color: var(--shiki-dark-bg, transparent) !important;
 }
 
 /* Code block styling */
 pre {
-  @apply overflow-x-auto rounded-lg p-4 font-mono;
+  @apply overflow-x-auto rounded-lg p-4 font-mono border border-border dark:border-[#262626];
 }
 
 pre code {
@@ -145,15 +145,15 @@ pre code {
 
 /* Prose adjustments */
 .prose pre {
-  @apply bg-code;
+  @apply bg-code dark:bg-[#1C1C1C];
 }
 
 .prose code {
-  @apply font-mono text-primary;
+  @apply font-mono text-primary dark:text-[#FAFAFA];
 }
 
 .prose pre:not(.shiki) {
-  @apply text-primary;
+  @apply text-primary dark:text-[#FAFAFA];
 }
 
 /* Loading dots animation */

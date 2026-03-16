@@ -10,6 +10,7 @@ export interface PostFrontmatter {
   track: "technical" | "business";
   tags?: string[];
   draft?: boolean;
+  pinned?: boolean;
   canonical?: string;
   image?: string;
 }
@@ -58,14 +59,14 @@ export async function getPostsMeta(): Promise<PostMeta[]> {
     posts.push({
       ...metadata,
       readingTime: calculateReadingTime(
-        rawPostModules[path] || metadata.description || ""
+        rawPostModules[path] || metadata.description || "",
       ),
     });
   }
 
   return posts.sort(
     (a, b) =>
-      new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+      new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
   );
 }
 
@@ -81,7 +82,7 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
       return {
         ...metadata,
         readingTime: calculateReadingTime(
-          rawPostModules[path] || metadata.description || ""
+          rawPostModules[path] || metadata.description || "",
         ),
         content: file.default,
       };
@@ -91,8 +92,13 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
 }
 
 export async function getPostsMetaByTrack(
-  track: "technical" | "business"
+  track: "technical" | "business",
 ): Promise<PostMeta[]> {
   const posts = await getPostsMeta();
   return posts.filter((post) => post.track === track);
+}
+
+export async function getPinnedPosts(): Promise<PostMeta[]> {
+  const posts = await getPostsMeta();
+  return posts.filter((post) => post.pinned);
 }

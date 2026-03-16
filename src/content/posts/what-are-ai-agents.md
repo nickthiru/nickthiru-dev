@@ -6,6 +6,7 @@ publishedAt: "2026-01-09"
 track: "technical"
 tags: ["ai-agents", "explainer", "langgraph"]
 draft: false
+pinned: true
 ---
 
 A few times this month someone has asked me, in basically the same tone:

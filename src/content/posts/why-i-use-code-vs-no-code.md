@@ -6,6 +6,7 @@ publishedAt: "2026-01-16"
 track: "technical"
 tags: ["ai-agents", "langgraph", "production-systems", "architecture"]
 draft: false
+pinned: true
 ---
 
 I get asked this a lot:

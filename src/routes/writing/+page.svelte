@@ -1,6 +1,7 @@
 <script lang="ts">
   import SEO from '$lib/components/SEO.svelte';
   import PostCard from '$lib/components/PostCard.svelte';
+  import EssentialReading from '$lib/components/EssentialReading.svelte';
   import FilterPills from '$lib/components/FilterPills.svelte';
   import type { PageData } from './$types';
 
@@ -18,7 +19,7 @@
     <p class="text-lg text-secondary dark:text-[#D4D4D4] mb-6">
       I write about building and shipping agentic AI from three main perspectives: engineering, business, and product.
     </p>
-    <div class="grid md:grid-cols-3 gap-6 mt-7 mb-14 items-start">
+    <div class="grid md:grid-cols-3 gap-6 mt-7 mb-16 items-start">
       <div class="bg-blue-lighter/30 border border-blue-lighter rounded-lg p-5 dark:bg-blue-darker/20 dark:border-blue-darker/40 h-full">
         <h2 class="text-h5 text-primary dark:text-[#FAFAFA] mb-4 flex items-center gap-2">
           <span class="track-badge track-badge-technical">Engineering</span>
@@ -65,6 +66,12 @@
         </div>
       </div>
     </div>
+
+    <!-- Essential Reading -->
+    <div class="pt-12 pb-16 border-t border-b border-border dark:border-[#262626] mb-14">
+      <EssentialReading posts={data.pinnedPosts} />
+    </div>
+
     <FilterPills />
   </header>
 

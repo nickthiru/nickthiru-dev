@@ -1,11 +1,12 @@
 ---
-title: "Why I'm Building AI Products Solo"
+title: "Why I'm Building AI Products Solo (and Why That's an Advantage)"
 slug: "why-building-solo"
 description: "Why solo doesn't mean small anymore. What AI augmentation changes about speed, quality, and the customer relationship—especially for MSMEs."
 publishedAt: "2026-01-10"
 track: "business"
 tags: ["solo-founder", "ai-augmentation", "business-strategy", "transparency"]
 draft: false
+pinned: true
 ---
 
 I should probably address the thing a lot of people notice immediately:

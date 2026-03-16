@@ -1,7 +1,8 @@
 import type { PageServerLoad } from "./$types";
-import { getPostsMeta } from "$lib/utils/posts";
+import { getPostsMeta, getPinnedPosts } from "$lib/utils/posts";
 
 export const load: PageServerLoad = async () => {
   const posts = await getPostsMeta();
-  return { posts };
+  const pinnedPosts = await getPinnedPosts();
+  return { posts, pinnedPosts };
 };

@@ -25,14 +25,25 @@ This is a lightweight routine. It does not involve content creation — it maint
 
 ### Step 1: Scan Build Logs
 
-Review this week's build log entries from `thiru-ai-labs/build-logs/`:
+Read the scan cursor first:
 
 ```bash
-ls -la thiru-ai-labs/build-logs/
-# Identify entries from the current week
+cat thiru-ai-labs/build-logs/.scan-state.json
+```
+
+Scan entries **newer than** `last_processed_date` (if empty, scan last 7 days). After completing the weekly session, update the cursor:
+
+```bash
+echo '{ "last_processed_date": "YYYY-MM-DD" }' > thiru-ai-labs/build-logs/.scan-state.json
+```
+
+```bash
+ls thiru-ai-labs/build-logs/*.md | sort
+# Filter to entries newer than last_processed_date
 ```
 
 For each entry, note:
+
 - Is it marked "Content Ready: Yes"?
 - What is the story arc strength (Problem → Struggle → Breakthrough)?
 - What content track does it fit (engineering, business, product)?
@@ -40,6 +51,7 @@ For each entry, note:
 ### Step 2: Identify Themes
 
 Extract potential blog post themes. Ask:
+
 - What problem did I solve that others might face?
 - What mistake could help others avoid wasting time?
 - What insight changed my approach to building?
@@ -47,6 +59,7 @@ Extract potential blog post themes. Ask:
 ### Step 3: Check Trailing Content Mix
 
 Review the last 10 published posts. Count by track:
+
 - If 3+ consecutive posts are the same track, bias toward a different track this week.
 - If one track is significantly under-represented, look for angles in that track from this week's logs.
 

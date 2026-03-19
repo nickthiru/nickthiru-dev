@@ -27,7 +27,7 @@ It does NOT:
 
 - Define voice or writing style (use `voice-and-style`)
 - Define privacy or sharing policies (use `voice-and-style`)
-- Plan content calendars or daily capture routines (use `content-planner`)
+- Plan weekly content themes (use `weekly-planner`)
 - Handle cross-platform distribution strategy (use `content-distributor`)
 
 ## Constraints

@@ -13,6 +13,8 @@ export interface PostFrontmatter {
   pinned?: boolean;
   canonical?: string;
   image?: string;
+  linkedin_url?: string;
+  x_url?: string;
 }
 
 export interface PostMeta extends PostFrontmatter {

@@ -72,10 +72,23 @@ Apply all SEO requirements from `03_POLICIES.md`.
 
 ### Step 7: Add Engagement Elements
 
-1. Engagement question at the end.
-2. Newsletter CTA: `[Subscribe](https://nickthiru.dev/subscribe)`.
+1. `## Your Turn` section at the end — a specific engagement question inviting the reader to share their own experience or challenge.
+2. `## Join the Discussion` section — include the placeholder text below; the actual LinkedIn and X links are added after `content-distributor` creates and the user posts the weekly social posts.
 3. Links to 2–3 related posts.
 4. FAQ section for featured snippets (optional).
+
+The newsletter CTA is rendered by the SvelteKit page footer automatically — do not include it in the post content.
+
+**`## Join the Discussion` placeholder:**
+
+```markdown
+## Join the Discussion
+
+Have thoughts on this? I’d love to hear them.
+Share your experience on [LinkedIn](LINKEDIN_URL) or [X](X_URL).
+```
+
+Note: `LINKEDIN_URL` and `X_URL` are placeholders. After publishing social posts, update the blog frontmatter `linkedin_url` and `x_url` fields — the SvelteKit page will render the live links automatically.
 
 ### Step 8: Publication Setup
 
@@ -92,8 +105,12 @@ tags: []
 draft: true
 track: ""
 image: ""
+linkedin_url: ""
+x_url: ""
 ---
 ```
+
+`linkedin_url` and `x_url` are left empty at publish time. Populate them after `content-distributor` creates the weekly social posts and the user posts them.
 
 Run quality checklist from `03_POLICIES.md`.
 

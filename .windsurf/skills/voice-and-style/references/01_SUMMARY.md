@@ -10,7 +10,7 @@ index:
 
 ## Identity
 
-`voice-and-style` is the foundational content skill that defines the authentic writing voice, the 4-step content creation pipeline, and the privacy policies for all content produced on nickthiru.dev. It does not create content itself — it provides the voice and policy invariants that other content skills (`blog-writer`, `content-planner`, `content-distributor`) depend on.
+`voice-and-style` is the foundational content skill that defines the authentic writing voice, the 4-step content creation pipeline, and the privacy policies for all content produced on nickthiru.dev. It does not create content itself — it provides the voice and policy invariants that other content skills (`post-writer`, `blog-writer`, `weekly-planner`, `content-distributor`) depend on.
 
 ## Scope
 
@@ -26,7 +26,8 @@ It defines:
 It does NOT:
 
 - Write blog posts (use `blog-writer`)
-- Select content themes or manage editorial planning (use `content-planner`)
+- Select weekly content themes or manage editorial planning (use `weekly-planner`)
+- Write daily social posts (use `post-writer`)
 - Repurpose or distribute content across platforms (use `content-distributor`)
 - Handle SEO optimization (use `blog-writer`)
 - Schedule or post content

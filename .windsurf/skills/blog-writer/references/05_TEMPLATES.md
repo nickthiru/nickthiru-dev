@@ -31,10 +31,12 @@ slug: "your-post-slug-here"
 description: "A concise description of your post (shown in previews and SEO)"
 publishedAt: "YYYY-MM-DD"
 updatedAt: ""
-track: "engineering"  # Options: "engineering", "business", "product"
+track: "engineering" # Options: "engineering", "business", "product"
 tags: ["tag1", "tag2", "tag3"]
-draft: true  # Set to false when ready to publish
-image: ""  # Optional: path to hero image
+draft: true # Set to false when ready to publish
+image: "" # Optional: path to hero image
+linkedin_url: "" # Populated after weekly social posts are live
+x_url: "" # Populated after weekly social posts are live
 ---
 ```
 
@@ -90,6 +92,15 @@ I spent [time period] trying to solve [technical challenge].
 ## What I'd Do Differently
 
 [Advice for others facing this problem]
+
+## Your Turn
+
+[Specific engagement question — e.g. "What's the hardest debugging problem you've faced with [tech]? I'd love to hear how you solved it."]
+
+## Join the Discussion
+
+Have thoughts on this? I'd love to hear them.
+Share your experience on [LinkedIn](LINKEDIN_URL) or [X](X_URL).
 ```
 
 **Track-specific requirements:**
@@ -136,6 +147,15 @@ I decided to share [specific metric/experience] publicly.
 ## Guidelines for Others
 
 [Safe framework for building in public — actionable advice]
+
+## Your Turn
+
+[Specific engagement question — e.g. "What metric do you wish you'd shared publicly earlier?"]
+
+## Join the Discussion
+
+Have thoughts on this? I'd love to hear them.
+Share your experience on [LinkedIn](LINKEDIN_URL) or [X](X_URL).
 ```
 
 **Track-specific requirements:**
@@ -177,7 +197,14 @@ Today I got [specific milestone] working.
 
 [What I'm working on tomorrow/next week]
 
-Question: [Engagement question for the audience]
+## Your Turn
+
+[Specific engagement question — e.g. "What feature would you want to see first?"]
+
+## Join the Discussion
+
+Have thoughts on this? I'd love to hear them.
+Share your experience on [LinkedIn](LINKEDIN_URL) or [X](X_URL).
 ```
 
 **Track-specific requirements:**

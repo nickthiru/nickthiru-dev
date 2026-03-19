@@ -1,5 +1,5 @@
 ---
-description: How to compile user intent into content-planner parameters.
+description: How to compile user intent into weekly-planner parameters.
 index:
   - Intent Compilation
   - Reasoning Boundaries
@@ -14,7 +14,6 @@ index:
 | --------- | --------- | ----- |
 | "what should I write about?" | routine_type | weekly_synthesis |
 | "check my build logs" | build_log_path | thiru-ai-labs/build-logs/ |
-| "morning routine" | routine_type | daily_checkin |
 | "review my content mix" | routine_type | monthly_review |
 | "I want to write about X" | theme_override | user-specified topic |
 
@@ -33,6 +32,7 @@ The agent MUST NOT reason about:
 - Voice or style decisions (delegate to `voice-and-style`)
 - Platform-specific formatting or distribution (delegate to `content-distributor`)
 - SEO strategy or keyword selection (delegate to `blog-writer`)
+- Daily social post creation (delegate to `post-writer`)
 
 ## Guardrails
 

@@ -21,7 +21,6 @@ index:
 
 ## Never
 
-- Never include external links in LinkedIn post body — add link as first comment.
 - Never create platform content without a blog post as source.
 - Never schedule newsletter without a personal note section.
 - Never sacrifice platform-specific best practices for speed.
@@ -30,12 +29,12 @@ index:
 
 ## Distribution Rules
 
-| Platform | Timing | Format | Length |
-| -------- | ------ | ------ | ------ |
-| LinkedIn | 8–10 AM target timezone | Professional insight post | 150–300 words |
-| X/Twitter | Morning for threads | Threads or single tweets | 7–10 tweets or 280 chars |
-| Blog | 1–2x/week | Long-form (source — handled by blog-writer) | 800–1500 words |
-| Newsletter | Weekly (Friday/Saturday) | Personal note + blog summaries + exclusive | Variable |
+| Platform   | Timing                   | Format                                      | Length                   |
+| ---------- | ------------------------ | ------------------------------------------- | ------------------------ |
+| LinkedIn   | 8–10 AM target timezone  | Professional insight post                   | 150–300 words            |
+| X/Twitter  | Morning for threads      | Threads or single tweets                    | 7–10 tweets or 280 chars |
+| Blog       | 1–2x/week                | Long-form (source — handled by blog-writer) | 800–1500 words           |
+| Newsletter | Weekly (Friday/Saturday) | Personal note + blog summaries + exclusive  | Variable                 |
 
 ## Performance Metrics
 

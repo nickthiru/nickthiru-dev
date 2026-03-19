@@ -1,12 +1,12 @@
 ---
-name: content-planner
+name: weekly-planner
 description: >
   Strategic content planning for nickthiru.dev. Weekly theme selection from build logs,
   content track classification, content mix management, and editorial routing to blog-writer.
   Handles the "what to write about" decision — not the writing itself.
 metadata:
   author: Nick Thiru
-  version: 1.0.0
+  version: 2.0.0
   references:
     - references/01_SUMMARY.md
     - references/02_INTENT.md
@@ -20,6 +20,7 @@ metadata:
     - theme
     - synthesis
     - content-mix
+    - weekly
 ---
 
 # INSTRUCTIONS

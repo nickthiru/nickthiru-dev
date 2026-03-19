@@ -1,23 +1,12 @@
 ---
-description: Canonical execution path for content-planner.
+description: Canonical execution path for weekly-planner.
 index:
-  - Daily Check-in Routine
   - Weekly Theme Selection
   - Monthly Content Mix Review
   - Cross-Workspace Pipeline
 ---
 
 # Procedure
-
-## Daily Check-in Routine
-
-**Duration:** 5–10 minutes.
-
-1. Reply to comments on yesterday's posts (LinkedIn, X, blog).
-2. Save 1–3 good posts from your niche for inspiration.
-3. Add 1 bullet to today's build log (`thiru-ai-labs/build-logs/YYYY-MM-DD.md`): what you are shipping today.
-
-This is a lightweight routine. It does not involve content creation — it maintains engagement momentum and seeds the build log for the day.
 
 ## Weekly Theme Selection
 
@@ -38,7 +27,7 @@ echo '{ "last_processed_date": "YYYY-MM-DD" }' > thiru-ai-labs/build-logs/.scan-
 ```
 
 ```bash
-ls thiru-ai-labs/build-logs/*.md | sort
+ls thiru-ai-labs/build-logs/$(date +%Y/%m)/*.md thiru-ai-labs/build-logs/$(date -d 'last month' +%Y/%m)/*.md 2>/dev/null | sort
 # Filter to entries newer than last_processed_date
 ```
 
@@ -88,14 +77,14 @@ Review the last 10 published posts. Count by track:
 
 ```
 thiru-ai-labs (Development)
-├── build-logs/YYYY-MM-DD.md     # Source material
+├── build-logs/YYYY/MM/YYYY-MM-DD.md   # Source material
 └── artifacts/                    # Screenshots, diagrams
     ↓ (Manual review and selection)
 nickthiru-dev (Content)
 ├── src/content/posts/            # Published blog posts
 ```
 
-Integration is manual only — no automatic triggers between workspaces. The content planner reviews build logs from thiru-ai-labs and makes theme selection decisions in nickthiru-dev.
+Integration is manual only — no automatic triggers between workspaces. `weekly-planner` reviews build logs from thiru-ai-labs and makes theme selection decisions in nickthiru-dev.
 
 ### Theme Ideas by Track
 

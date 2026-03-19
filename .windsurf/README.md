@@ -8,14 +8,15 @@ Every skill follows the ASI V2 canonical structure: `SKILL.md` + `references/` (
 
 ---
 
-## Content Skills (4)
+## Content Skills (5)
 
-| Skill                 | Purpose                                                        | Depends On                       |
-| --------------------- | -------------------------------------------------------------- | -------------------------------- |
-| `voice-and-style`     | Foundational voice, 4-step pipeline, privacy policies          | —                                |
-| `blog-writer`         | Blog post execution, SEO, templates, quality assurance         | `voice-and-style`                |
-| `content-planner`     | Weekly theme selection, content mix, editorial routing         | `voice-and-style`, `blog-writer` |
-| `content-distributor` | Multi-platform repurposing, scheduling, newsletter compilation | `voice-and-style`                |
+| Skill                 | Purpose                                                   | Depends On                          |
+| --------------------- | --------------------------------------------------------- | ----------------------------------- |
+| `voice-and-style`     | Foundational voice, 4-step pipeline, privacy policies     | —                                   |
+| `post-writer`         | Daily standalone X + LinkedIn posts from build log        | `voice-and-style`                   |
+| `weekly-planner`      | Weekly theme selection, content mix, editorial routing    | `voice-and-style`                   |
+| `blog-writer`         | Blog post execution, SEO, templates, quality assurance    | `voice-and-style`, `weekly-planner` |
+| `content-distributor` | Weekly multi-platform repurposing, newsletter compilation | `voice-and-style`                   |
 
 ## ASI Tooling (3)
 
@@ -45,9 +46,9 @@ Every skill follows the ASI V2 canonical structure: `SKILL.md` + `references/` (
 
 **Writing a blog post:** `voice-and-style` (voice) → `blog-writer` (template, draft, SEO, quality)
 
-**Daily content capture:** `content-planner` daily check-in procedure (morning engagement, build log seed)
+**Daily social post (optional):** `post-writer` → reads today's build log → drafts X + LinkedIn posts → manual posting
 
-**Weekly synthesis:** `content-planner` weekly theme selection → `blog-writer` (write post) → `content-distributor` (repurpose + distribute)
+**Weekly synthesis:** `weekly-planner` theme selection → `blog-writer` (write post) → `content-distributor` (repurpose + distribute) → update blog frontmatter with `linkedin_url`/`x_url`
 
 **Creating a new skill:** `asi-creator` (interactive creation loop) · `asi-onboard` (repository context)
 
@@ -62,8 +63,8 @@ Every skill follows the ASI V2 canonical structure: `SKILL.md` + `references/` (
 
 ## Content Pipeline
 
-The full 6-stage content pipeline (Stage 0–5) is documented in the Building in Public manual at `thiru-ai-labs/docs/business/building-in-public/03-content-pipeline/`.
+The full content pipeline (two-track: daily posts + weekly blog) is documented in the Building in Public manual at `thiru-ai-labs/docs/business/building-in-public/03-content-pipeline/`.
 
 ---
 
-**Last Updated:** March 9, 2026
+**Last Updated:** March 19, 2026

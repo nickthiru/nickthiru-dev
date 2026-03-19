@@ -21,6 +21,7 @@ Step 3: X/Twitter adaptation → Create thread (7–10 tweets) or single tweet
 Step 4: Newsletter segment  → Write summary + queue for weekly newsletter
 Step 5: Quality check       → Validate all versions against checklist
 Step 6: Present for review  → User approves or requests changes
+Step 7: Update frontmatter  → After user posts: capture LinkedIn + X URLs, update blog post frontmatter
 ```
 
 ## LinkedIn Adaptation
@@ -50,11 +51,12 @@ Engagement question at the end?
 - Short paragraphs (1–2 sentences each)
 - Line breaks between paragraphs for mobile readability
 - 3–5 relevant hashtags at the end
-- No external link in the body — add blog link as first comment after posting
+- Include blog link in body before hashtags (e.g. `Full breakdown → [blog URL]`)
 
 ### Templates
 
 "I'm building" (re-activation):
+
 ```
 I'm building [product] that solves [problem].
 
@@ -69,24 +71,26 @@ What I'm building instead:
 If you're in [target audience]: what's your biggest blocker?
 ```
 
-Build log progress (daily):
+Blog repurpose (weekly from published post):
+
 ```
-Build log: [Product Name]
+[Hook: 1–2 lines — the insight that stops the scroll]
 
-Today I got [specific milestone] working.
+[Context: what you were building and why it mattered]
 
-What it does:
-- [feature 1]
-- [feature 2]
+[What happened: struggle, breakthrough, or result]
 
-Why it matters: [user benefit]
+[Takeaway or key lesson]
 
-Next up: [next milestone]
+[Optional engagement question]
 
-Question: would you rather [option A] or [option B]?
+Full breakdown → [blog URL]
+
+#[tag1] #[tag2] #[tag3]
 ```
 
 "I thought X, I was wrong" (learning):
+
 ```
 I thought [assumption].
 
@@ -143,26 +147,31 @@ Biggest surprise: [key lesson].
 # Weekly Newsletter
 
 ## Personal Note (2–3 sentences)
+
 What you're working on, what's coming, or a behind-the-scenes moment
 that doesn't appear on the blog.
 
 ## This Week's Posts
 
 ### [Post Title 1]
+
 2-sentence summary of the key insight. What you'll learn and why it matters.
 
 [Read the full post →](link)
 
 ### [Post Title 2] (if 2 posts that week)
+
 2-sentence summary.
 
 [Read the full post →](link)
 
 ## One Thing I Learned This Week
+
 A single insight or lesson — the newsletter-exclusive content that gives
 subscribers a reason to stay subscribed.
 
 ## Quick Links
+
 - Follow on LinkedIn: [link]
 - Follow on X: [link]
 - Reply to this email with questions
@@ -181,10 +190,26 @@ Before presenting platform versions to the user:
 
 - [ ] Each platform version stands alone (does not require the blog post to make sense)
 - [ ] Voice matches `voice-and-style` policies across all versions
-- [ ] LinkedIn post has no external link in the body
+- [ ] LinkedIn post includes blog link in body before hashtags
+- [ ] X thread final tweet includes blog link
 - [ ] X thread hook is compelling and specific
 - [ ] Newsletter summary is concise (2 sentences per post)
 - [ ] Newsletter has a personal note section
 - [ ] Privacy guidelines respected across all versions
 - [ ] No copy-paste between platforms — each is genuinely adapted
 - [ ] Engagement element present (question or CTA) in LinkedIn and X versions
+
+## Step 7: Update Blog Frontmatter
+
+After the user has posted to LinkedIn and X:
+
+1. Obtain the published LinkedIn post URL from the user.
+2. Obtain the published X post URL from the user.
+3. Update the blog post frontmatter:
+
+```yaml
+linkedin_url: "https://www.linkedin.com/posts/..."
+x_url: "https://x.com/.../status/..."
+```
+
+4. Commit and push the change. The SvelteKit site will rebuild and the `## Join the Discussion` section will become visible in the blog post, linking readers to the LinkedIn and X threads for comments.

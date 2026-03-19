@@ -1,5 +1,5 @@
 ---
-description: Mandatory and prohibited behaviors for content-planner.
+description: Mandatory and prohibited behaviors for weekly-planner.
 index:
   - Always
   - Never
@@ -22,6 +22,7 @@ index:
 ## Never
 
 - Never write blog posts — delegate to `blog-writer`.
+- Never handle daily social posts — delegate to `post-writer`.
 - Never handle distribution or repurposing — delegate to `content-distributor`.
 - Never enforce a rigid editorial calendar — use flexible rotation guidance.
 - Never sacrifice content quality for posting frequency.
@@ -38,10 +39,10 @@ index:
 
 ## Content Mix Target
 
-| Track | Trailing Target | Description |
-| ----- | --------------- | ----------- |
-| Engineering | ~60% | Technical deep dives, architecture, debugging, implementation |
-| Business | ~30% | Revenue, pricing, positioning, customer discovery, operations |
-| Product | ~10% | Features, user feedback, roadmap, experiments |
+| Track       | Trailing Target | Description                                                   |
+| ----------- | --------------- | ------------------------------------------------------------- |
+| Engineering | ~60%            | Technical deep dives, architecture, debugging, implementation |
+| Business    | ~30%            | Revenue, pricing, positioning, customer discovery, operations |
+| Product     | ~10%            | Features, user feedback, roadmap, experiments                 |
 
 These are reviewed monthly over a rolling 3-month window. They guide theme selection bias, not rigid scheduling.

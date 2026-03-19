@@ -10,13 +10,13 @@ index:
 
 ## Intent Compilation
 
-| User says | Parameter | Value |
-| --------- | --------- | ----- |
-| "distribute this post" | source_post | path to published blog post |
-| "create LinkedIn version" | target_platforms | linkedin |
-| "create all platform versions" | target_platforms | all |
-| "compile this week's newsletter" | routine_type | newsletter |
-| "schedule for tomorrow" | scheduling | next-day |
+| User says                        | Parameter        | Value                       |
+| -------------------------------- | ---------------- | --------------------------- |
+| "distribute this post"           | source_post      | path to published blog post |
+| "create LinkedIn version"        | target_platforms | linkedin                    |
+| "create all platform versions"   | target_platforms | all                         |
+| "compile this week's newsletter" | routine_type     | newsletter                  |
+| "schedule for tomorrow"          | scheduling       | next-day                    |
 
 ## Reasoning Boundaries
 
@@ -30,7 +30,7 @@ The agent MAY reason about:
 
 The agent MUST NOT reason about:
 
-- What topic to write about (delegate to `content-planner`)
+- What topic to write about (delegate to `weekly-planner`)
 - How to write the blog post (delegate to `blog-writer`)
 - Voice or style definitions (delegate to `voice-and-style`)
 - SEO strategy (delegate to `blog-writer`)
@@ -38,7 +38,7 @@ The agent MUST NOT reason about:
 ## Guardrails
 
 - Never create platform content without a published blog post as source
-- Never include external links in LinkedIn post body
+- Always include the blog link in the LinkedIn post body before hashtags (not in a comment)
 - Never copy-paste the same text across platforms
 - Never skip the quality checklist before presenting platform versions
 - Never bypass `voice-and-style` privacy framework

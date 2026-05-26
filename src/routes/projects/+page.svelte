@@ -7,7 +7,7 @@
   
   // Separate into Current (Building, Live) and Future/Other (Idea, Archived)
   const currentProjects = allProjects.filter(p => p.status === 'Building' || p.status === 'Live');
-  const futureProjects = allProjects.filter(p => p.status === 'Idea' || p.status === 'Archived');
+  const futureProjects = allProjects.filter(p => p.status === 'Idea' || p.status === 'Planned' || p.status === 'Archived');
 </script>
 
 <SEO 

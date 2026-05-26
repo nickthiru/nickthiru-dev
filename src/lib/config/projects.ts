@@ -8,7 +8,7 @@ interface BaseProject {
   id: string;
   name: string;
   description: string;
-  status: "Building" | "Live" | "Idea" | "Archived";
+  status: "Building" | "Live" | "Planned" | "Idea" | "Archived";
   url?: string;
   featured?: boolean;
 }
@@ -37,42 +37,96 @@ export const projects: Project[] = [
   // Products (appear in blog post CTAs)
   {
     type: "product",
-    id: "linkedin-ghostwriter",
-    name: "LinkedIn Ghostwriter",
+    id: "social-engagement-radar",
+    name: "Social Engagement Radar",
     tagline: "Now Building",
     description:
-      "Turn voice notes into authentic LinkedIn posts. Style learning, quality gates, and scheduling built-in. For founders who want to post consistently without sounding like corporate AI.",
+      "Monitor X and LinkedIn conversations in real-time. Find relevant discussions about your topics, get AI-drafted responses ready to send. Plug into communities without manual monitoring",
     status: "Building",
-    url: "https://thiruailabs.com/products/linkedin-ghostwriter",
-    productUrl: "https://thiruailabs.com/products/linkedin-ghostwriter",
+    url: "https://thiruailabs.com/products/social-engagement-radar",
+    productUrl: "https://thiruailabs.com/products/social-engagement-radar",
     blogPostTags: [
-      "linkedin-ghostwriter",
+      "social-engagement-radar",
       "product",
-      "saas",
+      "SaaS",
       "building-in-public",
     ],
     featured: true,
   },
 
+  {
+    type: "product",
+    id: "ops-pilot",
+    name: "OpsPilot",
+    tagline: "Now Building",
+    description:
+      "Operational intelligence platform. Unified dashboard across Slack, GitHub, Jira, and more.          One place to see: alerts, incidents, PRs, deployments, and team signals. Single source of truth for ops.",
+    status: "Building",
+    url: "https://thiruailabs.com/products/ops-pilot",
+    productUrl: "https://thiruailabs.com/products/ops-pilot",
+    blogPostTags: [
+      "ops-pilot",
+      "product",
+      "SaaS",
+      "PaaS",
+      "building-in-public",
+    ],
+    featured: true,
+  },
+
+  {
+    type: "product",
+    id: "policy-forge",
+    name: "PolicyForge",
+    tagline: "Now Building",
+    description:
+      "Generate compliant cybersecurity policies in minutes instead of weeks. Answer 15–20 questions about your technology stack and controls. Get framework-aligned security policies ready for audit submission. No expensive consulting.",
+    status: "Building",
+    url: "https://thiruailabs.com/products/policy-forge",
+    productUrl: "https://thiruailabs.com/products/policy-forge",
+    blogPostTags: ["policy-forge", "product", "SaaS", "building-in-public"],
+    featured: true,
+  },
+
+  {
+    type: "product",
+    id: "secure-stack",
+    name: "SecureStack Platform",
+    tagline: "Now Building",
+    description:
+      "A modular AI-native cybersecurity compliance platform for SMBs and the defense industry supply chain at large. Each product, starting with PolicyForge, reinforces the others, building a coherent story: 'We assessed our gaps, generated policies, scanned our codebase for crypto vulnerabilities, and had everything organized for our auditor in 4 weeks—using one integrated platform.'",
+    status: "Planned",
+    url: "https://thiruailabs.com/products#secure-stack",
+    productUrl: "https://thiruailabs.com/products#secure-stack",
+    blogPostTags: [
+      "secure-stack",
+      "platform",
+      "product",
+      "SaaS",
+      "building-in-public",
+    ],
+    featured: false,
+  },
+
   // Non-product projects
-  {
-    type: "project",
-    id: "competitor-intelligence",
-    name: "Competitor Intelligence Agent",
-    description:
-      "Automated competitor monitoring and analysis. Track product changes, pricing updates, and market positioning. Get weekly intelligence reports without manual research.",
-    status: "Idea",
-    featured: false,
-  },
-  {
-    type: "project",
-    id: "vc-due-diligence",
-    name: "VC Due Diligence Agent",
-    description:
-      "Streamline investment due diligence with automated research, document analysis, and risk assessment. Built for venture capital firms evaluating early-stage startups.",
-    status: "Idea",
-    featured: false,
-  },
+  // {
+  //   type: "project",
+  //   id: "competitor-intelligence",
+  //   name: "Competitor Intelligence Agent",
+  //   description:
+  //     "Automated competitor monitoring and analysis. Track product changes, pricing updates, and market positioning. Get weekly intelligence reports without manual research.",
+  //   status: "Idea",
+  //   featured: false,
+  // },
+  // {
+  //   type: "project",
+  //   id: "vc-due-diligence",
+  //   name: "VC Due Diligence Agent",
+  //   description:
+  //     "Streamline investment due diligence with automated research, document analysis, and risk assessment. Built for venture capital firms evaluating early-stage startups.",
+  //   status: "Idea",
+  //   featured: false,
+  // },
 ];
 
 /**

@@ -11,7 +11,8 @@
     Live: 'border border-green-600 text-green-700 dark:border-green-400 dark:text-green-300',
     Building: 'border border-blue-600 text-blue-700 dark:border-blue-400 dark:text-blue-300',
     Archived: 'border border-gray-500 text-gray-600 dark:border-gray-400 dark:text-gray-300',
-    Idea: 'border border-black text-black dark:border-white dark:text-white'
+    Idea: 'border border-black text-black dark:border-white dark:text-white',
+    Planned: 'border border-yellow-600 text-yellow-700 dark:border-yellow-400 dark:text-yellow-300',
   };
 </script>
 

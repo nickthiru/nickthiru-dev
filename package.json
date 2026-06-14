@@ -28,6 +28,7 @@
     "vite": "^5.0.0"
   },
   "dependencies": {
+    "@getbrevo/brevo": "^5.0.4",
     "date-fns": "^3.0.0",
     "feed": "^4.2.2",
     "reading-time": "^1.5.0"

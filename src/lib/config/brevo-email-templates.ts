@@ -6,4 +6,5 @@
  */
 export const BREVO_TEMPLATE_IDS = {
   newsletter_verify: 7, // DOI confirmation email
+  welcome: 2, // Welcome after verification (newsletter-only)
 } as const;

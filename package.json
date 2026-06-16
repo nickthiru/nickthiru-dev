@@ -20,6 +20,7 @@
     "@tailwindcss/typography": "^0.5.10",
     "autoprefixer": "^10.4.16",
     "mdsvex": "^0.11.0",
+    "playwright": "^1.61.0",
     "postcss": "^8.4.32",
     "shiki": "^1.0.0",
     "svelte": "^5.0.0",

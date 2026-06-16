@@ -1,4 +1,4 @@
-import adapter from "@sveltejs/adapter-static";
+import adapter from "@sveltejs/adapter-vercel";
 import { mdsvex } from "mdsvex";
 import { createHighlighter } from "shiki";
 
@@ -41,16 +41,7 @@ const config = {
     }),
   ],
   kit: {
-    adapter: adapter({
-      pages: "build",
-      assets: "build",
-      fallback: "404.html",
-      precompress: false,
-      strict: true,
-    }),
-    prerender: {
-      entries: ["*"],
-    },
+    adapter: adapter(),
     inlineStyleThreshold: 0,
   },
 };

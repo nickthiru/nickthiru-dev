@@ -1,6 +1,4 @@
 <script lang="ts">
-  import { siteConfig } from '$lib/config';
-  
   let email = $state('');
   let firstName = $state('');
   let status = $state<'idle' | 'loading' | 'success' | 'error'>('idle');
@@ -19,12 +17,10 @@
     errorMessage = '';
 
     try {
-      const tags = tag ? [tag] : [];
-      const metadata = firstName ? { first_name: firstName } : {};
       const response = await fetch('/api/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, tags, metadata })
+        body: JSON.stringify({ email, first_name: firstName || undefined })
       });
 
       if (!response.ok) {
@@ -44,9 +40,9 @@
 
 {#if status === 'success'}
   <div class="bg-accent/10 border border-accent rounded-lg p-6 text-center">
-    <p class="text-accent font-medium">Thanks for subscribing!</p>
+    <p class="text-accent font-medium">Please check your email!</p>
     <p class="text-secondary text-small mt-2">
-      Check your inbox for a confirmation email.
+      A confirmation email has been sent. Click the link to confirm your subscription.
     </p>
   </div>
 {:else}

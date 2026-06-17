@@ -108,7 +108,7 @@ During development (`npm run dev`), drafts are visible so you can preview them.
 
 ### Configuration
 
-The project uses `@sveltejs/adapter-static` for static site generation. No additional Vercel configuration is needed.
+The project uses `@sveltejs/adapter-vercel` for server-side rendering and API routes.
 
 ### Automatic Deployments
 
@@ -123,9 +123,13 @@ The project uses `@sveltejs/adapter-static` for static site generation. No addit
 
 ## Environment Variables
 
-No environment variables required for basic functionality.
+See [docs/newsletter-subscription.md](docs/newsletter-subscription.md) for full details.
 
-If you add email capture later (e.g., ConvertKit, Buttondown), you'll add API keys here.
+| Variable               | Required | Description                                               |
+| ---------------------- | -------- | --------------------------------------------------------- |
+| `BREVO_API_KEY`        | Yes      | Brevo API key for newsletter subscription                 |
+| `BREVO_WEBHOOK_SECRET` | Yes      | Shared secret for webhook authentication                  |
+| `PUBLIC_URL`           | Yes      | Base URL for DOI redirect (e.g., `https://nickthiru.dev`) |
 
 ## Tech Stack
 
@@ -133,7 +137,14 @@ If you add email capture later (e.g., ConvertKit, Buttondown), you'll add API ke
 - **Styling**: [TailwindCSS](https://tailwindcss.com/) with Typography plugin
 - **Markdown**: [mdsvex](https://mdsvex.pngwn.io/)
 - **Syntax Highlighting**: [Shiki](https://shiki.matsu.io/)
+- **Email**: [Brevo](https://brevo.com/) (Double Opt-In newsletter + welcome email)
 - **Deployment**: [Vercel](https://vercel.com/)
+
+## Documentation
+
+- [Newsletter Subscription System](docs/newsletter-subscription.md) — Brevo DOI flow, webhooks, env vars
+- [Route Structure](docs/route-structure.md) — Site routing and pages
+- [Components Usage](docs/components-usage.md) — Reusable Svelte components
 
 ## License
 

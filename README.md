@@ -137,7 +137,7 @@ See [docs/newsletter-subscription.md](docs/newsletter-subscription.md) for full 
 - **Styling**: [TailwindCSS](https://tailwindcss.com/) with Typography plugin
 - **Markdown**: [mdsvex](https://mdsvex.pngwn.io/)
 - **Syntax Highlighting**: [Shiki](https://shiki.matsu.io/)
-- **Email**: [Brevo](https://brevo.com/) (Double Opt-In newsletter + welcome email)
+- **Email**: [Brevo](https://brevo.com/) (Double Opt-In newsletter + welcome email, shared with thiru-ai-labs)
 - **Deployment**: [Vercel](https://vercel.com/)
 
 ## Documentation

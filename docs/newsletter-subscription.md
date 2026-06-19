@@ -4,6 +4,8 @@
 
 The newsletter subscription uses **Brevo** (formerly Sendinblue) with a **Double Opt-In (DOI)** flow. When a user subscribes, they receive a confirmation email. Only after clicking the confirmation link do they receive the welcome email.
 
+**Shared List Architecture:** This site shares the `newsletter_subs` list (ID 11) with the thiru-ai-labs website. Both sites have webhooks configured to listen to `list_addition` events on this list. The nickthiru.dev webhook handles the welcome email for all newsletter subscribers, while the thiru-ai-labs webhook only handles waitlist-related emails.
+
 ## Architecture
 
 ```
@@ -65,6 +67,8 @@ User → POST /api/subscribe → Brevo createDoiContact() → DOI confirmation e
 6. Sends welcome email (template #2) with `first_name` param
 
 **Important:** Brevo sends `list_id` as an **array** (e.g., `[11]`), not a number. The handler extracts the first element.
+
+**Note:** This webhook handles the welcome email for **all** newsletter subscribers (from both nickthiru.dev and thiru-ai-labs). The thiru-ai-labs webhook only handles waitlist-related emails.
 
 ### 3. Confirmation Page (`/subscribe/confirmed`)
 

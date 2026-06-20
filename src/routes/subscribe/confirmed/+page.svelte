@@ -18,8 +18,11 @@
       <a href="/writing" class="btn-primary">
         Read the Blog
       </a>
-      <a href="/" class="btn-secondary">
+      <!-- <a href="/" class="btn-secondary">
         Back to Home
+      </a> -->
+      <a href="https://www.thiruailabs.com" target="_blank" class="btn-secondary">
+        Visit Thiru AI Labs
       </a>
     </div>
   </div>

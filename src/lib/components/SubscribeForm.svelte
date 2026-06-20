@@ -2,6 +2,7 @@
   let email = $state('');
   let firstName = $state('');
   let status = $state<'idle' | 'loading' | 'success' | 'error'>('idle');
+  let successStatus = $state<'new' | 'pending_confirmation' | 'already_subscribed'>('new');
   let errorMessage = $state('');
 
   interface Props {
@@ -28,6 +29,8 @@
         throw new Error(data.error || 'Failed to subscribe');
       }
 
+      const data = await response.json();
+      successStatus = data.status || 'new';
       status = 'success';
       email = '';
       firstName = '';
@@ -40,10 +43,22 @@
 
 {#if status === 'success'}
   <div class="bg-accent/10 border border-accent rounded-lg p-6 text-center">
-    <p class="text-accent font-medium">Please check your email!</p>
-    <p class="text-secondary text-small mt-2">
-      A confirmation email has been sent. Click the link to confirm your subscription.
-    </p>
+    {#if successStatus === 'already_subscribed'}
+      <p class="text-accent font-medium">You're already subscribed!</p>
+      <p class="text-secondary text-small mt-2">
+        This email is already confirmed. You'll continue to receive updates.
+      </p>
+    {:else if successStatus === 'pending_confirmation'}
+      <p class="text-accent font-medium">Please check your existing email!</p>
+      <p class="text-secondary text-small mt-2">
+        A confirmation email was already sent. Click the link to confirm your subscription.
+      </p>
+    {:else}
+      <p class="text-accent font-medium">Please check your email!</p>
+      <p class="text-secondary text-small mt-2">
+        A confirmation email has been sent. Click the link to confirm your subscription.
+      </p>
+    {/if}
   </div>
 {:else}
   <form onsubmit={handleSubmit} class="flex flex-col gap-3" novalidate>

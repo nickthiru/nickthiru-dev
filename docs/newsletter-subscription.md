@@ -9,8 +9,11 @@ The newsletter subscription uses **Brevo** (formerly Sendinblue) with a **Double
 ## Architecture
 
 ```
-User → POST /api/subscribe → Brevo createDoiContact() → DOI confirmation email
-                                                        ↓ (user clicks link)
+User → POST /api/subscribe → Check contact exists?
+                              ├─ No → Brevo createDoiContact() → DOI confirmation email
+                              ├─ Yes, not confirmed → Update FIRSTNAME → Return "check existing email"
+                              └─ Yes, confirmed → Return "already subscribed"
+                                                                 ↓ (user clicks DOI link)
                                               Brevo webhook → POST /api/brevo/webhook
                                                         ↓
                                               Welcome email (template #2)
@@ -31,23 +34,42 @@ User → POST /api/subscribe → Brevo createDoiContact() → DOI confirmation e
 }
 ```
 
-**Response (success):**
-
-```json
-{
-  "success": true,
-  "message": "Please check your email to confirm your subscription."
-}
-```
-
 **Logic:**
 
-1. Validates email is present
-2. Calls `brevoClient.contacts.createDoiContact()` with:
-   - `includeListIds: [11]` (newsletter_subs list)
-   - `templateId: 7` (DOI confirmation email template)
-   - `redirectionUrl: ${PUBLIC_URL}/subscribe/confirmed`
-   - `attributes: { FIRSTNAME: first_name }`
+The endpoint checks for existing contacts before creating new ones to prevent duplicate subscriptions:
+
+#### Case A: New Contact
+
+- Contact doesn't exist in Brevo
+- Creates DOI contact via `createDoiContact()` with:
+  - `includeListIds: [11]` (newsletter_subs list)
+  - `templateId: 7` (DOI confirmation email template)
+  - `redirectionUrl: https://www.thiruailabs.com/newsletter/confirmed`
+  - `attributes: { FIRSTNAME: first_name }`
+- Returns: "Please check your email to confirm your subscription." (201)
+
+#### Case B: Existing, Not Confirmed
+
+- Contact exists but `contact.attributes?.["DOUBLE_OPT-IN"] !== "1"` (note the hyphen in attribute name)
+- Updates `FIRSTNAME` if contact doesn't have one set and a new one is provided
+- Returns: "Please check your existing email to complete the subscription." (200, status: `pending_confirmation`)
+
+#### Case C: Existing, Already Confirmed
+
+- Contact exists with `contact.attributes?.["DOUBLE_OPT-IN"] === "1"`
+- Returns: "You're already subscribed to the newsletter." (200, status: `already_subscribed`)
+
+**All Success Responses:**
+
+```json
+// Case A (201)
+{ "success": true, "message": "Please check your email to confirm your subscription." }
+
+// Case B (200)
+{ "success": true, "message": "Please check your existing email to complete the subscription.", "status": "pending_confirmation" }
+
+// Case C (200)
+{ "success": true, "message": "You're already subscribed to the newsletter.", "status": "already_subscribed" }
 
 ### 2. Webhook Handler (`/api/brevo/webhook`)
 
@@ -108,30 +130,39 @@ In Brevo dashboard → Settings → Webhooks:
 ## Flow Diagram
 
 ```
-┌─────────┐     POST /api/subscribe      ┌──────────┐
-│  User   │ ────────────────────────────→ │  Brevo   │
-│  Form   │                               │  (DOI)   │
-└─────────┘                               └────┬─────┘
-                                               │
-                                    DOI confirmation email
-                                               │
-                                               ▼
-┌─────────┐     Click confirmation link      ┌──────────┐
-│  User   │ ←─────────────────────────────── │  Brevo   │
-└─────────┘                                  └────┬─────┘
-                                                  │
-                                    Webhook (list_addition)
-                                                  │
-                                                  ▼
+
+┌─────────┐ POST /api/subscribe ┌──────────────────┐
+│ User │ ────────────────────────────→ │ Check contact │
+│ Form │ │ exists? │
+└─────────┘ └────────┬─────────┘
+│
+┌──────────────┼──────────────┐
+▼ ▼ ▼
+┌──────────┐ ┌───────────┐ ┌──────────┐
+│ Not found│ │ Found, │ │ Found, │
+│ (Case A) │ │ not conf. │ │ conf. │
+└────┬─────┘ │ (Case B) │ │(Case C) │
+│ └─────┬─────┘ └────┬─────┘
+│ │ │
+▼ ▼ ▼
+Create DOI contact Update FIRSTNAME Return "already
+Brevo sends DOI (if empty) subscribed"
+email automatically
+│
+▼
+(User clicks DOI link later)
+│
+▼
 ┌─────────────────────────────────────────────────────────┐
-│              POST /api/brevo/webhook                     │
-│  1. Verify Bearer token                                 │
-│  2. Check event === "list_addition"                     │
-│  3. Check list_id[0] === 11                             │
-│  4. Fetch contact attributes                            │
-│  5. Send welcome email (template #2)                    │
+│ POST /api/brevo/webhook │
+│ 1. Verify Bearer token │
+│ 2. Check event === "list_addition" │
+│ 3. Check list_id[0] === 11 │
+│ 4. Fetch contact attributes │
+│ 5. Send welcome email (template #2) │
 └─────────────────────────────────────────────────────────┘
-```
+
+````
 
 ## Testing
 
@@ -150,7 +181,7 @@ curl -X POST https://nickthiru.dev/api/brevo/webhook \
   -H "Authorization: Bearer <your-secret>" \
   -H "Content-Type: application/json" \
   -d '{"event":"list_addition","email":"test@example.com","list_id":[11]}'
-```
+````
 
 Expected response: `{"success":true}`
 

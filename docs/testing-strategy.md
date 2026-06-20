@@ -63,12 +63,14 @@ https://nickthiru.dev/rss.xml
 
 ### 5. **Email integration test** (When changing subscription logic)
 
-- Subscribe with a test email
-- Verify Buttondown receives it with correct tags
-- Check welcome email arrives
-- Unsubscribe and verify it works
+Test the three subscription scenarios:
 
-**When to run:** After modifying SubscribeForm or WaitlistForm components.
+1. **New contact:** Subscribe with a new email → check DOI confirmation email arrives → click link → check welcome email arrives
+2. **Existing, unconfirmed:** Subscribe with same email again → should see "Please check your existing email to complete the subscription."
+3. **Existing, confirmed:** After confirming, subscribe again → should see "You're already subscribed to the newsletter."
+4. **Cross-site duplicate:** Subscribe via thiru-ai-labs waitlist first → try subscribing via nickthiru.dev → should see "You're already subscribed"
+
+**When to run:** After modifying the `/api/subscribe` endpoint or Brevo configuration.
 
 ### 6. **Visual regression** (Manual)
 
@@ -83,16 +85,18 @@ Before deploying major CSS changes:
 
 ## What Could Go Wrong (and how to catch it)
 
-| Issue                     | Detection Method           | Prevention                          |
-| ------------------------- | -------------------------- | ----------------------------------- |
-| Broken internal links     | Link checker               | Review before publishing            |
-| Broken external links     | Link checker               | Use reputable sources               |
-| RSS feed malformation     | RSS validator              | Test after schema changes           |
-| Email subscription breaks | Manual test                | Test in staging first               |
-| Markdown rendering issues | Build fails / visual check | Preview posts before publishing     |
-| TypeScript errors         | Build fails                | Run `npm run check` locally         |
-| Mobile layout breaks      | Manual visual check        | Test responsive design in DevTools  |
-| SEO metadata missing      | Manual check               | Use consistent frontmatter template |
+| Issue                            | Detection Method           | Prevention                                   |
+| -------------------------------- | -------------------------- | -------------------------------------------- |
+| Broken internal links            | Link checker               | Review before publishing                     |
+| Broken external links            | Link checker               | Use reputable sources                        |
+| RSS feed malformation            | RSS validator              | Test after schema changes                    |
+| Email subscription breaks        | Manual test (3 scenarios)  | Test in staging first                        |
+| Duplicate contact creation       | Manual test (cross-site)   | Contact existence check in `/api/subscribe`  |
+| DOUBLE_OPT-IN attribute mismatch | Manual test                | Use `=== "1"` with hyphenated attribute name |
+| Markdown rendering issues        | Build fails / visual check | Preview posts before publishing              |
+| TypeScript errors                | Build fails                | Run `npm run check` locally                  |
+| Mobile layout breaks             | Manual visual check        | Test responsive design in DevTools           |
+| SEO metadata missing             | Manual check               | Use consistent frontmatter template          |
 
 ## When to Add Automated Testing
 

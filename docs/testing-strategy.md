@@ -85,18 +85,19 @@ Before deploying major CSS changes:
 
 ## What Could Go Wrong (and how to catch it)
 
-| Issue                            | Detection Method           | Prevention                                   |
-| -------------------------------- | -------------------------- | -------------------------------------------- |
-| Broken internal links            | Link checker               | Review before publishing                     |
-| Broken external links            | Link checker               | Use reputable sources                        |
-| RSS feed malformation            | RSS validator              | Test after schema changes                    |
-| Email subscription breaks        | Manual test (3 scenarios)  | Test in staging first                        |
-| Duplicate contact creation       | Manual test (cross-site)   | Contact existence check in `/api/subscribe`  |
-| DOUBLE_OPT-IN attribute mismatch | Manual test                | Use `=== "1"` with hyphenated attribute name |
-| Markdown rendering issues        | Build fails / visual check | Preview posts before publishing              |
-| TypeScript errors                | Build fails                | Run `npm run check` locally                  |
-| Mobile layout breaks             | Manual visual check        | Test responsive design in DevTools           |
-| SEO metadata missing             | Manual check               | Use consistent frontmatter template          |
+| Issue                              | Detection Method           | Prevention                                   |
+| ---------------------------------- | -------------------------- | -------------------------------------------- |
+| Broken internal links              | Link checker               | Review before publishing                     |
+| Broken external links              | Link checker               | Use reputable sources                        |
+| RSS feed malformation              | RSS validator              | Test after schema changes                    |
+| Email subscription breaks          | Manual test (3 scenarios)  | Test in staging first                        |
+| Duplicate contact creation         | Manual test (cross-site)   | Contact existence check in `/api/subscribe`  |
+| DOUBLE_OPT-IN attribute mismatch   | Manual test                | Use `=== "1"` with hyphenated attribute name |
+| Unconfirmed contact re-subscribing | Acceptable (re-sends DOI)  | Brevo returns 404 for unconfirmed contacts   |
+| Markdown rendering issues          | Build fails / visual check | Preview posts before publishing              |
+| TypeScript errors                  | Build fails                | Run `npm run check` locally                  |
+| Mobile layout breaks               | Manual visual check        | Test responsive design in DevTools           |
+| SEO metadata missing               | Manual check               | Use consistent frontmatter template          |
 
 ## When to Add Automated Testing
 

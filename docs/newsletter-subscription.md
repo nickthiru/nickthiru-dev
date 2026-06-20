@@ -54,6 +54,8 @@ The endpoint checks for existing contacts before creating new ones to prevent du
 - Updates `FIRSTNAME` if contact doesn't have one set and a new one is provided
 - Returns: "Please check your existing email to complete the subscription." (200, status: `pending_confirmation`)
 
+**Note:** Brevo returns 404 for unconfirmed DOI contacts when calling `getContactInfo`, so they fall through to Case A and receive another DOI email. This is acceptable for this edge case — the user just gets another confirmation link.
+
 #### Case C: Existing, Already Confirmed
 
 - Contact exists with `contact.attributes?.["DOUBLE_OPT-IN"] === "1"`

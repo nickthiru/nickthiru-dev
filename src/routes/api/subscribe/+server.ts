@@ -7,7 +7,6 @@
  * 3. If contact is confirmed → return already subscribed message
  */
 import { json } from "@sveltejs/kit";
-import { env } from "$env/dynamic/private";
 import type { RequestHandler } from "./$types";
 import { brevoClient } from "$lib/server/brevo";
 import { handleBrevoError } from "$lib/server/brevo-errors";
@@ -26,24 +25,16 @@ export const POST: RequestHandler = async ({ request }) => {
   try {
     // Try to get existing contact
     let contact: any = null;
-    let contactLookupError: Error | null = null;
     try {
       contact = await brevoClient.contacts.getContactInfo({
         identifier: email,
       });
-      console.log(
-        `[subscribe] Contact found: ${email}, confirmed: ${contact.attributes?.["DOUBLE_OPT-IN"]}`,
-      );
-    } catch (err) {
-      contactLookupError = err as Error;
-      console.log(
-        `[subscribe] Contact not found: ${email}, error: ${contactLookupError.message}`,
-      );
+    } catch {
+      // Contact doesn't exist or is unconfirmed (Brevo returns 404 for unconfirmed DOI contacts)
     }
 
     // Case A: Contact doesn't exist → create DOI contact
     if (!contact) {
-      console.log(`[subscribe] Case A: Creating DOI contact for ${email}`);
       await brevoClient.contacts.createDoiContact({
         email,
         includeListIds: [BREVO_LIST_IDS.newsletter_subs],
@@ -69,9 +60,6 @@ export const POST: RequestHandler = async ({ request }) => {
 
     // Case B: Contact exists but not confirmed yet
     if (!isConfirmed) {
-      console.log(
-        `[subscribe] Case B: Contact exists but not confirmed for ${email}`,
-      );
       // Update FIRSTNAME if provided and contact doesn't have one
       const existingFirstName = contact.attributes?.FIRSTNAME || "";
       if (existingFirstName === "" && first_name) {
@@ -95,7 +83,6 @@ export const POST: RequestHandler = async ({ request }) => {
     }
 
     // Case C: Contact exists and already confirmed
-    console.log(`[subscribe] Case C: Contact already confirmed for ${email}`);
     return json(
       {
         success: true,

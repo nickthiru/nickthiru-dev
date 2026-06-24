@@ -5,7 +5,7 @@ description: "How I'm building an AI agent that turns voice notes into authentic
 publishedAt: "2026-01-15"
 track: "product"
 tags: ["linkedin-ghostwriter", "product", "building-in-public", "saas"]
-draft: false
+draft: true
 ---
 
 A couple weeks ago I caught myself doing the same ridiculous thing again: staring at the LinkedIn text box, rewriting the first sentence five times, and still not liking it.

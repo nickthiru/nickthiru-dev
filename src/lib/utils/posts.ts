@@ -7,7 +7,7 @@ export interface PostFrontmatter {
   description: string;
   publishedAt: string;
   updatedAt?: string;
-  track: "technical" | "business";
+  track: "technical" | "engineering" | "business" | "product";
   tags?: string[];
   draft?: boolean;
   pinned?: boolean;

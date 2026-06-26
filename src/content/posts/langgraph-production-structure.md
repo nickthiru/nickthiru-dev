@@ -10,25 +10,8 @@ series: ""
 series_position:
 linkedin_url: ""
 x_url: ""
----
-
-### Newsletter Hook Paragraph
-
-The first time I shipped a LangGraph agent to production, I thought I was done.  
-Then the incident happened. Not catastrophic — just enough weird behavior to make  
-me realize the gap between a demo agent and a production agent is enormous. One  
-is impressive. The other has to be boringly dependable. In this post I walk  
-through the structure I've landed on: four-node graph pattern, flat explicit state,  
-retry logic that distinguishes fatal from recoverable errors, and observability  
-baked in from day one — not bolted on after a 2 AM debugging session.
-
-### 2-Sentence Summary
-
-Shipping a LangGraph agent that looks good in a demo and one that holds up in  
-production are two very different problems. This post covers the architecture  
-patterns — node responsibilities, state design, error handling, and observability  
-— that make production agents debuggable and maintainable.
-
+newsletter_hook: "The first time I shipped a LangGraph agent to production, I thought I was done. Then the incident happened. Not catastrophic — just enough weird behavior to make me realize the gap between a demo agent and a production agent is enormous. One is impressive. The other has to be boringly dependable. In this post I walk through the structure I've landed on: four-node graph pattern, flat explicit state, retry logic that distinguishes fatal from recoverable errors, and observability baked in from day one — not bolted on after a 2 AM debugging session."
+summary_two_sentence: "Shipping a LangGraph agent that looks good in a demo and one that holds up in production are two very different problems. This post covers the architecture patterns — node responsibilities, state design, error handling, and observability — that make production agents debuggable and maintainable."
 ---
 
 The first time I shipped a LangGraph agent "to production," I thought I was done.

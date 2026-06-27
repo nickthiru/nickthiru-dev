@@ -66,14 +66,18 @@
         </div>
       </div>
     </div>
-
-    <!-- Essential Reading -->
-    <div class="pt-12 pb-16 border-t border-b border-border dark:border-[#262626] mb-14">
-      <EssentialReading posts={data.pinnedPosts} />
-    </div>
-
-    <FilterPills />
   </header>
+
+  <!-- Essential Reading -->
+  <div class="pt-12 pb-16 border-t border-b border-border dark:border-[#262626] mb-14">
+    <EssentialReading posts={data.pinnedPosts} />
+  </div>
+
+  <!-- Posts -->
+  <div class="mb-6">
+    <h2 class="text-h3 text-primary dark:text-[#FAFAFA] mb-6">Posts</h2>
+    <FilterPills />
+  </div>
 
   <div class="grid gap-6 md:grid-cols-2">
     {#each data.posts as post}

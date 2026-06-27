@@ -66,7 +66,7 @@ You're building something that needs to:
 - stay observable
 - stay cost-controlled
 
-[INTERNAL LINK: relevant post on LangGraph production architecture]
+<!-- [INTERNAL LINK: relevant post on LangGraph production architecture] -->
 
 ## Where No/Low-Code Breaks Down in Production
 
@@ -156,7 +156,7 @@ Code-first makes it easier to:
 - add structured logging
 - step through execution locally
 
-[INTERNAL LINK: relevant post on observability and tracing for AI agents]
+<!-- [INTERNAL LINK: relevant post on observability and tracing for AI agents] -->
 
 ### 5) Security and governance gaps show up fast
 
@@ -230,7 +230,7 @@ You don't need this entire stack on day one.
 But if you're building something customers depend on, you'll end up  
 needing _most of it_.
 
-[INTERNAL LINK: relevant post on AWS Lambda or infrastructure for AI agents]
+<!-- [INTERNAL LINK: relevant post on AWS Lambda or infrastructure for AI agents] -->
 
 ## When I Still Use No/Low-Code
 

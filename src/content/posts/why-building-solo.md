@@ -40,8 +40,7 @@ The concern is legitimate. If you're signing up to build critical
 operations around a solo-run product, you're placing a real bet.
 You need to know whether that bet is reckless or reasoned.
 
-[INTERNAL LINK: relevant post on Thiru AI Labs product focus or
-MSME customer profile]
+<!-- [INTERNAL LINK: relevant post on Thiru AI Labs product focus or MSME customer profile] -->
 
 The answer depends entirely on how the work actually gets done — and
 that's changed.
@@ -72,8 +71,7 @@ The result isn't "one person pretending to be a company."
 The result is a lean studio that can ship production-grade systems
 without the overhead of a full team.
 
-[INTERNAL LINK: relevant post on AI-augmented development workflow
-or build process]
+<!-- [INTERNAL LINK: relevant post on AI-augmented development workflow or build process] -->
 
 ## What you get as a customer
 
@@ -192,8 +190,7 @@ I'm not trying to be everything to everyone.
 
 I'm building for customers who care about outcomes.
 
-[INTERNAL LINK: relevant post on product focus or customer
-discovery]
+<!-- [INTERNAL LINK: relevant post on product focus or customer discovery] -->
 
 ## The real lesson
 

@@ -66,7 +66,7 @@ INFO: agent returned response
 
 **Why did it do that?**
 
-[INTERNAL LINK: relevant post on LangGraph agent architecture or production structure]
+<!-- [INTERNAL LINK: relevant post on LangGraph agent architecture or production structure] -->
 
 ## The First Mistake I Made
 
@@ -220,7 +220,7 @@ export async function logLLMCall(params: {
 }
 ```
 
-[INTERNAL LINK: relevant post on token cost management or LLM cost optimization]
+<!-- [INTERNAL LINK: relevant post on token cost management or LLM cost optimization] -->
 
 ## The Debugging Workflow
 
@@ -248,7 +248,7 @@ My current approach:
 
 It's not perfect. It's a moving target. But the alternative — not logging enough — is a worse tradeoff.
 
-[INTERNAL LINK: relevant post on privacy considerations in AI agent systems]
+<!-- [INTERNAL LINK: relevant post on privacy considerations in AI agent systems] -->
 
 ## Your Turn
 

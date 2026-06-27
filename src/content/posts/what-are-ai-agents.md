@@ -73,7 +73,7 @@ I realized I'd been building demos, not systems.
 The shift that changed everything was treating the _structure_ — state, error  
 handling, observability — as the real product, not an afterthought.
 
-[INTERNAL LINK: relevant post on structuring LangGraph agents for production]
+<!-- [INTERNAL LINK: relevant post on structuring LangGraph agents for production] -->
 
 ## Example: Booking a Flight
 
@@ -224,7 +224,7 @@ This is where most teams get stuck.
 
 That gap between demo and production is the real work.
 
-[INTERNAL LINK: relevant post on AI agent observability or quality gates]
+<!-- [INTERNAL LINK: relevant post on AI agent observability or quality gates] -->
 
 ## Getting Started
 

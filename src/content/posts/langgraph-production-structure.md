@@ -36,7 +36,7 @@ In production, your pain points show up fast:
 - You need to replay failures with enough context
 - You need to ship changes safely without breaking everything
 
-[INTERNAL LINK: relevant post on LangGraph getting started or agent architecture]
+<!-- [INTERNAL LINK: relevant post on LangGraph getting started or agent architecture] -->
 
 ## What I Tried First (and Why It Didn't Hold Up)
 
@@ -200,7 +200,7 @@ I used to treat tracing like a nice-to-have.
 
 Now I treat it like a feature.
 
-[INTERNAL LINK: relevant post on AI agent observability or tracing]
+<!-- [INTERNAL LINK: relevant post on AI agent observability or tracing] -->
 
 The pattern is simple: wrap node execution so every step logs timing and token  
 usage.
@@ -246,7 +246,7 @@ A few things I still don't have perfect answers for:
 - Multi-agent coordination without complexity explosions
 - Cost optimization that doesn't degrade quality
 
-[INTERNAL LINK: relevant post on multi-agent coordination or cost optimization]
+<!-- [INTERNAL LINK: relevant post on multi-agent coordination or cost optimization] -->
 
 If you've found patterns that work, I'd genuinely love to learn from you.
 

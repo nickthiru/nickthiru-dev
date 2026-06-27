@@ -5,7 +5,7 @@ publishedAt: "2026-01-09"
 slug: "what-are-ai-agents"
 draft: false
 tags: ["ai-agents", "explainer", "langgraph"]
-track: "engineering"
+track: "technical"
 series: ""
 series_position:
 linkedin_url: ""
@@ -242,9 +242,4 @@ starting today:
 What's the most confusing part of the agent hype for you right now — is it  
 the terminology, the gap between demo and production, or something else entirely?
 
-## Join the Discussion
-
-Sharing what I'm building and learning as I go. If this was  
-useful, I'd love to hear your take.
-
-[Connect on LinkedIn](LINKEDIN_URL) · [Follow on X](X_URL)
+I'm discussing this on [LinkedIn](LINKEDIN_URL) and [X](X_URL) — come share your thoughts there.

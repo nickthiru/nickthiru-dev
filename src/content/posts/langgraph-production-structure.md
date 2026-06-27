@@ -256,9 +256,4 @@ If you're building LangGraph agents in production: what's the one debugging
 lesson you learned the hard way — and did it change how you structured your  
 state or your nodes?
 
-## Join the Discussion
-
-Sharing what I'm building and learning as I go. If this was useful, I'd love  
-to hear your take.
-
-[Connect on LinkedIn](LINKEDIN_URL) · [Follow on X](X_URL)
+I'm discussing this on [LinkedIn](LINKEDIN_URL) and [X](X_URL) — come share your thoughts there.

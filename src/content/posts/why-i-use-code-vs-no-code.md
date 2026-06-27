@@ -5,7 +5,7 @@ publishedAt: "2026-01-16"
 slug: "why-i-use-code-vs-no-code"
 draft: false
 tags: ["ai-agents", "langgraph", "production-systems", "architecture"]
-track: "engineering"
+track: "technical"
 series: ""
 series_position:
 linkedin_url: ""
@@ -254,9 +254,4 @@ If you've shipped agents to production: what broke first — and did
 it change how you structured your error handling or your state  
 management?
 
-## Join the Discussion
-
-Sharing what I'm building and learning as I go. If this was  
-useful, I'd love to hear your take.
-
-[Connect on LinkedIn](LINKEDIN_URL) · [Follow on X](X_URL)
+I'm discussing this on [LinkedIn](LINKEDIN_URL) and [X](X_URL) — come share your thoughts there.

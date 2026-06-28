@@ -39,6 +39,11 @@ index:
 - **Technical but accessible**: Deep technical knowledge, explained for broader audience.
 - **Light humor**: Gentle, self-deprecating humor that builds connection.
 - **Down-to-earth**: Practical, relatable, avoids academic jargon.
+- **Punctuation**:
+  - Em dash (—): use at most once per post. It is a strong AI-prose
+    signal when overused. Prefer a full stop, a comma, a colon,
+    or a restructured sentence. If you find yourself reaching for
+    an em dash, that is a prompt to rewrite the sentence instead.
 
 ### Signature Phrases
 

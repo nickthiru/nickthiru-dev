@@ -1,6 +1,8 @@
 ---
 title: "Building AI Products Solo — And Why It Works"
-description: "Why solo doesn't mean small anymore. What AI augmentation changes about speed, quality, and the customer relationship—especially for MSMEs."
+description: "Why solo doesn't mean small anymore. What AI augmentation
+  changes about speed, quality, and the customer relationship—especially
+  for MSMEs."
 publishedAt: "2026-01-10"
 slug: "why-building-solo"
 draft: false
@@ -11,8 +13,17 @@ series_position:
 linkedin_url: ""
 x_url: ""
 pinned: true
-newsletter_hook: "I'm building Thiru AI Labs solo — no co-founder, no team, no 'we' behind the curtain. In B2B, that raises a fair question: is that a red flag? I used to wonder the same thing. Here's what I've learned: team size is a weak proxy for execution capacity when you're AI-augmented. For the customers I care about most — micro, small, and medium businesses — execution speed and direct access often matter more than headcount. This post is the honest case for why solo, done right, is actually an advantage."
-summary_two_sentence: "Solo used to mean constrained — limited by time, capacity, and the inability to do everything at once. AI augmentation changes that math in ways that matter most to lean businesses who need speed, direct access, and genuine incentive alignment."
+newsletter_hook: "I'm building Thiru AI Labs solo: no co-founder, no team,
+  no 'we' behind the curtain. In B2B, that raises a fair question: is that
+  a red flag? I used to wonder the same thing. Here's what I've learned:
+  team size is a weak proxy for execution capacity when you're AI-augmented.
+  For the customers I care about most (micro, small, and medium businesses),
+  execution speed and direct access often matter more than headcount. This
+  post is the honest case for why solo, done right, is actually an advantage."
+summary_two_sentence: "Solo used to mean constrained: limited by time,
+  capacity, and the inability to do everything at once. AI augmentation
+  changes that math in ways that matter most to lean businesses who need
+  speed, direct access, and genuine incentive alignment."
 ---
 
 I should probably address the thing a lot of people notice immediately:
@@ -28,10 +39,10 @@ shorthand for stability.
 But here's the tradeoff I've learned the hard way:
 
 **team size is a weak proxy for execution capacity when you're
-AI-augmented.**
+_AI-augmented_.**
 
-And for the kinds of customers I care about most — micro, small, and
-medium businesses — execution speed and direct access often matter
+And for the kinds of customers I care about most (micro, small, and
+medium businesses), execution speed and direct access often matter
 more than headcount.
 
 ## The stakes
@@ -42,7 +53,7 @@ You need to know whether that bet is reckless or reasoned.
 
 <!-- [INTERNAL LINK: relevant post on Thiru AI Labs product focus or MSME customer profile] -->
 
-The answer depends entirely on how the work actually gets done — and
+The answer depends entirely on how the work actually gets done. And
 that's changed.
 
 ## The old rules (and why they're breaking)
@@ -78,7 +89,7 @@ without the overhead of a full team.
 This is the part that matters.
 
 If you're a customer (or potential customer), being solo changes
-the relationship in some ways that are actually positive — and these
+the relationship in some ways that are actually positive. These
 flow directly from how the work is structured, not in spite of it.
 
 ### 1. Speed
@@ -102,7 +113,7 @@ You're not talking to:
 You're talking to the builder.
 
 That means when you ask "why does it work like this?" you get a real
-answer — including the tradeoffs.
+answer, including the tradeoffs.
 
 ### 3. Incentive alignment
 
@@ -164,7 +175,7 @@ This is how I mitigate it:
 
 ### "Can you handle support?"
 
-Yes — with boundaries and systems.
+Yes: with boundaries and systems.
 
 - clear response windows
 - automated monitoring so issues are caught early
@@ -196,7 +207,7 @@ I'm building for customers who care about outcomes.
 
 The real lesson was this: "solo" is a structural description, not a
 capacity description. What AI augmentation changes isn't the number
-of hours in the day — it's the ratio of judgment work to execution
+of hours in the day. It's the ratio of judgment work to execution
 work. A solo founder who is AI-augmented is doing nearly all
 judgment and very little execution overhead. That's the only kind
 of work that actually compounds.
@@ -207,7 +218,7 @@ framing matters. The question isn't "how big is the team?" It's
 
 ## Your Turn
 
-If you've worked with a solo builder before — what made the
+If you've worked with a solo builder before: what made the
 difference between it feeling like a risk and feeling like an
 advantage? I'm genuinely curious whether it came down to trust,
 speed, or something else.

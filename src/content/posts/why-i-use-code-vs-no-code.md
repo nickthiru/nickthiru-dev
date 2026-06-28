@@ -1,257 +1,200 @@
 ---
-title: "Why I Build Production AI Systems with Code, Not No-Code"
-description: "Why code-first beats no/low-code once reliability, observability, and cost start to matter (and when I still use the visual tools)."
-publishedAt: "2026-01-16"
+title: "Why I build AI systems with code, not no-code tools"
+description: "No-code AI tools are great for prototypes. Here's why
+  I switched to code-first for production and what that stack
+  actually looks like."
+publishedAt: "2025-11-30"
 slug: "why-i-use-code-vs-no-code"
 draft: false
-tags: ["ai-agents", "langgraph", "production-systems", "architecture"]
+tags: ["no-code", "production", "langgraph", "architecture"]
 track: "technical"
 series: ""
 series_position:
 linkedin_url: ""
 x_url: ""
 pinned: true
-newsletter_hook: "Everyone asks me why I don't just use Flowise or n8n — and
-  they're not wrong that those tools are faster to start with. But I learned
-  the hard way that a demo agent is not a production agent. The moment real
-  users depend on your workflow, 'fast to build' can become 'slow to fix.'
-  In this post I walk through exactly where visual AI builders break down in
-  production — edge cases, state management, debugging, cost control — and the
-  code-first stack I landed on after getting burned enough times to know
-  better."
-summary_two_sentence: "No/low-code AI builders are optimised for the happy
-  path — production is not the happy path. This post covers why code-first
-  wins once reliability, observability, and cost start to matter, and when
-  visual tools are still the right call."
+newsletter_hook: "Someone asked me recently if they could 'just use
+  Zapier' for their AI agent. The honest answer is: it depends entirely
+  on what 'production' means to you. No-code tools are genuinely
+  impressive for demos and MVPs. I used them too. The problem shows up
+  later: when you need to understand why the agent did something, when
+  edge cases start failing in ways you can't debug, when a vendor
+  changes their node behaviour and your workflow silently breaks. In
+  this post I walk through where no-code tools stopped working for me,
+  what I switched to, and the one thing about the debugging setup that
+  a lot of people get wrong."
+summary_two_sentence: "No-code tools get you to a working demo faster
+  than anything else — but they create a ceiling that production
+  systems hit hard. This post covers where that ceiling shows up,
+  the code-first stack I use instead, and the one debugging practice
+  that changes once real user data is involved."
 ---
 
-I get asked this a lot:
+The first time someone asked me if they could "just use Zapier" for
+their AI agent, I had to think about how to answer honestly.
+
+Because the truthful answer is: maybe. It depends on what you mean
+by "just."
+
+If you mean "get to a working demo quickly" — yes. No-code tools are
+genuinely impressive for that. I used them. I still think they're
+the right call for certain things.
+
+But if you mean "ship something to real users and keep it running":
+that's where I've consistently hit a wall.
+
+## Where No-Code Tools Shine (and Where They Don't)
+
+No-code platforms like Flowise and n8n are excellent at one thing:
+making the invisible visible. You can see the flow. You can drag a
+node in, connect it, and watch something work in minutes. For
+exploring an idea or showing a stakeholder what an agent could do,
+they're unbeatable.
+
+The ceiling shows up in production. Specifically, it shows up in
+three places:
+
+**Edge cases you can't see coming.** No-code workflows are defined
+at the happy-path level. When something breaks: when a tool returns
+an unexpected format, when the LLM produces output your next node
+doesn't expect, you're debugging inside a visual abstraction that
+wasn't designed for that. You're clicking around trying to understand
+what happened, not reading an error trace.
+
+**State management that wasn't designed for complexity.** Simple
+linear workflows are fine in no-code. As soon as you need conditional
+branching, retry logic, or state that persists across steps in a
+non-trivial way, the visual metaphor starts to fight you. You end up
+working around the tool's assumptions rather than with them.
+
+**Vendor dependency you can't fully control.** No-code platforms
+change. Node behaviour gets updated, connectors break, pricing changes.
+Your production workflow is sitting on a foundation you don't own and
+can't fully inspect.
+
+None of these are fatal for an internal tool or a prototype. For a
+product that real users depend on, they start to matter a lot.
+
+## What I Got Wrong First
+
+My initial reaction to no-code limitations was to add code around the
+edges: custom code nodes, webhooks out to backend services, stitching
+things together.
 
-"Why not just use Flowise or n8n? They're so much faster."
-
-And honestly… they're not wrong.
-
-If you're prototyping an idea or building a demo for a pitch deck,  
-drag-and-drop AI builders can feel like cheating in the best way.
-
-But here's the tradeoff I learned the hard way:
-
-**A demo agent is not a production agent.**
-
-And the moment real users depend on your workflow, the "fast" tools  
-can become the slowest part of your system.
-
-## The Mental Model That Made This Click
-
-I spent months trying to make a visual builder work for a production  
-workflow before I admitted to myself what I was actually fighting.
-
-No/low-code AI builders are like Lego.
-
-You can build a house quickly.
-
-But if you try to build a skyscraper out of Lego:
-
-- it's fragile
-- it's hard to modify safely
-- debugging is painful
-
-Production agentic systems are skyscrapers.
-
-You're building something that needs to:
-
-- run reliably
-- handle edge cases
-- survive failures
-- stay observable
-- stay cost-controlled
-
-<!-- [INTERNAL LINK: relevant post on LangGraph production architecture] -->
-
-## Where No/Low-Code Breaks Down in Production
-
-No/low-code tools are optimised for the happy path.
-
-Production is not the happy path.
-
-Nobody tells you this until you're staring at a broken workflow at  
-midnight trying to figure out which invisible node swallowed your  
-user's input.
-
-### 1) Edge cases become spaghetti
-
-In production you deal with:
-
-- timeouts
-- flaky third-party APIs
-- users doing weird things
-- models hallucinating
-
-In a visual builder, every extra edge case usually means:
-
-- more nodes
-- more branching
-- a graph that becomes impossible to reason about
-
-With code, error handling stays explicit and testable.
-
-```typescript
-try {
-  const result = await agent.run(input);
-} catch (error) {
-  if (error instanceof APITimeout) {
-    const result = await retryWithBackoff(() => agent.run(input));
-  } else if (error instanceof LLMHallucination) {
-    await queueForHumanReview(input);
-  }
-}
-```
-
-### 2) Control flow (especially loops) is awkward
-
-Agents often need cycles:
-
-- generate
-- evaluate
-- refine
-
-Generating a social media engagement post in my [Social Engagement Radar](https://thiruailabs.com/products/social-engagement-radar) app is a good example:
-
-1. Generate a draft
-2. Score for voice match and quality
-3. If it fails, regenerate (up to N attempts)
-4. If it still fails, route to a human review queue
-
-This is trivial in LangGraph.
-
-In most visual tools, it's either painful or brittle.
-
-### 3) State management isn't a first-class concept
-
-Production agents need state across steps:
-
-- checkpointing
-- resuming after failures
-- human-in-the-loop flows
-
-LangGraph treats state as a core primitive.
-
-Many low-code tools treat it like an afterthought.
-
-### 4) Debugging is where you pay the bill
-
-When your graph breaks, you need:
-
-- structured logs
-- trace IDs
-- tool inputs/outputs
-- the exact prompt
-
-Without that, you don't debug — you guess.
-
-Code-first makes it easier to:
-
-- unit test nodes
-- integration test workflows
-- add structured logging
-- step through execution locally
-
-<!-- [INTERNAL LINK: relevant post on observability and tracing for AI agents] -->
-
-### 5) Security and governance gaps show up fast
-
-Once you touch real customer data, you need:
-
-- secrets management
-- audit trails
-- access controls
-- encryption
-
-It's not that low-code tools can't do any of this.
-
-It's that you often end up _fighting the platform_ to get it right.
-
-### 6) Vendor lock-in becomes real
-
-If your workflow is trapped inside a platform:
-
-- you inherit their roadmap
-- you inherit their pricing
-- you inherit their constraints
-
-With code, you own the system.
-
-### 7) Cost control is harder than it looks
-
-No/low-code platforms often charge per execution.
-
-That can be fine early.
-
-But as usage grows, "per run" costs can balloon.
-
-With code, you can build cost controls intentionally:
-
-- caching
-- batching
-- model routing (cheap model for simple steps, expensive for reasoning)
-- token usage monitoring
-
-## The Moment I Stopped Fighting It
-
-The real lesson was this: I kept treating the visual tool as the  
-default and asking "how do I make this work in the builder?" That  
-was the wrong question. The right question was "what does this  
-workflow actually need?" — and once I answered that honestly, the  
-builder was clearly not the right tool for the job.
-
-Once I committed to code-first, the system became easier to reason  
-about, not harder. Each failure had a clear owner. Each cost spike  
-had a traceable cause. Each edge case had a named handler.
-
-That shift — from fighting the platform to owning the system — is  
-what made production viable.
-
-## The Code-First Production Stack I Use
-
-When I say "code-first," I don't mean "LangGraph and vibes."
-
-I mean a full system:
-
-| Layer               | Tech                 | Why                      |
-| ------------------- | -------------------- | ------------------------ |
-| Agent orchestration | LangGraph            | loops, branching, state  |
-| Backend             | Node.js + AWS Lambda | scalable execution       |
-| UI / dashboards     | SvelteKit            | custom monitoring + UX   |
-| Monitoring          | CloudWatch + Sentry  | logs, metrics, errors    |
-| Infra               | AWS CDK              | reproducible deployments |
-
-You don't need this entire stack on day one.
-
-But if you're building something customers depend on, you'll end up  
-needing _most of it_.
-
-<!-- [INTERNAL LINK: relevant post on AWS Lambda or infrastructure for AI agents] -->
-
-## When I Still Use No/Low-Code
-
-I'm not anti low-code.
-
-Here's when I'd still reach for it:
-
-- quick prototypes
-- internal automations where downtime is acceptable
-- simple linear workflows
-- teams without engineering resources
-
-Here's the tradeoff in one line:
-
-- **prototype** → use whatever gets you to validation fastest
-- **system** → invest in code
+This is the worst of both worlds. You have the constraints of the
+no-code platform and the complexity of custom code, without the
+full debuggability or testability of a pure code implementation.
+The abstraction layer doesn't disappear when you add code around it.
+It just becomes harder to reason about.
+
+The cleaner decision, and the one I landed on, was to move the
+orchestration layer fully into code.
+
+## Why Code-First Wins in Production
+
+This isn't an aesthetic preference. It comes down to four things that
+production systems require and that code-first implementations handle
+better:
+
+**Testability.** You can write unit tests for individual nodes and
+integration tests for complete workflows. You can run them in CI.
+You can catch regressions before they reach production. No-code
+tools have limited or no equivalent.
+
+**Full control over error handling.** In code, you decide exactly
+what happens when a tool call fails, when a timeout occurs, when
+an LLM returns something unexpected. You can distinguish between
+errors that should trigger a retry, errors that should escalate,
+and errors that should surface to the user with a specific message.
+This is difficult to express cleanly in a visual workflow editor.
+
+**Observability you can reason about.** When something goes wrong,
+you need to understand why the agent made the decisions it made.
+Code-first gives you the ability to add structured logging at
+decision points: capturing the state that led to each branching
+decision, not just the action taken.
+
+(See: _[What debugging AI agents taught me about observability](/writing/observability-lessons-from-agent-debugging)_)
+
+**No abstraction ceiling.** When the requirements change, and in
+production they always change, you can change the implementation
+without fighting a tool's opinions about what workflows should look
+like. The code does exactly what you tell it to do.
+
+## The Stack I Use
+
+For AI agent work, I use LangGraph for orchestration on a TypeScript
+backend. LangGraph gives me explicit state management, built-in
+support for conditional branching, and a clear model for how nodes
+communicate. It has a learning curve. It's more opinionated than
+rolling something yourself, but that structure pays for itself in
+production.
+
+(See: _[How I structure LangGraph agents for production](/writing/langgraph-production-structure)_)
+
+The key commitment is TypeScript throughout. Consistent types across
+the orchestration layer, the tool integrations, and the state
+management make refactoring safer and errors more visible.
+
+## The Debugging Reality (and the One Thing That Changes)
+
+One of the strongest arguments for code-first is debugging. When
+something goes wrong in production, you need to be able to replay
+what happened: reconstruct the state the agent was in at each
+decision point and understand why it made the call it made.
+
+Code-first makes this tractable. Specifically:
+
+- **Unit test individual nodes** — each node has defined inputs and
+  outputs you can test in isolation
+- **Integration test full workflows** — run the complete graph
+  against representative inputs in a test environment
+- **Add structured logging at decision points** — when the agent
+  arrives at a branching decision, log the complete state that
+  informed it, not just the outcome
+- **Step through execution locally** — reproduce a failure case
+  in a local environment with known inputs
+
+The one thing about the logging setup that changes once you move
+from a demo to a production system with real users: prompt logging
+is not unconditionally safe.
+
+A prompt that contains only system instructions and few-shot examples
+built from synthetic data? Log it freely: it's pure debugging gold.
+
+A prompt that assembles personal data about a real user or a third
+party into its context before dispatch? That prompt is now a personal
+data payload. Logging it verbatim means your observability store
+becomes a personal data store: with all the retention, access
+control, and deletion obligations that entails. That decision needs
+to be made deliberately, not by default.
+
+<!-- `[ARTIFACT: user to confirm format and content before publishing]` -->
+
+The two-case rule: decide which type your prompts fall into when you
+design the system, not when something breaks at 2 AM.
+
+(See: _[What debugging AI agents taught me about observability](/writing/observability-lessons-from-agent-debugging)_)
+
+## What I'm Still Working Out
+
+A few things I haven't fully resolved:
+
+- When the right call is a hybrid: no-code for simple automations
+  that genuinely don't need production-grade observability, code
+  for the agent layer. I don't think pure code-first everywhere is
+  always the answer.
+- How to evaluate no-code tools fairly as they mature. Flowise and
+  n8n have both improved significantly. The gap that made the
+  code-first decision obvious for me in the past may not be as
+  wide now for simpler use cases.
 
 ## Your Turn
 
-If you've shipped agents to production: what broke first — and did  
-it change how you structured your error handling or your state  
-management?
+If you've shipped an AI agent to production (no-code or code-first),
+what was the moment that clarified which approach was right for
+your situation? I'm curious whether the decision point was debugging,
+testing, state management, or something else entirely.
 
-I'm discussing this on [LinkedIn](LINKEDIN_URL) and [X](X_URL) — come share your thoughts there.
+I'm discussing this on [LinkedIn](LINKEDIN_URL) and [X](X_URL) —
+come share your experience there.

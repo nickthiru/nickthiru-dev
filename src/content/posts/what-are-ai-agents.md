@@ -1,6 +1,8 @@
 ---
 title: "What are AI agents and agentic systems, anyway?"
-description: "A plain-English explanation of AI agents, agentic systems, and what makes them different from chatbots—plus the production lessons people skip."
+description: "A plain-English explanation of AI agents, agentic systems, and
+  what makes them different from chatbots—plus the production lessons people
+  skip."
 publishedAt: "2026-01-09"
 slug: "what-are-ai-agents"
 draft: false
@@ -12,10 +14,10 @@ linkedin_url: ""
 x_url: ""
 pinned: true
 newsletter_hook: "Someone asked me this week: 'Wait, what's an AI agent? Isn't
-  this just ChatGPT with extra steps?' Fair question — the internet has done a
+  this just ChatGPT with extra steps?' Fair question. The internet has done a
   great job turning the word agent into a vibes-based marketing term. In this
   post I try to make it simple: what agents actually are, how they differ from
-  chatbots, what makes them tick, and — the part most explainers skip — why the
+  chatbots, what makes them tick, and, the part most explainers skip, why the
   gap between a demo agent and a production agent is where the real work lives."
 summary_two_sentence: "AI agents are systems that take multi-step actions to
   accomplish goals — not just answer questions — and agentic systems are
@@ -30,17 +32,14 @@ A few times this month someone has asked me, in basically the same tone:
 
 Fair question.
 
-Because the internet has done a great job turning the word _agent_ into a  
-vibes-based marketing term.
+Because the internet has done a great job turning the word _agent_ into a vibes-based marketing term.
 
 So let me try to make this simple.
 
 ## The Short Version
 
-- An **AI agent** is an AI system that can take **multi-step actions** to  
-  accomplish a goal.
-- An **agentic system** is an application built around agents to handle real  
-  workflows end-to-end.
+- An **AI agent** is an AI system that can take **multi-step actions** to accomplish a goal.
+- An **agentic system** is an application built around agents to handle real workflows end-to-end.
 
 Think: less "chatbot," more "assistant that actually does things."
 
@@ -64,16 +63,11 @@ Here's the mental model that helped me:
 
 ## What I Got Wrong First
 
-When I first started building with agents, I made the mistake most people make:  
-I treated them like very capable chatbots. I focused entirely on what the model  
-could do and almost none on how the system should behave when things went wrong.  
-The first time a tool timed out in production and the agent had no recovery path,  
-I realized I'd been building demos, not systems.
+When I first started building with agents, I made the mistake most people make: I treated them like very capable chatbots. I focused entirely on what the model could do and almost none on how the system should behave when things went wrong. The first time a tool timed out in production and the agent had no recovery path, I realized I'd been building demos, not systems.
 
-The shift that changed everything was treating the _structure_ — state, error  
-handling, observability — as the real product, not an afterthought.
+The shift that changed everything was treating the _structure_ as the real product, not an afterthought: state, error handling, observability.
 
-<!-- [INTERNAL LINK: relevant post on structuring LangGraph agents for production] -->
+(See: _[How I structure LangGraph agents for production](/writing/langgraph-production-structure)_)
 
 ## Example: Booking a Flight
 
@@ -224,7 +218,7 @@ This is where most teams get stuck.
 
 That gap between demo and production is the real work.
 
-<!-- [INTERNAL LINK: relevant post on AI agent observability or quality gates] -->
+(See: _[What debugging AI agents taught me about observability](/writing/observability-lessons-from-agent-debugging)_)
 
 ## Getting Started
 
@@ -239,7 +233,6 @@ starting today:
 
 ## Your Turn
 
-What's the most confusing part of the agent hype for you right now — is it  
-the terminology, the gap between demo and production, or something else entirely?
+What's the most confusing part of the agent hype for you right now — is it the terminology, the gap between demo and production, or something else entirely?
 
 I'm discussing this on [LinkedIn](LINKEDIN_URL) and [X](X_URL) — come share your thoughts there.

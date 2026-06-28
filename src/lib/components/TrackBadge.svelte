@@ -1,17 +1,19 @@
 <script lang="ts">
   interface Props {
-    track: 'technical' | 'business' | 'product';
+    track: 'engineering' | 'technical' | 'business' | 'product';
   }
 
   let { track }: Props = $props();
 
   const labels = {
-    technical: 'Engineering',
+    engineering: 'Technical',
+    technical: 'Technical',
     business: 'Business',
     product: 'Product'
   };
 
   const badgeClass = {
+    engineering: 'track-badge-technical',
     technical: 'track-badge-technical',
     business: 'track-badge-business',
     product: 'track-badge-product'

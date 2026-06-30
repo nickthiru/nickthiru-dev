@@ -338,7 +338,7 @@
 
       <!-- Page Info -->
       <p class="text-center text-sm text-secondary dark:text-[#A3A3A3] mt-5">
-        Page {currentPage} of {totalPages} — Showing {(currentPage - 1) * POSTS_PER_PAGE + 1}–{Math.min(currentPage * POSTS_PER_PAGE, filteredPosts.length)} of {filteredPosts.length} posts
+        Page {currentPage} of {totalPages} , Showing {(currentPage - 1) * POSTS_PER_PAGE + 1}–{Math.min(currentPage * POSTS_PER_PAGE, filteredPosts.length)} of {filteredPosts.length} posts
       </p>
     </nav>
   {/if}

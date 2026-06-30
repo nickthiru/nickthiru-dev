@@ -12,7 +12,7 @@
 
 {#if posts.length > 0}
   <div class="mb-8 flex items-baseline justify-between">
-    <h2 class="text-h3 text-primary dark:text-[#FAFAFA]">Essential Reading</h2>
+    <!-- <h2 class="text-h3 text-primary dark:text-[#FAFAFA]">Essential Reading</h2> -->
     {#if showViewAll}
       <a href="/writing" class="hover:text-accent font-medium">
         View all writing <span aria-hidden="true">→</span>

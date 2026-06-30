@@ -19,6 +19,9 @@
   let activeSeries: string[] = $state([]);
   let activePhases: string[] = $state([]);
 
+  // Essential Reading collapsible state
+  let essentialReadingExpanded = $state(false);
+
   // Pagination state
   const POSTS_PER_PAGE = 10;
   let currentPage = $state(1);
@@ -148,7 +151,7 @@
   <header class="mb-6">
     <h1 class="text-h2 text-primary dark:text-[#FAFAFA] mb-8">Writing</h1>
     <p class="text-lg text-secondary dark:text-[#D4D4D4] mb-6">
-      I write about building and shipping agentic AI from three main perspectives: engineering, business, and product.
+      I write about building and shipping agentic AI from three main perspectives, also referred to as <strong>Tracks</strong>: engineering, business, and product.
     </p>
     <div class="grid md:grid-cols-3 gap-6 mt-7 mb-16 items-start">
       <div class="bg-blue-lighter/30 border border-blue-lighter rounded-lg p-5 dark:bg-blue-darker/20 dark:border-blue-darker/40 h-full">
@@ -197,52 +200,71 @@
         </div>
       </div>
     </div>
-
-    <!-- Series Explanation -->
-    <div class="mt-12 p-6 bg-accent/5 border border-accent/20 rounded-lg">
-      <h2 class="text-h4 text-primary dark:text-[#FAFAFA] mb-3">📚 Series</h2>
-      <p class="text-base text-secondary dark:text-[#D4D4D4] mb-4">
-        A <strong>series</strong> is a sequence of related posts following a product's development journey. Each series tracks the evolution from initial concept through to real-world deployment and beyond.
-      </p>
-      <div class="flex flex-wrap gap-3 text-sm">
-        <div class="flex items-center gap-2">
-          <span class="phase-badge bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300">Strategy</span>
-          <span class="text-secondary dark:text-[#A3A3A3]">→</span>
-        </div>
-        <div class="flex items-center gap-2">
-          <span class="phase-badge bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300">Design</span>
-          <span class="text-secondary dark:text-[#A3A3A3]">→</span>
-        </div>
-        <div class="flex items-center gap-2">
-          <span class="phase-badge bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300">Engineering</span>
-          <span class="text-secondary dark:text-[#A3A3A3]">→</span>
-        </div>
-        <div class="flex items-center gap-2">
-          <span class="phase-badge bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300">Deployment</span>
-          <span class="text-secondary dark:text-[#A3A3A3]">→</span>
-        </div>
-        <div class="flex items-center gap-2">
-          <span class="phase-badge bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300">Maintenance</span>
-          <span class="text-secondary dark:text-[#A3A3A3]">→</span>
-        </div>
-        <div class="flex items-center gap-2">
-          <span class="phase-badge bg-pink-100 text-pink-800 dark:bg-pink-900/30 dark:text-pink-300">Community</span>
-        </div>
-      </div>
-      <p class="text-sm text-secondary dark:text-[#A3A3A3] mt-3">
-        Each phase represents a stage in the product lifecycle. Filter by phase to see posts at specific stages across all series.
-      </p>
-    </div>
   </header>
 
-  <!-- Essential Reading -->
-  <div class="pt-12 pb-16 border-t border-b border-border dark:border-[#262626] mb-14">
-    <EssentialReading posts={data.pinnedPosts} />
-  </div>
+  <!-- Series & Essential Reading (2-Column Grid) -->
+  <div class="grid md:grid-cols-2 gap-6 mt-12">
+      <!-- Series Card -->
+      <div class="p-6 bg-accent/5 border border-accent/20 rounded-lg h-full">
+        <h2 class="text-h4 text-primary dark:text-[#FAFAFA] mb-3">Series</h2>
+        <p class="text-base text-secondary dark:text-[#D4D4D4]">
+          Blog posts can also belong to a <strong>Series</strong>, which collects related posts exploring a topic deeply—whether that's a product's journey, a technical subject, or a business theme.
+        </p>
+      </div>
+
+      <!-- Essential Reading Card -->
+      <div class="p-6 bg-accent/5 border border-accent/20 rounded-lg h-full">
+        <h2 class="text-h4 text-primary dark:text-[#FAFAFA] mb-3">Essential Reading</h2>
+        <p class="text-base text-secondary dark:text-[#D4D4D4] mb-3">
+          The most important posts to start with—foundational reads that set the stage for everything else.
+        </p>
+        <button
+          type="button"
+          class="flex items-center justify-between w-full py-2 px-4 rounded-lg border border-accent/30 text-accent hover:bg-accent/10 font-medium transition-colors"
+          onclick={() => essentialReadingExpanded = !essentialReadingExpanded}
+          aria-expanded={essentialReadingExpanded}
+          aria-controls="essential-reading-content"
+        >
+          <span>{essentialReadingExpanded ? 'Hide' : `Show (${data.pinnedPosts.length})`}</span>
+          <svg class="w-4 h-4 transition-transform {essentialReadingExpanded ? 'rotate-180' : ''}" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Essential Reading Dropdown Panel (Full Width) -->
+    {#if essentialReadingExpanded}
+      <!-- Backdrop -->
+      <div
+        class="fixed inset-0 bg-black/20 dark:bg-black/40 z-40"
+        onclick={() => essentialReadingExpanded = false}
+        aria-hidden="true"
+      ></div>
+      <!-- Dropdown Panel -->
+      <div
+        id="essential-reading-content"
+        class="relative z-50 mt-4 mx-auto max-w-page px-6 md:px-8"
+      >
+        <div class="bg-white/95 dark:bg-[#0A0A0A]/95 backdrop-blur-sm border border-border dark:border-[#262626] rounded-lg shadow-xl p-6">
+          <div class="flex items-center justify-between mb-4">
+            <!-- <h3 class="text-h5 text-primary dark:text-[#FAFAFA]">Essential Reading</h3> -->
+            <button
+              type="button"
+              class="text-accent hover:underline font-medium text-sm"
+              onclick={() => essentialReadingExpanded = false}
+            >
+              Hide
+            </button>
+          </div>
+          <EssentialReading posts={data.pinnedPosts} />
+        </div>
+      </div>
+    {/if}
 
   <!-- Posts -->
-  <div id="posts-section" class="mb-6">
-    <h2 class="text-h3 text-primary dark:text-[#FAFAFA] mb-6">Posts</h2>
+  <div id="posts-section" class="mt-10 mb-6 border-t border-border dark:border-[#262626] pt-10">
+    <!-- <h2 class="text-h3 text-primary dark:text-[#FAFAFA] mb-6">Posts</h2> -->
     <FilterPills
       series={data.allSeries}
       activeTracks={activeTracks}
@@ -281,7 +303,7 @@
 
   <!-- Pagination -->
   {#if totalPages > 1}
-    <nav class="pagination mt-8 pt-6 border-t border-border dark:border-[#262626]" aria-label="Pagination">
+    <nav class="pagination mt-8 pt-6" aria-label="Pagination">
       <div class="flex items-center justify-between">
         <!-- Previous Button -->
         <button
@@ -315,7 +337,7 @@
       </div>
 
       <!-- Page Info -->
-      <p class="text-center text-sm text-secondary dark:text-[#A3A3A3] mt-4">
+      <p class="text-center text-sm text-secondary dark:text-[#A3A3A3] mt-5">
         Page {currentPage} of {totalPages} — Showing {(currentPage - 1) * POSTS_PER_PAGE + 1}–{Math.min(currentPage * POSTS_PER_PAGE, filteredPosts.length)} of {filteredPosts.length} posts
       </p>
     </nav>

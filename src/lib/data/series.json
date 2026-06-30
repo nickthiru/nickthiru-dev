@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Social Engagement Radar",
+    "slug": "social-engagement-radar",
+    "description": "Monitor X and LinkedIn conversations in real-time. Find relevant discussions, get AI-drafted responses ready to send."
+  },
+  {
+    "name": "OpsPilot",
+    "slug": "ops-pilot",
+    "description": "Operational intelligence platform. Unified dashboard across Slack, GitHub, Jira, and more."
+  },
+  {
+    "name": "PolicyForge",
+    "slug": "policy-forge",
+    "description": "Generate compliant cybersecurity policies in minutes instead of weeks."
+  }
+]

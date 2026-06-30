@@ -148,12 +148,12 @@
 />
 
 <section class="mx-auto max-w-page px-6 md:px-8 py-12 md:py-16">
-  <header class="mb-6">
+  <header class="mb-6 border-b border-border dark:border-[#262626]">
     <h1 class="text-h2 text-primary dark:text-[#FAFAFA] mb-8">Writing</h1>
     <p class="text-lg text-secondary dark:text-[#D4D4D4] mb-6">
       I write about building and shipping agentic AI from three main perspectives, also referred to as <strong>Tracks</strong>: engineering, business, and product.
     </p>
-    <div class="grid md:grid-cols-3 gap-6 mt-7 mb-16 items-start">
+    <div class="grid md:grid-cols-3 gap-6 mt-7 mb-12 items-start">
       <div class="bg-blue-lighter/30 border border-blue-lighter rounded-lg p-5 dark:bg-blue-darker/20 dark:border-blue-darker/40 h-full">
         <h2 class="text-h5 text-primary dark:text-[#FAFAFA] mb-4 flex items-center gap-2">
           <span class="track-badge track-badge-technical">Engineering</span>
@@ -263,7 +263,7 @@
     {/if}
 
   <!-- Posts -->
-  <div id="posts-section" class="mt-10 mb-6 border-t border-border dark:border-[#262626] pt-10">
+  <div id="posts-section" class="mt-12 mb-6 border-t border-border dark:border-[#262626] pt-10">
     <!-- <h2 class="text-h3 text-primary dark:text-[#FAFAFA] mb-6">Posts</h2> -->
     <FilterPills
       series={data.allSeries}

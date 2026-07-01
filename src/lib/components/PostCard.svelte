@@ -2,6 +2,7 @@
   import type { PostMeta } from '$lib/utils/posts';
   import { formatDateShort } from '$lib/utils/date';
   import TrackBadge from './TrackBadge.svelte';
+  import { phaseBadges, seriesBadgeStyle } from '$lib/config/badges';
 
   interface Props {
     post: PostMeta;
@@ -9,20 +10,8 @@
 
   let { post }: Props = $props();
 
-  // Phase display order and colors
-  const phaseOrder = ['strategy', 'design', 'engineering', 'deployment', 'maintenance', 'community'];
-  
-  const phaseColors: Record<string, string> = {
-    strategy: 'bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300',
-    design: 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300',
-    engineering: 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300',
-    deployment: 'bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300',
-    maintenance: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300',
-    community: 'bg-pink-100 text-pink-800 dark:bg-pink-900/30 dark:text-pink-300'
-  };
-
-  function getPhaseColor(phase: string): string {
-    return phaseColors[phase] || 'bg-gray-100 text-gray-800 dark:bg-gray-900/30 dark:text-gray-300';
+  function getPhaseBadgeClass(phase: string): string {
+    return phaseBadges[phase]?.badge || 'bg-gray-100 text-gray-800 dark:bg-gray-900/30 dark:text-gray-300';
   }
 
   function capitalize(str: string): string {
@@ -51,7 +40,7 @@
     
     <!-- Badges (bottom, full width) -->
     <div class="flex flex-wrap items-center gap-2 mt-4 pt-2">
-      <div class="shrink-0">
+      <div class="shrink-0 rounded">
         <TrackBadge track={post.track} />
       </div>
       
@@ -64,7 +53,7 @@
       
       <!-- Phase Badge (only if series_phase exists) -->
       {#if post.series_phase}
-        <span class="phase-badge {getPhaseColor(post.series_phase)}">
+        <span class="phase-badge {getPhaseBadgeClass(post.series_phase)}">
           {capitalize(post.series_phase)}
         </span>
       {/if}
@@ -77,6 +66,9 @@
     @apply px-2 py-0.5 rounded text-xs font-medium;
   }
   .series-badge {
-    @apply px-2 py-0.5 rounded text-xs font-medium bg-accent/10 text-accent dark:bg-accent/20 dark:text-accent;
+    /* Uses seriesBadgeStyle from $lib/config/badges.ts */
+    @apply px-2 py-0.5 rounded text-xs font-medium
+           text-secondary bg-white border border-gray-400
+           dark:text-[#A3A3A3] dark:bg-[#0A0A0A] dark:border-gray-500;
   }
 </style>

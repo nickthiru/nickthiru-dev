@@ -11,6 +11,7 @@
   import { onMount } from 'svelte';
   import type { PageData } from './$types';
   import type { Post, PostMeta, SeriesSummary } from '$lib/utils/posts';
+  import { phaseBadges, seriesBadgeStyle } from '$lib/config/badges';
 
   interface ExtendedPageData {
     post: Post;
@@ -48,18 +49,8 @@
     return data.post.description;
   });
 
-  // Phase colors for badges
-  const phaseColors: Record<string, string> = {
-    strategy: 'bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300',
-    design: 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300',
-    engineering: 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300',
-    deployment: 'bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300',
-    maintenance: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300',
-    community: 'bg-pink-100 text-pink-800 dark:bg-pink-900/30 dark:text-pink-300'
-  };
-
-  function getPhaseColor(phase: string): string {
-    return phaseColors[phase] || 'bg-gray-100 text-gray-800 dark:bg-gray-900/30 dark:text-gray-300';
+  function getPhaseBadgeClass(phase: string): string {
+    return phaseBadges[phase]?.badge || 'bg-gray-100 text-gray-800 dark:bg-gray-900/30 dark:text-gray-300';
   }
 
   function capitalize(str: string): string {
@@ -84,14 +75,14 @@
       <div class="flex items-center justify-between mb-4">
         <div class="flex items-center gap-3">
           <TrackBadge track={data.post.track} />
-          {#if data.post.series_phase}
-            <span class="phase-badge {getPhaseColor(data.post.series_phase)}">
-              {capitalize(data.post.series_phase)}
-            </span>
-          {/if}
           {#if data.post.series_name}
             <span class="series-badge">
               {data.post.series_name}
+            </span>
+          {/if}
+          {#if data.post.series_phase}
+            <span class="phase-badge {getPhaseBadgeClass(data.post.series_phase)}">
+              {capitalize(data.post.series_phase)}
             </span>
           {/if}
         </div>
@@ -142,7 +133,7 @@
     {/if}
 
     <!-- Article Body -->
-    <div class="max-w-prose mx-auto prose dark:prose-invert">
+    <div class="max-w-prose mx-auto mt-12 prose dark:prose-invert">
       <data.post.content />
     </div>
 
@@ -243,7 +234,10 @@
   }
 
   .series-badge {
-    @apply px-2 py-0.5 rounded text-xs font-medium bg-accent/10 text-accent dark:bg-accent/20 dark:text-accent;
+    /* Uses seriesBadgeStyle from $lib/config/badges.ts */
+    @apply px-2 py-0.5 rounded text-xs font-medium
+           text-secondary bg-white border border-gray-400
+           dark:text-[#A3A3A3] dark:bg-[#0A0A0A] dark:border-gray-500;
   }
 
   .series-drawer-toggle-btn {

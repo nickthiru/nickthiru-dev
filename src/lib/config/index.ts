@@ -1,6 +1,6 @@
 /**
  * Central configuration export
- * Merges site config and projects/products config for easy imports
+ * Merges site config, projects/products config, and badge config for easy imports
  */
 
 export { siteConfig, type SiteConfig } from "./site";
@@ -13,3 +13,17 @@ export {
   type Product,
   type NonProductProject,
 } from "./projects";
+export {
+  trackBadges,
+  phaseBadges,
+  phaseOrder,
+  seriesBadgeStyle,
+  trackPillActiveStyle,
+  seriesPillActiveStyle,
+  phasePillActiveStyle,
+  allPillActiveStyle,
+  pillInactiveStyle,
+  seriesPillInactiveText,
+  type TrackBadgeConfig,
+  type PhaseBadgeConfig,
+} from "./badges";

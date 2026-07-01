@@ -1,17 +1,32 @@
 <script lang="ts">
   import type { SeriesMeta } from '$lib/utils/posts';
+  import {
+    phaseBadges,
+    phaseOrder,
+    trackBadges,
+    trackPillActiveStyle,
+    seriesPillActiveStyle,
+    phasePillActiveStyle,
+    allPillActiveStyle,
+    pillInactiveStyle,
+    seriesPillInactiveText,
+  } from '$lib/config/badges';
 
-  const phases = ['strategy', 'design', 'engineering', 'deployment', 'maintenance', 'community'] as const;
-  type Phase = typeof phases[number];
-
-  const phaseColors: Record<Phase, string> = {
-    strategy: 'bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300',
-    design: 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300',
-    engineering: 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300',
-    deployment: 'bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300',
-    maintenance: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300',
-    community: 'bg-pink-100 text-pink-800 dark:bg-pink-900/30 dark:text-pink-300'
+  // Map display track names to slug for color lookup
+  const trackDisplayToSlug: Record<string, string> = {
+    'Engineering': 'engineering',
+    'Business': 'business',
+    'Product': 'product',
   };
+
+  function getTrackPillClass(track: string): string {
+    const slug = trackDisplayToSlug[track];
+    return slug ? trackBadges[slug]?.pill || '' : '';
+  }
+
+  function getPhaseBadgeClass(phase: string): string {
+    return phaseBadges[phase]?.badge || 'bg-gray-100 text-gray-800 dark:bg-gray-900/30 dark:text-gray-300';
+  }
 
   interface Props {
     tracks?: string[];
@@ -69,10 +84,6 @@
     return activePhases.includes(phase);
   }
 
-  function getPhaseColor(phase: string): string {
-    return phaseColors[phase as Phase] || 'bg-gray-100 text-gray-800 dark:bg-gray-900/30 dark:text-gray-300';
-  }
-
   function capitalize(str: string): string {
     return str.charAt(0).toUpperCase() + str.slice(1);
   }
@@ -88,14 +99,25 @@
       <span class="filter-column-label">Track:</span>
       <div class="flex flex-wrap items-center gap-2 mt-2">
         {#each tracks as track}
-          <button
-            type="button"
-            class="filter-pill {isTrackActive(track) ? 'filter-pill-active' : 'filter-pill-inactive'}"
-            aria-pressed={isTrackActive(track)}
-            onclick={() => handleTrackClick(track)}
-          >
-            {track}
-          </button>
+          {#if track === 'All'}
+            <button
+              type="button"
+              class="filter-pill {isTrackActive(track) ? allPillActiveStyle : pillInactiveStyle}"
+              aria-pressed={isTrackActive(track)}
+              onclick={() => handleTrackClick(track)}
+            >
+              {track}
+            </button>
+          {:else}
+            <button
+              type="button"
+              class="filter-pill {isTrackActive(track) ? `${trackPillActiveStyle} ${getTrackPillClass(track)}` : `${pillInactiveStyle} ${getTrackPillClass(track)}`}"
+              aria-pressed={isTrackActive(track)}
+              onclick={() => handleTrackClick(track)}
+            >
+              {track}
+            </button>
+          {/if}
         {/each}
       </div>
     </div>
@@ -107,7 +129,7 @@
         <div class="flex flex-wrap items-center gap-2 mt-2">
           <button
             type="button"
-            class="filter-pill {isSeriesActive('all') ? 'filter-pill-active' : 'filter-pill-inactive'}"
+            class="filter-pill {isSeriesActive('all') ? allPillActiveStyle : pillInactiveStyle}"
             aria-pressed={isSeriesActive('all')}
             onclick={() => handleSeriesClick('all')}
           >
@@ -116,7 +138,7 @@
           {#each series as s}
             <button
               type="button"
-              class="filter-pill {isSeriesActive(s.slug) ? 'filter-pill-active' : 'filter-pill-inactive'}"
+              class="filter-pill {isSeriesActive(s.slug) ? seriesPillActiveStyle : `${pillInactiveStyle} ${seriesPillInactiveText}`}"
               aria-pressed={isSeriesActive(s.slug)}
               onclick={() => handleSeriesClick(s.slug)}
             >
@@ -137,10 +159,10 @@
           </svg>
         </span>
         <div class="flex flex-wrap items-center gap-2 mt-2">
-          {#each phases as phase}
+          {#each phaseOrder as phase}
             <button
               type="button"
-              class="filter-pill-phase {isPhaseActive(phase) ? 'filter-pill-phase-active' : 'filter-pill-phase-inactive'} {getPhaseColor(phase)}"
+              class="filter-pill-phase {isPhaseActive(phase) ? phasePillActiveStyle : 'filter-pill-phase-inactive'} {getPhaseBadgeClass(phase)}"
               aria-pressed={isPhaseActive(phase)}
               onclick={() => handlePhaseClick(phase)}
             >
@@ -176,25 +198,16 @@
 </div>
 
 <style>
-  .filter-pill {
-    @apply px-3 py-1.5 rounded-full text-sm font-medium transition-colors cursor-pointer;
-  }
-  .filter-pill-inactive {
-    @apply border border-border text-secondary dark:border-[#262626] dark:text-[#A3A3A3] hover:border-accent hover:text-accent;
-  }
-  .filter-pill-active {
-    @apply bg-accent text-white border border-accent hover:bg-accent/90;
-  }
+.filter-pill {
+  @apply px-3 py-1.5 rounded-full text-sm font-medium transition-colors cursor-pointer;
+}
 
-  .filter-pill-phase {
-    @apply px-3 py-1.5 rounded-full text-sm font-medium transition-colors cursor-pointer;
-  }
-  .filter-pill-phase-inactive {
-    @apply opacity-60 hover:opacity-100;
-  }
-  .filter-pill-phase-active {
-    @apply ring-2 ring-accent ring-offset-1 dark:ring-offset-[#0A0A0A];
-  }
+.filter-pill-phase {
+  @apply px-3 py-1.5 rounded-full text-sm font-medium transition-colors cursor-pointer;
+}
+.filter-pill-phase-inactive {
+  @apply hover:opacity-80;
+}
 
   .filter-column {
     @apply flex flex-col;

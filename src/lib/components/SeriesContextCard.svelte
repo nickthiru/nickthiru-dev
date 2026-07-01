@@ -16,7 +16,7 @@
 
 <div class="series-context-card">
   <div class="flex items-start gap-3">
-    <span class="text-2xl shrink-0">📚</span>
+    <!-- <span class="text-2xl shrink-0">📚</span> -->
     <div class="flex-1">
       <p class="text-base text-primary dark:text-[#FAFAFA] mb-1">
         You're reading Part {currentPosition} of {totalInSeries} in 

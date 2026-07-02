@@ -7,7 +7,7 @@ publishedAt: "2025-12-15"
 slug: "langgraph-production-structure"
 draft: false
 tags: ["langgraph", "architecture", "agents"]
-track: "technical"
+track: "engineering"
 series: ""
 series_position:
 linkedin_url: ""

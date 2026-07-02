@@ -7,7 +7,7 @@ publishedAt: "2026-01-09"
 slug: "what-are-ai-agents"
 draft: false
 tags: ["ai-agents", "explainer", "langgraph"]
-track: "technical"
+track: "engineering"
 series: ""
 series_position:
 linkedin_url: ""

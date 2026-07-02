@@ -31,7 +31,6 @@
     'Engineering': 'engineering',
     'Business': 'business',
     'Product': 'product',
-    'Technical': 'technical'
   };
 
   // Series descriptions map
@@ -156,7 +155,7 @@
     <div class="grid md:grid-cols-3 gap-6 mt-7 mb-12 items-start">
       <div class="bg-blue-lighter/30 border border-blue-lighter rounded-lg p-5 dark:bg-blue-darker/20 dark:border-blue-darker/40 h-full">
         <h2 class="text-h5 text-primary dark:text-[#FAFAFA] mb-4 flex items-center gap-2">
-          <span class="track-badge track-badge-technical">Engineering</span>
+          <span class="track-badge track-badge-engineering">Engineering</span>
         </h2>
         <div class="space-y-4">
           <div>

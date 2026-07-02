@@ -10,7 +10,7 @@
 // These colors match the track badges shown in the track description
 // cards at the top of the /writing page and on post cards.
 // Defined in app.css as:
-//   .track-badge-technical: bg-blue-lighter text-blue-darker
+//   .track-badge-engineering: bg-blue-lighter text-blue-darker
 //   .track-badge-business: bg-pink-lighter text-pink-darker
 //   .track-badge-product: bg-purple-100 text-purple-800
 
@@ -25,7 +25,7 @@ export interface TrackBadgeConfig {
 export const trackBadges: Record<string, TrackBadgeConfig> = {
   engineering: {
     label: "Engineering",
-    badge: "track-badge-technical",
+    badge: "track-badge-engineering",
     pill: "text-blue-darker bg-blue-lighter dark:text-blue-light dark:bg-blue-darker/30",
   },
   business: {

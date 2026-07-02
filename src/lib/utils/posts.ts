@@ -7,7 +7,7 @@ export interface PostFrontmatter {
   description: string;
   publishedAt: string;
   updatedAt?: string;
-  track: "technical" | "engineering" | "business" | "product";
+  track: "engineering" | "business" | "product";
   tags?: string[];
   draft?: boolean;
   pinned?: boolean;
@@ -129,7 +129,7 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
 }
 
 export async function getPostsMetaByTrack(
-  track: "technical" | "business",
+  track: "engineering" | "business",
 ): Promise<PostMeta[]> {
   const posts = await getPostsMeta();
   return posts.filter((post) => post.track === track);

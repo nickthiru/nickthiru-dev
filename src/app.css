@@ -81,7 +81,7 @@
     @apply inline-block text-xs font-semibold px-3 py-1 rounded;
   }
 
-  .track-badge-technical {
+  .track-badge-engineering {
     @apply bg-blue-lighter text-blue-darker;
   }
 

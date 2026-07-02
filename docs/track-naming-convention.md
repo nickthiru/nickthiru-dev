@@ -2,20 +2,20 @@
 
 ## Current Standard
 
-The codebase uses a **two-layer naming system** for content tracks:
+The codebase uses a **single slug** for each content track, with display labels mapped in components and config.
 
 ### Internal Values (code/data)
 
 Used in:
 
-- Post frontmatter (`track: "technical"`)
+- Post frontmatter (`track: "engineering"`)
 - TypeScript types
 - Database/config values
 - Route parameters
 
 **Values:**
 
-- `technical` - Engineering/technical content
+- `engineering` - Engineering/technical content
 - `business` - Business/operating content
 - `product` - Product development content
 
@@ -30,15 +30,15 @@ Used in:
 
 **Labels:**
 
-- `technical` → **"Engineering"**
-- `business` → **"Business"** (or "Operating" in some contexts)
+- `engineering` → **"Engineering"**
+- `business` → **"Business"**
 - `product` → **"Product"**
 
 ## Why This Approach?
 
-1. **Stability**: Internal values (`technical`) don't change even if we rebrand the display label
-2. **Flexibility**: Can change "Engineering" to "Technical" in UI without touching data
-3. **Clarity**: "Engineering" is more specific and user-friendly than "technical"
+1. **Simplicity**: One slug used everywhere — frontmatter, routes, filters, badges — no indirection or mapping layer needed.
+2. **Clarity**: "Engineering" is both the internal slug and the user-facing label, reducing cognitive overhead.
+3. **Consistency**: Filter pills, postcard badges, and blog post badges all display the same label.
 
 ## Implementation
 
@@ -47,7 +47,7 @@ Used in:
 ```typescript
 // TrackBadge.svelte
 const labels = {
-  technical: "Engineering", // Internal → Display
+  engineering: "Engineering",
   business: "Business",
   product: "Product",
 };
@@ -57,48 +57,27 @@ const labels = {
 
 ```yaml
 ---
-track: "technical" # Use internal value
+track: "engineering" # Use the track slug directly
 ---
 ```
 
 ### In Routes
 
 ```
-/writing/engineering  # URL uses display name
+/writing/engineering  # URL uses the track slug
 ```
 
-But the route loads posts with:
+And the route loads posts with:
 
 ```typescript
-getPostsMetaByTrack("technical"); // Uses internal value
+getPostsMetaByTrack("engineering"); // Uses the same slug
 ```
 
 ## Current Files Using This Convention
 
-- ✅ `src/lib/components/TrackBadge.svelte` - Maps internal → display
-- ✅ `src/lib/utils/posts.ts` - Uses internal values in types
-- ✅ `src/content/posts/*.md` - Uses internal values in frontmatter
-- ✅ `src/routes/writing/engineering/+page.server.ts` - Loads by internal value
-- ✅ `src/routes/rss.xml/+server.ts` - Maps for RSS categories
-
-## Potential Inconsistency
-
-The route is `/writing/engineering` but internally uses `track: "technical"`. This is intentional but can be confusing.
-
-**Alternative considered:** Rename internal value to `engineering` to match URL.
-
-**Decision:** Keep `technical` as internal value because:
-
-- It's more generic (covers broader technical content)
-- Already used in all existing posts
-- Display label can change without data migration
-- "Engineering" is just the current branding choice
-
-## Future Additions
-
-When adding new tracks:
-
-1. Choose a generic internal value (e.g., `design`, `marketing`)
-2. Map to specific display label in TrackBadge
-3. Create route using display name (e.g., `/writing/design`)
-4. Load posts using internal value in server code
+- ✅ `src/lib/components/TrackBadge.svelte` - Maps slug → display label
+- ✅ `src/lib/utils/posts.ts` - Uses track slugs in types
+- ✅ `src/content/posts/*.md` - Uses track slugs in frontmatter
+- ✅ `src/routes/writing/engineering/+page.server.ts` - Loads by track slug
+- ✅ `src/lib/config/badges.ts` - Track badge config keyed by track slug
+- ✅ `src/routes/rss.xml/+server.ts` - RSS category mappings

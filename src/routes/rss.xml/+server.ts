@@ -28,9 +28,9 @@ export const GET: RequestHandler = async () => {
       <guid isPermaLink="true">${siteConfig.url}/writing/${post.slug}</guid>
       <pubDate>${new Date(post.publishedAt).toUTCString()}</pubDate>
       <category>${
-        post.track === "technical" ? "Engineering" : "Operating"
+        post.track === "engineering" ? "Engineering" : "Operating"
       }</category>
-    </item>`
+    </item>`,
       )
       .join("")}
   </channel>

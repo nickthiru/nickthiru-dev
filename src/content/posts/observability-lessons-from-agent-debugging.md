@@ -7,7 +7,7 @@ publishedAt: "2025-12-08"
 slug: "observability-lessons-from-agent-debugging"
 draft: false
 tags: ["observability", "debugging", "agents", "langgraph"]
-track: "technical"
+track: "engineering"
 series: ""
 series_position:
 linkedin_url: ""

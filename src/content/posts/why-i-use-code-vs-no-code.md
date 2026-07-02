@@ -7,7 +7,7 @@ publishedAt: "2025-11-30"
 slug: "why-i-use-code-vs-no-code"
 draft: false
 tags: ["no-code", "production", "langgraph", "architecture"]
-track: "technical"
+track: "engineering"
 series: ""
 series_position:
 linkedin_url: ""

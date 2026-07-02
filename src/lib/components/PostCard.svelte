@@ -46,7 +46,7 @@
       
       <!-- Series Badge (only if series_name exists) -->
       {#if post.series_name}
-        <span class="series-badge">
+        <span class="{seriesBadgeStyle}">
           {post.series_name}
         </span>
       {/if}
@@ -64,11 +64,5 @@
 <style>
   .phase-badge {
     @apply px-2 py-0.5 rounded text-xs font-medium;
-  }
-  .series-badge {
-    /* Uses seriesBadgeStyle from $lib/config/badges.ts */
-    @apply px-2 py-0.5 rounded text-xs font-medium
-           text-secondary bg-white border border-gray-400
-           dark:text-[#A3A3A3] dark:bg-[#0A0A0A] dark:border-gray-500;
   }
 </style>

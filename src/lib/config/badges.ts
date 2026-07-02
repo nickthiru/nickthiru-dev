@@ -119,7 +119,7 @@ export const seriesBadgeStyle =
 export const trackPillActiveStyle =
   "ring-2 ring-accent ring-offset-1 dark:ring-offset-[#0A0A0A]";
 
-// Series named pills: purple border only (no fill)
+// Series named pills: white bg + purple border only (no fill)
 export const seriesPillActiveStyle =
   "text-secondary bg-white border-2 border-accent dark:text-[#A3A3A3] dark:bg-[#0A0A0A] dark:border-accent";
 
@@ -131,9 +131,6 @@ export const phasePillActiveStyle =
 export const allPillActiveStyle =
   "bg-accent text-white border border-accent hover:bg-accent/90";
 
-// Inactive pill base style (border + hover, no text color — text color comes from track/series specific classes)
+// Inactive pill base style (border + hover — no bg, no text color; bg/text come from track/series specific classes)
 export const pillInactiveStyle =
   "border border-border dark:border-[#262626] hover:border-accent";
-
-// Inactive series pill text color
-export const seriesPillInactiveText = "text-secondary dark:text-[#A3A3A3]";

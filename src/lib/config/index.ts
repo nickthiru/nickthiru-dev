@@ -23,7 +23,6 @@ export {
   phasePillActiveStyle,
   allPillActiveStyle,
   pillInactiveStyle,
-  seriesPillInactiveText,
   type TrackBadgeConfig,
   type PhaseBadgeConfig,
 } from "./badges";

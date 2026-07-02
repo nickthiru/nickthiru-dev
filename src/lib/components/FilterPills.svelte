@@ -9,7 +9,7 @@
     phasePillActiveStyle,
     allPillActiveStyle,
     pillInactiveStyle,
-    seriesPillInactiveText,
+    seriesBadgeStyle,
   } from '$lib/config/badges';
 
   // Map display track names to slug for color lookup
@@ -138,7 +138,7 @@
           {#each series as s}
             <button
               type="button"
-              class="filter-pill {isSeriesActive(s.slug) ? seriesPillActiveStyle : `${pillInactiveStyle} ${seriesPillInactiveText}`}"
+              class="filter-pill {isSeriesActive(s.slug) ? seriesPillActiveStyle : `${pillInactiveStyle} ${seriesBadgeStyle}`}"
               aria-pressed={isSeriesActive(s.slug)}
               onclick={() => handleSeriesClick(s.slug)}
             >
@@ -199,11 +199,11 @@
 
 <style>
 .filter-pill {
-  @apply px-3 py-1.5 rounded-full text-sm font-medium transition-colors cursor-pointer;
+  @apply px-3 py-1.5 rounded text-sm font-medium transition-colors cursor-pointer;
 }
 
 .filter-pill-phase {
-  @apply px-3 py-1.5 rounded-full text-sm font-medium transition-colors cursor-pointer;
+  @apply px-3 py-1.5 rounded text-sm font-medium transition-colors cursor-pointer;
 }
 .filter-pill-phase-inactive {
   @apply hover:opacity-80;

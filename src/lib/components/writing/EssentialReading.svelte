@@ -38,7 +38,7 @@
   <!-- Section Header Row -->
   <div class="section-header">
     <span class="section-label">Essential Reading</span>
-    <div class="section-rule"></div>
+    <!-- <div class="section-rule"></div> -->
     <button
       type="button"
       class="toggle-link"
@@ -47,7 +47,7 @@
       onclick={toggle}
     >
       <!-- <span class="toggle-text">{expanded ? 'Hide' : `Show posts (${postCount})`}</span> -->
-      <span class="toggle-text">{expanded ? 'Hide' : `Show posts`}</span>
+      <span class="toggle-text">{expanded ? 'Hide' : `Show`}</span>
       <svg class="toggle-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M2 4L6 8L10 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>

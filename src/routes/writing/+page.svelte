@@ -1,8 +1,9 @@
 <script lang="ts">
   import SEO from '$lib/components/SEO.svelte';
   import PostCard from '$lib/components/PostCard.svelte';
-  import EssentialReading from '$lib/components/EssentialReading.svelte';
+  import EssentialReading from '$lib/components/writing/EssentialReading.svelte';
   import FilterPills from '$lib/components/FilterPills.svelte';
+  import SearchGuide from '$lib/components/writing/SearchGuide.svelte';
   import type { PageData } from './$types';
   import type { PostMeta } from '$lib/utils/posts';
 
@@ -18,9 +19,6 @@
   let activeTracks: string[] = $state([]);
   let activeSeries: string[] = $state([]);
   let activePhases: string[] = $state([]);
-
-  // Essential Reading collapsible state
-  let essentialReadingExpanded = $state(false);
 
   // Pagination state
   const POSTS_PER_PAGE = 10;
@@ -147,122 +145,21 @@
 />
 
 <section class="mx-auto max-w-page px-6 md:px-8 py-12 md:py-16">
-  <header class="mb-6 border-b border-border dark:border-[#262626]">
+  <header class="mb-6 border-b border-border dark:border-[#262626] pb-4">
     <h1 class="text-h2 text-primary dark:text-[#FAFAFA] mb-8">Writing</h1>
     <p class="text-lg text-secondary dark:text-[#D4D4D4] mb-6">
       I write about building and shipping agentic AI from three main perspectives, also referred to as <strong>Tracks</strong>: engineering, business, and product.
     </p>
-    <div class="grid md:grid-cols-3 gap-6 mt-7 mb-12 items-start">
-      <div class="bg-blue-lighter/30 border border-blue-lighter rounded-lg p-5 dark:bg-blue-darker/20 dark:border-blue-darker/40 h-full">
-        <h2 class="text-h5 text-primary dark:text-[#FAFAFA] mb-4 flex items-center gap-2">
-          <span class="track-badge track-badge-engineering">Engineering</span>
-        </h2>
-        <div class="space-y-4">
-          <div>
-            <span class="block font-medium text-primary dark:text-[#FAFAFA] text-sm">Engineering Deep-Dives</span>
-            <span class="text-secondary dark:text-[#D4D4D4] text-sm leading-relaxed block mt-1">Architecture decisions, implementation challenges, and solutions.</span>
-          </div>
-          <div>
-            <span class="block font-medium text-primary dark:text-[#FAFAFA] text-sm">Technical Writing</span>
-            <span class="text-secondary dark:text-[#D4D4D4] text-sm leading-relaxed block mt-1">General agentic AI insights, industry trends, and emerging patterns.</span>
-          </div>
-        </div>
-      </div>
-      <div class="bg-pink-lighter/30 border border-pink-lighter rounded-lg p-5 dark:bg-pink-darker/20 dark:border-pink-darker/40 h-full">
-        <h2 class="text-h5 text-primary dark:text-[#FAFAFA] mb-4 flex items-center gap-2">
-          <span class="track-badge track-badge-business">Business</span>
-        </h2>
-        <div class="space-y-4">
-          <div>
-            <span class="block font-medium text-primary dark:text-[#FAFAFA] text-sm">Business & Operations</span>
-            <span class="text-secondary dark:text-[#D4D4D4] text-sm leading-relaxed block mt-1">Practical insights on pricing, distribution, and running a portfolio.</span>
-          </div>
-          <div>
-            <span class="block font-medium text-primary dark:text-[#FAFAFA] text-sm">Metrics & Progress</span>
-            <span class="text-secondary dark:text-[#D4D4D4] text-sm leading-relaxed block mt-1">Real numbers and honest updates on what's working and what's not.</span>
-          </div>
-        </div>
-      </div>
-      <div class="bg-accent/10 border border-accent/20 rounded-lg p-5 dark:bg-accent/20 dark:border-accent/40 h-full">
-        <h2 class="text-h5 text-primary dark:text-[#FAFAFA] mb-4 flex items-center gap-2">
-          <span class="track-badge track-badge-product">Product</span>
-        </h2>
-        <div class="space-y-4">
-          <div>
-            <span class="block font-medium text-primary dark:text-[#FAFAFA] text-sm">Product News</span>
-            <span class="text-secondary dark:text-[#D4D4D4] text-sm leading-relaxed block mt-1">Build logs, learnings, and updates on shipped AI products.</span>
-          </div>
-          <div>
-            <span class="block font-medium text-primary dark:text-[#FAFAFA] text-sm">Community Feedback</span>
-            <span class="text-secondary dark:text-[#D4D4D4] text-sm leading-relaxed block mt-1">Iterating on products based on user requests and collaboration.</span>
-          </div>
-        </div>
-      </div>
-    </div>
   </header>
 
-  <!-- Series & Essential Reading (2-Column Grid) -->
-  <div class="grid md:grid-cols-2 gap-6 mt-12">
-      <!-- Series Card -->
-      <div class="p-6 bg-accent/5 border border-accent/20 rounded-lg h-full">
-        <h2 class="text-h4 text-primary dark:text-[#FAFAFA] mb-3">Series</h2>
-        <p class="text-base text-secondary dark:text-[#D4D4D4]">
-          Blog posts can also belong to a <strong>Series</strong>, which collects related posts exploring a topic deeply—whether that's a product's journey, a technical subject, or a business theme.
-        </p>
-      </div>
+  <!-- Search Guide (collapsible section with tracks, series, and phase cards) -->
+  <SearchGuide />
 
-      <!-- Essential Reading Card -->
-      <div class="p-6 bg-accent/5 border border-accent/20 rounded-lg h-full">
-        <h2 class="text-h4 text-primary dark:text-[#FAFAFA] mb-3">Essential Reading</h2>
-        <p class="text-base text-secondary dark:text-[#D4D4D4] mb-3">
-          The most important posts to start with—foundational reads that set the stage for everything else.
-        </p>
-        <button
-          type="button"
-          class="flex items-center justify-between w-full py-2 px-4 rounded-lg border border-accent/30 text-accent hover:bg-accent/10 font-medium transition-colors"
-          onclick={() => essentialReadingExpanded = !essentialReadingExpanded}
-          aria-expanded={essentialReadingExpanded}
-          aria-controls="essential-reading-content"
-        >
-          <span>{essentialReadingExpanded ? 'Hide' : `Show (${data.pinnedPosts.length})`}</span>
-          <svg class="w-4 h-4 transition-transform {essentialReadingExpanded ? 'rotate-180' : ''}" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-          </svg>
-        </button>
-      </div>
-    </div>
-
-    <!-- Essential Reading Dropdown Panel (Full Width) -->
-    {#if essentialReadingExpanded}
-      <!-- Backdrop -->
-      <div
-        class="fixed inset-0 bg-black/20 dark:bg-black/40 z-40"
-        onclick={() => essentialReadingExpanded = false}
-        aria-hidden="true"
-      ></div>
-      <!-- Dropdown Panel -->
-      <div
-        id="essential-reading-content"
-        class="relative z-50 mt-4 mx-auto max-w-page px-6 md:px-8"
-      >
-        <div class="bg-white/95 dark:bg-[#0A0A0A]/95 backdrop-blur-sm border border-border dark:border-[#262626] rounded-lg shadow-xl p-6">
-          <div class="flex items-center justify-between mb-4">
-            <!-- <h3 class="text-h5 text-primary dark:text-[#FAFAFA]">Essential Reading</h3> -->
-            <button
-              type="button"
-              class="text-accent hover:underline font-medium text-sm"
-              onclick={() => essentialReadingExpanded = false}
-            >
-              Hide
-            </button>
-          </div>
-          <EssentialReading posts={data.pinnedPosts} />
-        </div>
-      </div>
-    {/if}
+  <!-- Essential Reading (standalone full-width collapsible section) -->
+  <EssentialReading posts={data.pinnedPosts} />
 
   <!-- Posts -->
-  <div id="posts-section" class="mt-12 mb-6 border-t border-border dark:border-[#262626] pt-10">
+  <div id="posts-section" class="mb-6 border-t border-border dark:border-[#262626] pt-10">
     <!-- <h2 class="text-h3 text-primary dark:text-[#FAFAFA] mb-6">Posts</h2> -->
     <FilterPills
       series={data.allSeries}

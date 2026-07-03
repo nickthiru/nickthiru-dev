@@ -13,6 +13,7 @@ series_position:
 linkedin_url: ""
 x_url: ""
 pinned: true
+pinned_order: 2
 newsletter_hook: "I'm building Thiru AI Labs solo: no co-founder, no team,
   no 'we' behind the curtain. In B2B, that raises a fair question: is that
   a red flag? I used to wonder the same thing. Here's what I've learned:

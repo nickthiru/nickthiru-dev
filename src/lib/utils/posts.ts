@@ -11,6 +11,7 @@ export interface PostFrontmatter {
   tags?: string[];
   draft?: boolean;
   pinned?: boolean;
+  pinned_order?: number;
   canonical?: string;
   image?: string;
   linkedin_url?: string;
@@ -137,7 +138,13 @@ export async function getPostsMetaByTrack(
 
 export async function getPinnedPosts(): Promise<PostMeta[]> {
   const posts = await getPostsMeta();
-  return posts.filter((post) => post.pinned);
+  const pinnedPosts = posts.filter((post) => post.pinned);
+
+  return pinnedPosts.sort((a, b) => {
+    const orderA = a.pinned_order ?? Infinity;
+    const orderB = b.pinned_order ?? Infinity;
+    return orderA - orderB;
+  });
 }
 
 // Get all posts in a series, sorted by series_position

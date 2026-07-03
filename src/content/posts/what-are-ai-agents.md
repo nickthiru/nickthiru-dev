@@ -13,6 +13,7 @@ series_position:
 linkedin_url: ""
 x_url: ""
 pinned: true
+pinned_order: 1
 newsletter_hook: "Someone asked me this week: 'Wait, what's an AI agent? Isn't
   this just ChatGPT with extra steps?' Fair question. The internet has done a
   great job turning the word agent into a vibes-based marketing term. In this

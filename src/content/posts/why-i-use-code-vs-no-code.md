@@ -13,6 +13,7 @@ series_position:
 linkedin_url: ""
 x_url: ""
 pinned: true
+pinned_order: 3
 newsletter_hook: "Someone asked me recently if they could 'just use
   Zapier' for their AI agent. The honest answer is: it depends entirely
   on what 'production' means to you. No-code tools are genuinely

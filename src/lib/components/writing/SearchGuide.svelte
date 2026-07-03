@@ -125,16 +125,13 @@
         <div class="p-6 bg-accent/5 border border-accent/20 rounded-lg h-full">
           <h2 class="text-h4 text-primary dark:text-[#FAFAFA] mb-3">Phase</h2>
           <p class="text-base text-secondary dark:text-[#D4D4D4] mb-3">
-            <strong><em>Product</em> series</strong> are organised into phases that follow a product's
-            development journey:
-          </p>
-          <p class="text-base font-semibold text-accent dark:text-[#D4D4D4] mb-3">
-            Strategy → Design → Engineering → Deployment
+            <em>Product series</em> posts are organised into <strong>Phases</strong> of a product's development journey: 
+            <span class="text-base font-medium">
+            strategy, design, engineering, deployment, maintenace, community (feedback)
+          </span>
           </p>
           <p class="text-base text-secondary dark:text-[#A3A3A3]">
-            When browsing a product series, you can filter posts by phase.
-            The phase filter appears automatically when a product series
-            is selected.
+            The phase filter appears automatically when a product series is selected.
           </p>
         </div>
       </div>

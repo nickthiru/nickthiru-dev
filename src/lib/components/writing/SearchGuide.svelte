@@ -57,82 +57,92 @@
     aria-hidden={!expanded}
   >
     <div class="guide-content-inner">
-      <!-- Track Cards (3-column grid) -->
-      <div class="grid md:grid-cols-3 gap-6 mb-6">
-        <!-- Engineering Track -->
-        <div class="bg-blue-lighter/30 border border-blue-lighter rounded-lg p-5 dark:bg-blue-darker/20 dark:border-blue-darker/40 h-full">
-          <h2 class="text-h5 text-primary dark:text-[#FAFAFA] mb-4 flex items-center gap-2">
-            <TrackBadge track="engineering" />
-          </h2>
-          <div class="space-y-4">
-            <div>
-              <span class="block font-medium text-primary dark:text-[#FAFAFA] text-sm">Engineering Deep-Dives</span>
-              <span class="text-secondary dark:text-[#D4D4D4] text-sm leading-relaxed block mt-1">Architecture decisions, implementation challenges, and solutions.</span>
+      <!-- Tracks Section -->
+      <div class="mb-6">
+        <h2 class="text-h4 text-primary dark:text-[#FAFAFA] ml-3 mb-3">Track</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <!-- Engineering Track -->
+          <div class="bg-blue-lighter/30 border border-blue-lighter rounded-lg p-5 dark:bg-blue-darker/20 dark:border-blue-darker/40 h-full">
+            <div class="mb-4 flex items-center gap-2">
+              <TrackBadge track="engineering" />
             </div>
-            <div>
-              <span class="block font-medium text-primary dark:text-[#FAFAFA] text-sm">Technical Writing</span>
-              <span class="text-secondary dark:text-[#D4D4D4] text-sm leading-relaxed block mt-1">General agentic AI insights, industry trends, and emerging patterns.</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Business Track -->
-        <div class="bg-pink-lighter/30 border border-pink-lighter rounded-lg p-5 dark:bg-pink-darker/20 dark:border-pink-darker/40 h-full">
-          <h2 class="text-h5 text-primary dark:text-[#FAFAFA] mb-4 flex items-center gap-2">
-            <TrackBadge track="business" />
-          </h2>
-          <div class="space-y-4">
-            <div>
-              <span class="block font-medium text-primary dark:text-[#FAFAFA] text-sm">Business & Operations</span>
-              <span class="text-secondary dark:text-[#D4D4D4] text-sm leading-relaxed block mt-1">Practical insights on pricing, distribution, and running a portfolio.</span>
-            </div>
-            <div>
-              <span class="block font-medium text-primary dark:text-[#FAFAFA] text-sm">Metrics & Progress</span>
-              <span class="text-secondary dark:text-[#D4D4D4] text-sm leading-relaxed block mt-1">Real numbers and honest updates on what's working and what's not.</span>
+            <div class="space-y-4">
+              <div>
+                <span class="block font-medium text-primary dark:text-[#FAFAFA] text-sm">Engineering Deep-Dives</span>
+                <span class="text-secondary dark:text-[#D4D4D4] text-sm leading-relaxed block mt-1">Architecture decisions, implementation challenges, and solutions.</span>
+              </div>
+              <div>
+                <span class="block font-medium text-primary dark:text-[#FAFAFA] text-sm">Technical Writing</span>
+                <span class="text-secondary dark:text-[#D4D4D4] text-sm leading-relaxed block mt-1">General agentic AI insights, industry trends, and emerging patterns.</span>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Product Track -->
-        <div class="bg-accent/10 border border-accent/20 rounded-lg p-5 dark:bg-accent/20 dark:border-accent/40 h-full">
-          <h2 class="text-h5 text-primary dark:text-[#FAFAFA] mb-4 flex items-center gap-2">
-            <TrackBadge track="product" />
-          </h2>
-          <div class="space-y-4">
-            <div>
-              <span class="block font-medium text-primary dark:text-[#FAFAFA] text-sm">Product News</span>
-              <span class="text-secondary dark:text-[#D4D4D4] text-sm leading-relaxed block mt-1">Build logs, learnings, and updates on shipped AI products.</span>
+          <!-- Business Track -->
+          <div class="bg-pink-lighter/30 border border-pink-lighter rounded-lg p-5 dark:bg-pink-darker/20 dark:border-pink-darker/40 h-full">
+            <div class="mb-4 flex items-center gap-2">
+              <TrackBadge track="business" />
             </div>
-            <div>
-              <span class="block font-medium text-primary dark:text-[#FAFAFA] text-sm">Community Feedback</span>
-              <span class="text-secondary dark:text-[#D4D4D4] text-sm leading-relaxed block mt-1">Iterating on products based on user requests and collaboration.</span>
+            <div class="space-y-4">
+              <div>
+                <span class="block font-medium text-primary dark:text-[#FAFAFA] text-sm">Business & Operations</span>
+                <span class="text-secondary dark:text-[#D4D4D4] text-sm leading-relaxed block mt-1">Practical insights on pricing, distribution, and running a portfolio.</span>
+              </div>
+              <div>
+                <span class="block font-medium text-primary dark:text-[#FAFAFA] text-sm">Metrics & Progress</span>
+                <span class="text-secondary dark:text-[#D4D4D4] text-sm leading-relaxed block mt-1">Real numbers and honest updates on what's working and what's not.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Track -->
+          <div class="bg-accent/10 border border-accent/20 rounded-lg p-5 dark:bg-accent/20 dark:border-accent/40 h-full">
+            <div class="mb-4 flex items-center gap-2">
+              <TrackBadge track="product" />
+            </div>
+            <div class="space-y-4">
+              <div>
+                <span class="block font-medium text-primary dark:text-[#FAFAFA] text-sm">Product News</span>
+                <span class="text-secondary dark:text-[#D4D4D4] text-sm leading-relaxed block mt-1">Build logs, learnings, and updates on shipped AI products.</span>
+              </div>
+              <div>
+                <span class="block font-medium text-primary dark:text-[#FAFAFA] text-sm">Community Feedback</span>
+                <span class="text-secondary dark:text-[#D4D4D4] text-sm leading-relaxed block mt-1">Iterating on products based on user requests and collaboration.</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Series & Phase Cards (2-column grid) -->
+      <!-- Series & Phase Section -->
       <div class="grid md:grid-cols-2 gap-6">
-        <!-- Series Card -->
-        <div class="p-6 bg-accent/5 border border-accent/20 rounded-lg h-full">
-          <h2 class="text-h4 text-primary dark:text-[#FAFAFA] mb-3">Series</h2>
-          <p class="text-base text-secondary dark:text-[#D4D4D4]">
-            Blog posts can also belong to a <strong>Series</strong>, which collects related posts exploring a topic deeply—whether that's a product's journey, a technical subject, or a business theme.
-          </p>
+        <!-- Series -->
+        <div>
+          <h2 class="text-h4 text-primary dark:text-[#FAFAFA] ml-3 mb-3">Series</h2>
+          <div class="p-6 bg-accent/5 border border-accent/20 rounded-lg">
+            <p class="text-base text-secondary dark:text-[#D4D4D4] mb-3">
+              Blog posts can also belong to a <strong>Series</strong>, which collects related posts exploring a topic deeply—whether that's a product's journey, a technical subject, or a business theme.
+            </p>
+            <p class="text-base text-secondary dark:text-[#A3A3A3]">
+              Use the Series filter to browse all posts in an arc together, in the order they were written.
+            </p>
+          </div>
         </div>
 
-        <!-- Phase Card -->
-        <div class="p-6 bg-accent/5 border border-accent/20 rounded-lg h-full">
-          <h2 class="text-h4 text-primary dark:text-[#FAFAFA] mb-3">Phase</h2>
-          <p class="text-base text-secondary dark:text-[#D4D4D4] mb-3">
-            <em>Product series</em> posts are organised into <strong>Phases</strong> of a product's development journey: 
-            <span class="text-base font-medium">
-            strategy, design, engineering, deployment, maintenace, community (feedback)
-          </span>
-          </p>
-          <p class="text-base text-secondary dark:text-[#A3A3A3]">
-            The phase filter appears automatically when a product series is selected.
-          </p>
+        <!-- Phase -->
+        <div>
+          <h2 class="text-h4 text-primary dark:text-[#FAFAFA] ml-3 mb-3">Phase</h2>
+          <div class="p-6 bg-accent/5 border border-accent/20 rounded-lg">
+            <p class="text-base text-secondary dark:text-[#D4D4D4] mb-3">
+              <em>Product Series</em> posts are organised into <strong>Phases</strong> of a product's development journey:
+              <span class="text-base font-medium">
+                Strategy, Design, Engineering, Deployment, Maintenance, and Community (feedback).
+              </span>
+            </p>
+            <p class="text-base text-secondary dark:text-[#A3A3A3]">
+              The Phase filter appears automatically when a product series is selected.
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -141,7 +151,7 @@
 
 <style>
   .search-guide {
-    @apply p-4 pb-5 my-8 ml-6 mr-9 border-2 rounded-xl border-purple-200 dark:border-[#262626];
+    @apply p-4 pb-5 mt-7 mb-6 ml-6 mr-9 border-2 rounded-xl border-purple-200 dark:border-[#262626];
   }
 
   .section-header {
@@ -174,7 +184,7 @@
 
   .guide-content {
     @apply overflow-hidden transition-all duration-200 ease-out;
-    max-height: 2000px;
+    max-height: 4000px;
   }
 
   .guide-content.collapsed {
@@ -183,6 +193,6 @@
   }
 
   .guide-content-inner {
-    @apply pt-6;
+    @apply pt-4 ;
   }
 </style>

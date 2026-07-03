@@ -151,7 +151,7 @@
 
 <style>
   .search-guide {
-    @apply p-4 pb-5 mt-7 mb-6 ml-6 mr-9 border-2 rounded-xl border-purple-200 dark:border-[#262626];
+    @apply p-4 pb-5 mt-7 mb-6 ml-6 mr-10 border-2 rounded-xl border-purple-200 dark:border-[#262626];
   }
 
   .section-header {

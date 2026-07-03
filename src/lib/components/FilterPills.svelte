@@ -176,7 +176,7 @@
 
   <!-- Result Count and Clear All -->
   {#if resultCount !== undefined || hasActiveFilters}
-    <div class="flex items-center justify-between mt-4 pt-3">
+    <div class="flex items-center justify-between mt-4 ml-2">
       {#if resultCount !== undefined}
         <span class="text-sm text-secondary dark:text-[#A3A3A3]">
           Showing {resultCount} {resultCount === 1 ? 'post' : 'posts'}

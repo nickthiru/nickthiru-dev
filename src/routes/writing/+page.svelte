@@ -161,7 +161,7 @@
   <EssentialReading posts={data.pinnedPosts} initialExpanded={data.essentialReadingExpanded} />
 
   <!-- Posts -->
-  <div id="posts-section" class="mb-6">
+  <div id="posts-section" class="mb-4">
     <!-- <h2 class="text-h3 text-primary dark:text-[#FAFAFA] mb-6">Posts</h2> -->
     <FilterPills
       series={data.allSeries}

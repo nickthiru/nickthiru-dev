@@ -145,7 +145,7 @@
 />
 
 <section class="mx-auto max-w-page px-6 md:px-8 py-12 md:py-16">
-  <header class="mb-6">
+  <header>
     <h1 class="text-h2 text-primary dark:text-[#FAFAFA] mb-8">Writing</h1>
     <p class="text-lg text-secondary dark:text-[#D4D4D4] mb-6">
       I write about building and shipping agentic AI from three main perspectives, also referred to as <strong>Tracks</strong>: engineering, business, and product.
@@ -159,7 +159,7 @@
   <EssentialReading posts={data.pinnedPosts} />
 
   <!-- Posts -->
-  <div id="posts-section" class="mb-6 border-t border-border dark:border-[#262626] pt-5">
+  <div id="posts-section" class="mb-6">
     <!-- <h2 class="text-h3 text-primary dark:text-[#FAFAFA] mb-6">Posts</h2> -->
     <FilterPills
       series={data.allSeries}

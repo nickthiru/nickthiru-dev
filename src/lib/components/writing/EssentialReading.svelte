@@ -59,7 +59,7 @@
     The most important posts to start with — foundational reads that set the stage for everything else.
   </p> -->
   <p class="section-subtitle">
-    The 3 most important posts to start with.
+    The 3 most important posts to start with, if you haven't already.
   </p>
 
   <!-- Collapsible Content -->
@@ -81,7 +81,7 @@
 
 <style>
   .essential-reading-section {
-    @apply mt-8;
+    @apply p-4 pb-5 mb-9 ml-6 mr-9 border-2 rounded-xl border-purple-200 dark:border-[#262626];
   }
 
   .section-header {
@@ -109,7 +109,7 @@
   }
 
   .section-subtitle {
-    @apply text-base text-secondary dark:text-[#D4D4D4] mb-8;
+    @apply text-base text-secondary dark:text-[#D4D4D4];
   }
 
   .guide-content {
@@ -123,6 +123,6 @@
   }
 
   .guide-content-inner {
-    @apply pb-8;
+    @apply pt-6;
   }
 </style>

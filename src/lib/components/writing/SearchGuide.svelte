@@ -125,7 +125,7 @@
         <div class="p-6 bg-accent/5 border border-accent/20 rounded-lg h-full">
           <h2 class="text-h4 text-primary dark:text-[#FAFAFA] mb-3">Phase</h2>
           <p class="text-base text-secondary dark:text-[#D4D4D4] mb-3">
-            Product series are organised into phases that follow a product's
+            <strong><em>Product</em> series</strong> are organised into phases that follow a product's
             development journey:
           </p>
           <p class="text-base font-semibold text-accent dark:text-[#D4D4D4] mb-3">
@@ -144,7 +144,7 @@
 
 <style>
   .search-guide {
-    @apply mt-8;
+    @apply p-4 pb-5 my-8 ml-6 mr-9 border-2 rounded-xl border-purple-200 dark:border-[#262626];
   }
 
   .section-header {
@@ -155,9 +155,9 @@
     @apply text-sm font-semibold text-secondary dark:text-[#A3A3A3] whitespace-nowrap;
   }
 
-  .section-rule {
+  /* .section-rule {
     @apply flex-1 h-px bg-border dark:bg-[#262626];
-  }
+  } */
 
   .toggle-link {
     @apply flex items-center gap-1 text-sm font-medium text-accent hover:text-accent/80 whitespace-nowrap bg-transparent border-none p-0 cursor-pointer;
@@ -186,6 +186,6 @@
   }
 
   .guide-content-inner {
-    @apply pt-4 pb-8 border-b border-border dark:border-[#262626];
+    @apply pt-6;
   }
 </style>

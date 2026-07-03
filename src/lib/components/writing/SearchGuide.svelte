@@ -1,27 +1,19 @@
 <script lang="ts">
-  import { onMount } from "svelte";
   import TrackBadge from "$lib/components/TrackBadge.svelte";
 
-  // State management with localStorage persistence
-  let expanded = $state(true);
-  let mounted = $state(false);
+  interface Props {
+    initialExpanded: boolean;
+  }
 
-  onMount(() => {
-    mounted = true;
-    const saved = localStorage.getItem("nickthiru_writing_search_guide_expanded");
-    if (saved !== null) {
-      expanded = JSON.parse(saved);
-    }
-  });
+  let { initialExpanded }: Props = $props();
+
+  const COOKIE_NAME = "nickthiru_search_guide_expanded";
+
+  let expanded = $state(initialExpanded);
 
   function toggle() {
     expanded = !expanded;
-    if (mounted) {
-      localStorage.setItem(
-        "nickthiru_writing_search_guide_expanded",
-        JSON.stringify(expanded),
-      );
-    }
+    document.cookie = `${COOKIE_NAME}=${expanded};path=/;max-age=31536000`;
   }
 </script>
 

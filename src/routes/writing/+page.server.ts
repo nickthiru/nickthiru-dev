@@ -29,10 +29,23 @@ function mergeSeries(
   return merged;
 }
 
-export const load: PageServerLoad = async () => {
+export const load: PageServerLoad = async ({ cookies }) => {
   const posts = await getPostsMeta();
   const pinnedPosts = await getPinnedPosts();
   const dynamicSeries = await getAllSeries();
   const allSeries = mergeSeries(seriesData, dynamicSeries);
-  return { posts, pinnedPosts, allSeries };
+
+  // Read preferences from cookies (defaults: search guide expanded, essential reading collapsed)
+  const searchGuideExpanded =
+    cookies.get("nickthiru_search_guide_expanded") !== "false";
+  const essentialReadingExpanded =
+    cookies.get("nickthiru_essential_reading_expanded") === "true";
+
+  return {
+    posts,
+    pinnedPosts,
+    allSeries,
+    searchGuideExpanded,
+    essentialReadingExpanded,
+  };
 };

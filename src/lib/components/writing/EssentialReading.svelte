@@ -1,34 +1,21 @@
 <script lang="ts">
-  import { onMount } from "svelte";
   import EssentialReadingCard from "$lib/components/EssentialReadingCard.svelte";
   import type { PostMeta } from "$lib/utils/posts";
 
   interface Props {
     posts: PostMeta[];
+    initialExpanded: boolean;
   }
 
-  let { posts }: Props = $props();
+  let { posts, initialExpanded }: Props = $props();
 
-  // State management with localStorage persistence
-  let expanded = $state(false);
-  let mounted = $state(false);
+  const COOKIE_NAME = "nickthiru_essential_reading_expanded";
 
-  onMount(() => {
-    mounted = true;
-    const saved = localStorage.getItem("nickthiru_writing_essential_reading_expanded");
-    if (saved !== null) {
-      expanded = JSON.parse(saved);
-    }
-  });
+  let expanded = $state(initialExpanded);
 
   function toggle() {
     expanded = !expanded;
-    if (mounted) {
-      localStorage.setItem(
-        "nickthiru_writing_essential_reading_expanded",
-        JSON.stringify(expanded),
-      );
-    }
+    document.cookie = `${COOKIE_NAME}=${expanded};path=/;max-age=31536000`;
   }
 
   const postCount = $derived(posts?.length ?? 0);

@@ -11,6 +11,8 @@
     posts: PostMeta[];
     pinnedPosts: PostMeta[];
     allSeries: Array<{ name: string; slug: string; description: string }>;
+    searchGuideExpanded: boolean;
+    essentialReadingExpanded: boolean;
   }
 
   let { data }: { data: ExtendedPageData } = $props();
@@ -153,10 +155,10 @@
   </header>
 
   <!-- Search Guide (collapsible section with tracks, series, and phase cards) -->
-  <SearchGuide />
+  <SearchGuide initialExpanded={data.searchGuideExpanded} />
 
   <!-- Essential Reading (standalone full-width collapsible section) -->
-  <EssentialReading posts={data.pinnedPosts} />
+  <EssentialReading posts={data.pinnedPosts} initialExpanded={data.essentialReadingExpanded} />
 
   <!-- Posts -->
   <div id="posts-section" class="mb-6">

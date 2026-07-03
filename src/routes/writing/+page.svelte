@@ -22,6 +22,20 @@
   let activeSeries: string[] = $state([]);
   let activePhases: string[] = $state([]);
 
+  // Initialize series filter from URL query parameter
+  let initializedFromUrl = $state(false);
+
+  $effect(() => {
+    if (!initializedFromUrl && typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const seriesParam = params.get('series');
+      if (seriesParam) {
+        activeSeries = [seriesParam];
+      }
+      initializedFromUrl = true;
+    }
+  });
+
   // Pagination state
   const POSTS_PER_PAGE = 10;
   let currentPage = $state(1);

@@ -14,9 +14,12 @@
   <div class="mb-8 flex items-baseline justify-between">
     <h2 class="text-h3 text-primary dark:text-[#FAFAFA]">Essential Reading</h2>
     {#if showViewAll}
-      <a href="/writing" class="hover:text-accent font-medium">
-        View all writing <span aria-hidden="true">→</span>
-      </a>
+      <div>
+        <a href="/writing" class="text-accent hover:underline font-medium">
+          View all writing
+        </a>
+        <span class="text-accent font-medium" aria-hidden="true">→</span>
+      </div>
     {/if}
   </div>
 

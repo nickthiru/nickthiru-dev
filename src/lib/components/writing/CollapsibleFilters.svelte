@@ -87,19 +87,30 @@
 <div class="collapsible-filters">
   <!-- Header Row -->
   <div class="filter-header">
-    <span class="filter-label">Filters</span>
-    <button
-      type="button"
-      class="toggle-link"
-      aria-expanded={expanded}
-      aria-controls="filters-content"
-      onclick={toggle}
-    >
-      <span class="toggle-text">{expanded ? 'Hide' : 'Show'}</span>
-      <svg class="toggle-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M2 4L6 8L10 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </button>
+    <div class="filter-header-left">
+      <span class="filter-label">Filters</span>
+      <button
+        type="button"
+        class="toggle-link"
+        aria-expanded={expanded}
+        aria-controls="filters-content"
+        onclick={toggle}
+      >
+        <span class="toggle-text">{expanded ? 'Hide' : 'Show'}</span>
+        <svg class="toggle-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 4L6 8L10 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+    {#if hasActiveFilters}
+      <button
+        type="button"
+        class="clear-all-link"
+        onclick={handleClearAll}
+      >
+        Clear filters
+      </button>
+    {/if}
   </div>
 
   <!-- Shared content area: summary when collapsed, pills when expanded -->
@@ -121,15 +132,6 @@
           </span>
         {/each}
       </div>
-      {#if hasActiveFilters}
-        <button
-          type="button"
-          class="clear-all-link"
-          onclick={handleClearAll}
-        >
-          Clear all
-        </button>
-      {/if}
     </div>
 
     <!-- Filter pills: shown when expanded -->
@@ -153,11 +155,19 @@
   }
 
   .filter-header {
-    @apply flex items-center gap-3 mb-2;
+    @apply flex items-center justify-between gap-3 mb-2;
+  }
+
+  .filter-header-left {
+    @apply flex items-center gap-3;
   }
 
   .filter-label {
     @apply text-sm font-semibold text-secondary dark:text-[#A3A3A3] whitespace-nowrap;
+  }
+
+  .clear-all-link {
+    @apply text-sm text-accent hover:underline whitespace-nowrap bg-transparent border-none p-0 cursor-pointer;
   }
 
   .toggle-link {
@@ -173,7 +183,7 @@
   }
 
   .filters-content {
-    @apply relative overflow-hidden;
+    @apply relative;
     min-height: 2rem;
   }
 
@@ -205,10 +215,6 @@
 
   .summary-value {
     @apply font-normal;
-  }
-
-  .clear-all-link {
-    @apply text-sm text-accent hover:underline whitespace-nowrap flex-shrink-0;
   }
 
   /* Pills view - shown when expanded */

@@ -72,20 +72,8 @@
   <article class="mx-auto max-w-page px-6 md:px-8 py-12 md:py-16">
     <!-- Article Header -->
     <header class="max-w-prose mx-auto mb-12">
-      <div class="flex items-center justify-between mb-4">
-        <div class="flex items-center gap-3">
-          <TrackBadge track={data.post.track} />
-          {#if data.post.series_name}
-            <span class="{seriesBadgeStyle}">
-              {data.post.series_name}
-            </span>
-          {/if}
-          {#if data.post.series_phase}
-            <span class="phase-badge {getPhaseBadgeClass(data.post.series_phase)}">
-              {capitalize(data.post.series_phase)}
-            </span>
-          {/if}
-        </div>
+      <!-- Series Navigation Button (top right) -->
+      <div class="flex items-center justify-end mb-4">
         {#if data.seriesMeta}
           <button
             class="series-drawer-toggle-btn"
@@ -93,15 +81,17 @@
             aria-expanded={drawerOpen}
             onclick={() => drawerOpen = !drawerOpen}
           >
-            <!-- List/TOC icon -->
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="8" y1="6" x2="21" y2="6"/>
-              <line x1="8" y1="12" x2="21" y2="12"/>
-              <line x1="8" y1="18" x2="21" y2="18"/>
-              <line x1="3" y1="6" x2="3.01" y2="6"/>
-              <line x1="3" y1="12" x2="3.01" y2="12"/>
-              <line x1="3" y1="18" x2="3.01" y2="18"/>
-            </svg>
+            <span class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="8" y1="6" x2="21" y2="6"/>
+                <line x1="8" y1="12" x2="21" y2="12"/>
+                <line x1="8" y1="18" x2="21" y2="18"/>
+                <line x1="3" y1="6" x2="3.01" y2="6"/>
+                <line x1="3" y1="12" x2="3.01" y2="12"/>
+                <line x1="3" y1="18" x2="3.01" y2="18"/>
+              </svg>
+              Series Navigation
+            </span>
           </button>
         {/if}
       </div>
@@ -110,12 +100,28 @@
         {data.post.title}
       </h1>
       
-      <div class="flex items-center gap-2 text-secondary dark:text-[#A3A3A3]">
+      <!-- Date and Reading Time -->
+      <div class="flex items-center gap-2 text-secondary dark:text-[#A3A3A3] mb-4">
         <time datetime={data.post.publishedAt}>
           {formatDate(data.post.publishedAt)}
         </time>
         <span>·</span>
         <span>{data.post.readingTime}</span>
+      </div>
+
+      <!-- Badges (below date) -->
+      <div class="flex flex-wrap items-center gap-3">
+        <TrackBadge track={data.post.track} />
+        {#if data.post.series_name}
+          <span class="{seriesBadgeStyle}">
+            {data.post.series_name}
+          </span>
+        {/if}
+        {#if data.post.series_phase}
+          <span class="phase-badge {getPhaseBadgeClass(data.post.series_phase)}">
+            {capitalize(data.post.series_phase)}
+          </span>
+        {/if}
       </div>
     </header>
 
@@ -233,7 +239,11 @@
     @apply px-2 py-0.5 rounded text-xs font-medium;
   }
 
-  .series-drawer-toggle-btn {
+  /* .series-drawer-toggle-btn {
     @apply p-2 rounded-lg border border-border dark:border-[#262626] hover:border-accent hover:text-accent transition-colors;
-  }
+  } */
+
+  .series-drawer-toggle-btn {
+  @apply px-3 py-2 rounded-lg border border-gray-300 dark:border-[#262626] hover:border-accent hover:text-accent transition-colors text-sm font-medium;
+}
 </style>

@@ -78,9 +78,12 @@
 <section class="mx-auto max-w-page px-6 md:px-8 py-12 border-t border-border dark:border-[#262626]">
   <div class="flex items-baseline justify-between mb-8">
     <h2 class="text-h3 text-primary dark:text-[#FAFAFA]">Current Projects</h2>
-    <a href="/projects" class="hover:text-accent font-medium">
-      View all projects <span aria-hidden="true">→</span>
-    </a>
+    <div>
+      <a href="/projects" class="text-accent hover:underline font-medium">
+        View all projects
+      </a>
+      <span class="text-accent font-medium" aria-hidden="true">→</span>
+    </div>
   </div>
   
   <div class="grid gap-6 md:grid-cols-2">

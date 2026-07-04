@@ -133,4 +133,4 @@ export const allPillActiveStyle =
 
 // Inactive pill base style (border + hover — no bg, no text color; bg/text come from track/series specific classes)
 export const pillInactiveStyle =
-  "border border-border dark:border-[#262626] hover:border-accent";
+  "border border-gray-300 dark:border-[#262626] hover:border-accent";

@@ -40,7 +40,7 @@
   });
 
   // Pagination state
-  const POSTS_PER_PAGE = 10;
+  const POSTS_PER_PAGE = 8;
   let currentPage = $state(1);
 
   // Normalize track names for comparison

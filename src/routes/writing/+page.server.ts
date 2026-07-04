@@ -35,11 +35,27 @@ export const load: PageServerLoad = async ({ cookies }) => {
   const dynamicSeries = await getAllSeries();
   const allSeries = mergeSeries(seriesData, dynamicSeries);
 
-  // Read preferences from cookies (defaults: search guide expanded, essential reading collapsed)
+  // Read preferences from cookies (defaults: search guide expanded, essential reading collapsed, filters collapsed)
   const searchGuideExpanded =
     cookies.get("nickthiru_search_guide_expanded") !== "false";
   const essentialReadingExpanded =
     cookies.get("nickthiru_essential_reading_expanded") === "true";
+  const filtersExpanded = cookies.get("nickthiru_filters_expanded") === "true";
+
+  // Read saved filter state from cookie
+  const filterStateCookie = cookies.get("nickthiru_filter_state");
+  let initialFilterState: {
+    tracks: string[];
+    series: string[];
+    phases: string[];
+  } | null = null;
+  if (filterStateCookie) {
+    try {
+      initialFilterState = JSON.parse(filterStateCookie);
+    } catch {
+      // Ignore invalid cookies
+    }
+  }
 
   return {
     posts,
@@ -47,5 +63,7 @@ export const load: PageServerLoad = async ({ cookies }) => {
     allSeries,
     searchGuideExpanded,
     essentialReadingExpanded,
+    filtersExpanded,
+    initialFilterState,
   };
 };

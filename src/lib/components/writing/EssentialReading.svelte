@@ -68,7 +68,7 @@
 
 <style>
   .essential-reading-section {
-    @apply p-4 pb-5 mb-8 ml-11 mr-11 border-2 rounded-xl border-purple-200 dark:border-[#262626];
+    @apply p-4 pb-5 mb-10 ml-11 mr-11 border-2 rounded-xl border-purple-200 dark:border-[#262626];
   }
 
   .section-header {

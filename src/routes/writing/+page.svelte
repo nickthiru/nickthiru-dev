@@ -2,7 +2,7 @@
   import SEO from '$lib/components/SEO.svelte';
   import PostCard from '$lib/components/PostCard.svelte';
   import EssentialReading from '$lib/components/writing/EssentialReading.svelte';
-  import FilterPills from '$lib/components/FilterPills.svelte';
+  import CollapsibleFilters from '$lib/components/writing/CollapsibleFilters.svelte';
   import SearchGuide from '$lib/components/writing/SearchGuide.svelte';
   import type { PageData } from './$types';
   import type { PostMeta } from '$lib/utils/posts';
@@ -13,16 +13,19 @@
     allSeries: Array<{ name: string; slug: string; description: string }>;
     searchGuideExpanded: boolean;
     essentialReadingExpanded: boolean;
+    filtersExpanded: boolean;
+    initialFilterState: { tracks: string[]; series: string[]; phases: string[] } | null;
   }
 
   let { data }: { data: ExtendedPageData } = $props();
 
-  // Client-side filter state
-  let activeTracks: string[] = $state([]);
-  let activeSeries: string[] = $state([]);
-  let activePhases: string[] = $state([]);
+  // Client-side filter state - initialize from server-provided state or empty arrays
+  // Use $state.snapshot to capture the initial value at component creation time
+  let activeTracks: string[] = $state($state.snapshot(data.initialFilterState?.tracks) ?? []);
+  let activeSeries: string[] = $state($state.snapshot(data.initialFilterState?.series) ?? []);
+  let activePhases: string[] = $state($state.snapshot(data.initialFilterState?.phases) ?? []);
 
-  // Initialize series filter from URL query parameter
+  // Initialize series filter from URL query parameter (overrides saved state)
   let initializedFromUrl = $state(false);
 
   $effect(() => {
@@ -143,7 +146,22 @@
     activeTracks = [];
     activeSeries = [];
     activePhases = [];
+    // Clear saved filter state
+    if (typeof window !== 'undefined') {
+      document.cookie = 'nickthiru_filter_state={"tracks":[],"series":[],"phases":[]};path=/;max-age=31536000';
+    }
   }
+
+  // Persist filter state to cookies whenever it changes
+  $effect(() => {
+    activeTracks;
+    activeSeries;
+    activePhases;
+    if (typeof window !== 'undefined') {
+      const state = JSON.stringify({ tracks: activeTracks, series: activeSeries, phases: activePhases });
+      document.cookie = `nickthiru_filter_state=${state};path=/;max-age=31536000`;
+    }
+  });
 
   function goToPage(page: number) {
     currentPage = page;
@@ -175,20 +193,25 @@
   <EssentialReading posts={data.pinnedPosts} initialExpanded={data.essentialReadingExpanded} />
 
   <!-- Posts -->
-  <div id="posts-section" class="mb-4">
+  <div id="posts-section" class="mb-4 border-t border-border dark:border-[#262626] pt-5">
     <!-- <h2 class="text-h3 text-primary dark:text-[#FAFAFA] mb-6">Posts</h2> -->
-    <FilterPills
+    <CollapsibleFilters
       series={data.allSeries}
       activeTracks={activeTracks}
       activeSeries={activeSeries}
       activePhases={activePhases}
+      initialExpanded={data.filtersExpanded}
       onTrackChange={handleTrackChange}
       onSeriesChange={handleSeriesChange}
       onPhaseChange={handlePhaseChange}
-      resultCount={filteredPosts.length}
       onClearAll={handleClearAll}
     />
   </div>
+
+  <!-- Result Count (always visible, above posts) -->
+  <p class="text-sm text-secondary dark:text-[#A3A3A3] mb-4 ml-1">
+    Showing {filteredPosts.length} {filteredPosts.length === 1 ? 'post' : 'posts'}
+  </p>
 
   <!-- Series Descriptions (shown when a single series is selected) -->
   {#if activeSeries.length === 1 && !activeSeries.includes('all')}

@@ -12,7 +12,7 @@
   <div class="max-w-prose mx-auto text-center">
     <h1 class="text-h2 text-primary dark:text-[#FAFAFA] mb-4">Subscribe</h1>
     <p class="text-lg text-secondary dark:text-[#D4D4D4] mb-8">
-      Get new posts in your inbox. No spam, unsubscribe anytime.
+      Stay updated with weekly blog post roundups. No spam, unsubscribe anytime.
     </p>
     
     <div class="max-w-md mx-auto">
@@ -23,7 +23,7 @@
       As the Founder and AI Systems Architect & Engineer at <a href="https://thiruailabs.com" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline inline-flex items-center gap-1">Thiru AI Labs</a>, I write about building and shipping production-grade agentic AI products and systems—sharing hard-won lessons and expertise across engineering, product, and business.
     </p>
     <p class="text-secondary dark:text-[#D4D4D4] mt-4 text-base">
-      Expect 1–2 posts per week when I'm in writing mode.
+      Expect 2–3 blog posts per week when I'm in writing mode.
     </p>
   </div>
 </section>

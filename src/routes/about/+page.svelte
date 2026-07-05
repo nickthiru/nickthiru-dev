@@ -14,27 +14,27 @@
 
     <div class="prose dark:prose-invert">
       <p>
-        I am an AI systems architect, but my path here was anything but linear. I build at the intersection of modern web infrastructure and agentic AI, driven by a simple philosophy: I am an autodidact who loves solving complex problems.
+        As an autodidact who loves solving complex problems, my path to where I am today was anything but linear.
       </p>
 
       <p>
-        My career started over two and a half decades ago, programming real-time SCADA industrial automation systems. I then decided to move over to a corporate career, spending over a decade climbing the corporate ladder in business operations and executive leadership. I managed business turnarounds, restructured supply chains, and served as an executive assistant to the chairman of a multinational group. I learned exactly how businesses operate, scale, and sometimes fail.
+        My career started over two and a half decades ago, programming real-time SCADA industrial automation systems. Shortly after, I decided to move over to a corporate route, spending over a decade in business operations and executive roles, ultimately serving as executive assistant to the chairman of a multinational group, where, among other things, I managed business turnarounds, restructuring supply chains, and navigating enterprise strategy. I learned exactly how businesses operate, scale, and sometimes fail.
       </p>
 
       <p>
-        But after reaching those executive highs, I realized I missed the nitty-gritty of building. I wanted the never-ending cycle of learning and application that only technology provides. So, I started over. I went back into the trenches as a full-stack web developer and cloud infrastructure engineer, meticulously learning how modern systems work under the hood.
+        But after reaching those highs, I realized I missed rolling up my sleeves and doing the <em>tactical</em> work of making things better—optimizing systems and processes at the ground level. I wanted the never-ending cycle of learning and application, something that the technology domain provides. So, I started over. I went back into the trenches and emerged as a full-stack web developer and cloud infrastructure engineer, meticulously learning how modern systems work under the hood.
       </p>
 
       <p>
-        When AI coding assistants emerged, I was initially skeptical. But once I integrated them into my workflow, it changed everything. I transitioned from hand-coding every line to orchestrating complex architectures alongside AI.
+        When Generative AI emerged, I was initially skeptical about its utility and reliability. But once I started integrating it into my workflow—using it to explore problems, accelerate knowledge work, and reason through complexity—it became indispensable. I transitioned from working purely from first principles to orchestrating solutions alongside AI.
       </p>
 
       <p>
-        However, I quickly realized that AI is not a magic button—it is a massive multiplier for those who already know what they are doing. Many non-technical founders rely blindly on AI and get trapped in endless loops, struggling to move their applications beyond fragile proofs-of-concept. Because I did the hard work of mastering the underlying engineering principles first, I know how to design the architecture, direct the AI to accelerate the build, and catch the mistakes it inevitably makes.
+        However, I quickly realized that AI is not a magic button. It is a massive multiplier for those who already know what they are doing. Because I did the hard work of mastering the underlying engineering principles first, I know how to design the architecture, direct the AI to accelerate the build, catch the mistakes it inevitably makes, and move my applications beyond fragile proofs-of-concept to enterprise-grade solutions.
       </p>
 
       <p>
-        Today, I run 
+        Today, I run
         <a
           href="https://thiruailabs.com"
           target="_blank"
@@ -42,12 +42,13 @@
           class="text-accent hover:underline inline-flex items-center gap-1"
         >
           Thiru AI Labs
-        </a>, a solo AI systems studio. I document my learnings across three tracks: <strong>Engineering</strong> (architecture, deep-stack code, and AI orchestration), <strong>Product</strong> (building things people actually need), and <strong>Business</strong> (strategy, operations, and the realities of being a solo founder). I work remotely, and I share my journey publicly right here.
+        </a>, a solo AI systems studio, where I:
       </p>
-
-      <p>
-        I also offer <a href="https://thiruailabs.com/consult" target="_blank" rel="noopener noreferrer">consulting</a> services for teams building agentic AI systems.
-      </p>
+        <ul>
+          <li>architect and develop <a href="https://nickthiru-dev/writing/what-are-ai-agents" target="_blank" rel="noopener noreferrer">agentic AI</a> systems and <a href="https://thiruailabs.com/products" target="_blank" rel="noopener noreferrer">SaaS products</a></li>
+          <li>offer <a href="https://thiruailabs.com/consult" target="_blank" rel="noopener noreferrer">consulting</a> services for teams building agentic AI systems</li>
+          <li>document and share my hard-won lessons and expertise publicly, right <a href="https://nickthiru-dev/writing" target="_blank" rel="noopener noreferrer">here</a></li>
+        </ul>
     </div>
   </div>
 </section>

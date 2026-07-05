@@ -76,7 +76,7 @@
 				</div>
 
       <p>
-        If you're writing about a specific post, linking the URL helps me respond faster.
+        If you're writing about a specific blog post, linking the URL helps me respond faster.
       </p>
     </div>
   </div>

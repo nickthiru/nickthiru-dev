@@ -11,17 +11,27 @@
 
   const STORAGE_KEY = "nickthiru_essential_reading_expanded";
 
-  let expanded = $state(
-    typeof window !== 'undefined'
-      ? (localStorage.getItem(STORAGE_KEY) !== null
-         ? localStorage.getItem(STORAGE_KEY) === "true"
-         : initialExpanded)
-      : initialExpanded
-  );
+  // Use server-provided initialExpanded (from cookie) as the source of truth for SSR
+  // Then check localStorage as fallback for client-side navigation
+  let expanded = $state(initialExpanded);
+  let hydrated = $state(false);
+
+  $effect(() => {
+    if (typeof window !== 'undefined' && !hydrated) {
+      const stored = localStorage.getItem(STORAGE_KEY);
+      if (stored !== null) {
+        expanded = stored === "true";
+      }
+      hydrated = true;
+    }
+  });
 
   function toggle() {
     expanded = !expanded;
     localStorage.setItem(STORAGE_KEY, String(expanded));
+    // Also set cookie so server knows on next full page load
+    const isHttps = typeof window !== 'undefined' && window.location.protocol === 'https:';
+    document.cookie = `${STORAGE_KEY}=${expanded};path=/;max-age=31536000;SameSite=Lax${isHttps ? ';Secure' : ''}`;
   }
 
   const postCount = $derived(posts?.length ?? 0);

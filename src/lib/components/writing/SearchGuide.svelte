@@ -13,8 +13,10 @@
 
   function toggle() {
     expanded = !expanded;
-    document.cookie = `${COOKIE_NAME}=${expanded};path=/;max-age=31536000`;
+    const isHttps = typeof window !== 'undefined' && window.location.protocol === 'https:';
+    document.cookie = `${COOKIE_NAME}=${expanded};path=/;max-age=31536000;SameSite=Lax${isHttps ? ';Secure' : ''}`;
   }
+
 </script>
 
 <section class="search-guide">

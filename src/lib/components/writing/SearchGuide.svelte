@@ -7,14 +7,19 @@
 
   let { initialExpanded }: Props = $props();
 
-  const COOKIE_NAME = "nickthiru_search_guide_expanded";
+  const STORAGE_KEY = "nickthiru_search_guide_expanded";
 
-  let expanded = $state(initialExpanded);
+  let expanded = $state(
+    typeof window !== 'undefined'
+      ? (localStorage.getItem(STORAGE_KEY) !== null
+         ? localStorage.getItem(STORAGE_KEY) === "true"
+         : initialExpanded)
+      : initialExpanded
+  );
 
   function toggle() {
     expanded = !expanded;
-    const isHttps = typeof window !== 'undefined' && window.location.protocol === 'https:';
-    document.cookie = `${COOKIE_NAME}=${expanded};path=/;max-age=31536000;SameSite=Lax${isHttps ? ';Secure' : ''}`;
+    localStorage.setItem(STORAGE_KEY, String(expanded));
   }
 
 </script>

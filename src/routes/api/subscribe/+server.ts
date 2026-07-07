@@ -20,7 +20,7 @@ export const POST: RequestHandler = async ({ request }) => {
     return json({ error: "Email is required" }, { status: 400 });
   }
 
-  const redirectUrl = `https://www.thiruailabs.com/newsletter/confirmed`;
+  const redirectUrl = `https://www.nickthiru.dev/subscribe/confirmed`;
 
   try {
     // Try to get existing contact

@@ -46,7 +46,7 @@
     {#if successStatus === 'already_subscribed'}
       <p class="text-accent font-medium">You're already subscribed!</p>
       <p class="text-secondary dark:text-[#D4D4D4] text-small mt-2">
-        This email is already confirmed. You'll continue to receive updates.
+        This email is already registered for the newsletter. You'll continue to receive updates.
       </p>
     {:else if successStatus === 'pending_confirmation'}
       <p class="text-accent font-medium">Please check your existing email!</p>

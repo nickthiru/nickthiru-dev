@@ -27,7 +27,7 @@
 
     <h1 class="text-h2 text-primary dark:text-[#FAFAFA] mb-4">Email Confirmed!</h1>
     <p class="text-lg text-secondary dark:text-[#D4D4D4] mb-8">
-      You're now subscribed to the newsletter. You'll receive new posts directly in your inbox.
+      Thank you for confirming your email. You're now subscribed to the <em>Nick Thiru Dev Notes</em> newsletter.
     </p>
 
     <div class="flex flex-col gap-7 sm:flex-row sm:justify-center">

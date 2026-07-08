@@ -10,8 +10,8 @@ tags: ["no-code", "production", "langgraph", "architecture"]
 track: "engineering"
 series: ""
 series_position:
-linkedin_url: ""
-x_url: ""
+linkedin_url: "https://www.linkedin.com/feed/update/urn:li:activity:7480647513314615296/"
+x_url: "https://x.com/nickthiru/status/2074878674541912550"
 pinned: true
 pinned_order: 3
 newsletter_hook: "Someone asked me recently if they could 'just use

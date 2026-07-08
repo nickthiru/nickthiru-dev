@@ -196,6 +196,3 @@ If you've shipped an AI agent to production (no-code or code-first),
 what was the moment that clarified which approach was right for
 your situation? I'm curious whether the decision point was debugging,
 testing, state management, or something else entirely.
-
-I'm discussing this on [LinkedIn](LINKEDIN_URL) and [X](X_URL) —
-come share your experience there.

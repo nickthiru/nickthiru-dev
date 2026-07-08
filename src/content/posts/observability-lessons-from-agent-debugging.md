@@ -296,5 +296,3 @@ A few things I don't have perfect answers for yet:
 ## Your Turn
 
 If you're running agents in production: have you hit the moment where your logs were technically complete but couldn't tell you _why_ the agent made the decision it did? What changed in your instrumentation setup after that?
-
-I'm discussing this on [LinkedIn](LINKEDIN_URL) and [X](X_URL) — come share your thoughts there.

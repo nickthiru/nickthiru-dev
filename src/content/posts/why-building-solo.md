@@ -223,5 +223,3 @@ If you've worked with a solo builder before: what made the
 difference between it feeling like a risk and feeling like an
 advantage? I'm genuinely curious whether it came down to trust,
 speed, or something else.
-
-I'm discussing this on [LinkedIn](LINKEDIN_URL) and [X](X_URL) — come share your thoughts there.

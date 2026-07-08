@@ -235,5 +235,3 @@ starting today:
 ## Your Turn
 
 What's the most confusing part of the agent hype for you right now — is it the terminology, the gap between demo and production, or something else entirely?
-
-I'm discussing this on [LinkedIn](LINKEDIN_URL) and [X](X_URL) — come share your thoughts there.

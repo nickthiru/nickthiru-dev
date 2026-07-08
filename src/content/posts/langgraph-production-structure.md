@@ -230,5 +230,3 @@ A few things I don't have clean answers to yet:
 ## Your Turn
 
 If you're running LangGraph agents in production: what's the part of the structure that felt most important to get right early? State design, node boundaries, error handling, observability. I'm curious what created the most pain before you locked it in.
-
-I'm discussing this on [LinkedIn](LINKEDIN_URL) and [X](X_URL) — come share your experience there.

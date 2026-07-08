@@ -10,8 +10,8 @@ tags: ["solo-founder", "ai-augmentation", "business-strategy", "transparency"]
 track: "business"
 series: ""
 series_position:
-linkedin_url: ""
-x_url: ""
+linkedin_url: "https://www.linkedin.com/feed/update/urn:li:activity:7480666485195964416/"
+x_url: "https://x.com/nickthiru/status/2074901245119357056"
 pinned: true
 pinned_order: 2
 newsletter_hook: "I'm building Thiru AI Labs solo: no co-founder, no team,

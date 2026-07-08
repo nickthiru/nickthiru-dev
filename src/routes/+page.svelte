@@ -34,7 +34,7 @@
         class="text-accent hover:underline inline-flex items-center gap-1"
       >
         Thiru AI Labs
-      </a>, building full-stack, agentic AI SaaS products and bespoke systems—secure, data-isolated, reliable, and production-grade—for the real world.
+      </a>, building full-stack, agentic AI SaaS products and bespoke systems — secure, data-isolated, reliable, and production-grade — for the real world.
       </p>
       <p class="font-[100] text-lg text-secondary dark:text-[#D4D4D4] leading-relaxed mb-6">
          I also share my hard-won lessons and expertise across engineering, product, and business, through my writing.

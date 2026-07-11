@@ -41,7 +41,7 @@ export const projects: Project[] = [
     name: "Social Engagement Radar",
     tagline: "Now Building",
     description:
-      "Monitor X and LinkedIn conversations in real-time. Find relevant discussions about your topics, get AI-drafted responses ready to send. Plug into communities without manual monitoring",
+      "Monitor X and LinkedIn conversations in real-time. Find relevant discussions about your topics of interest, get AI-drafted responses ready to review, edit, and send. Easily plug into communities without manual monitoring.",
     status: "Building",
     url: "https://thiruailabs.com/products/social-engagement-radar",
     productUrl: "https://thiruailabs.com/products/social-engagement-radar",
@@ -60,7 +60,7 @@ export const projects: Project[] = [
     name: "OpsPilot",
     tagline: "Now Building",
     description:
-      "Operational intelligence platform. Unified dashboard across Slack, GitHub, Jira, and more.          One place to see: alerts, incidents, PRs, deployments, and team signals. Single source of truth for ops.",
+      "SMBs will be able to run their entire business with the operational efficiency and intelligence previously available only to enterprises with dedicated accounting, finance, customer support, sales & marketing, and operations teams.",
     status: "Building",
     url: "https://thiruailabs.com/products/ops-pilot",
     productUrl: "https://thiruailabs.com/products/ops-pilot",

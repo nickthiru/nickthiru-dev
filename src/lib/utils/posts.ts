@@ -14,6 +14,7 @@ export interface PostFrontmatter {
   pinned_order?: number;
   canonical?: string;
   image?: string;
+  image_size?: "sm" | "md" | "lg" | "full";
   linkedin_url?: string;
   x_url?: string;
   // Series metadata

@@ -5,6 +5,8 @@ description: "The patterns I use to keep LangGraph agents maintainable,
   at first)."
 publishedAt: "2025-12-15"
 slug: "langgraph-production-structure"
+image: "/posts/langgraph-production-structure.png"
+image_size: "lg"
 draft: false
 tags: ["langgraph", "architecture", "agents"]
 track: "engineering"

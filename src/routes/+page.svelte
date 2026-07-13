@@ -27,7 +27,7 @@
         Building agentic AI systems that ship.
       </h1>
       <p class="font-[100] text-lg text-secondary dark:text-[#D4D4D4] leading-relaxed mb-4">
-        I'm the Founder and AI Systems Architect & Engineer at <a
+        I'm Nick, the Founder and AI Systems Architect & Engineer at <a
         href="https://thiruailabs.com"
         target="_blank"
         rel="noopener noreferrer"

@@ -5,6 +5,8 @@ description: "No-code AI tools are great for prototypes. Here's why
   actually looks like."
 publishedAt: "2025-11-30"
 slug: "why-i-use-code-vs-no-code"
+image: "/posts/why-i-use-code-vs-no-code.png"
+image_size: "lg"
 draft: false
 tags: ["no-code", "production", "langgraph", "architecture"]
 track: "engineering"

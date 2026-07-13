@@ -5,6 +5,8 @@ description: "A plain-English explanation of AI agents, agentic systems, and
   skip."
 publishedAt: "2026-01-09"
 slug: "what-are-ai-agents"
+image: "/posts/what-are-ai-agents.png"
+image_size: "lg"
 draft: false
 tags: ["ai-agents", "explainer", "langgraph"]
 track: "engineering"

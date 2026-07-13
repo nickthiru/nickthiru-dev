@@ -56,6 +56,13 @@
   function capitalize(str: string): string {
     return str.charAt(0).toUpperCase() + str.slice(1);
   }
+
+  function getImageWidthClass(size: "sm" | "md" | "lg" | "full" | undefined): string {
+    if (size === "sm") return "max-w-sm";
+    if (size === "md") return "max-w-md";
+    if (size === "lg") return "max-w-lg";
+    return "w-full";
+  }
 </script>
 
 <SEO 
@@ -134,6 +141,17 @@
           currentPosition={data.positionInfo.current}
           totalInSeries={data.positionInfo.total}
           seriesSlug={data.post.series_slug!}
+        />
+      </div>
+    {/if}
+
+    <!-- Post Illustration -->
+    {#if data.post.image}
+      <div class="max-w-prose mx-auto mt-8 mb-8">
+        <img
+          src={data.post.image}
+          alt="Illustration for {data.post.title}"
+          class="{getImageWidthClass(data.post.image_size)} w-full rounded-lg shadow-md mx-auto block"
         />
       </div>
     {/if}

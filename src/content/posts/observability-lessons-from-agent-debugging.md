@@ -5,6 +5,8 @@ description: "Three logging decisions that changed how I debug production
   is involved."
 publishedAt: "2025-12-08"
 slug: "observability-lessons-from-agent-debugging"
+image: "/posts/observability-lessons-from-agent-debugging.png"
+image_size: "lg"
 draft: false
 tags: ["observability", "debugging", "agents", "langgraph"]
 track: "engineering"

@@ -5,6 +5,8 @@ description: "Why solo doesn't mean small anymore. What AI augmentation
   for MSMEs."
 publishedAt: "2026-01-10"
 slug: "why-building-solo"
+image: "/posts/why-building-solo.png"
+image_size: "lg"
 draft: false
 tags: ["solo-founder", "ai-augmentation", "business-strategy", "transparency"]
 track: "business"

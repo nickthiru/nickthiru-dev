@@ -47,13 +47,22 @@ const baseSchema = z.object({
   summary_two_sentence: z.string(),
 });
 
-// Product post schema — track: "product" requires known product name + slug
+// Product series post schema — track: "product" with known product series
 const productPostSchema = baseSchema.extend({
   track: z.literal("product"),
   series_name: productName,
   series_slug: productSlug,
   series_phase: phase,
   series_position: z.number().int().positive(),
+});
+
+// Product standalone post schema — track: "product" but not part of a product series (teaching aid)
+const productStandalonePostSchema = baseSchema.extend({
+  track: z.literal("product"),
+  series_name: z.literal(""),
+  series_slug: z.literal(""),
+  series_phase: z.literal(""),
+  series_position: z.null().or(z.undefined()).or(z.number().int().positive()),
 });
 
 // Non-product series post schema
@@ -77,6 +86,7 @@ const nonProductStandalonePostSchema = baseSchema.extend({
 // Union of all valid frontmatter shapes
 export const postFrontmatterSchema = z.union([
   productPostSchema,
+  productStandalonePostSchema,
   nonProductSeriesPostSchema,
   nonProductStandalonePostSchema,
 ]);

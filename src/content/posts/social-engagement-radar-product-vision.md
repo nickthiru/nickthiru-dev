@@ -1,6 +1,6 @@
 ---
 title: "Social Engagement Radar — Inside the Product Vision"
-description: "Part 1 of N in Social Engagement Radar. I built this product to solve a specific, measurable problem. Here's the vision — and the reasoning behind every constraint."
+description: "I built this product to solve a specific, measurable problem. Here's the vision — and the reasoning behind every constraint."
 publishedAt: "2026-07-15"
 slug: "social-engagement-radar-product-vision"
 image: "/posts/social-engagement-radar-product-vision.png"
@@ -48,7 +48,7 @@ The design problem, then, isn't just discovery. It's discovery plus drafting plu
 
 Here's the tradeoff that shaped the scope decision early on.
 
-Every existing tool in this space sits in one of two camps. The first camp — Typefully, Hypefury, Tweet Hunter and their equivalents — is optimised for content creation: threads, scheduling, analytics. Engagement is a sidebar. You can do it, but it's not the product. The second camp is automation: bots and mass-action tools that find and reply at scale. They solve the volume problem by removing the human entirely.
+Every existing tool in this space sits in one of two camps. The first camp — content scheduling and thread-building tools — is optimised for content creation: threads, scheduling, analytics. Engagement is a sidebar. You can do it, but it's not the product. The second camp is automation: bots and mass-action tools that find and reply at scale. They solve the volume problem by removing the human entirely.
 
 I rejected both. Not because they're bad products — they're well-built for what they do — but because neither solves the problem I started with. Content tools treat engagement as a secondary action. Automation tools treat trust as an acceptable casualty. Neither was the right frame.
 

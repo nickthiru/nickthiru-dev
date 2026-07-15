@@ -5,7 +5,7 @@ publishedAt: "2026-07-15"
 slug: "why-stack-trace-product-vision"
 image: "/posts/why-stack-trace-product-vision.png"
 image_size: "lg"
-draft: false
+draft: true
 tags: []
 track: "product"
 series_name: ""

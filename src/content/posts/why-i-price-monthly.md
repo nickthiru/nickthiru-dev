@@ -1,11 +1,23 @@
 ---
 title: "Why I price monthly (even when annual makes more sense)"
 slug: "why-i-price-monthly"
-description: "Why I’m choosing monthly pricing while I’m still learning—and the framework I use to decide when to introduce annual."
+description: "Why I'm choosing monthly pricing while I'm still learning—and the framework I use to decide when to introduce annual."
 publishedAt: "2025-01-15"
-track: "business"
-tags: ["pricing", "saas", "strategy"]
+image: "/posts/why-i-price-monthly.png"
+image_size: "lg"
 draft: true
+tags: ["pricing", "saas", "strategy"]
+track: "business"
+series_name: ""
+series_slug: ""
+series_phase: ""
+series_position:
+linkedin_url: ""
+x_url: ""
+pinned: false
+pinned_order:
+newsletter_hook: ""
+summary_two_sentence: ""
 ---
 
 Every SaaS pricing guide tells you the same thing:

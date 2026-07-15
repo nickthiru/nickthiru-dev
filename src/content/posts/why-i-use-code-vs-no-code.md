@@ -10,7 +10,9 @@ image_size: "lg"
 draft: false
 tags: ["no-code", "production", "langgraph", "architecture"]
 track: "engineering"
-series: ""
+series_name: ""
+series_slug: ""
+series_phase: ""
 series_position:
 linkedin_url: "https://www.linkedin.com/feed/update/urn:li:activity:7480647513314615296/"
 x_url: "https://x.com/nickthiru/status/2074878674541912550"

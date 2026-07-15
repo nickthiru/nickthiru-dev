@@ -10,7 +10,9 @@ image_size: "lg"
 draft: false
 tags: ["observability", "debugging", "agents", "langgraph"]
 track: "engineering"
-series: ""
+series_name: ""
+series_slug: ""
+series_phase: ""
 series_position:
 linkedin_url: "https://www.linkedin.com/feed/update/urn:li:activity:7480661028343750656/"
 x_url: "https://x.com/nickthiru/status/2074894566323544246"

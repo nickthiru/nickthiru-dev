@@ -10,7 +10,9 @@ image_size: "lg"
 draft: false
 tags: ["ai-agents", "explainer", "langgraph"]
 track: "engineering"
-series: ""
+series_name: ""
+series_slug: ""
+series_phase: ""
 series_position:
 linkedin_url: "https://www.linkedin.com/feed/update/urn:li:activity:7480664898247503872/"
 x_url: "https://x.com/nickthiru/status/2074899815113359780"

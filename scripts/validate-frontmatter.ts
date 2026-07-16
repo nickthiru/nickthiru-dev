@@ -30,6 +30,70 @@ const allowedKeys = new Set([
   "summary_two_sentence",
 ]);
 
+// Human-readable descriptions for common fields
+const fieldDescriptions: Record<string, string> = {
+  track: 'Must be "product", "engineering", or "business"',
+  series_name:
+    "Product name (for track:product) or series title (empty string for standalone posts)",
+  series_slug:
+    "Kebab-case slug matching the series (empty for standalone posts)",
+  series_phase:
+    "One of: strategy, design, engineering, deployment, maintenance, community",
+  series_position: "Positive integer (1, 2, 3...)",
+  image_size: "One of: sm, md, lg, full",
+  publishedAt: "ISO date string (YYYY-MM-DD)",
+  newsletter_hook: "A short teaser paragraph for newsletter subscribers",
+  summary_two_sentence: "Exactly two sentences summarizing the post",
+  pinned_order:
+    'Number for ordering pinned posts, "n/a" for non-pinned, or omit',
+};
+
+/**
+ * Extract field-level errors from Zod v4 issues.
+ * For union types, errors are nested inside `issues` property.
+ */
+function extractErrors(
+  issue: Record<string, unknown>,
+  data: Record<string, unknown>,
+): Array<{ field: string; detail: string; hint?: string }> {
+  const errors: Array<{ field: string; detail: string; hint?: string }> = [];
+
+  // Zod v4 union errors have nested `issues` array
+  if (issue.issues && Array.isArray(issue.issues)) {
+    for (const subIssue of issue.issues as Record<string, unknown>[]) {
+      errors.push(...extractErrors(subIssue, data));
+    }
+    return errors;
+  }
+
+  // Regular field error
+  const path = (issue.path as PropertyKey[]) || [];
+  const field = path.map(String).join(".");
+  const message = (issue.message as string) || "Invalid input";
+  const description = fieldDescriptions[field] || "";
+
+  // Get the actual value at the path
+  let actualValue: unknown = data;
+  for (const key of path) {
+    if (actualValue !== null && actualValue !== undefined) {
+      actualValue = (actualValue as Record<string, unknown>)[String(key)];
+    }
+  }
+
+  let detail = message;
+  if (actualValue !== undefined && path.length > 0) {
+    detail += ` (got: ${JSON.stringify(actualValue)})`;
+  }
+
+  errors.push({
+    field: field || "(root)",
+    detail,
+    hint: description || undefined,
+  });
+
+  return errors;
+}
+
 function validateFrontmatter() {
   const files = fs
     .readdirSync(postsDir)
@@ -49,13 +113,17 @@ function validateFrontmatter() {
     }
 
     let fileHasErrors = false;
-    const errors: string[] = [];
+    const errors: Array<{ field: string; detail: string; hint?: string }> = [];
 
     // Check for unknown keys first
     for (const key of Object.keys(data)) {
       if (!allowedKeys.has(key)) {
         fileHasErrors = true;
-        errors.push(`Unknown key: "${key}"`);
+        errors.push({
+          field: key,
+          detail: "Unknown key",
+          hint: "Remove this key or add it to allowedKeys",
+        });
       }
     }
 
@@ -64,8 +132,8 @@ function validateFrontmatter() {
 
     if (!result.success) {
       fileHasErrors = true;
-      for (const error of result.error.issues) {
-        errors.push(`${error.path.join(".")}: ${error.message}`);
+      for (const issue of result.error.issues as unknown as Record<string, unknown>[]) {
+        errors.push(...extractErrors(issue, data));
       }
     }
 
@@ -73,7 +141,11 @@ function validateFrontmatter() {
       hasErrors = true;
       console.error(`\n❌ ${file}:`);
       for (const error of errors) {
-        console.error(`   - ${error}`);
+        console.error(`   ${error.field}: ${error.detail}`);
+        if (error.hint) {
+          console.error(`      → ${error.hint}`);
+        }
+        console.error("");
       }
     } else {
       console.log(`✅ ${file}`);

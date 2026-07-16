@@ -5,7 +5,7 @@ publishedAt: "2026-07-15"
 slug: "why-stack-trace-product-vision"
 image: "/posts/why-stack-trace-product-vision.png"
 image_size: "lg"
-draft: true
+draft: false
 tags: []
 track: "product"
 series_name: ""
@@ -16,8 +16,8 @@ linkedin_url: ""
 x_url: ""
 pinned: false
 pinned_order:
-newsletter_hook: "Most product features start life as reasonable requests. 'Make it faster.' 'Track outcomes.' 'Don't publish without my approval.' Each one sounds sensible. The problem is that a sensible request is not the same as a root business outcome — and if you build to the request, you may solve the wrong thing entirely. During the Social Engagement Radar vision session, I used a technique I'd picked up from BDD in Action by John Ferguson Smart: keep asking 'why?' until the answer stops changing. Three goal chains. Three moments where the surface request dissolved into something more fundamental. That's what this post is about."
-summary_two_sentence: "Surface-level product goals are rarely the real problem — they're symptoms of a deeper business need that only becomes visible when you keep asking why. This post walks through the Why Stack Trace technique using three real goal chains from a product vision session, showing how it turns vague requests into measurable outcomes worth building toward."
+newsletter_hook: "Most product features start life as reasonable requests. 'Make it faster.' 'Track outcomes.' 'Don't publish without my approval.' Each one sounds sensible. The problem is that a sensible request is not the same as a root business outcome — and if you build to the request, you may solve the wrong thing entirely. During the Social Engagement Radar vision session, I used a technique I'd picked up from BDD in Action by John Ferguson Smart and Jan Molak: keep asking 'why?' until the answer stops changing. Three goal chains. Three moments where the surface request dissolved into something more fundamental. That's what this post is about."
+summary_two_sentence: "Surface-level product goals are rarely the real problem. They're symptoms of a deeper business need that only becomes visible when you keep asking why. This post walks through the Why Stack Trace technique using three real goal chains from a product vision session, showing how it turns vague requests into measurable outcomes worth building toward."
 ---
 
 I had three goals written down before I started building the Social Engagement Radar. Reduce effort. Improve outcomes. Protect trust. Clean, sensible, easy to build a backlog around. The problem is that none of them were actually business goals yet.
@@ -28,7 +28,7 @@ Here's what I mean. "Reduce effort" tells you someone is spending too much time 
 
 Nobody tells you this, but the gap between a directionally correct goal and a useful one is exactly where most product work goes wrong.
 
-So I borrowed a technique from a book I'd found useful during planning work: _BDD in Action_ by John Ferguson Smart. The idea is simple in principle and ruthless in practice. For each goal you've written down, ask "why?" — and keep asking until the answer stops opening into another question. When you reach an outcome you can measure and that clearly links to revenue, cost, or risk, you've found the real goal. Everything above it is a request.
+So I borrowed a technique from a book I'd found useful during planning work: _BDD in Action_ by John Ferguson Smart and Jan Molak. The idea is simple in principle and ruthless in practice. For each goal you've written down, ask "why?" and keep asking until the answer stops opening into another question. When you reach an outcome you can measure and that clearly links to revenue, cost, or risk, you've found the real goal. Everything above it is a request.
 
 I started calling it the Why Stack Trace because it felt exactly like unwinding a call stack. You see the surface call. You dig down. You find the root.
 
@@ -44,13 +44,13 @@ On the surface: a speed problem. Users spend too long on a manual process. Easy 
 
 First why: why are they slow? Because manual scanning doesn't reliably surface the right conversations at the right time, and generic writing tools require significant restyling for every draft.
 
-Second why: why does that cost so much? Because when you act late on a social conversation, the engagement value drops sharply — and users pursuing multiple distinct interests have to rebuild their context from scratch every session, multiplying wasted effort across every interest they're active in.
+Second why: why does that cost so much? Because when you act late on a social conversation, the engagement value drops sharply, and users pursuing multiple distinct interests have to rebuild their context from scratch every session, multiplying wasted effort across every interest they're active in.
 
 That last piece is what changed my thinking. The root outcome wasn't "make the workflow faster." It was: lower the user's effective cost of engagement to the point where doing this daily becomes sustainable. That's a different brief entirely. It changes what you build, what you measure, and what "done" looks like.
 
 ## What You're Really Tracking When You Track Outcomes
 
-The second goal was about improving users' downstream business outcomes from replies — more leads, more collaborations, more visibility.
+The second goal was about improving users' downstream business outcomes from replies: more leads, more collaborations, more visibility.
 
 <!-- [ARTIFACT: user to confirm format and content before publishing] -->
 
@@ -68,11 +68,11 @@ The third goal was the one that looked most like an engineering requirement: ens
 
 <!-- [ARTIFACT: user to confirm format and content before publishing] -->
 
-First why: why does this matter enough to be a top-level goal? Because trust failures in social publishing are immediate and visible — a single unintended post can cause real reputational damage, and users who experience that don't come back.
+First why: why does this matter enough to be a top-level goal? Because trust failures in social publishing are immediate and visible. A single unintended post can cause real reputational damage, and users who experience that don't come back.
 
 Second why: why does auditability matter beyond just preventing accidents? Because the combination of an approval gate and a clear record of what was published and when is what makes the product safe enough to adopt as a daily workflow tool.
 
-The root outcome: protect revenue by preserving user trust and eliminating the category of operational mishaps that would cause churn. That reframes what looks like a safety feature into a commercial decision. You're not just avoiding bad outcomes — you're removing the reason a user would ever leave.
+The root outcome: protect revenue by preserving user trust and eliminating the category of operational mishaps that would cause churn. That reframes what looks like a safety feature into a commercial decision. You're not just avoiding bad outcomes. You're removing the reason a user would ever leave.
 
 ## The Pattern Worth Keeping
 
@@ -80,10 +80,10 @@ Here's the tradeoff when you skip this kind of reasoning: you end up building th
 
 The Why Stack Trace is not complicated. It's disciplined repetition of one question. But that discipline is what separates a product spec from a product strategy.
 
-I picked up the approach from John Ferguson Smart's work on BDD and discovery — the idea that you should trace a requirement back to its business value before you commit to building it. What I found is that this same principle applies at the vision level, before any features are defined. It's not just useful for requirements. It's how you write goals that are actually buildable.
+I picked up the approach from Smart and Molak's work on BDD and discovery: the idea that you should trace a requirement back to its business value before you commit to building it. What I found is that this same principle applies at the vision level, before any features are defined. It's not just useful for requirements. It's how you write goals that are actually buildable.
 
 (See: _[The *Social Engagement Radar* product vision](/writing/social-engagement-radar-product-vision)_)
 
 ## Your Turn
 
-When you're defining goals early in a product or project, do you ask "why?" more than once — or does the first plausible answer tend to stick?
+When you're defining goals early in a product or project, do you ask "why?" more than once, or does the first plausible answer tend to stick?

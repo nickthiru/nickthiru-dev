@@ -11,7 +11,7 @@ export interface PostFrontmatter {
   tags?: string[];
   draft?: boolean;
   pinned?: boolean;
-  pinned_order?: number;
+  pinned_order?: number | "n/a";
   canonical?: string;
   image?: string;
   image_size?: "sm" | "md" | "lg" | "full";
@@ -142,8 +142,8 @@ export async function getPinnedPosts(): Promise<PostMeta[]> {
   const pinnedPosts = posts.filter((post) => post.pinned);
 
   return pinnedPosts.sort((a, b) => {
-    const orderA = a.pinned_order ?? Infinity;
-    const orderB = b.pinned_order ?? Infinity;
+    const orderA = typeof a.pinned_order === "number" ? a.pinned_order : Infinity;
+    const orderB = typeof b.pinned_order === "number" ? b.pinned_order : Infinity;
     return orderA - orderB;
   });
 }

@@ -127,11 +127,13 @@
     </div>
 
     <!-- Start from beginning -->
-    <div class="series-drawer-footer">
-      <a href="/writing/?series={seriesSummary.series_slug}" class="start-link">
-        Start from the beginning →
-      </a>
-    </div>
+    {#if allPosts[0] && currentPosition > 1}
+      <div class="series-drawer-footer">
+        <a href="/writing/{allPosts[0].slug}" class="start-link">
+          Start from the beginning →
+        </a>
+      </div>
+    {/if}
   </div>
 </div>
 

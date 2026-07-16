@@ -37,7 +37,7 @@ const baseSchema = z.object({
   tags: z.array(z.string()).optional(),
   draft: z.boolean().optional(),
   pinned: z.boolean().optional(),
-  pinned_order: z.number().optional(),
+  pinned_order: z.number().or(z.literal("n/a")).optional(),
   canonical: z.string().optional(),
   image: z.string().min(1),
   image_size: imageSize,

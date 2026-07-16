@@ -134,6 +134,7 @@
 
     <!-- Series Context Card (if series exists) -->
     {#if data.seriesMeta && data.positionInfo}
+      {@const firstPostSlug = data.seriesPosts[0]?.slug ?? ''}
       <div class="max-w-prose mx-auto">
         <SeriesContextCard
           seriesName={data.post.series_name!}
@@ -141,6 +142,7 @@
           currentPosition={data.positionInfo.current}
           totalInSeries={data.positionInfo.total}
           seriesSlug={data.post.series_slug!}
+          firstPostSlug={firstPostSlug}
         />
       </div>
     {/if}
@@ -167,7 +169,7 @@
     </div>
 
     <!-- What's Coming Next (if next post exists) -->
-    {#if data.nextInSeries}
+    <!-- {#if data.nextInSeries}
       <div class="max-w-prose mx-auto">
         <WhatsComingNext
           nextPostTitle={data.nextInSeries.title}
@@ -175,7 +177,7 @@
           nextPostPhase={data.nextInSeries.series_phase}
         />
       </div>
-    {/if}
+    {/if} -->
 
     <!-- Post Navigation (if series exists) -->
     {#if data.seriesMeta}

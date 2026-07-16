@@ -14,7 +14,7 @@
   let { 
     title = siteConfig.title,
     description = siteConfig.description,
-    image = '/og-default.png',
+    image = '/static/logo.png',
     type = 'website',
     publishedAt,
     canonical

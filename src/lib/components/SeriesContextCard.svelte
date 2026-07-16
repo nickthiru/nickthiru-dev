@@ -19,8 +19,9 @@
     <!-- <span class="text-2xl shrink-0">📚</span> -->
     <div class="flex-1">
       <p class="text-base text-primary dark:text-[#FAFAFA] mb-1">
-        You're reading Part {currentPosition} of {totalInSeries} in 
+        You're reading Part {currentPosition} of {totalInSeries} in the
         <a href="/writing/?series={seriesSlug}" class="text-accent hover:underline">{seriesName}</a>
+        series 
         {#if currentPhase}
           ({capitalize(currentPhase)} phase).
         {/if}

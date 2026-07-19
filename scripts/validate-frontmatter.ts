@@ -95,13 +95,25 @@ function extractErrors(
 }
 
 function validateFrontmatter() {
-  const files = fs
-    .readdirSync(postsDir)
-    .filter((f: string) => f.endsWith(".md"));
+  // Recursively find all .md files in drafts/ only (pre-publish validation)
+  const files: string[] = [];
+  function walkDir(dir: string) {
+    const entries = fs.readdirSync(dir, { withFileTypes: true });
+    for (const entry of entries) {
+      const fullPath = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        walkDir(fullPath);
+      } else if (entry.name.endsWith(".md")) {
+        files.push(fullPath);
+      }
+    }
+  }
+  walkDir(path.join(postsDir, "drafts"));
+
   let hasErrors = false;
 
-  for (const file of files) {
-    const filePath = path.join(postsDir, file);
+  for (const filePath of files) {
+    const file = path.relative(postsDir, filePath);
     const content = fs.readFileSync(filePath, "utf-8");
     const { data } = matter(content);
 
@@ -132,7 +144,10 @@ function validateFrontmatter() {
 
     if (!result.success) {
       fileHasErrors = true;
-      for (const issue of result.error.issues as unknown as Record<string, unknown>[]) {
+      for (const issue of result.error.issues as unknown as Record<
+        string,
+        unknown
+      >[]) {
         errors.push(...extractErrors(issue, data));
       }
     }

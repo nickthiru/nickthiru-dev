@@ -70,11 +70,11 @@ type PostModule = {
   default: Component;
 };
 
-const postModules = import.meta.glob<PostModule>("/src/content/posts/*.md", {
+const postModules = import.meta.glob<PostModule>("/src/content/posts/**/*.md", {
   eager: true,
 });
 
-const rawPostModules = import.meta.glob<string>("/src/content/posts/*.md", {
+const rawPostModules = import.meta.glob<string>("/src/content/posts/**/*.md", {
   eager: true,
   query: "?raw",
   import: "default",
@@ -142,8 +142,10 @@ export async function getPinnedPosts(): Promise<PostMeta[]> {
   const pinnedPosts = posts.filter((post) => post.pinned);
 
   return pinnedPosts.sort((a, b) => {
-    const orderA = typeof a.pinned_order === "number" ? a.pinned_order : Infinity;
-    const orderB = typeof b.pinned_order === "number" ? b.pinned_order : Infinity;
+    const orderA =
+      typeof a.pinned_order === "number" ? a.pinned_order : Infinity;
+    const orderB =
+      typeof b.pinned_order === "number" ? b.pinned_order : Infinity;
     return orderA - orderB;
   });
 }

@@ -1,0 +1,30 @@
+{
+  "subject": "This week: three product visions, one lesson",
+  "personal_note": "This week's build logs all rhymed in a way I didn't expect. Writing OpsPilot's vision, I started from my own workflow and had to force myself to ask who this was actually for — the answer reshaped the whole product. Writing PolicyForge's vision, I role-played as someone with zero cybersecurity background just to catch the questions a real consultant would ask. And working through Social Engagement Radar's goals, I kept asking \"why\" until \"reduce effort\" turned into something I could actually measure. Same lesson, three times over: the first answer you write down is rarely the real one. You have to keep digging before you build.",
+  "articles": [
+    {
+      "title": "Social Engagement Radar — Inside the Product Vision",
+      "slug": "social-engagement-radar-product-vision",
+      "hook": "I've watched a lot of product ideas collapse at the first real question: what problem are you actually solving, and how would you know if you solved it? For Social Engagement Radar, every decision had to trace back to a measurable user outcome, and every constraint had to earn its place. This post lays out the problem, the product scope, and the three things that make it different from every scheduling or content tool out there.",
+      "url": "https://nickthiru.dev/writing/social-engagement-radar-product-vision"
+    },
+    {
+      "title": "PolicyForge - Inside the Product Vision",
+      "slug": "policyforge-product-vision",
+      "hook": "Picture getting a letter that says your company's cyber insurance won't renew unless you produce a full set of written security policies — in under three weeks. No compliance team. No budget for a $15k consultant. Just you, a deadline, and a blank page. That's the exact moment PolicyForge was built for. Here's the vision behind it, and why \"in minutes, not weeks\" isn't just a tagline.",
+      "url": "https://nickthiru.dev/writing/policyforge-product-vision"
+    },
+    {
+      "title": "Stop Asking What. Start Asking Why.",
+      "slug": "why-stack-trace-product-vision",
+      "hook": "Most product features start life as reasonable requests: \"Make it faster.\" \"Track outcomes.\" \"Don't publish without my approval.\" Each sounds sensible, but a sensible request differs from a root business outcome — build to the request and you may solve the wrong thing. During the Social Engagement Radar vision session, I used a technique from BDD in Action: keep asking \"why?\" until the answer stops changing. Three goal chains, three moments where the surface request dissolved into something more fundamental.",
+      "url": "https://nickthiru.dev/writing/why-stack-trace-product-vision"
+    },
+    {
+      "title": "OpsPilot - Inside the Product Vision",
+      "slug": "opspilot-product-vision",
+      "hook": "I sat down to write a vision doc for an idea I thought I already understood. Then one question took the whole thing apart: \"what is this actually for, and who is it actually for?\" What came out the other side wasn't a bigger version of the same idea. It was a sharper one. Here's what OpsPilot actually is, and who it's actually for — from solo founders to the small-to-medium teams they grow into.",
+      "url": "https://nickthiru.dev/writing/opspilot-product-vision"
+    }
+  ]
+}

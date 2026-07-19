@@ -53,18 +53,21 @@ const BASE_URL = "https://nickthiru.dev/writing/";
 
 // ─── CLI Arg Parsing ─────────────────────────────────────────────────────────
 
-function parseArgs(): { configPath: string } {
+function parseArgs(): { command: string; configPath: string } {
   const args = process.argv.slice(2);
   let configPath = DEFAULT_DRAFT_PATH;
+  let command = "create-draft"; // default
 
   for (let i = 0; i < args.length; i++) {
     if (args[i] === "--config" && args[i + 1]) {
       configPath = path.resolve(args[i + 1]);
       i++;
+    } else if (args[i] === "create-draft" || args[i] === "finalize") {
+      command = args[i];
     }
   }
 
-  return { configPath };
+  return { command, configPath };
 }
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
@@ -218,9 +221,13 @@ function markArticlesAsSent(articles: ArticleEntry[], date: string): void {
 
 // ─── Main ────────────────────────────────────────────────────────────────────
 
-async function sendNewsletterCampaign() {
-  const { configPath } = parseArgs();
+// ─── Commands ─────────────────────────────────────────────────────────────────
 
+// ✅ Update these values before running
+const TEMPLATE_ID = 11; // 👈 paste your Brevo template ID here
+const LIST_ID = 11; // 👈 paste your Brevo subscriber list ID here
+
+async function createDraft(configPath: string) {
   // Step 1: Load draft config
   const draft = loadDraft(configPath);
   if (!draft || !draft.personal_note || !draft.subject || !draft.articles) {
@@ -290,27 +297,17 @@ async function sendNewsletterCampaign() {
   const today = new Date().toISOString().split("T")[0];
   const campaignName = `Newsletter — Week of ${today}`;
 
-  // Step 4: Confirm before sending
+  // Step 4: Summary
   console.log("📋 Campaign summary:");
   console.log(`   Name:    ${campaignName}`);
   console.log(`   Subject: ${draft.subject}`);
   console.log(`   Articles: ${articles.length}`);
   console.log("");
 
-  const confirm = await promptUser("Create draft campaign in Brevo? (y/n): ");
-  if (confirm.toLowerCase() !== "y") {
-    console.log("❌ Aborted. Articles remain in newsletter-pending/.");
-    return;
-  }
-
-  // Step 5: Create campaign
+  // Step 5: Create campaign (no prompt — this is the create-draft command)
   const brevo = new BrevoClient({
     apiKey: process.env.BREVO_API_KEY!,
   });
-
-  // ✅ Update these values before running
-  const TEMPLATE_ID = 11; // 👈 paste your Brevo template ID here
-  const LIST_ID = 11; // 👈 paste your Brevo subscriber list ID here
 
   try {
     const response = await brevo.emailCampaigns.createEmailCampaign({
@@ -330,33 +327,96 @@ async function sendNewsletterCampaign() {
     console.log("\n✅ Draft campaign created successfully!");
     console.log(`   Campaign ID: ${response.id}`);
     console.log(
-      "   👉 Go to Brevo > Marketing > Campaigns to preview the draft.",
+      "   👉 Go to Brevo > Marketing > Campaigns to preview and send.",
     );
-
-    // Step 6: Confirm send and update tracking
-    const sent = await promptUser("\nCampaign sent in Brevo? (y/n): ");
-    if (sent.toLowerCase() === "y") {
-      const trackerEntry: NewsletterTrackerEntry = {
-        date: today,
-        campaign_name: campaignName,
-        subject: draft.subject,
-        articles: articles.map((a) => a.slug),
-        status: "sent",
-      };
-      updateTracker(trackerEntry);
-      markArticlesAsSent(articles, today);
-      deleteDraft(configPath);
-      console.log("\n✅ Tracking updated. Articles moved to newsletter-done/.");
-      console.log("✅ Draft config deleted.");
-    } else {
-      console.log(
-        "\n⏭️  Tracking not updated. Articles remain in newsletter-pending/.",
-      );
-      console.log("   Run the script again after sending to update tracking.");
-    }
+    console.log(
+      "\n   After sending, run: npx tsx send-newsletter-campaign.ts finalize",
+    );
   } catch (error) {
     console.error("❌ Campaign creation failed:", error);
   }
 }
 
-sendNewsletterCampaign();
+async function finalize(configPath: string) {
+  // Load draft config to get subject and article list
+  const draft = loadDraft(configPath);
+  if (!draft || !draft.subject || !draft.articles) {
+    console.log("\n⚠️  No valid .newsletter-draft.json found.");
+    console.log("   Cannot finalize without the draft config file.");
+    console.log(
+      "   If you already deleted it, manually update newsletter-tracker.json.",
+    );
+    return;
+  }
+
+  // Discover articles that are still in newsletter-pending
+  const discovered = await discoverArticles();
+
+  // Match draft articles with discovered files
+  const articles: ArticleEntry[] = [];
+  for (const draftArticle of draft.articles) {
+    const found = discovered.find(
+      (d) => d.slug === draftArticle.url.split("/").pop(),
+    );
+    if (found) {
+      articles.push(found);
+    }
+  }
+
+  if (articles.length === 0) {
+    console.log("\n⚠️  No matching articles found in newsletter-pending/.");
+    console.log("   They may have already been moved. Exiting.");
+    return;
+  }
+
+  const today = new Date().toISOString().split("T")[0];
+  const campaignName = `Newsletter — Week of ${today}`;
+
+  // Update tracker
+  const trackerEntry: NewsletterTrackerEntry = {
+    date: today,
+    campaign_name: campaignName,
+    subject: draft.subject,
+    articles: articles.map((a) => a.slug),
+    status: "sent",
+  };
+  updateTracker(trackerEntry);
+
+  // Mark articles as sent and move files
+  markArticlesAsSent(articles, today);
+
+  // Delete draft config
+  deleteDraft(configPath);
+
+  console.log("\n✅ Tracking updated. Articles moved to newsletter-done/.");
+  console.log("✅ Draft config deleted.");
+}
+
+// ─── Entry Point ───────────────────────────────────────────────────────────────
+
+async function main() {
+  const { command, configPath } = parseArgs();
+
+  console.log(`\n📧 Newsletter CLI — Command: ${command}\n`);
+
+  switch (command) {
+    case "create-draft":
+      await createDraft(configPath);
+      break;
+    case "finalize":
+      await finalize(configPath);
+      break;
+    default:
+      console.log(`⚠️  Unknown command: ${command}`);
+      console.log("Usage:");
+      console.log(
+        "  npx tsx send-newsletter-campaign.ts create-draft [--config path]",
+      );
+      console.log(
+        "  npx tsx send-newsletter-campaign.ts finalize [--config path]",
+      );
+      break;
+  }
+}
+
+main();

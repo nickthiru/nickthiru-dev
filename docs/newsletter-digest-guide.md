@@ -110,7 +110,9 @@ The LLM writes this file directly — you don't need to save it manually.
 
 ### Step 2: Create the Brevo Campaign (Script Task)
 
-Run `send-newsletter-campaign.ts`. The script:
+The script has two subcommands:
+
+#### `create-draft` — Creates the campaign in Brevo
 
 1. **Loads `.newsletter-draft.json`** (or a custom path via `--config`)
 2. **Scans `published/newsletter-pending/`** for `.md` files
@@ -118,13 +120,27 @@ Run `send-newsletter-campaign.ts`. The script:
 4. **Filters out** articles where `draft: true` or `newsletter_sent: true`
 5. **Matches draft articles with discovered files**
 6. **Displays discovered articles** — title, slug, URL, hook preview
-7. **Asks for confirmation** — y/n before creating the campaign
-8. **Creates the Brevo campaign** — via `createEmailCampaign` (marketing API)
-9. **Asks if you sent it** — y/n after you've sent in Brevo
-10. **Updates tracking** — appends to `newsletter-tracker.json`
-11. **Updates frontmatter** — sets `newsletter_sent: true` + `newsletter_date`
-12. **Moves files** — from `newsletter-pending/` to `newsletter-done/`
-13. **Deletes `.newsletter-draft.json`** — cleanup after successful run
+7. **Creates the Brevo campaign** — via `createEmailCampaign` (marketing API)
+8. **Exits** — no tracking updates, no file moves
+
+```bash
+npx tsx src/scripts/send-newsletter-campaign.ts create-draft
+```
+
+After running, go to Brevo → Marketing → Campaigns to preview the draft and send it manually.
+
+#### `finalize` — Updates tracking after you've sent
+
+1. **Loads `.newsletter-draft.json`** to get subject and article list
+2. **Discovers matching articles** still in `newsletter-pending/`
+3. **Updates tracking** — appends to `newsletter-tracker.json`
+4. **Updates frontmatter** — sets `newsletter_sent: true` + `newsletter_date`
+5. **Moves files** — from `newsletter-pending/` to `newsletter-done/`
+6. **Deletes `.newsletter-draft.json`** — cleanup
+
+```bash
+npx tsx src/scripts/send-newsletter-campaign.ts finalize
+```
 
 ### Configuration (Manual Step)
 
@@ -135,19 +151,14 @@ const TEMPLATE_ID = 11; // 👈 paste your Brevo template ID here
 const LIST_ID = 11; // 👈 paste your Brevo subscriber list ID here
 ```
 
-### Running the Script
-
-```bash
-# Default: reads from newsletter-pending/.newsletter-draft.json
-npx tsx src/scripts/send-newsletter-campaign.ts
-
-# Custom config path:
-npx tsx src/scripts/send-newsletter-campaign.ts --config /path/to/draft.json
-```
-
 ### Example Session
 
 ```
+# Step 1: Create the draft campaign
+$ npx tsx src/scripts/send-newsletter-campaign.ts create-draft
+
+📧 Newsletter CLI — Command: create-draft
+
 🔍 Scanning for newsletter-pending articles...
 
 📰 Found 3 article(s) for this issue:
@@ -175,13 +186,20 @@ npx tsx src/scripts/send-newsletter-campaign.ts --config /path/to/draft.json
    Subject: This week: Why I Price, Why Building, What Are AI
    Articles: 3
 
-Create draft campaign in Brevo? (y/n): y
-
 ✅ Draft campaign created successfully!
    Campaign ID: 42
-   👉 Go to Brevo > Marketing > Campaigns to preview the draft.
+   👉 Go to Brevo > Marketing > Campaigns to preview and send.
 
-Campaign sent in Brevo? (y/n): y
+   After sending, run: npx tsx send-newsletter-campaign.ts finalize
+
+# Step 2: After sending in Brevo, finalize
+$ npx tsx src/scripts/send-newsletter-campaign.ts finalize
+
+📧 Newsletter CLI — Command: finalize
+
+✅ Moved why-i-price-monthly.md to newsletter-done/
+✅ Moved why-building-solo.md to newsletter-done/
+✅ Moved what-are-ai-agents.md to newsletter-done/
 
 ✅ Tracking updated. Articles moved to newsletter-done/.
 ✅ Draft config deleted.

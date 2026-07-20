@@ -16,7 +16,7 @@ linkedin_url: "https://www.linkedin.com/posts/nick-thiru_opspilot-buildinpublic-
 x_url: "https://x.com/nickthiru/status/2078093133305479347"
 pinned: false
 pinned_order: "n/a"
-newsletter_hook: "I sat down to write a vision doc for an idea I thought I already understood. Then one question took the whole thing apart: 'what is this actually for, and who is it actually for?' What came out the other side wasn't a bigger version of the same idea. It was a sharper one. Here's what OpsPilot actually is, and who it's actually for — from solo founders to the small-to-medium teams they grow into."
+newsletter_hook: 'I sat down to write a vision doc for an idea I thought I already understood. Then one question took the whole thing apart: "what is this actually for, and who is it actually for?" What came out the other side wasn''t a bigger version of the same idea. It was a sharper one. Here''s what OpsPilot actually is, and who it''s actually for — from solo founders to the small-to-medium teams they grow into.'
 summary_two_sentence: "OpsPilot started as an idea for tracking my own operations, and writing its vision forced me to confront what it was really solving — and who for. The answer reshaped the product into something bigger: an integration platform that gives solo founders and small-to-medium teams the operational intelligence of a full enterprise ops function."
 ---
 

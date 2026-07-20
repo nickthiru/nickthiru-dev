@@ -17,10 +17,9 @@ interface ArticleEntry {
   filePath: string;
 }
 
-interface NewsletterDraft {
+interface NewsletterMeta {
   personal_note: string;
   subject: string;
-  articles: Array<{ title: string; hook: string; url: string }>;
 }
 
 interface NewsletterTrackerEntry {
@@ -45,29 +44,29 @@ const TRACKER_PATH = path.resolve(
   import.meta.dirname,
   "../../../thiru-ai-labs/docs/business/building-in-public-latest/newsletter-tracker.json",
 );
-const DEFAULT_DRAFT_PATH = path.resolve(
+const DEFAULT_META_PATH = path.resolve(
   import.meta.dirname,
-  "../content/posts/published/newsletter-pending/.newsletter-draft.json",
+  "../content/posts/published/newsletter-pending/.newsletter-meta.json",
 );
 const BASE_URL = "https://nickthiru.dev/writing/";
 
 // ─── CLI Arg Parsing ─────────────────────────────────────────────────────────
 
-function parseArgs(): { command: string; configPath: string } {
+function parseArgs(): { command: string; metaPath: string } {
   const args = process.argv.slice(2);
-  let configPath = DEFAULT_DRAFT_PATH;
+  let metaPath = DEFAULT_META_PATH;
   let command = "create-draft"; // default
 
   for (let i = 0; i < args.length; i++) {
     if (args[i] === "--config" && args[i + 1]) {
-      configPath = path.resolve(args[i + 1]);
+      metaPath = path.resolve(args[i + 1]);
       i++;
     } else if (args[i] === "create-draft" || args[i] === "finalize") {
       command = args[i];
     }
   }
 
-  return { command, configPath };
+  return { command, metaPath };
 }
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
@@ -161,18 +160,18 @@ async function discoverArticles(): Promise<ArticleEntry[]> {
   return articles;
 }
 
-function loadDraft(configPath: string): NewsletterDraft | null {
-  if (!fs.existsSync(configPath)) return null;
+function loadMeta(metaPath: string): NewsletterMeta | null {
+  if (!fs.existsSync(metaPath)) return null;
   try {
-    return JSON.parse(fs.readFileSync(configPath, "utf-8"));
+    return JSON.parse(fs.readFileSync(metaPath, "utf-8"));
   } catch {
     return null;
   }
 }
 
-function deleteDraft(configPath: string): void {
-  if (fs.existsSync(configPath)) {
-    fs.unlinkSync(configPath);
+function deleteMeta(metaPath: string): void {
+  if (fs.existsSync(metaPath)) {
+    fs.unlinkSync(metaPath);
   }
 }
 
@@ -227,50 +226,29 @@ function markArticlesAsSent(articles: ArticleEntry[], date: string): void {
 const TEMPLATE_ID = 11; // 👈 paste your Brevo template ID here
 const LIST_ID = 11; // 👈 paste your Brevo subscriber list ID here
 
-async function createDraft(configPath: string) {
-  // Step 1: Load draft config
-  const draft = loadDraft(configPath);
-  if (!draft || !draft.personal_note || !draft.subject || !draft.articles) {
-    console.log("\n⚠️  No valid .newsletter-draft.json found.");
-    console.log("   Run prompt_newsletter first to generate the draft,");
+async function createDraft(metaPath: string) {
+  // Step 1: Load meta (personal_note + subject only)
+  const meta = loadMeta(metaPath);
+  if (!meta || !meta.personal_note || !meta.subject) {
+    console.log("\n⚠️  No valid .newsletter-meta.json found.");
+    console.log("   Run prompt_newsletter first to generate the meta,");
     console.log("   then run this script.");
-    console.log(`\n   Expected config path: ${configPath}`);
+    console.log(`\n   Expected config path: ${metaPath}`);
     console.log("   Or specify a custom path: --config /path/to/file.json");
     console.log("\n   Expected format:");
     console.log(`   {
   "personal_note": "...",
-  "subject": "...",
-  "articles": [
-    { "title": "...", "hook": "...", "url": "..." }
-  ]
+  "subject": "..."
 }`);
     return;
   }
 
-  // Step 2: Discover articles (validate against draft)
+  // Step 2: Discover articles from frontmatter
   console.log("🔍 Scanning for newsletter-pending articles...\n");
-  const discovered = await discoverArticles();
-
-  if (discovered.length === 0) {
-    console.log("\nNo articles to include. Exiting.");
-    return;
-  }
-
-  // Match draft articles with discovered files
-  const articles: ArticleEntry[] = [];
-  for (const draftArticle of draft.articles) {
-    const found = discovered.find(
-      (d) => d.slug === draftArticle.url.split("/").pop(),
-    );
-    if (found) {
-      articles.push(found);
-    } else {
-      console.log(`⚠️  Could not find file for: ${draftArticle.title}`);
-    }
-  }
+  const articles = await discoverArticles();
 
   if (articles.length === 0) {
-    console.log("\n⚠️  No matching articles found. Exiting.");
+    console.log("\nNo articles to include. Exiting.");
     return;
   }
 
@@ -284,13 +262,13 @@ async function createDraft(configPath: string) {
   });
 
   console.log(
-    `\n✅ Personal note loaded from draft (${draft.personal_note.split(/\s+/).length} words)`,
+    `\n✅ Personal note loaded from meta (${meta.personal_note.split(/\s+/).length} words)`,
   );
-  console.log(`✅ Subject line: ${draft.subject}\n`);
+  console.log(`✅ Subject line: ${meta.subject}\n`);
 
-  // Step 3: Build params
+  // Step 3: Build params (articles from frontmatter)
   const params = {
-    personal_note: draft.personal_note,
+    personal_note: meta.personal_note,
     articles: articles.map(({ title, hook, url }) => ({ title, hook, url })),
   };
 
@@ -300,11 +278,11 @@ async function createDraft(configPath: string) {
   // Step 4: Summary
   console.log("📋 Campaign summary:");
   console.log(`   Name:    ${campaignName}`);
-  console.log(`   Subject: ${draft.subject}`);
+  console.log(`   Subject: ${meta.subject}`);
   console.log(`   Articles: ${articles.length}`);
   console.log("");
 
-  // Step 5: Create campaign (no prompt — this is the create-draft command)
+  // Step 5: Create campaign
   const brevo = new BrevoClient({
     apiKey: process.env.BREVO_API_KEY!,
   });
@@ -316,7 +294,7 @@ async function createDraft(configPath: string) {
         name: "Nick",
         email: "newsletter@nickthiru.dev",
       },
-      subject: draft.subject,
+      subject: meta.subject,
       templateId: TEMPLATE_ID,
       recipients: {
         listIds: [LIST_ID],
@@ -337,31 +315,20 @@ async function createDraft(configPath: string) {
   }
 }
 
-async function finalize(configPath: string) {
-  // Load draft config to get subject and article list
-  const draft = loadDraft(configPath);
-  if (!draft || !draft.subject || !draft.articles) {
-    console.log("\n⚠️  No valid .newsletter-draft.json found.");
-    console.log("   Cannot finalize without the draft config file.");
+async function finalize(metaPath: string) {
+  // Load meta to get subject
+  const meta = loadMeta(metaPath);
+  if (!meta || !meta.subject) {
+    console.log("\n⚠️  No valid .newsletter-meta.json found.");
+    console.log("   Cannot finalize without the meta config file.");
     console.log(
       "   If you already deleted it, manually update newsletter-tracker.json.",
     );
     return;
   }
 
-  // Discover articles that are still in newsletter-pending
-  const discovered = await discoverArticles();
-
-  // Match draft articles with discovered files
-  const articles: ArticleEntry[] = [];
-  for (const draftArticle of draft.articles) {
-    const found = discovered.find(
-      (d) => d.slug === draftArticle.url.split("/").pop(),
-    );
-    if (found) {
-      articles.push(found);
-    }
-  }
+  // Discover articles from frontmatter
+  const articles = await discoverArticles();
 
   if (articles.length === 0) {
     console.log("\n⚠️  No matching articles found in newsletter-pending/.");
@@ -376,7 +343,7 @@ async function finalize(configPath: string) {
   const trackerEntry: NewsletterTrackerEntry = {
     date: today,
     campaign_name: campaignName,
-    subject: draft.subject,
+    subject: meta.subject,
     articles: articles.map((a) => a.slug),
     status: "sent",
   };
@@ -385,26 +352,26 @@ async function finalize(configPath: string) {
   // Mark articles as sent and move files
   markArticlesAsSent(articles, today);
 
-  // Delete draft config
-  deleteDraft(configPath);
+  // Delete meta config
+  deleteMeta(metaPath);
 
   console.log("\n✅ Tracking updated. Articles moved to newsletter-done/.");
-  console.log("✅ Draft config deleted.");
+  console.log("✅ Meta config deleted.");
 }
 
 // ─── Entry Point ───────────────────────────────────────────────────────────────
 
 async function main() {
-  const { command, configPath } = parseArgs();
+  const { command, metaPath } = parseArgs();
 
   console.log(`\n📧 Newsletter CLI — Command: ${command}\n`);
 
   switch (command) {
     case "create-draft":
-      await createDraft(configPath);
+      await createDraft(metaPath);
       break;
     case "finalize":
-      await finalize(configPath);
+      await finalize(metaPath);
       break;
     default:
       console.log(`⚠️  Unknown command: ${command}`);

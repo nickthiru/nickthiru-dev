@@ -82,7 +82,7 @@ The site's post discovery glob was updated from `*.md` to `**/*.md` in `src/lib/
 
 ## Two-Step Workflow
 
-### Step 1: Generate the Draft (LLM Task)
+### Step 1: Generate the Meta (LLM Task)
 
 Run `prompt_newsletter` in your AI assistant. The prompt will:
 
@@ -90,21 +90,22 @@ Run `prompt_newsletter` in your AI assistant. The prompt will:
 2. Read the `build_logs` from each article's frontmatter
 3. Apply privacy checks to the personal note
 4. Draft the personal note from build logs (80–120 words) — **waits for your approval**
-5. Assemble digest entries (title + hook + URL per article) — **waits for your approval**
+5. List digest entries (title + hook + URL from frontmatter) — **waits for your approval**
 6. Generate 2–3 subject line options — **waits for your selection**
-7. Write `.newsletter-draft.json` with all approved values
+7. Write `.newsletter-meta.json` with `personal_note` + `subject` only
 
 **The JSON file contains:**
 
 ```json
 {
   "personal_note": "your approved 80-120 word note here",
-  "subject": "your selected subject line",
-  "articles": [{ "title": "...", "hook": "...", "url": "..." }]
+  "subject": "your selected subject line"
 }
 ```
 
-**Path:** `src/content/posts/published/newsletter-pending/.newsletter-draft.json`
+**Path:** `src/content/posts/published/newsletter-pending/.newsletter-meta.json`
+
+Article data (title, hook, URL) comes from frontmatter at runtime — not stored in this file.
 
 The LLM writes this file directly — you don't need to save it manually.
 
@@ -114,14 +115,13 @@ The script has two subcommands:
 
 #### `create-draft` — Creates the campaign in Brevo
 
-1. **Loads `.newsletter-draft.json`** (or a custom path via `--config`)
+1. **Loads `.newsletter-meta.json`** (or a custom path via `--config`) for `personal_note` + `subject`
 2. **Scans `published/newsletter-pending/`** for `.md` files
-3. **Reads frontmatter** of each file (custom YAML parser, no external dependency)
+3. **Reads frontmatter** of each file (title, slug, newsletter_hook)
 4. **Filters out** articles where `draft: true` or `newsletter_sent: true`
-5. **Matches draft articles with discovered files**
-6. **Displays discovered articles** — title, slug, URL, hook preview
-7. **Creates the Brevo campaign** — via `createEmailCampaign` (marketing API)
-8. **Exits** — no tracking updates, no file moves
+5. **Displays discovered articles** — title, slug, URL, hook preview
+6. **Creates the Brevo campaign** — via `createEmailCampaign` (marketing API)
+7. **Exits** — no tracking updates, no file moves
 
 ```bash
 npx tsx src/scripts/send-newsletter-campaign.ts create-draft
@@ -131,12 +131,12 @@ After running, go to Brevo → Marketing → Campaigns to preview the draft and 
 
 #### `finalize` — Updates tracking after you've sent
 
-1. **Loads `.newsletter-draft.json`** to get subject and article list
+1. **Loads `.newsletter-meta.json`** to get subject
 2. **Discovers matching articles** still in `newsletter-pending/`
 3. **Updates tracking** — appends to `newsletter-tracker.json`
 4. **Updates frontmatter** — sets `newsletter_sent: true` + `newsletter_date`
 5. **Moves files** — from `newsletter-pending/` to `newsletter-done/`
-6. **Deletes `.newsletter-draft.json`** — cleanup
+6. **Deletes `.newsletter-meta.json`** — cleanup
 
 ```bash
 npx tsx src/scripts/send-newsletter-campaign.ts finalize
@@ -205,23 +205,20 @@ $ npx tsx src/scripts/send-newsletter-campaign.ts finalize
 ✅ Draft config deleted.
 ```
 
-### If Draft File Is Missing
+### If Meta File Is Missing
 
 ```
-⚠️  No valid .newsletter-draft.json found.
-   Run prompt_newsletter first to generate the draft,
+⚠️  No valid .newsletter-meta.json found.
+   Run prompt_newsletter first to generate the meta,
    then run this script.
 
-   Expected config path: /path/to/.newsletter-draft.json
+   Expected config path: /path/to/.newsletter-meta.json
    Or specify a custom path: --config /path/to/file.json
 
    Expected format:
    {
      "personal_note": "...",
-     "subject": "...",
-     "articles": [
-       { "title": "...", "hook": "...", "url": "..." }
-     ]
+     "subject": "..."
    }
 ```
 

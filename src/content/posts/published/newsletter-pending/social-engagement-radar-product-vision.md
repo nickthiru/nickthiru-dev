@@ -16,7 +16,7 @@ linkedin_url: "https://www.linkedin.com/posts/nick-thiru_productvision-productde
 x_url: "https://x.com/nickthiru/status/2077773969533649284"
 pinned: false
 pinned_order:
-newsletter_hook: "I've watched a lot of product ideas collapse at the first real question: what problem are you actually solving, and how would you know if you solved it? For Social Engagement Radar, I wanted to build the product vision differently. Every decision had to trace back to a measurable user outcome. Every constraint had to earn its place. This post lays out what I ended up with: the problem, the product scope, the three things that make it different from every scheduling or content tool out there, and the honest reasoning behind each one. If you're building something and wondering how much rigour to put into vision work before writing a line of code, this one's for you."
+newsletter_hook: "I've watched a lot of product ideas collapse at the first real question: what problem are you actually solving, and how would you know if you solved it? For Social Engagement Radar, every decision had to trace back to a measurable user outcome, and every constraint had to earn its place. This post lays out the problem, the product scope, and the three things that make it different from every scheduling or content tool out there."
 summary_two_sentence: "Growing on X requires showing up in the right conversations early, but finding those conversations manually is slow, inconsistent, and easy to skip. Social Engagement Radar is built to solve that specific problem, with a defined scope, measurable success criteria, and a deliberate constraint that no automated tool can match: nothing publishes without you."
 ---
 

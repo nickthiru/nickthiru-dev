@@ -16,7 +16,7 @@ linkedin_url: "https://www.linkedin.com/posts/nick-thiru_policyforge-compliance-
 x_url: "https://x.com/nickthiru/status/2078193579412078679"
 pinned: false
 pinned_order:
-newsletter_hook: "Picture getting a letter that says your company's cyber insurance won't renew unless you produce a full set of written security policies — in under three weeks. No compliance team. No budget for a $15k consultant. Just you, a deadline, and a blank page. That's the exact moment PolicyForge was built for. Here's the vision behind it, and why 'in minutes, not weeks' isn't just a tagline."
+newsletter_hook: 'Picture getting a letter that says your company''s cyber insurance won''t renew unless you produce a full set of written security policies — in under three weeks. No compliance team. No budget for a $15k consultant. Just you, a deadline, and a blank page. That''s the exact moment PolicyForge was built for. Here''s the vision behind it, and why "in minutes, not weeks" isn''t just a tagline.'
 summary_two_sentence: "Small and mid-sized regulated companies routinely face compliance deadlines they have no realistic way to meet — not enough time, expertise, or budget for traditional consulting. PolicyForge exists to close that gap, turning weeks of policy-writing into a guided, minutes-long process that produces audit-ready, organization-specific documents."
 ---
 

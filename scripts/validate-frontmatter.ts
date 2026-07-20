@@ -28,6 +28,9 @@ const allowedKeys = new Set([
   "series_position",
   "newsletter_hook",
   "summary_two_sentence",
+  "build_logs",
+  "newsletter_sent",
+  "newsletter_date",
 ]);
 
 // Human-readable descriptions for common fields
@@ -43,6 +46,9 @@ const fieldDescriptions: Record<string, string> = {
   image_size: "One of: sm, md, lg, full",
   publishedAt: "ISO date string (YYYY-MM-DD)",
   newsletter_hook: "A short teaser paragraph for newsletter subscribers",
+  build_logs: "Array of build log filenames this article was derived from",
+  newsletter_sent: "Boolean — true if included in a newsletter digest",
+  newsletter_date: "Date string (YYYY-MM-DD) when included in newsletter",
   summary_two_sentence: "Exactly two sentences summarizing the post",
   pinned_order:
     'Number for ordering pinned posts, "n/a" for non-pinned, or omit',

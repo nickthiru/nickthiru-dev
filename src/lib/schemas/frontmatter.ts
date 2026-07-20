@@ -45,6 +45,9 @@ const baseSchema = z.object({
   x_url: z.string(),
   newsletter_hook: z.string(),
   summary_two_sentence: z.string(),
+  build_logs: z.array(z.string()).optional(),
+  newsletter_sent: z.boolean().optional(),
+  newsletter_date: z.string().optional(),
 });
 
 // Product series post schema — track: "product" with known product series

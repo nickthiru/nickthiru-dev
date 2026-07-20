@@ -1,5 +1,5 @@
 ---
-title: "PolicyForge - Inside the Product Vision"
+title: "PolicyForge — Fast, Cheap, or Accurate…Why Not All Three!"
 description: "Compliant security policies in minutes, not weeks — the vision behind PolicyForge and why it exists."
 publishedAt: "2026-07-17"
 slug: "policyforge-product-vision"

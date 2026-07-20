@@ -1,5 +1,5 @@
 ---
-title: "How I structure LangGraph agents for production"
+subtitle: "How I structure LangGraph agents for production"
 description: "The patterns I use to keep LangGraph agents maintainable,
   testable, and observable in production (including what I got wrong
   at first)."

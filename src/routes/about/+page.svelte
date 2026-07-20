@@ -18,15 +18,15 @@
       </p>
 
       <p>
-        My career started over two and a half decades ago, programming real-time SCADA industrial automation systems. Shortly after, I decided to move over to a corporate route, spending over a decade in business operations and executive roles, ultimately serving as executive assistant to the chairman of a multinational group, where, among other things, I managed business turnarounds, restructuring supply chains, and navigating enterprise strategy. I learned exactly how businesses operate, scale, and sometimes fail.
+        Hi, I'm Nick Thiru. My career started over two and a half decades ago, programming real-time SCADA industrial automation systems. Shortly after, I decided to move over to a corporate route, spending over a decade in business operations and executive roles, ultimately serving as executive assistant to the chairman of a multinational group, where, among other things, I managed business turnarounds, restructuring supply chains, and navigating enterprise strategy. I learned exactly how businesses operate, scale, and sometimes fail.
       </p>
 
       <p>
-        But after reaching those highs, I realized I missed rolling up my sleeves and doing the <em>tactical</em> work of making things better—optimizing systems and processes at the ground level. I wanted the never-ending cycle of learning and application, something that the technology domain provides. So, I started over. I went back into the trenches and emerged as a full-stack web developer and cloud infrastructure engineer, meticulously learning how modern systems work under the hood.
+        But after reaching those highs, I realized I missed rolling up my sleeves and doing the <em>tactical</em> work of making things better. That is, optimizing systems and processes at the ground level. I wanted the never-ending cycle of learning and application, something that the technology domain provides. So, I started over. I went back into the trenches and emerged as a full-stack web developer and cloud infrastructure engineer, meticulously learning how modern systems work under the hood.
       </p>
 
       <p>
-        When Generative AI emerged, I was initially skeptical about its utility and reliability. But once I started integrating it into my workflow—using it to explore problems, accelerate knowledge work, and reason through complexity—it became indispensable. I transitioned from working purely from first principles to orchestrating solutions alongside AI.
+        When Generative AI emerged, I was initially skeptical about its utility and reliability. But once I started integrating it into my workflow — using it to explore problems, accelerate knowledge work, and reason through complexity — it became indispensable. I transitioned from working purely from first principles to orchestrating solutions alongside AI.
       </p>
 
       <p>

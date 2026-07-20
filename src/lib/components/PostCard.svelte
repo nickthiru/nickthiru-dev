@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { PostMeta } from '$lib/utils/posts';
   import { formatDateShort } from '$lib/utils/date';
+  import { getFullTitle } from '$lib/utils/posts';
   import TrackBadge from './TrackBadge.svelte';
   import { phaseBadges, seriesBadgeStyle } from '$lib/config/badges';
 
@@ -29,7 +30,7 @@
     </div>
     
     <h3 class="text-h4 text-primary dark:text-[#FAFAFA] group-hover:text-accent transition-colors mb-2">
-      {post.title}
+      {getFullTitle(post)}
     </h3>
     
     <div class="flex-grow">

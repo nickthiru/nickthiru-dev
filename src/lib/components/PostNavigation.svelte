@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { PostMeta } from '$lib/utils/posts';
+  import { getFullTitle } from '$lib/utils/posts';
 
   interface Props {
     previousPost: PostMeta | null;
@@ -18,7 +19,7 @@
       {#if previousPost}
         <a href="/writing/{previousPost.slug}" class="nav-link">
           <span class="nav-direction">← Previous</span>
-          <span class="nav-title">{previousPost.title}</span>
+          <span class="nav-title">{getFullTitle(previousPost)}</span>
         </a>
       {/if}
     </div>
@@ -26,7 +27,7 @@
       {#if nextPost}
         <a href="/writing/{nextPost.slug}" class="nav-link">
           <span class="nav-direction">Next →</span>
-          <span class="nav-title">{nextPost.title}</span>
+          <span class="nav-title">{getFullTitle(nextPost)}</span>
         </a>
       {/if}
     </div>

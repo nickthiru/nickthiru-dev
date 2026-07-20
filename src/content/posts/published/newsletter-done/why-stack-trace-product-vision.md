@@ -1,5 +1,5 @@
 ---
-title: "Stop Asking What. Start Asking Why."
+subtitle: "Stop Asking What. Start Asking Why."
 description: "When I built the Social Engagement Radar vision, one technique kept pulling surface requests apart to find the real business problem underneath. Here's how it works."
 publishedAt: "2026-07-15"
 slug: "why-stack-trace-product-vision"

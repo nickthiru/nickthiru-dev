@@ -11,6 +11,7 @@
   import { onMount } from 'svelte';
   import type { PageData } from './$types';
   import type { Post, PostMeta, SeriesSummary } from '$lib/utils/posts';
+  import { getFullTitle } from '$lib/utils/posts';
   import { phaseBadges, seriesBadgeStyle } from '$lib/config/badges';
 
   interface ExtendedPageData {
@@ -65,8 +66,8 @@
   }
 </script>
 
-<SEO 
-  title={data.post.title}
+<SEO
+  title={getFullTitle(data.post)}
   description={metaDescription}
   type="article"
   publishedAt={data.post.publishedAt}
@@ -104,7 +105,7 @@
       </div>
       
       <h1 class="text-h2 text-primary mb-4 dark:text-[#FAFAFA]">
-        {data.post.title}
+        {getFullTitle(data.post)}
       </h1>
       
       <!-- Date and Reading Time -->
@@ -152,7 +153,7 @@
       <div class="max-w-prose mx-auto mt-8 mb-8">
         <img
           src={data.post.image}
-          alt="Illustration for {data.post.title}"
+          alt="Illustration for {getFullTitle(data.post)}"
           class="{getImageWidthClass(data.post.image_size)} w-full rounded-lg shadow-md mx-auto block"
         />
       </div>

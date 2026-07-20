@@ -1,5 +1,5 @@
 ---
-title: "Social Engagement Radar — A Tool That Finds, Drafts, and Never Publishes Without You"
+subtitle: "A Tool That Finds, Drafts, and Never Publishes Without You"
 description: "I built this product to solve a specific, measurable problem. Here's the vision, and the reasoning behind every constraint."
 publishedAt: "2026-07-15"
 slug: "social-engagement-radar-product-vision"

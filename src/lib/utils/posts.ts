@@ -2,7 +2,8 @@ import { calculateReadingTime } from "./reading-time";
 import type { Component } from "svelte";
 
 export interface PostFrontmatter {
-  title: string;
+  title?: string; // deprecated — use subtitle
+  subtitle?: string;
   slug: string;
   description: string;
   publishedAt: string;
@@ -262,4 +263,23 @@ export async function getFilteredPosts(options: {
       (post.series_slug && series.includes(post.series_slug));
     return trackMatch && seriesMatch;
   });
+}
+
+/**
+ * Composes the full display title from series_name and subtitle.
+ * For product series posts: returns "Series Name — Subtitle"
+ * For standalone posts (empty series_name): returns subtitle unchanged.
+ * Falls back to title field for backward compatibility.
+ */
+export function getFullTitle(post: {
+  series_name?: string;
+  subtitle?: string;
+  title?: string;
+}): string {
+  // Backward compatibility: fall back to title if subtitle not set
+  const subtitle = post.subtitle || post.title || "";
+  if (post.series_name && post.series_name.trim() !== "") {
+    return `${post.series_name} — ${subtitle}`;
+  }
+  return subtitle;
 }

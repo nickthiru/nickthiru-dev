@@ -1,5 +1,5 @@
 ---
-title: "OpsPilot — From Dashboard to Decision-Maker"
+subtitle: "From Dashboard to Decision-Maker"
 description: "OpsPilot unifies scattered business operational apps, tools, and data into one operational brain for solo founders and the small-to-medium teams that grow out from them."
 publishedAt: "2026-07-17"
 slug: "opspilot-product-vision"

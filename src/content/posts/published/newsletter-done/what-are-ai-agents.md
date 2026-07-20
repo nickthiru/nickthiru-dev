@@ -1,5 +1,5 @@
 ---
-title: "What are AI agents and agentic systems, anyway?"
+subtitle: "What are AI agents and agentic systems, anyway?"
 description: "A plain-English explanation of AI agents, agentic systems, and
   what makes them different from chatbots—plus the production lessons people
   skip."

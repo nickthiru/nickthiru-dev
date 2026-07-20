@@ -7,7 +7,8 @@ const postsDir = path.resolve("src/content/posts");
 
 // Allowed keys — used to detect unknown YAML keys
 const allowedKeys = new Set([
-  "title",
+  "title", // deprecated — use subtitle
+  "subtitle",
   "slug",
   "description",
   "publishedAt",

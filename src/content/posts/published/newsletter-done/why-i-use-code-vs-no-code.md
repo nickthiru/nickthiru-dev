@@ -1,5 +1,5 @@
 ---
-title: "Why I build AI systems with code, not no-code tools"
+subtitle: "Why I build AI systems with code, not no-code tools"
 description: "No-code AI tools are great for prototypes. Here's why
   I switched to code-first for production and what that stack
   actually looks like."

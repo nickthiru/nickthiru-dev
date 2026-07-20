@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { SeriesSummary, PostMeta } from '$lib/utils/posts';
+  import { onMount, tick } from 'svelte';
 
   interface Props {
     seriesName: string;
@@ -56,6 +57,25 @@
       close();
     }
   }
+
+  // Truncation detection for hover tooltips
+  let titleElements: Record<string, HTMLElement> = {};
+  let truncatedPosts: Set<string> = $state(new Set());
+
+  onMount(async () => {
+    await tick();
+    // Check each title for actual truncation
+    for (const [slug, el] of Object.entries(titleElements)) {
+      if (el && el.scrollHeight > el.clientHeight) {
+        truncatedPosts.add(slug);
+        truncatedPosts = new Set(truncatedPosts); // trigger reactivity
+      }
+    }
+  });
+
+  function isTruncated(slug: string): boolean {
+    return truncatedPosts.has(slug);
+  }
 </script>
 
 <svelte:window onkeydown={handleKeydown} />
@@ -77,11 +97,6 @@
           <line x1="6" y1="6" x2="18" y2="18"/>
         </svg>
       </button>
-    </div>
-
-    <!-- Position -->
-    <div class="series-drawer-position">
-      Part {currentPosition} of {totalInSeries}
     </div>
 
     <!-- Phases -->
@@ -114,12 +129,32 @@
             class="post-link"
             class:current={post.slug === currentPostSlug}
           >
-            <span class="post-number">
-              {#if post.series_position}{post.series_position}{/if}
-            </span>
-            <span class="post-title">{post.title}</span>
-            {#if post.series_phase}
-              <span class="post-phase">{capitalize(post.series_phase)}</span>
+            <div class="post-content">
+              <div class="post-header">
+                <span class="post-number">
+                  {#if post.series_position}{post.series_position}{/if}
+                </span>
+                <span
+                  class="post-title"
+                  bind:this={titleElements[post.slug]}
+                >
+                  {post.subtitle}
+                </span>
+              </div>
+              {#if post.series_phase}
+                <div class="post-meta">
+                  <span class="post-phase">{capitalize(post.series_phase)}</span>
+                  {#if post.series_position}
+                    <span class="post-meta-separator">·</span>
+                    <span class="post-position">Part {post.series_position} of {totalInSeries}</span>
+                  {/if}
+                </div>
+              {/if}
+            </div>
+            {#if isTruncated(post.slug)}
+              <div class="post-tooltip" role="tooltip">
+                {post.subtitle}
+              </div>
             {/if}
           </a>
         {/each}
@@ -134,6 +169,7 @@
         </a>
       </div>
     {/if}
+
   </div>
 </div>
 
@@ -160,10 +196,6 @@
 
   .series-drawer-close {
     @apply p-1 rounded hover:bg-gray-100 dark:hover:bg-[#1A1A1A] transition-colors;
-  }
-
-  .series-drawer-position {
-    @apply text-sm text-secondary dark:text-[#A3A3A3] mb-4 pb-4 border-b border-border dark:border-[#262626];
   }
 
   .series-drawer-phases {
@@ -203,23 +235,57 @@
   }
 
   .post-link {
-    @apply flex items-center gap-2 py-2 px-3 rounded-lg text-sm transition-colors hover:bg-gray-50 dark:hover:bg-[#1A1A1A];
+    @apply block py-3 px-3 rounded-lg text-sm transition-colors hover:bg-gray-50 dark:hover:bg-[#1A1A1A] relative;
   }
 
   .post-link.current {
-    @apply bg-accent/10 dark:bg-accent/20 text-accent;
+    @apply bg-accent/10 dark:bg-accent/20;
+  }
+
+  .post-content {
+    @apply flex flex-col gap-1;
+  }
+
+  .post-header {
+    @apply flex items-start gap-2;
   }
 
   .post-number {
-    @apply w-6 text-center font-medium shrink-0;
+    @apply w-6 text-center font-medium shrink-0 pt-0.5;
   }
 
   .post-title {
-    @apply flex-1 line-clamp-2;
+    @apply flex-1 line-clamp-2 text-primary dark:text-[#FAFAFA];
+  }
+
+  .post-link.current .post-title {
+    @apply text-accent;
+  }
+
+  .post-meta {
+    @apply flex items-center gap-1.5 ml-8 text-xs text-secondary dark:text-[#A3A3A3];
   }
 
   .post-phase {
-    @apply text-xs text-secondary dark:text-[#A3A3A3] shrink-0;
+    @apply font-medium;
+  }
+
+  .post-meta-separator {
+    @apply text-secondary dark:text-[#A3A3A3];
+  }
+
+  .post-position {
+    @apply text-secondary dark:text-[#A3A3A3];
+  }
+
+  /* Tooltip for truncated titles */
+  .post-tooltip {
+    @apply absolute bottom-full left-3 mb-2 px-3 py-2 bg-gray-900 dark:bg-[#1A1A1A] text-white text-xs rounded-lg shadow-lg max-w-xs z-50 pointer-events-none opacity-0 transition-opacity;
+  }
+
+  .post-link:hover .post-tooltip,
+  .post-link:focus .post-tooltip {
+    @apply opacity-100;
   }
 
   .series-drawer-footer {

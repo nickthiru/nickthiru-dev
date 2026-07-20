@@ -1,5 +1,5 @@
 ---
-title: "Building AI Products Solo — And Why It Works"
+subtitle: "Building AI Products Solo — And Why It Works"
 description: "Why solo doesn't mean small anymore. What AI augmentation
   changes about speed, quality, and the customer relationship—especially
   for MSMEs."

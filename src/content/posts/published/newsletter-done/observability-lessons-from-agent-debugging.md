@@ -1,5 +1,5 @@
 ---
-title: "What debugging AI agents taught me about observability"
+subtitle: "What debugging AI agents taught me about observability"
 description: "Three logging decisions that changed how I debug production
   agents. Plus the one constraint that changes everything when personal data
   is involved."

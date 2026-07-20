@@ -274,7 +274,7 @@ If the script fails after you've sent the campaign:
    newsletter_date: "2026-07-18"
    ```
 2. Move each file from `newsletter-pending/` to `newsletter-done/`
-3. Append to `newsletter-tracker.json` (at `thiru-ai-labs/docs/business/building-in-public-latest/newsletter-tracker.json`):
+3. Append to `newsletter-tracker.json` (at `nickthiru-dev/src/content/posts/newsletter-tracker.json`):
    ```json
    {
      "date": "2026-07-18",
@@ -320,7 +320,7 @@ If the script fails after you've sent the campaign:
 | ----------------------------- | -------------------------------------------- | ---------------------------------------------------- |
 | `article-draft.md`            | `thiru-ai-labs/.../prompts/article-draft.md` | Generates article frontmatter with newsletter fields |
 | `newsletter.md`               | `thiru-ai-labs/.../prompts/newsletter.md`    | Assembles digest (AI-assisted workflow)              |
-| `newsletter-tracker.json`     | `thiru-ai-labs/.../newsletter-tracker.json`  | Audit trail of sent issues                           |
+| `newsletter-tracker.json`     | `nickthiru-dev/src/content/posts/`           | Audit trail of sent issues                           |
 | `send-newsletter-campaign.ts` | `nickthiru-dev/src/scripts/`                 | Automated script (discovers, creates, tracks)        |
 | `posts.ts`                    | `nickthiru-dev/src/lib/utils/`               | Site post discovery (glob updated to `**/*.md`)      |
 

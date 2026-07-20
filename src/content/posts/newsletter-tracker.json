@@ -1,0 +1,16 @@
+{
+  "issues": [
+    {
+      "date": "2026-07-19",
+      "campaign_name": "Newsletter — Week of 2026-07-19",
+      "subject": "This week: three product visions, one lesson",
+      "articles": [
+        "opspilot-product-vision",
+        "policyforge-product-vision",
+        "social-engagement-radar-product-vision",
+        "why-stack-trace-product-vision"
+      ],
+      "status": "sent"
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "series": [
+    {
+      "name": "Social Engagement Radar",
+      "slug": "social-engagement-radar",
+      "description": "Monitor X and LinkedIn conversations in real-time. Find relevant discussions, get AI-drafted responses ready to send.",
+      "status": "active",
+      "current_phase": "strategy",
+      "current_position": 1,
+      "total_planned_posts": "unknown",
+      "phases": {
+        "strategy": {
+          "posts_published": 1,
+          "next_topic": "Impact mapping"
+        },
+        "design": {
+          "posts_published": 0,
+          "next_topic": null
+        },
+        "engineering": {
+          "posts_published": 0,
+          "next_topic": null
+        },
+        "deployment": {
+          "posts_published": 0,
+          "next_topic": null
+        },
+        "maintenance": {
+          "posts_published": 0,
+          "next_topic": null
+        },
+        "community": {
+          "posts_published": 0,
+          "next_topic": null
+        }
+      },
+      "posts": [
+        {
+          "slug": "social-engagement-radar-product-vision",
+          "title": "Social Engagement Radar — Inside the Product Vision",
+          "phase": "strategy",
+          "position": 1,
+          "publishedAt": "2026-07-15"
+        }
+      ]
+    },
+    {
+      "name": "OpsPilot",
+      "slug": "ops-pilot",
+      "description": "Operational intelligence platform. Unified dashboard across Slack, GitHub, Jira, and more.",
+      "status": "active",
+      "current_phase": "strategy",
+      "current_position": 1,
+      "total_planned_posts": "unknown",
+      "phases": {
+        "strategy": {
+          "posts_published": 1,
+          "next_topic": "Impact mapping"
+        },
+        "design": {
+          "posts_published": 0,
+          "next_topic": null
+        },
+        "engineering": {
+          "posts_published": 0,
+          "next_topic": null
+        },
+        "deployment": {
+          "posts_published": 0,
+          "next_topic": null
+        },
+        "maintenance": {
+          "posts_published": 0,
+          "next_topic": null
+        },
+        "community": {
+          "posts_published": 0,
+          "next_topic": null
+        }
+      },
+      "posts": [
+        {
+          "slug": "opspilot-product-vision",
+          "title": "OpsPilot - Inside the Product Vision",
+          "phase": "strategy",
+          "position": 1,
+          "publishedAt": "2026-07-17"
+        }
+      ]
+    },
+    {
+      "name": "PolicyForge",
+      "slug": "policy-forge",
+      "description": "Generate compliant cybersecurity policies in minutes instead of weeks.",
+      "status": "active",
+      "current_phase": "strategy",
+      "current_position": 1,
+      "total_planned_posts": "unknown",
+      "phases": {
+        "strategy": {
+          "posts_published": 1,
+          "next_topic": "Impact mapping"
+        },
+        "design": {
+          "posts_published": 0,
+          "next_topic": null
+        },
+        "engineering": {
+          "posts_published": 0,
+          "next_topic": null
+        },
+        "deployment": {
+          "posts_published": 0,
+          "next_topic": null
+        },
+        "maintenance": {
+          "posts_published": 0,
+          "next_topic": null
+        },
+        "community": {
+          "posts_published": 0,
+          "next_topic": null
+        }
+      },
+      "posts": [
+        {
+          "slug": "policyforge-product-vision",
+          "title": "PolicyForge - Inside the Product Vision",
+          "phase": "strategy",
+          "position": 1,
+          "publishedAt": "2026-07-17"
+        }
+      ]
+    }
+  ]
+}

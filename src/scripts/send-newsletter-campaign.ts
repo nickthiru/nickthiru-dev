@@ -42,7 +42,7 @@ const DONE_DIR = path.resolve(
 );
 const TRACKER_PATH = path.resolve(
   import.meta.dirname,
-  "../../../thiru-ai-labs/docs/business/building-in-public-latest/newsletter-tracker.json",
+  "../content/posts/newsletter-tracker.json",
 );
 const DEFAULT_META_PATH = path.resolve(
   import.meta.dirname,

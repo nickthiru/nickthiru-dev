@@ -6,7 +6,7 @@ slug: "policyforge-product-vision"
 image: "/posts/policyforge-product-vision.png"
 image_size: "lg"
 draft: false
-tags: ["policyforge", "product-vision", "compliance", "cybersecurity"]
+tags: ["policy-forge", "product-vision", "compliance", "cybersecurity"]
 track: "product"
 series_name: "PolicyForge"
 series_slug: "policy-forge"

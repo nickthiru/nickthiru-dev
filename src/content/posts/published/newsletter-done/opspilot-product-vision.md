@@ -6,7 +6,7 @@ slug: "opspilot-product-vision"
 image: "/posts/opspilot-product-vision.png"
 image_size: "lg"
 draft: false
-tags: ["opspilot", "product-vision", "ai-agents", "operations"]
+tags: ["ops-pilot", "product-vision", "ai-agents", "operations"]
 track: "product"
 series_name: "OpsPilot"
 series_slug: "ops-pilot"

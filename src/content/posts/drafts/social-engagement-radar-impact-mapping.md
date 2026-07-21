@@ -6,7 +6,13 @@ slug: "social-engagement-radar-impact-mapping"
 image: "/posts/social-engagement-radar-impact-mapping.png"
 image_size: "lg"
 draft: false
-tags: ["product-strategy", "impact-mapping", "mvp-planning"]
+tags:
+  [
+    "social-engagement-radar",
+    "product-strategy",
+    "impact-mapping",
+    "mvp-planning",
+  ]
 track: "product"
 series_name: "Social Engagement Radar"
 series_slug: "social-engagement-radar"

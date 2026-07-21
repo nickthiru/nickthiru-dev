@@ -6,7 +6,7 @@ slug: "policy-forge-impact-mapping"
 image: "/posts/policy-forge-impact-mapping.png"
 image_size: "lg"
 draft: false
-tags: ["product-strategy", "impact-mapping", "mvp", "policyforge"]
+tags: ["policy-forge", "product-strategy", "impact-mapping", "mvp"]
 track: "product"
 series_name: "PolicyForge"
 series_slug: "policy-forge"

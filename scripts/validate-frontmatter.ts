@@ -1,4 +1,5 @@
 import { postFrontmatterSchema } from "../src/lib/schemas/frontmatter";
+import { getProducts } from "../src/lib/config/projects";
 import * as fs from "fs";
 import * as path from "path";
 import matter from "gray-matter";
@@ -33,6 +34,21 @@ const allowedKeys = new Set([
   "newsletter_sent",
   "newsletter_date",
 ]);
+
+// Known product tags — must match src/lib/config/projects.ts
+const knownProductTags = new Set<string>();
+for (const product of getProducts()) {
+  for (const tag of product.blogPostTags) {
+    knownProductTags.add(tag);
+  }
+}
+
+// Map series_name to the correct product tag
+const seriesNameToProductTag: Record<string, string> = {
+  "Social Engagement Radar": "social-engagement-radar",
+  OpsPilot: "ops-pilot",
+  PolicyForge: "policy-forge",
+};
 
 // Human-readable descriptions for common fields
 const fieldDescriptions: Record<string, string> = {
@@ -156,6 +172,55 @@ function validateFrontmatter() {
         unknown
       >[]) {
         errors.push(...extractErrors(issue, data));
+      }
+    }
+
+    // Additional tags validation
+    const tags = data.tags as string[] | undefined;
+    const seriesName = data.series_name as string | undefined;
+    const track = data.track as string | undefined;
+
+    // Check 1: tags should not be empty
+    if (!tags || tags.length === 0) {
+      fileHasErrors = true;
+      errors.push({
+        field: "tags",
+        detail: "Tags array is empty or missing",
+        hint: "Product series posts must include the hyphenated product tag. Standalone posts should include topical tags.",
+      });
+    }
+
+    // Check 2: Product series posts must include the correct product tag
+    if (seriesName && seriesName.trim() !== "") {
+      const expectedProductTag = seriesNameToProductTag[seriesName];
+      if (expectedProductTag && tags && !tags.includes(expectedProductTag)) {
+        fileHasErrors = true;
+        errors.push({
+          field: "tags",
+          detail: `Missing required product tag "${expectedProductTag}" for series "${seriesName}"`,
+          hint: `Add "${expectedProductTag}" to the tags array. Do not use "${seriesName.toLowerCase().replace(/\s+/g, "")}" or other variations.`,
+        });
+      }
+    }
+
+    // Check 3: Warn about tags that look like product names but use wrong spelling
+    if (tags) {
+      const commonMisspellings: Record<string, string> = {
+        policyforge: "policy-forge",
+        opspilot: "ops-pilot",
+        socialengagementradar: "social-engagement-radar",
+        "social-engagement-rader": "social-engagement-radar",
+      };
+      for (const tag of tags) {
+        const lowerTag = tag.toLowerCase();
+        if (commonMisspellings[lowerTag]) {
+          fileHasErrors = true;
+          errors.push({
+            field: "tags",
+            detail: `Tag "${tag}" is a misspelling. Did you mean "${commonMisspellings[lowerTag]}"?`,
+            hint: "Use the exact hyphenated product tag from the product config.",
+          });
+        }
       }
     }
 

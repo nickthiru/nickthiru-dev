@@ -35,8 +35,12 @@
 {/if}
 
 <style>
-  .post-navigation {
+  /* .post-navigation {
     @apply flex flex-col sm:flex-row gap-4 sm:gap-6 my-8 pt-8 border-t border-border dark:border-[#262626];
+  } */
+
+  .post-navigation {
+    @apply flex flex-col sm:flex-row gap-4 sm:gap-6 my-8;
   }
 
   .nav-item {

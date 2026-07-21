@@ -210,7 +210,7 @@
     {/if}
 
     <!-- Product Waitlist CTA (conditional on tags) -->
-    <div class="max-w-prose mx-auto mt-16">
+    <div class="max-w-prose mx-auto mt-20">
       <ProductWaitlistCTA tags={data.post.tags} />
     </div>
 

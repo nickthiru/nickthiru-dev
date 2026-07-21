@@ -199,8 +199,18 @@
       </div>
     {/if}
 
+    <!-- Post Navigation (if series exists) -->
+    {#if data.seriesMeta}
+      <div class="max-w-prose mx-auto">
+        <PostNavigation
+          previousPost={data.previousInSeries}
+          nextPost={data.nextInSeries}
+        />
+      </div>
+    {/if}
+
     <!-- Product Waitlist CTA (conditional on tags) -->
-    <div class="max-w-prose mx-auto">
+    <div class="max-w-prose mx-auto mt-16">
       <ProductWaitlistCTA tags={data.post.tags} />
     </div>
 
@@ -216,14 +226,14 @@
     {/if} -->
 
     <!-- Post Navigation (if series exists) -->
-    {#if data.seriesMeta}
+    <!-- {#if data.seriesMeta}
       <div class="max-w-prose mx-auto">
         <PostNavigation
           previousPost={data.previousInSeries}
           nextPost={data.nextInSeries}
         />
       </div>
-    {/if}
+    {/if} -->
 
     <!-- Join the Discussion (conditional — visible once social post URLs are set in frontmatter) -->
     <!-- {#if data.post.linkedin_url || data.post.x_url}
@@ -258,7 +268,7 @@
     {/if} -->
 
     <!-- Post footer -->
-    <footer class="max-w-prose mx-auto mt-16 pt-8">
+    <footer class="max-w-prose mx-auto mt-12 pt-8">
       <div class="bg-accent/5 border border-accent/20 rounded-lg p-8 md:p-10 dark:bg-accent/10 dark:border-accent/30 text-center">
         <h3 class="text-h3 text-primary dark:text-[#FAFAFA] mb-4">
           Thanks for reading

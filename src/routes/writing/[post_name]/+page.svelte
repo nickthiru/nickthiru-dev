@@ -164,6 +164,41 @@
       <data.post.content />
     </div>
 
+    <!-- Join the Discussion (conditional — visible once social post URLs are set in frontmatter) -->
+    {#if data.post.linkedin_url || data.post.x_url}
+      <div class="max-w-prose mx-auto mt-5">
+        <!-- <h2 class="text-h3 text-primary dark:text-[#FAFAFA] mb-4">Join the Discussion</h2> -->
+        <!-- <p class="text-secondary dark:text-[#D4D4D4] mb-4">
+          Have thoughts on this? I'd love to hear them. The conversation is happening on:
+        </p> -->
+        <p class="prose dark:prose-invert mb-4">
+          Have thoughts on this? I'd love to hear them. The conversation is happening on:
+        </p>
+        <ul class="flex flex-col gap-2">
+          {#if data.post.linkedin_url}
+            <li>
+              <a
+                href={data.post.linkedin_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-accent hover:underline"
+              >LinkedIn →</a>
+            </li>
+          {/if}
+          {#if data.post.x_url}
+            <li>
+              <a
+                href={data.post.x_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-accent hover:underline"
+              >X (Twitter) →</a>
+            </li>
+          {/if}
+        </ul>
+      </div>
+    {/if}
+
     <!-- Product Waitlist CTA (conditional on tags) -->
     <div class="max-w-prose mx-auto">
       <ProductWaitlistCTA tags={data.post.tags} />
@@ -191,7 +226,7 @@
     {/if}
 
     <!-- Join the Discussion (conditional — visible once social post URLs are set in frontmatter) -->
-    {#if data.post.linkedin_url || data.post.x_url}
+    <!-- {#if data.post.linkedin_url || data.post.x_url}
       <div class="max-w-prose mx-auto mt-12 pt-8 border-t border-border dark:border-[#262626]">
         <h2 class="text-h3 text-primary dark:text-[#FAFAFA] mb-4">Join the Discussion</h2>
         <p class="text-secondary dark:text-[#D4D4D4] mb-4">
@@ -220,7 +255,7 @@
           {/if}
         </ul>
       </div>
-    {/if}
+    {/if} -->
 
     <!-- Post footer -->
     <footer class="max-w-prose mx-auto mt-16 pt-8">

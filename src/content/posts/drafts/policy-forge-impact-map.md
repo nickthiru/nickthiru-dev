@@ -12,8 +12,8 @@ series_name: "PolicyForge"
 series_slug: "policy-forge"
 series_phase: "strategy"
 series_position: 2
-linkedin_url: ""
-x_url: ""
+linkedin_url: "https://www.linkedin.com/posts/nick-thiru_policyforge-productmanagement-mvp-share-7485247365772156930-K3G0/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAArlnX4BlgP7Imj9jDqmmDropzzOvYwJoaY"
+x_url: "https://x.com/nickthiru/status/2079481844693873036"
 pinned: false
 pinned_order:
 newsletter_hook: "PolicyForge's pitch was simple: generate compliant policies in minutes instead of paying a consultant $8k–$15k. But 'generate policies' isn't a build plan, it's a slogan. I had to figure out which piece to build first, and which stakeholder's trust would actually make or break the whole thing. The answer wasn't the feature I expected."

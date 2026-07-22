@@ -13,7 +13,7 @@ series_slug: "ops-pilot"
 series_phase: "strategy"
 series_position: 1
 linkedin_url: "https://www.linkedin.com/posts/nick-thiru_opspilot-buildinpublic-productdevelopment-share-7483858623845019648-cc5h/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAArlnX4BlgP7Imj9jDqmmDropzzOvYwJoaY"
-x_url: "https://x.com/nickthiru/status/2078093133305479347"
+# x_url: "https://x.com/nickthiru/status/2078093133305479347"
 pinned: false
 pinned_order: "n/a"
 newsletter_hook: 'I sat down to write a vision doc for an idea I thought I already understood. Then one question took the whole thing apart: "what is this actually for, and who is it actually for?" What came out the other side wasn''t a bigger version of the same idea. It was a sharper one. Here''s what OpsPilot actually is, and who it''s actually for — from solo founders to the small-to-medium teams they grow into.'

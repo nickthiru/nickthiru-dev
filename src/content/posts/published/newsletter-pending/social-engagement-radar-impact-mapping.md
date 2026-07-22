@@ -19,7 +19,7 @@ series_slug: "social-engagement-radar"
 series_phase: "strategy"
 series_position: 2
 linkedin_url: "https://www.linkedin.com/posts/nick-thiru_socialengagementradar-productstrategy-buildinpublic-share-7484977145086132225-p8zI/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAArlnX4BlgP7Imj9jDqmmDropzzOvYwJoaY"
-x_url: "https://x.com/nickthiru/status/2078193579412078679"
+# x_url: "https://x.com/nickthiru/status/2078193579412078679"
 pinned: false
 pinned_order:
 newsletter_hook: "Before I wrote a single line of code for Social Engagement Radar, I sat down with three fuzzy business goals and tried to answer one uncomfortable question: which of these ideas would actually work, and which were just things I wanted to be true? The answers weren't what I expected."

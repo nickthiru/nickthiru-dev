@@ -13,7 +13,7 @@ series_slug: "social-engagement-radar"
 series_phase: "strategy"
 series_position: 1
 linkedin_url: "https://www.linkedin.com/posts/nick-thiru_productvision-productdevelopment-productstrategy-activity-7483539960453693440-h7eG?utm_source=share&utm_medium=member_desktop&rcm=ACoAAArlnX4BlgP7Imj9jDqmmDropzzOvYwJoaY"
-x_url: "https://x.com/nickthiru/status/2077773969533649284"
+# x_url: "https://x.com/nickthiru/status/2077773969533649284"
 pinned: false
 pinned_order:
 newsletter_hook: "I've watched a lot of product ideas collapse at the first real question: what problem are you actually solving, and how would you know if you solved it? For Social Engagement Radar, every decision had to trace back to a measurable user outcome, and every constraint had to earn its place. This post lays out the problem, the product scope, and the three things that make it different from every scheduling or content tool out there."

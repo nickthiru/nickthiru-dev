@@ -15,7 +15,7 @@ series_slug: ""
 series_phase: ""
 series_position:
 linkedin_url: "https://www.linkedin.com/feed/update/urn:li:activity:7480661028343750656/"
-x_url: "https://x.com/nickthiru/status/2074894566323544246"
+# x_url: "https://x.com/nickthiru/status/2074894566323544246"
 newsletter_hook:
   "The first time I got a 'your agent did something weird' message
   from a user, I pulled the logs, searched for an error, and found nothing useful.

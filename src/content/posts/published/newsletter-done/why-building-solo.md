@@ -15,7 +15,7 @@ series_slug: ""
 series_phase: ""
 series_position:
 linkedin_url: "https://www.linkedin.com/feed/update/urn:li:activity:7480666485195964416/"
-x_url: "https://x.com/nickthiru/status/2074901245119357056"
+# x_url: "https://x.com/nickthiru/status/2074901245119357056"
 pinned: true
 pinned_order: 2
 newsletter_hook: "I'm building Thiru AI Labs solo: no co-founder, no team,

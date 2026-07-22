@@ -12,7 +12,7 @@ series_name: "OpsPilot"
 series_slug: "ops-pilot"
 series_phase: "strategy"
 series_position: 2
-linkedin_url: ""
+linkedin_url: "https://www.linkedin.com/posts/nick-thiru_i-almost-skipped-straight-to-building-opspilots-share-7485649306897543168-rH1V/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAArlnX4BlgP7Imj9jDqmmDropzzOvYwJoaY"
 x_url: ""
 pinned: false
 pinned_order:

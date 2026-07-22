@@ -105,19 +105,18 @@ function parseArgs(): { filePath: string | null } {
  *
  * Criteria:
  *  1. draft !== true  (must be published)
- *  2. linkedin_url and x_url both non-empty (social posts created)
+ *  2. linkedin_url non-empty (LinkedIn post created; X is optional)
  *  3. newsletter_hook non-empty (required for digest)
  *  4. newsletter_sent !== true (not already included in a newsletter)
  */
 function isReadyToMove(fm: Record<string, unknown>): boolean {
   const draft = fm.draft as boolean | undefined;
   const linkedin = (fm.linkedin_url as string) || "";
-  const x = (fm.x_url as string) || "";
   const hook = (fm.newsletter_hook as string) || "";
   const sent = fm.newsletter_sent as boolean | undefined;
 
   if (draft === true) return false;
-  if (!linkedin || !x) return false;
+  if (!linkedin) return false;
   if (!hook) return false;
   if (sent === true) return false;
 
@@ -327,13 +326,11 @@ function getSkipReasons(fm: Record<string, unknown>): string[] {
   const reasons: string[] = [];
   const draft = fm.draft as boolean | undefined;
   const linkedin = (fm.linkedin_url as string) || "";
-  const x = (fm.x_url as string) || "";
   const hook = (fm.newsletter_hook as string) || "";
   const sent = fm.newsletter_sent as boolean | undefined;
 
   if (draft === true) reasons.push("draft=true");
   if (!linkedin) reasons.push("linkedin_url empty");
-  if (!x) reasons.push("x_url empty");
   if (!hook) reasons.push("newsletter_hook empty");
   if (sent === true) reasons.push("newsletter_sent=true");
 

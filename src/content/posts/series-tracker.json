@@ -51,11 +51,11 @@
       "description": "Operational intelligence platform. Unified dashboard across Slack, GitHub, Jira, and more.",
       "status": "active",
       "current_phase": "strategy",
-      "current_position": 1,
+      "current_position": "2",
       "total_planned_posts": "unknown",
       "phases": {
         "strategy": {
-          "posts_published": 1
+          "posts_published": 2
         },
         "design": {
           "posts_published": 0
@@ -80,6 +80,13 @@
           "phase": "strategy",
           "position": 1,
           "publishedAt": "2026-07-17"
+        },
+        {
+          "slug": "ops-pilot-impact-mapping",
+          "title": "Impact Mapping Who Actually Has to Change",
+          "phase": "strategy",
+          "position": "2",
+          "publishedAt": "2026-07-22"
         }
       ]
     },

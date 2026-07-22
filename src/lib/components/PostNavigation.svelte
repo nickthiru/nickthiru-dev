@@ -40,7 +40,7 @@
   } */
 
   .post-navigation {
-    @apply flex flex-col sm:flex-row gap-4 sm:gap-6 my-8;
+    @apply flex flex-col sm:flex-row gap-4 sm:gap-6 mt-12;
   }
 
   .nav-item {

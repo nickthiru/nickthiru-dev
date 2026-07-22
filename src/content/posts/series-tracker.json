@@ -6,11 +6,11 @@
       "description": "Monitor X and LinkedIn conversations in real-time. Find relevant discussions, get AI-drafted responses ready to send.",
       "status": "active",
       "current_phase": "strategy",
-      "current_position": 1,
+      "current_position": "2",
       "total_planned_posts": "unknown",
       "phases": {
         "strategy": {
-          "posts_published": 1,
+          "posts_published": 2,
           "next_topic": "Impact mapping"
         },
         "design": {
@@ -41,6 +41,13 @@
           "phase": "strategy",
           "position": 1,
           "publishedAt": "2026-07-15"
+        },
+        {
+          "slug": "social-engagement-radar-impact-mapping",
+          "title": "What Impact Mapping Told Us Before We Wrote Single Line of Code",
+          "phase": "strategy",
+          "position": "2",
+          "publishedAt": "2026-07-20"
         }
       ]
     },
@@ -94,11 +101,11 @@
       "description": "Generate compliant cybersecurity policies in minutes instead of weeks.",
       "status": "active",
       "current_phase": "strategy",
-      "current_position": 1,
+      "current_position": "2",
       "total_planned_posts": "unknown",
       "phases": {
         "strategy": {
-          "posts_published": 1,
+          "posts_published": 2,
           "next_topic": "Impact mapping"
         },
         "design": {
@@ -129,6 +136,13 @@
           "phase": "strategy",
           "position": 1,
           "publishedAt": "2026-07-17"
+        },
+        {
+          "slug": "policy-forge-impact-mapping",
+          "title": "How Impact Mapping Built the MVP Roadmap",
+          "phase": "strategy",
+          "position": "2",
+          "publishedAt": "2026-07-21"
         }
       ]
     }

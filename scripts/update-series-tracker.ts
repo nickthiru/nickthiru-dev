@@ -13,6 +13,12 @@ const PENDING_DIR = path.resolve(
   "../src/content/posts/published/newsletter-pending",
 );
 
+const DRAFTS_DIR = path.resolve(
+  // @ts-ignore — import.meta.dirname works at runtime with tsx
+  import.meta.dirname,
+  "../src/content/posts/drafts",
+);
+
 interface PostEntry {
   slug: string;
   title: string;
@@ -95,6 +101,45 @@ function parseArgs(): { filePath: string | null } {
   return { filePath };
 }
 
+/**
+ * Determine if a draft post is ready to be moved to newsletter-pending/.
+ *
+ * Criteria:
+ *  1. draft !== true  (must be published)
+ *  2. linkedin_url and x_url both non-empty (social posts created)
+ *  3. newsletter_hook non-empty (required for digest)
+ *  4. newsletter_sent !== true (not already included in a newsletter)
+ */
+function isReadyToMove(fm: Record<string, unknown>): boolean {
+  const draft = fm.draft as boolean | undefined;
+  const linkedin = (fm.linkedin_url as string) || "";
+  const x = (fm.x_url as string) || "";
+  const hook = (fm.newsletter_hook as string) || "";
+  const sent = fm.newsletter_sent as boolean | undefined;
+
+  if (draft === true) return false;
+  if (!linkedin || !x) return false;
+  if (!hook) return false;
+  if (sent === true) return false;
+
+  return true;
+}
+
+/**
+ * Move a file from drafts/ to newsletter-pending/.
+ */
+function moveFileToPending(sourcePath: string): void {
+  const basename = path.basename(sourcePath);
+  const destPath = path.join(PENDING_DIR, basename);
+
+  if (!fs.existsSync(PENDING_DIR)) {
+    fs.mkdirSync(PENDING_DIR, { recursive: true });
+  }
+
+  fs.renameSync(sourcePath, destPath);
+  console.log(`📦 Moved ${basename} → newsletter-pending/`);
+}
+
 function processFile(filePath: string, tracker: SeriesTracker): void {
   const raw = fs.readFileSync(filePath, "utf-8");
   const fm = extractFrontmatter(raw);
@@ -120,8 +165,9 @@ function processFile(filePath: string, tracker: SeriesTracker): void {
     return;
   }
 
+  // Frontmatter uses 'subtitle' as the title field (title is deprecated)
   const slug = (fm.slug as string) || "";
-  const title = (fm.title as string) || "";
+  const title = (fm.subtitle as string) || (fm.title as string) || "";
   const phase = (fm.series_phase as string) || "";
   const position = (fm.series_position as number) || 0;
   const publishedAt = (fm.publishedAt as string) || "";
@@ -180,30 +226,91 @@ function updateSeriesTracker(args: ReturnType<typeof parseArgs>): void {
       console.error(`❌ File not found: ${args.filePath}`);
       process.exit(1);
     }
-    processFile(args.filePath, tracker);
+
+    const resolvedPath = path.resolve(args.filePath);
+    const raw = fs.readFileSync(resolvedPath, "utf-8");
+    const fm = extractFrontmatter(raw);
+
+    // If the file is in drafts/ and is ready, move it first
+    if (resolvedPath.startsWith(DRAFTS_DIR) && isReadyToMove(fm)) {
+      moveFileToPending(resolvedPath);
+      // Process the copy in newsletter-pending/
+      const pendingPath = path.join(PENDING_DIR, path.basename(resolvedPath));
+      processFile(pendingPath, tracker);
+    } else if (resolvedPath.startsWith(DRAFTS_DIR) && !isReadyToMove(fm)) {
+      const reasons = getSkipReasons(fm);
+      console.log(
+        `⏭️  ${path.basename(resolvedPath)} — not ready to move. Reasons: ${reasons.join(", ")}`,
+      );
+    } else {
+      // File is already in newsletter-pending/ or elsewhere
+      processFile(resolvedPath, tracker);
+    }
   } else {
-    // Batch mode: scan newsletter-pending/
+    // Batch mode: scan drafts/ for ready-to-move posts, then scan newsletter-pending/
+    let movedCount = 0;
+    let skippedCount = 0;
+
+    // Phase 1: Check drafts/ for posts ready to move
+    if (fs.existsSync(DRAFTS_DIR)) {
+      const draftFiles = fs
+        .readdirSync(DRAFTS_DIR)
+        .filter((f: string) => f.endsWith(".md"));
+
+      if (draftFiles.length > 0) {
+        console.log(
+          `🔍 Checking ${draftFiles.length} draft(s) for readiness...\n`,
+        );
+      }
+
+      for (const file of draftFiles) {
+        const draftPath = path.join(DRAFTS_DIR, file);
+        const raw = fs.readFileSync(draftPath, "utf-8");
+        const fm = extractFrontmatter(raw);
+
+        if (isReadyToMove(fm)) {
+          moveFileToPending(draftPath);
+          movedCount++;
+        } else {
+          const reasons = getSkipReasons(fm);
+          console.log(
+            `⏭️  ${file} — not ready. Reasons: ${reasons.join(", ")}`,
+          );
+          skippedCount++;
+        }
+      }
+    }
+
+    // Phase 2: Process all .md files in newsletter-pending/
     if (!fs.existsSync(PENDING_DIR)) {
       console.log(`⚠️  Newsletter-pending directory not found: ${PENDING_DIR}`);
       console.log("Nothing to do.");
       return;
     }
 
-    const files = fs
+    const pendingFiles = fs
       .readdirSync(PENDING_DIR)
       .filter((f: string) => f.endsWith(".md"));
-    if (files.length === 0) {
-      console.log("✅ No articles in newsletter-pending/. Nothing to do.");
+
+    if (pendingFiles.length === 0 && movedCount === 0) {
+      console.log("✅ No articles to process. Nothing to do.");
       return;
     }
 
-    console.log(
-      `🔍 Scanning ${files.length} file(s) in newsletter-pending/...\n`,
-    );
-    for (const file of files) {
-      const filePath = path.join(PENDING_DIR, file);
-      processFile(filePath, tracker);
+    if (pendingFiles.length > 0) {
+      console.log(
+        `\n📰 Processing ${pendingFiles.length} article(s) in newsletter-pending/...\n`,
+      );
+      for (const file of pendingFiles) {
+        const filePath = path.join(PENDING_DIR, file);
+        processFile(filePath, tracker);
+      }
     }
+
+    // Summary
+    console.log(
+      `\n📊 Summary: ${movedCount} moved, ${skippedCount} skipped, ${pendingFiles.length} processed for tracker.`,
+    );
   }
 
   // Write back
@@ -212,6 +319,26 @@ function updateSeriesTracker(args: ReturnType<typeof parseArgs>): void {
     JSON.stringify(tracker, null, 2) + "\n",
   );
   console.log("\n✅ series-tracker.json updated.");
+}
+
+/**
+ * Return human-readable reasons why a post is not ready to move.
+ */
+function getSkipReasons(fm: Record<string, unknown>): string[] {
+  const reasons: string[] = [];
+  const draft = fm.draft as boolean | undefined;
+  const linkedin = (fm.linkedin_url as string) || "";
+  const x = (fm.x_url as string) || "";
+  const hook = (fm.newsletter_hook as string) || "";
+  const sent = fm.newsletter_sent as boolean | undefined;
+
+  if (draft === true) reasons.push("draft=true");
+  if (!linkedin) reasons.push("linkedin_url empty");
+  if (!x) reasons.push("x_url empty");
+  if (!hook) reasons.push("newsletter_hook empty");
+  if (sent === true) reasons.push("newsletter_sent=true");
+
+  return reasons;
 }
 
 updateSeriesTracker(parseArgs());

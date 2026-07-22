@@ -1,11 +1,11 @@
 ---
 subtitle: "Impact Mapping Who Actually Has to Change"
 description: "Why I spent a day impact mapping behavior change instead of writing specs, and what it saved me from building blind."
-publishedAt: "2026-07-20"
+publishedAt: "2026-07-22"
 slug: "ops-pilot-impact-mapping"
 image: "/posts/ops-pilot-impact-mapping.png"
 image_size: "lg"
-draft: true
+draft: false
 tags: ["ops-pilot", "product-strategy", "building-in-public"]
 track: "product"
 series_name: "OpsPilot"

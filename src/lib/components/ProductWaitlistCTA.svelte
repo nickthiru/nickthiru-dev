@@ -1,14 +1,14 @@
 <script lang="ts">
-  import { getProductByTag } from '$lib/config';
+  import { getProductBySlug } from '$lib/config';
 
   interface Props {
-    tags?: string[];
+    seriesSlug?: string;
   }
 
-  let { tags = [] }: Props = $props();
+  let { seriesSlug }: Props = $props();
 
-  // Get the matching product based on post tags
-  const product = $derived(getProductByTag(tags));
+  // Get the matching product based on series slug
+  const product = $derived(getProductBySlug(seriesSlug));
 </script>
 
 {#if product}

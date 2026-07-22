@@ -146,6 +146,7 @@ export function getProducts(): Product[] {
 /**
  * Get product by blog post tag - returns the first matching product
  * Used by ProductWaitlistCTA component
+ * @deprecated Use getProductBySlug instead for more reliable matching
  */
 export function getProductByTag(postTags: string[]): Product | null {
   const products = getProducts();
@@ -155,4 +156,14 @@ export function getProductByTag(postTags: string[]): Product | null {
     }
   }
   return null;
+}
+
+/**
+ * Get product by series slug - matches product id to series_slug
+ * Used by ProductWaitlistCTA component for reliable product matching
+ */
+export function getProductBySlug(seriesSlug: string | undefined): Product | null {
+  if (!seriesSlug) return null;
+  const products = getProducts();
+  return products.find((p) => p.id === seriesSlug) || null;
 }

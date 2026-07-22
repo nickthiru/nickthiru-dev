@@ -9,6 +9,7 @@ export {
   getAllProjects,
   getProducts,
   getProductByTag,
+  getProductBySlug,
   type Project,
   type Product,
   type NonProductProject,

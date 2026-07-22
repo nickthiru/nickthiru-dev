@@ -209,9 +209,9 @@
       </div>
     {/if}
 
-    <!-- Product Waitlist CTA (conditional on tags) -->
+    <!-- Product Waitlist CTA (conditional on series_slug) -->
     <div class="max-w-prose mx-auto mt-20">
-      <ProductWaitlistCTA tags={data.post.tags} />
+      <ProductWaitlistCTA seriesSlug={data.post.series_slug} />
     </div>
 
     <!-- What's Coming Next (if next post exists) -->

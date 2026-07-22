@@ -29,7 +29,6 @@ interface PostEntry {
 
 interface PhaseInfo {
   posts_published: number;
-  next_topic: string | null;
 }
 
 interface SeriesEntry {

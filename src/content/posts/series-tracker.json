@@ -10,28 +10,22 @@
       "total_planned_posts": "unknown",
       "phases": {
         "strategy": {
-          "posts_published": 2,
-          "next_topic": "Impact mapping"
+          "posts_published": 2
         },
         "design": {
-          "posts_published": 0,
-          "next_topic": null
+          "posts_published": 0
         },
         "engineering": {
-          "posts_published": 0,
-          "next_topic": null
+          "posts_published": 0
         },
         "deployment": {
-          "posts_published": 0,
-          "next_topic": null
+          "posts_published": 0
         },
         "maintenance": {
-          "posts_published": 0,
-          "next_topic": null
+          "posts_published": 0
         },
         "community": {
-          "posts_published": 0,
-          "next_topic": null
+          "posts_published": 0
         }
       },
       "posts": [
@@ -61,28 +55,22 @@
       "total_planned_posts": "unknown",
       "phases": {
         "strategy": {
-          "posts_published": 1,
-          "next_topic": "Impact mapping"
+          "posts_published": 1
         },
         "design": {
-          "posts_published": 0,
-          "next_topic": null
+          "posts_published": 0
         },
         "engineering": {
-          "posts_published": 0,
-          "next_topic": null
+          "posts_published": 0
         },
         "deployment": {
-          "posts_published": 0,
-          "next_topic": null
+          "posts_published": 0
         },
         "maintenance": {
-          "posts_published": 0,
-          "next_topic": null
+          "posts_published": 0
         },
         "community": {
-          "posts_published": 0,
-          "next_topic": null
+          "posts_published": 0
         }
       },
       "posts": [
@@ -105,28 +93,22 @@
       "total_planned_posts": "unknown",
       "phases": {
         "strategy": {
-          "posts_published": 2,
-          "next_topic": "Impact mapping"
+          "posts_published": 2
         },
         "design": {
-          "posts_published": 0,
-          "next_topic": null
+          "posts_published": 0
         },
         "engineering": {
-          "posts_published": 0,
-          "next_topic": null
+          "posts_published": 0
         },
         "deployment": {
-          "posts_published": 0,
-          "next_topic": null
+          "posts_published": 0
         },
         "maintenance": {
-          "posts_published": 0,
-          "next_topic": null
+          "posts_published": 0
         },
         "community": {
-          "posts_published": 0,
-          "next_topic": null
+          "posts_published": 0
         }
       },
       "posts": [

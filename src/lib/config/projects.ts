@@ -91,16 +91,16 @@ export const projects: Project[] = [
   {
     type: "product",
     id: "secure-stack",
-    name: "SecureStack Platform",
+    name: "SecureStack Suite",
     tagline: "Now Building",
     description:
-      "A modular AI-native cybersecurity compliance platform for SMBs and the defense industry supply chain at large. Each product, starting with PolicyForge, reinforces the others, building a coherent story: 'We assessed our gaps, generated policies, scanned our codebase for crypto vulnerabilities, and had everything organized for our auditor in 4 weeks—using one integrated platform.'",
+      "A modular AI-native cybersecurity compliance suite of products for regulated SMBs and the defense industry supply chain at large. Each product, starting with PolicyForge + CipherScan, reinforces the others, building a coherent story: 'We assessed our gaps, generated policies, scanned our codebase for crypto vulnerabilities, and had everything organized for our auditor in 4 weeks—using one integrated suite.'",
     status: "Planned",
     url: "https://thiruailabs.com/products#secure-stack",
     productUrl: "https://thiruailabs.com/products#secure-stack",
     blogPostTags: [
       "secure-stack",
-      "platform",
+      "suite",
       "product",
       "SaaS",
       "building-in-public",
@@ -162,7 +162,9 @@ export function getProductByTag(postTags: string[]): Product | null {
  * Get product by series slug - matches product id to series_slug
  * Used by ProductWaitlistCTA component for reliable product matching
  */
-export function getProductBySlug(seriesSlug: string | undefined): Product | null {
+export function getProductBySlug(
+  seriesSlug: string | undefined,
+): Product | null {
   if (!seriesSlug) return null;
   const products = getProducts();
   return products.find((p) => p.id === seriesSlug) || null;

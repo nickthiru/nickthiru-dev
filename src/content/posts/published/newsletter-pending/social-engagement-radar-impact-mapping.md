@@ -1,5 +1,5 @@
 ---
-subtitle: "What Impact Mapping Told Us Before We A Wrote Single Line of Code"
+subtitle: "What Impact Mapping Told Us Before We Wrote A Single Line of Code"
 description: "How impact mapping turned three business goals into a ranked build plan, and exposed our riskiest assumptions."
 publishedAt: "2026-07-20"
 slug: "social-engagement-radar-impact-mapping"

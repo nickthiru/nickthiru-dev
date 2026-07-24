@@ -64,7 +64,7 @@
       <div class="max-w-prose">
         <h2 class="text-h3 text-primary dark:text-[#FAFAFA] mb-3">Subscribe</h2>
         <p class="text-secondary dark:text-[#D4D4D4]">
-          Stay updated with weekly blog post roundups. No spam, unsubscribe anytime.
+          Stay updated with weekly blog post roundups — no spam, unsubscribe anytime.
         </p>
       </div>
       <div class="w-full max-w-md mb-3">

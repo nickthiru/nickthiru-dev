@@ -19,7 +19,7 @@ pinned_order:
 newsletter_hook: "PolicyForge's pitch was simple: generate compliant policies in minutes instead of paying a consultant $8k–$15k. But 'generate policies' isn't a build plan, it's a slogan. I had to figure out which piece to build first, and which stakeholder's trust would actually make or break the whole thing. The answer wasn't the feature I expected."
 summary_two_sentence: "PolicyForge's product vision promised to replace expensive compliance consultants with a self-service tool, but a vision statement doesn't tell you what to build first. Using impact mapping to map out who actually needed to change their behavior, and what could go wrong if they didn't, turned a slogan into a prioritized, risk-aware MVP plan."
 build_logs:
-  - "build-logs/2026/05/2026-05-26.md"
+  - "thiru-ai-labs/apps/secure-stack/policy-forge/docs/build/discovery/impact-map/build-log.md"
 newsletter_sent: false
 newsletter_date: ""
 ---

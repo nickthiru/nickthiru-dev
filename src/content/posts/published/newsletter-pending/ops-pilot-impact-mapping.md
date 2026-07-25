@@ -19,7 +19,7 @@ pinned_order:
 newsletter_hook: "I almost skipped straight to building OpsPilot's dashboard. Then I asked a harder question: whose behavior actually has to change for this to work? That question turned into a day of impact mapping, and it surfaced a dependency I hadn't designed around. Here's what the exercise forced me to confront before writing a line of code."
 summary_two_sentence: "Before building OpsPilot, I mapped out exactly whose behavior had to change and why, instead of jumping straight to features. The exercise surfaced a design constraint around third-party platforms that now shapes what I'm building first."
 build_logs:
-  - "build-logs/2026/05/2026-05-23.md"
+  - "thiru-ai-labs/apps/ops-pilot/docs/build/discovery/02-impact-map/build-log.md"
 newsletter_sent: false
 newsletter_date: ""
 ---

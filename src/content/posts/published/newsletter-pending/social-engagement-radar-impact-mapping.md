@@ -25,7 +25,7 @@ pinned_order:
 newsletter_hook: "Before I wrote a single line of code for Social Engagement Radar, I sat down with three fuzzy business goals and tried to answer one uncomfortable question: which of these ideas would actually work, and which were just things I wanted to be true? The answers weren't what I expected."
 summary_two_sentence: "I ran an impact-mapping exercise against Social Engagement Radar's three core business goals to figure out what to build first. It turned three vague aspirations into a ranked list of capabilities, and forced me to admit which parts of the plan were guesses dressed up as strategy."
 build_logs:
-  - "impact-map.md"
+  - "unavailable"
 newsletter_sent: false
 newsletter_date: ""
 ---

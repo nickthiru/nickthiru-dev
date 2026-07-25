@@ -20,8 +20,8 @@ newsletter_hook: "PolicyForge's pitch was simple: generate compliant policies in
 summary_two_sentence: "PolicyForge's product vision promised to replace expensive compliance consultants with a self-service tool, but a vision statement doesn't tell you what to build first. Using impact mapping to map out who actually needed to change their behavior, and what could go wrong if they didn't, turned a slogan into a prioritized, risk-aware MVP plan."
 build_logs:
   - "thiru-ai-labs/apps/secure-stack/policy-forge/docs/build/discovery/impact-map/build-log.md"
-newsletter_sent: false
-newsletter_date: ""
+newsletter_sent: true
+newsletter_date: "2026-07-25"
 ---
 
 ## The User Moment

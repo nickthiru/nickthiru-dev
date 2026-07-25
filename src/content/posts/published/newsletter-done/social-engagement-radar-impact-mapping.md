@@ -26,8 +26,8 @@ newsletter_hook: "Before I wrote a single line of code for Social Engagement Rad
 summary_two_sentence: "I ran an impact-mapping exercise against Social Engagement Radar's three core business goals to figure out what to build first. It turned three vague aspirations into a ranked list of capabilities, and forced me to admit which parts of the plan were guesses dressed up as strategy."
 build_logs:
   - "unavailable"
-newsletter_sent: false
-newsletter_date: ""
+newsletter_sent: true
+newsletter_date: "2026-07-25"
 ---
 
 ## The User Moment

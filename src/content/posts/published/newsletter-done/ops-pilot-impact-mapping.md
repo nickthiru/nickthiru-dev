@@ -20,8 +20,8 @@ newsletter_hook: "I almost skipped straight to building OpsPilot's dashboard. Th
 summary_two_sentence: "Before building OpsPilot, I mapped out exactly whose behavior had to change and why, instead of jumping straight to features. The exercise surfaced a design constraint around third-party platforms that now shapes what I'm building first."
 build_logs:
   - "thiru-ai-labs/apps/ops-pilot/docs/build/discovery/02-impact-map/build-log.md"
-newsletter_sent: false
-newsletter_date: ""
+newsletter_sent: true
+newsletter_date: "2026-07-25"
 ---
 
 ## The User Moment

@@ -11,6 +11,17 @@
         "why-stack-trace-product-vision"
       ],
       "status": "sent"
+    },
+    {
+      "date": "2026-07-25",
+      "campaign_name": "Newsletter — Week of 2026-07-25",
+      "subject": "The week I stopped mistaking hopes for plans",
+      "articles": [
+        "ops-pilot-impact-mapping",
+        "policy-forge-impact-mapping",
+        "social-engagement-radar-impact-mapping"
+      ],
+      "status": "sent"
     }
   ]
 }

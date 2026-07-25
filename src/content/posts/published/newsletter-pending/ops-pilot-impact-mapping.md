@@ -13,7 +13,7 @@ series_slug: "ops-pilot"
 series_phase: "strategy"
 series_position: 2
 linkedin_url: "https://www.linkedin.com/posts/nick-thiru_i-almost-skipped-straight-to-building-opspilots-share-7485649306897543168-rH1V/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAArlnX4BlgP7Imj9jDqmmDropzzOvYwJoaY"
-x_url: ""
+x_url: "https://x.com/nickthiru/status/2080891895782547651"
 pinned: false
 pinned_order:
 newsletter_hook: "I almost skipped straight to building OpsPilot's dashboard. Then I asked a harder question: whose behavior actually has to change for this to work? That question turned into a day of impact mapping, and it surfaced a dependency I hadn't designed around. Here's what the exercise forced me to confront before writing a line of code."

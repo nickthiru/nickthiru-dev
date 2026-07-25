@@ -139,7 +139,7 @@ async function discoverArticles(): Promise<ArticleEntry[]> {
       continue;
     }
 
-    const title = (fm.title as string) || "";
+    const title = (fm.subtitle as string) || (fm.title as string) || "";
     const slug = (fm.slug as string) || "";
     const hook = (fm.newsletter_hook as string) || "";
 

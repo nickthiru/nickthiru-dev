@@ -14,7 +14,7 @@ series_slug: "policy-forge"
 series_phase: "strategy"
 series_position: 3
 linkedin_url: "https://lnkd.in/p/gaZFwsUf"
-x_url: ""
+x_url: "https://x.com/nickthiru/status/2081706453514191303"
 pinned: false
 pinned_order:
 newsletter_hook: "We were about to build a faster way to produce compliance paperwork. Then we sat down and actually mapped how the work happens today, and found out the paperwork speed was never the problem. Here's what we found instead, and why it changed the whole direction of PolicyForge."

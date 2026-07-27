@@ -96,11 +96,11 @@
       "description": "Generate compliant cybersecurity policies in minutes instead of weeks.",
       "status": "active",
       "current_phase": "strategy",
-      "current_position": "2",
+      "current_position": "3",
       "total_planned_posts": "unknown",
       "phases": {
         "strategy": {
-          "posts_published": 2
+          "posts_published": 3
         },
         "design": {
           "posts_published": 0
@@ -132,6 +132,13 @@
           "phase": "strategy",
           "position": "2",
           "publishedAt": "2026-07-21"
+        },
+        {
+          "slug": "policyforge-real-problem",
+          "title": "The problem wasn't what we thought it was",
+          "phase": "strategy",
+          "position": "3",
+          "publishedAt": "2026-07-25"
         }
       ]
     }

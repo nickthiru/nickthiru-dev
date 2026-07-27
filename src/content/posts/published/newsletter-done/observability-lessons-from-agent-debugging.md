@@ -8,7 +8,7 @@ slug: "observability-lessons-from-agent-debugging"
 image: "/posts/observability-lessons-from-agent-debugging.png"
 image_size: "lg"
 draft: false
-tags: ["observability", "debugging", "agents", "langgraph"]
+hashtags: ["#Observability", "#Debugging", "#AIAgents", "#LangGraph"]
 track: "engineering"
 series_name: ""
 series_slug: ""

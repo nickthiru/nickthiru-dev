@@ -6,7 +6,7 @@ publishedAt: "2025-01-15"
 image: "/posts/why-i-price-monthly.png"
 image_size: "lg"
 draft: true
-tags: ["pricing", "saas", "strategy"]
+hashtags: ["#Pricing", "#SaaS", "#Strategy"]
 track: "business"
 series_name: ""
 series_slug: ""

@@ -6,7 +6,16 @@ slug: "policyforge-product-vision"
 image: "/posts/policyforge-product-vision.png"
 image_size: "lg"
 draft: false
-tags: ["policy-forge", "product-vision", "compliance", "cybersecurity"]
+hashtags:
+  [
+    "#CMMC",
+    "#NIST800-171",
+    "#CybersecurityCompliance",
+    "#DFARS",
+    "#Compliance",
+    "#ProductVision",
+    "#Cybersecurity",
+  ]
 track: "product"
 series_name: "PolicyForge"
 series_slug: "policy-forge"

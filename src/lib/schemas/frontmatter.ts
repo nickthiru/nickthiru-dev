@@ -35,7 +35,7 @@ const baseSchema = z.object({
     .string()
     .regex(/^\d{4}-\d{2}-\d{2}$/)
     .optional(),
-  tags: z.array(z.string()).optional(),
+  hashtags: z.array(z.string()).optional(),
   draft: z.boolean().optional(),
   pinned: z.boolean().optional(),
   pinned_order: z.number().or(z.literal("n/a")).optional(),

@@ -15,7 +15,7 @@ const allowedKeys = new Set([
   "publishedAt",
   "updatedAt",
   "track",
-  "tags",
+  "hashtags",
   "draft",
   "pinned",
   "pinned_order",
@@ -35,20 +35,11 @@ const allowedKeys = new Set([
   "newsletter_date",
 ]);
 
-// Known product tags — must match src/lib/config/projects.ts
-const knownProductTags = new Set<string>();
+// Map series_name to the correct product's default hashtags
+const seriesNameToDefaultHashtags: Record<string, string[]> = {};
 for (const product of getProducts()) {
-  for (const tag of product.blogPostTags) {
-    knownProductTags.add(tag);
-  }
+  seriesNameToDefaultHashtags[product.name] = product.defaultHashtags;
 }
-
-// Map series_name to the correct product tag
-const seriesNameToProductTag: Record<string, string> = {
-  "Social Engagement Radar": "social-engagement-radar",
-  OpsPilot: "ops-pilot",
-  PolicyForge: "policy-forge",
-};
 
 // Human-readable descriptions for common fields
 const fieldDescriptions: Record<string, string> = {
@@ -175,50 +166,34 @@ function validateFrontmatter() {
       }
     }
 
-    // Additional tags validation
-    const tags = data.tags as string[] | undefined;
+    // Additional hashtags validation
+    const hashtags = data.hashtags as string[] | undefined;
     const seriesName = data.series_name as string | undefined;
     const track = data.track as string | undefined;
 
-    // Check 1: tags should not be empty
-    if (!tags || tags.length === 0) {
-      fileHasErrors = true;
-      errors.push({
-        field: "tags",
-        detail: "Tags array is empty or missing",
-        hint: "Product series posts must include the hyphenated product tag. Standalone posts should include topical tags.",
-      });
-    }
-
-    // Check 2: Product series posts must include the correct product tag
+    // Check 1: hashtags should not be empty for product series posts
     if (seriesName && seriesName.trim() !== "") {
-      const expectedProductTag = seriesNameToProductTag[seriesName];
-      if (expectedProductTag && tags && !tags.includes(expectedProductTag)) {
+      if (!hashtags || hashtags.length === 0) {
         fileHasErrors = true;
         errors.push({
-          field: "tags",
-          detail: `Missing required product tag "${expectedProductTag}" for series "${seriesName}"`,
-          hint: `Add "${expectedProductTag}" to the tags array. Do not use "${seriesName.toLowerCase().replace(/\s+/g, "")}" or other variations.`,
+          field: "hashtags",
+          detail: "Hashtags array is empty or missing for product series post",
+          hint: "Product series posts must include the product's default hashtags.",
         });
       }
-    }
 
-    // Check 3: Warn about tags that look like product names but use wrong spelling
-    if (tags) {
-      const commonMisspellings: Record<string, string> = {
-        policyforge: "policy-forge",
-        opspilot: "ops-pilot",
-        socialengagementradar: "social-engagement-radar",
-        "social-engagement-rader": "social-engagement-radar",
-      };
-      for (const tag of tags) {
-        const lowerTag = tag.toLowerCase();
-        if (commonMisspellings[lowerTag]) {
+      // Check 2: Product series posts must include the product's default hashtags
+      const expectedDefaultHashtags = seriesNameToDefaultHashtags[seriesName];
+      if (expectedDefaultHashtags && hashtags) {
+        const missingHashtags = expectedDefaultHashtags.filter(
+          (h) => !hashtags.includes(h),
+        );
+        if (missingHashtags.length > 0) {
           fileHasErrors = true;
           errors.push({
-            field: "tags",
-            detail: `Tag "${tag}" is a misspelling. Did you mean "${commonMisspellings[lowerTag]}"?`,
-            hint: "Use the exact hyphenated product tag from the product config.",
+            field: "hashtags",
+            detail: `Missing required default hashtags: ${missingHashtags.join(", ")} for series "${seriesName}"`,
+            hint: `Add the missing hashtags to the hashtags array. These are the product's default hashtags from the product config.`,
           });
         }
       }

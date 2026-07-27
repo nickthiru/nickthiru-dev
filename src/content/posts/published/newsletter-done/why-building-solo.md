@@ -8,7 +8,8 @@ slug: "why-building-solo"
 image: "/posts/why-building-solo.png"
 image_size: "lg"
 draft: false
-tags: ["solo-founder", "ai-augmentation", "business-strategy", "transparency"]
+hashtags:
+  ["#SoloFounder", "#AIAugmentation", "#BusinessStrategy", "#Transparency"]
 track: "business"
 series_name: ""
 series_slug: ""

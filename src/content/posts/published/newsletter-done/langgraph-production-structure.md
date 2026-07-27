@@ -8,7 +8,7 @@ slug: "langgraph-production-structure"
 image: "/posts/langgraph-production-structure.png"
 image_size: "lg"
 draft: false
-tags: ["langgraph", "architecture", "agents"]
+hashtags: ["#LangGraph", "#Architecture", "#AIAgents"]
 track: "engineering"
 series_name: ""
 series_slug: ""

@@ -17,7 +17,7 @@ interface BaseProject {
 export interface Product extends BaseProject {
   type: "product";
   tagline: string; // Display tagline for CTA (e.g., "Now Building")
-  blogPostTags: string[]; // Tags that trigger this product's CTA in blog posts
+  defaultHashtags: string[]; // Default hashtags for social posts about this product
   productUrl: string; // Link to product page on thiruailabs.com
 }
 
@@ -45,11 +45,12 @@ export const projects: Project[] = [
     status: "Building",
     url: "https://thiruailabs.com/products/social-engagement-radar",
     productUrl: "https://thiruailabs.com/products/social-engagement-radar",
-    blogPostTags: [
-      "social-engagement-radar",
-      "product",
-      "SaaS",
-      "building-in-public",
+    defaultHashtags: [
+      "#SocialListening",
+      "#CommunityManagement",
+      "#AI",
+      "#SocialMedia",
+      "#Engagement",
     ],
     featured: true,
   },
@@ -64,12 +65,12 @@ export const projects: Project[] = [
     status: "Building",
     url: "https://thiruailabs.com/products/ops-pilot",
     productUrl: "https://thiruailabs.com/products/ops-pilot",
-    blogPostTags: [
-      "ops-pilot",
-      "product",
-      "SaaS",
-      "PaaS",
-      "building-in-public",
+    defaultHashtags: [
+      "#SMB",
+      "#AIAutomation",
+      "#BusinessOps",
+      "#StartupTools",
+      "#AI",
     ],
     featured: true,
   },
@@ -84,7 +85,13 @@ export const projects: Project[] = [
     status: "Building",
     url: "https://thiruailabs.com/products/policy-forge",
     productUrl: "https://thiruailabs.com/products/policy-forge",
-    blogPostTags: ["policy-forge", "product", "SaaS", "building-in-public"],
+    defaultHashtags: [
+      "#CMMC",
+      "#NIST800-171",
+      "#CybersecurityCompliance",
+      "#DFARS",
+      "#Compliance",
+    ],
     featured: true,
   },
 
@@ -98,12 +105,12 @@ export const projects: Project[] = [
     status: "Planned",
     url: "https://thiruailabs.com/products#secure-stack",
     productUrl: "https://thiruailabs.com/products#secure-stack",
-    blogPostTags: [
-      "secure-stack",
-      "suite",
-      "product",
-      "SaaS",
-      "building-in-public",
+    defaultHashtags: [
+      "#CMMC",
+      "#Cybersecurity",
+      "#Compliance",
+      "#DFARS",
+      "#AI",
     ],
     featured: false,
   },
@@ -141,21 +148,6 @@ export function getAllProjects(): Project[] {
  */
 export function getProducts(): Product[] {
   return projects.filter((p): p is Product => p.type === "product");
-}
-
-/**
- * Get product by blog post tag - returns the first matching product
- * Used by ProductWaitlistCTA component
- * @deprecated Use getProductBySlug instead for more reliable matching
- */
-export function getProductByTag(postTags: string[]): Product | null {
-  const products = getProducts();
-  for (const product of products) {
-    if (product.blogPostTags.some((tag) => postTags.includes(tag))) {
-      return product;
-    }
-  }
-  return null;
 }
 
 /**

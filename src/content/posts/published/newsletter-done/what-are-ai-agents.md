@@ -8,7 +8,7 @@ slug: "what-are-ai-agents"
 image: "/posts/what-are-ai-agents.png"
 image_size: "lg"
 draft: false
-tags: ["ai-agents", "explainer", "langgraph"]
+hashtags: ["#AIAgents", "#Explainer", "#LangGraph"]
 track: "engineering"
 series_name: ""
 series_slug: ""

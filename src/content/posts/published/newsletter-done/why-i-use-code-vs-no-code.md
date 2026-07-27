@@ -8,7 +8,7 @@ slug: "why-i-use-code-vs-no-code"
 image: "/posts/why-i-use-code-vs-no-code.png"
 image_size: "lg"
 draft: false
-tags: ["no-code", "production", "langgraph", "architecture"]
+hashtags: ["#NoCode", "#Production", "#LangGraph", "#Architecture"]
 track: "engineering"
 series_name: ""
 series_slug: ""

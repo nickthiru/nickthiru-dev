@@ -6,7 +6,15 @@ slug: "social-engagement-radar-product-vision"
 image: "/posts/social-engagement-radar-product-vision.png"
 image_size: "lg"
 draft: false
-tags: ["social-engagement-radar", "product-vision"]
+hashtags:
+  [
+    "#SocialListening",
+    "#CommunityManagement",
+    "#AI",
+    "#SocialMedia",
+    "#Engagement",
+    "#ProductVision",
+  ]
 track: "product"
 series_name: "Social Engagement Radar"
 series_slug: "social-engagement-radar"

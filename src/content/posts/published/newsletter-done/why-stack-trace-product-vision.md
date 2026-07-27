@@ -6,7 +6,7 @@ slug: "why-stack-trace-product-vision"
 image: "/posts/why-stack-trace-product-vision.png"
 image_size: "lg"
 draft: false
-tags: []
+hashtags: ["#ProductStrategy", "#RootCauseAnalysis", "#ProductVision"]
 track: "product"
 series_name: ""
 series_slug: ""

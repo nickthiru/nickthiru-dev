@@ -6,7 +6,16 @@ slug: "policy-forge-impact-mapping"
 image: "/posts/policy-forge-impact-mapping.png"
 image_size: "lg"
 draft: false
-tags: ["policy-forge", "product-strategy", "impact-mapping", "mvp"]
+hashtags:
+  [
+    "#CMMC",
+    "#NIST800-171",
+    "#CybersecurityCompliance",
+    "#DFARS",
+    "#Compliance",
+    "#ImpactMapping",
+    "#MVP",
+  ]
 track: "product"
 series_name: "PolicyForge"
 series_slug: "policy-forge"

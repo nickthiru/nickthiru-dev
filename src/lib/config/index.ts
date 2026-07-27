@@ -8,7 +8,6 @@ export {
   projects,
   getAllProjects,
   getProducts,
-  getProductByTag,
   getProductBySlug,
   type Project,
   type Product,

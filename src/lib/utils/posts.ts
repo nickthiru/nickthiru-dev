@@ -9,7 +9,7 @@ export interface PostFrontmatter {
   publishedAt: string;
   updatedAt?: string;
   track: "engineering" | "business" | "product";
-  tags?: string[];
+  hashtags?: string[];
   draft?: boolean;
   pinned?: boolean;
   pinned_order?: number | "n/a";

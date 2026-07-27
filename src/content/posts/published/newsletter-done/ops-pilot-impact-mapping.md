@@ -6,7 +6,14 @@ slug: "ops-pilot-impact-mapping"
 image: "/posts/ops-pilot-impact-mapping.png"
 image_size: "lg"
 draft: false
-tags: ["ops-pilot", "product-strategy", "building-in-public"]
+hashtags:
+  [
+    "#SMB",
+    "#AIAutomation",
+    "#BusinessOps",
+    "#ProductStrategy",
+    "#BuildingInPublic",
+  ]
 track: "product"
 series_name: "OpsPilot"
 series_slug: "ops-pilot"

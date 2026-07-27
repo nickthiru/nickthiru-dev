@@ -6,15 +6,7 @@ slug: "opspilot-product-vision"
 image: "/posts/opspilot-product-vision.png"
 image_size: "lg"
 draft: false
-hashtags:
-  [
-    "#SMB",
-    "#AIAutomation",
-    "#BusinessOps",
-    "#StartupTools",
-    "#AI",
-    "#Operations",
-  ]
+hashtags: ["#SMB", "#AIAutomation", "#BusinessOps", "#StartupTools", "#AI"]
 track: "product"
 series_name: "OpsPilot"
 series_slug: "ops-pilot"

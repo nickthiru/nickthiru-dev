@@ -13,7 +13,6 @@ hashtags:
     "#AI",
     "#SocialMedia",
     "#Engagement",
-    "#ProductVision",
   ]
 track: "product"
 series_name: "Social Engagement Radar"

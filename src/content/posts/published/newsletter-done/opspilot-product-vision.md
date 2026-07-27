@@ -13,7 +13,6 @@ hashtags:
     "#BusinessOps",
     "#StartupTools",
     "#AI",
-    "#ProductVision",
     "#Operations",
   ]
 track: "product"

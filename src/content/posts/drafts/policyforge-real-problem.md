@@ -7,14 +7,7 @@ image: "/posts/policyforge-real-problem.png"
 image_size: "lg"
 draft: true
 hashtags:
-  [
-    "#CMMC",
-    "#NIST800-171",
-    "#CybersecurityCompliance",
-    "#DFARS",
-    "#Compliance",
-    "#ProductStrategy",
-  ]
+  ["#CMMC", "#NIST800-171", "#CybersecurityCompliance", "#DFARS", "#Compliance"]
 track: "product"
 series_name: "PolicyForge"
 series_slug: "policy-forge"

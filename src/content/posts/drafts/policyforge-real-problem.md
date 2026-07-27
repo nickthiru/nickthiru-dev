@@ -5,7 +5,7 @@ publishedAt: "2026-07-25"
 slug: "policyforge-real-problem"
 image: "/posts/policyforge-real-problem.png"
 image_size: "lg"
-draft: false
+draft: true
 hashtags:
   ["#CMMC", "#NIST800-171", "#CybersecurityCompliance", "#DFARS", "#Compliance"]
 track: "product"

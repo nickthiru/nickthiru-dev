@@ -171,18 +171,8 @@ function validateFrontmatter() {
     const seriesName = data.series_name as string | undefined;
     const track = data.track as string | undefined;
 
-    // Check 1: hashtags should not be empty for product series posts
+    // Check: Product series posts must include the product's default hashtags
     if (seriesName && seriesName.trim() !== "") {
-      if (!hashtags || hashtags.length === 0) {
-        fileHasErrors = true;
-        errors.push({
-          field: "hashtags",
-          detail: "Hashtags array is empty or missing for product series post",
-          hint: "Product series posts must include the product's default hashtags.",
-        });
-      }
-
-      // Check 2: Product series posts must include the product's default hashtags
       const expectedDefaultHashtags = seriesNameToDefaultHashtags[seriesName];
       if (expectedDefaultHashtags && hashtags) {
         const missingHashtags = expectedDefaultHashtags.filter(

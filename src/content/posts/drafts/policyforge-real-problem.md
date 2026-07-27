@@ -20,7 +20,7 @@ pinned_order:
 newsletter_hook: "We were about to build a faster way to produce compliance paperwork. Then we sat down and actually mapped how the work happens today — and found out the paperwork speed was never the problem. Here's what we found instead, and why it changed the whole direction of PolicyForge."
 summary_two_sentence: "PolicyForge started from the assumption that compliance documents just take too long to produce. Mapping the real workflow revealed the actual bottleneck is a trust and translation problem between an operations lead and the auditors and carriers who have to believe his paperwork."
 build_logs:
-  - "build-log.md"
+  - "thiru-ai-labs/apps/secure-stack/policy-forge/docs/build/phase-1/step-1-1/build-log.md"
 newsletter_sent: false
 newsletter_date: ""
 ---

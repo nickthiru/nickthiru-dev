@@ -28,7 +28,7 @@
         {/if} -->
       </p>
       <p class="text-sm text-secondary dark:text-[#A3A3A3] mb-2">
-        Use the <strong>Series Navigation</strong> button at the top-right of the post to browse all posts in the series.
+        Use the <strong>Series Navigation</strong> button at the top-right to browse all posts in the series.
       </p>
       {#if currentPosition > 1}
         <a href="/writing/{firstPostSlug}" class="text-sm text-accent hover:underline font-medium">

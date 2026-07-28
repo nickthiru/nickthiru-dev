@@ -14,7 +14,7 @@ series_slug: "policy-forge"
 series_phase: "strategy"
 series_position: 4
 linkedin_url: "https://www.linkedin.com/posts/nick-thiru_cmmc-nist800-cybersecuritycompliance-activity-7487849673903407104-m-lv?utm_source=share&utm_medium=member_desktop&rcm=ACoAAArlnX4BlgP7Imj9jDqmmDropzzOvYwJoaY"
-x_url: ""
+x_url: "https://x.com/nickthiru/status/2082090486140219462"
 pinned: false
 pinned_order:
 newsletter_hook: "We thought we'd already answered the hardest question: what kind of AI product is this, actually? Turns out we'd answered it too fast. A routine self-check surfaced a capability we'd quietly filed under the wrong bucket, and unpicking it changed how much control we were willing to hand the AI. Here's what almost slipped through."

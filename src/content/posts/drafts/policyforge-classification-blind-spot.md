@@ -13,7 +13,7 @@ series_name: "PolicyForge"
 series_slug: "policy-forge"
 series_phase: "strategy"
 series_position: 4
-linkedin_url: ""
+linkedin_url: "https://www.linkedin.com/posts/nick-thiru_cmmc-nist800-cybersecuritycompliance-activity-7487849673903407104-m-lv?utm_source=share&utm_medium=member_desktop&rcm=ACoAAArlnX4BlgP7Imj9jDqmmDropzzOvYwJoaY"
 x_url: ""
 pinned: false
 pinned_order:

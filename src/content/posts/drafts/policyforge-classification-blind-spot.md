@@ -57,7 +57,7 @@ Option three: treat the mismatch as a signal, not an isolated error. Re-run the 
 
 The honest before-and-after here: my first pass classified that capability as something the AI should just do, full autonomy, no checkpoint. The corrected version reclassified it as something the AI proposes, with a person required to sign off before it goes further. Not because the AI is bad at the task itself, but because the cost of being wrong there is too high to hand over quietly, and the signal that it was wrong wouldn't necessarily show up until a client was already affected.
 
-I went with option three. Not because I'm naturally thorough by disposition, but because the entire point of doing this classification step at all was to get the category right before it shaped a dozen other decisions I couldn't easily unwind later. Skipping the deeper check would have defeated the purpose of doing the check in the first place.
+I went with option three. Not only because I'm naturally thorough by disposition, but because the entire point of doing this classification step at all was to get the category right before it shaped a dozen other decisions I couldn't easily unwind later. Skipping the deeper check would have defeated the purpose of doing the check in the first place.
 
 ## The Build
 

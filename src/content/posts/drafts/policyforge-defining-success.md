@@ -14,7 +14,7 @@ series_slug: "policy-forge"
 series_phase: "strategy"
 series_position: 5
 linkedin_url: "https://lnkd.in/p/gcJ2yXRH"
-x_url: ""
+x_url: "https://x.com/nickthiru/status/2082424252230492538"
 pinned: false
 pinned_order:
 newsletter_hook: "How do you know if a product is actually working before you have real customers? PolicyForge's answer wasn't a gut feeling — it was four testable claims about cost, trust, and compliance, each with a number attached that could prove the whole idea wrong. Here's what those numbers are, and the one assumption that's riskier than all the rest."

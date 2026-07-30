@@ -5,7 +5,7 @@ publishedAt: "2026-07-30"
 slug: "agent-or-copilot"
 image: "/posts/agent-or-copilot.png"
 image_size: "lg"
-draft: true
+draft: false
 hashtags: ["#SMB", "#AIAutomation", "#BusinessOps", "#StartupTools", "#AI"]
 track: "product"
 series_name: "OpsPilot"

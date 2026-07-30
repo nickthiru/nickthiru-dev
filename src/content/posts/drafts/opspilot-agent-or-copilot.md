@@ -13,7 +13,7 @@ series_slug: "ops-pilot"
 series_phase: "strategy"
 series_position: 3
 linkedin_url: "https://lnkd.in/p/gAwh5573"
-x_url: ""
+x_url: "https://x.com/nickthiru/status/2082802503650099247"
 pinned: false
 pinned_order:
 newsletter_hook: "We had a dozen features that all looked different on paper — some drafted things, some just flagged things, some acted on things. Naming what we were actually building turned out to be harder than building it. Here's the label we landed on, why two other obvious ones were wrong, and what almost nobody who reaches for the fashionable word actually checks first."

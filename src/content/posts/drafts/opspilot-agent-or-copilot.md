@@ -12,7 +12,7 @@ series_name: "OpsPilot"
 series_slug: "ops-pilot"
 series_phase: "strategy"
 series_position: 3
-linkedin_url: ""
+linkedin_url: "https://lnkd.in/p/gAwh5573"
 x_url: ""
 pinned: false
 pinned_order:

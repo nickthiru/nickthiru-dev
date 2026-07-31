@@ -14,7 +14,7 @@ series_slug: "policy-forge"
 series_phase: "strategy"
 series_position: 6
 linkedin_url: "https://lnkd.in/p/g_JSMR8r"
-x_url: ""
+x_url: "https://x.com/nickthiru/status/2083155252036161792"
 pinned: false
 pinned_order:
 newsletter_hook: "Three workflows looked equally important. Only one could go first, and picking wrong meant building something impressive that couldn't actually be tested. Here's how I chose the workflow that everything else in PolicyForge now depends on."

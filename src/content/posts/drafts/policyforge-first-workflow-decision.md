@@ -5,7 +5,7 @@ publishedAt: "2026-07-31"
 slug: "policyforge-first-workflow-decision"
 image: "/posts/policyforge-first-workflow-decision.png"
 image_size: "lg"
-draft: true
+draft: false
 hashtags:
   ["#CMMC", "#NIST800-171", "#CybersecurityCompliance", "#DFARS", "#Compliance"]
 track: "product"

@@ -13,7 +13,7 @@ series_slug: ""
 series_phase: ""
 series_position:
 linkedin_url: "https://lnkd.in/p/ghkvAdHy"
-x_url: ""
+x_url: "https://x.com/nickthiru/status/2083149442379812946"
 pinned: false
 pinned_order:
 newsletter_hook: "Everyone's arguing about whether their product is an 'agent', a 'copilot', or an 'assistant' as if it's a single toggle switch. It isn't. Here's what actually happened when I tried to force that choice on a real product — and the much more useful question I ended up asking instead."

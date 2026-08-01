@@ -47,7 +47,7 @@
         <ul>
           <li>architect and build AI systems and <a href="https://thiruailabs.com/products" target="_blank" rel="noopener noreferrer">SaaS products</a></li>
           <li>offer <a href="https://thiruailabs.com/consult" target="_blank" rel="noopener noreferrer">consulting</a> services for teams building AI systems</li>
-          <li>document and share my hard-won lessons and expertise publicly, right <a href="https://nickthiru-dev/writing" target="_blank" rel="noopener noreferrer">here</a></li>
+          <li>document and share my hard-won lessons and expertise publicly, right <a href="https://nickthiru-dev/writing" target="_blank" rel="noopener noreferrer">here</a> on this website</li>
         </ul>
     </div>
   </div>

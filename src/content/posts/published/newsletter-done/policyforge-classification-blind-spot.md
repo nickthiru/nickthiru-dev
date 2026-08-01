@@ -21,8 +21,8 @@ newsletter_hook: "We thought we'd already answered the hardest question: what ki
 summary_two_sentence: "During a routine self-check, we found a capability we'd misclassified when locking down what kind of AI product PolicyForge actually is. Fixing it before moving forward changed where we drew the line between what the AI can decide and what a human has to."
 build_logs:
   - "thiru-ai-labs/apps/secure-stack/policy-forge/docs/build/phase-1/step-1-2/build-log.md"
-newsletter_sent: false
-newsletter_date: ""
+newsletter_sent: true
+newsletter_date: "2026-08-01"
 ---
 
 ## The User Moment

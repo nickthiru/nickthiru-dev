@@ -20,8 +20,8 @@ newsletter_hook: "Everyone's arguing about whether their product is an 'agent', 
 summary_two_sentence: "Trying to pick a single label — Agent, Copilot, or Assistant — for an AI product often forces a false choice that hides what's really going on underneath. The better question is what each individual capability is allowed to do on its own, and building the interface around that answer instead of the label."
 build_logs:
   - "thiru-ai-labs/apps/ops-pilot/docs/build/phase-1/step-1-2/build-log.md"
-newsletter_sent: false
-newsletter_date: ""
+newsletter_sent: true
+newsletter_date: "2026-08-01"
 ---
 
 ## Why "Agent vs. Copilot vs. Assistant" Is the Wrong Question (And What to Ask Instead)

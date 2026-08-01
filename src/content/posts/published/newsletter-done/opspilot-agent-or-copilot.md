@@ -20,8 +20,8 @@ newsletter_hook: "We had a dozen features that all looked different on paper —
 summary_two_sentence: "OpsPilot's feature set kept resisting a clean category label — it didn't just suggest things like a copilot, and it didn't just wait for requests like an assistant. Locking the right category changed the entire approval-and-review model we ended up building."
 build_logs:
   - "thiru-ai-labs/apps/ops-pilot/docs/build/phase-1/step-1-2/build-log.md"
-newsletter_sent: false
-newsletter_date: ""
+newsletter_sent: true
+newsletter_date: "2026-08-01"
 ---
 
 ## The User Moment

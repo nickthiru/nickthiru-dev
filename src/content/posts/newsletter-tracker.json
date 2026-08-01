@@ -22,6 +22,20 @@
         "social-engagement-radar-impact-mapping"
       ],
       "status": "sent"
+    },
+    {
+      "date": "2026-08-01",
+      "campaign_name": "Newsletter — Week of 2026-08-01",
+      "subject": "The week I almost shipped the wrong assumption twice",
+      "articles": [
+        "agent-or-copilot",
+        "policyforge-classification-blind-spot",
+        "policyforge-defining-success",
+        "policyforge-first-workflow-decision",
+        "policyforge-real-problem",
+        "wrong-ai-category-question"
+      ],
+      "status": "sent"
     }
   ]
 }

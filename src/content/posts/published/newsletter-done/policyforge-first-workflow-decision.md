@@ -21,8 +21,8 @@ newsletter_hook: "Three workflows looked equally important. Only one could go fi
 summary_two_sentence: "PolicyForge had three candidate workflows competing for first-build priority, each solving a real problem. I picked the one I could test without waiting on anyone else, and it's already shaping every decision after it."
 build_logs:
   - "thiru-ai-labs/apps/secure-stack/policy-forge/docs/build/phase-1/step-1-4/build-log.md"
-newsletter_sent: false
-newsletter_date: ""
+newsletter_sent: true
+newsletter_date: "2026-08-01"
 ---
 
 ## The User Moment

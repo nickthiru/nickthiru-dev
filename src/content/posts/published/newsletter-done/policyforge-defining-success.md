@@ -21,8 +21,8 @@ newsletter_hook: "How do you know if a product is actually working before you ha
 summary_two_sentence: "Before writing another line of code, the real question for PolicyForge wasn't 'does it work' but 'how would anyone know if it worked.' Turning vague goals into testable numbers surfaced one risk bigger than all the others combined."
 build_logs:
   - "thiru-ai-labs/apps/secure-stack/policy-forge/docs/build/phase-1/step-1-3/build-log.md"
-newsletter_sent: false
-newsletter_date: ""
+newsletter_sent: true
+newsletter_date: "2026-08-01"
 ---
 
 ## The User Moment

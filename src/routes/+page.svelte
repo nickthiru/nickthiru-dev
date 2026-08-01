@@ -24,17 +24,17 @@
     
     <div class="max-w-2xl text-center lg:text-left">
       <h1 class="text-h2 text-primary dark:text-[#FAFAFA] mb-6">
-        Building agentic AI systems that ship.
+        Building AI systems that ship.
       </h1>
       <p class="font-[100] text-lg text-secondary dark:text-[#D4D4D4] leading-relaxed mb-4">
-        I'm Nick, the Founder and AI Systems Architect & Engineer at <a
+        Welcome, I'm Nick. I build full-stack AI SaaS products and bespoke systems — secure, data-isolated, reliable, and production-grade — for the real world, through my solo AI systems studio, <a
         href="https://thiruailabs.com"
         target="_blank"
         rel="noopener noreferrer"
         class="text-accent hover:underline inline-flex items-center gap-1"
       >
         Thiru AI Labs
-      </a>, building full-stack, agentic AI SaaS products and bespoke systems — secure, data-isolated, reliable, and production-grade — for the real world.
+      </a>.
       </p>
       <p class="font-[100] text-lg text-secondary dark:text-[#D4D4D4] leading-relaxed mb-6">
          I also share my hard-won lessons and expertise across engineering, product, and business, through my writing.

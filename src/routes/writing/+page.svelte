@@ -175,14 +175,14 @@
 
 <SEO 
   title="Writing"
-  description="Technical deep-dives and business insights on building agentic AI systems."
+  description="Technical deep-dives and business insights on building and shipping AI products and systems."
 />
 
 <section class="mx-auto max-w-page px-6 md:px-8 py-12 md:py-16">
   <header>
     <h1 class="text-h2 text-primary dark:text-[#FAFAFA] mb-8">Writing</h1>
     <p class="text-lg text-secondary dark:text-[#D4D4D4]">
-      I write about building and shipping agentic AI from three main perspectives, also referred to as <strong>Tracks</strong>: engineering, business, and product.
+      I write about building and shipping AI applications from three main perspectives, also referred to as <strong>Tracks</strong>: engineering, business, and product.
     </p>
   </header>
 

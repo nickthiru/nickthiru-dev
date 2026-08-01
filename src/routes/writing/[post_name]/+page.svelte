@@ -274,7 +274,7 @@
           Thanks for reading
         </h3>
         <p class="text-secondary dark:text-[#D4D4D4] mb-8">
-          If this was useful, subscribe for more posts on the engineering, productization, and business, of agentic AI systems.
+          If this was useful, subscribe for more posts on the engineering, productization, and business, of AI systems.
         </p>
         <div class="w-full max-w-md mx-auto">
           <SubscribeForm tag={data.post.track} />

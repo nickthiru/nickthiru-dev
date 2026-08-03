@@ -5,7 +5,7 @@ publishedAt: "2026-08-01"
 slug: "boundary-table-full-workflow"
 image: "/posts/boundary-table-full-workflow.png"
 image_size: "lg"
-draft: true
+draft: false
 hashtags: ["#AIProducts", "#ProductStrategy", "#BuildInPublic", "#CMMC"]
 track: "product"
 series_name: ""
@@ -26,7 +26,7 @@ newsletter_date: ""
 
 ## The Situation
 
-I'd already worked out the fix for a debate I kept running into: instead of arguing whether an AI product is an "agent," a "copilot," or an "assistant," you ask a narrower question, one capability at a time. What is this specific action allowed to do without a human, and what happens if it's wrong. (See: [_The AI product label that's actually three labels!_](/writing/wrong-ai-category-question))
+I'd already worked out the fix for a debate I kept running into: instead of arguing whether an AI product is an "agent," a "copilot," or an "assistant," you ask a narrower question, one capability at a time. What is this specific action allowed to do without a human, and what happens if it's wrong. (See: [_The AI product label that's actually three labels!_](/writing/wrong-ai-category-question)),
 
 That framing held up well when I checked it against isolated actions: a churn alert here, a payment retry there, one formatting step in a compliance product that almost slipped through as harmless when it wasn't. Each of those is a single, self-contained decision. Ask the five questions, get an answer, move to the next capability.
 
@@ -43,8 +43,6 @@ The failure mode I was worried about was specific. In a chain of decisions, an e
 I went in with a hypothesis that turned out to be wrong, and the wrongness is the interesting part. My assumption was that stakes would roughly track position in the sequence: early steps, low stakes, since there's plenty of workflow left to catch a mistake; later steps, high stakes, since a bad output there ships close to the end.
 
 That's not what the four decision points I mapped actually showed. One of the earliest checkpoints in the chain, whether someone's answers to a guided interview are complete enough to proceed, I left fully autonomous. Getting it wrong just means the system asks a few more questions before continuing, a cheap, reversible mistake no matter how early it happens. But a checkpoint sitting in the _middle_ of the chain, whether an AI-proposed mapping of someone's plain-language answers into formal compliance language is actually accurate, is one of the two points I required a human to sign off on, not because it's late, but because the knowledge needed to catch a wrong mapping doesn't exist anywhere except in that person's head. Position in the sequence predicted almost nothing. What predicted the right answer, every time, was a single question: if this step is wrong, does anyone besides the person building it have the specific, situational knowledge to notice?
-
-> `[ARTIFACT: user to confirm format and content before publishing]` — a short side-by-side of two decision points from the underlying workflow (the interview-completeness check vs. the framework-mapping accuracy check) could be included here, framed explicitly as two illustrative examples from a four-point analysis, not the full table.
 
 Once I reframed the question that way, the workflow's other two checkpoints fell into place with the same logic instead of needing separate justification. A step verifying environment-specific technical details stayed human-owned, for the same reason as the mapping check: the accuracy of that detail lives with the person who actually configured their own systems, not with a pattern-matching model. A step handling gaps flagged in the draft stayed human-owned too, but for a slightly different reason. It's not that the knowledge is inaccessible. It's that silently accepting a gap has a cost the whole product exists to prevent, so a human has to actively accept or override it rather than let it pass by default.
 

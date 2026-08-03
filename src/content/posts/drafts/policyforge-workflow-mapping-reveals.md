@@ -5,7 +5,7 @@ publishedAt: "2026-08-01"
 slug: "policyforge-workflow-mapping-reveals"
 image: "/posts/policyforge-workflow-mapping-reveals.png"
 image_size: "lg"
-draft: true
+draft: false
 hashtags:
   ["#CMMC", "#NIST800-171", "#CybersecurityCompliance", "#DFARS", "#Compliance"]
 track: "product"
@@ -27,7 +27,7 @@ newsletter_date: ""
 
 ## The User Moment
 
-Last time, I told you which workflow I was building first for PolicyForge and why: the guided-interview-to-draft-policy chain, because it was the one piece of the product I could test without waiting on anyone else. (See: [_PolicyForge — Why the first workflow we build determines everything after_](/posts/policyforge-first-workflow-decision.md)).
+Last time, I told you which workflow I was building first for PolicyForge and why: the guided-interview-to-draft-policy chain, because it was the one piece of the product I could test without waiting on anyone else. (See: [_PolicyForge — Why the first workflow we build determines everything after_](/writing/policyforge-first-workflow-decision)).
 
 That decision felt clean on paper. Michael answers questions about his environment, the system reasons its way to a compliance-mapped draft, done. But "build the workflow that tests the riskiest bet" is a sentence you can write in an afternoon. Actually mapping that workflow, step by step, with every decision point named and every AI/human boundary drawn in ink instead of implied, is a different kind of work. It's the difference between saying "I trust the process" and being able to point to exactly where trust has to be earned.
 

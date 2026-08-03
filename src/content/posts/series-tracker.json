@@ -103,11 +103,11 @@
       "description": "Generate compliant cybersecurity policies in minutes instead of weeks.",
       "status": "active",
       "current_phase": "strategy",
-      "current_position": "6",
+      "current_position": "7",
       "total_planned_posts": "unknown",
       "phases": {
         "strategy": {
-          "posts_published": 6
+          "posts_published": 7
         },
         "design": {
           "posts_published": 0
@@ -167,6 +167,13 @@
           "phase": "strategy",
           "position": "6",
           "publishedAt": "2026-07-31"
+        },
+        {
+          "slug": "policyforge-workflow-mapping-reveals",
+          "title": "What mapping our first workflow actually revealed",
+          "phase": "strategy",
+          "position": "7",
+          "publishedAt": "2026-08-01"
         }
       ]
     }

@@ -13,7 +13,7 @@ series_slug: ""
 series_phase: ""
 series_position:
 linkedin_url: "https://lnkd.in/p/g35rcNUH"
-x_url: ""
+x_url: "https://x.com/nickthiru/status/2084351170882257155"
 pinned: false
 pinned_order:
 newsletter_hook: "The five-question test told me what a single AI capability should be allowed to do without a human. Then I had a full, connected workflow to check, not just one action, and the answers stopped lining up the way I expected. Here's the pattern that emerged once I ran the test end to end."

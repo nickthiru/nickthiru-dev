@@ -69,7 +69,7 @@ The single riskiest assumption on that list isn't about the product's technical 
 
 Close behind it sits a second uncomfortable assumption: will the insurance carriers on the other end of this process actually accept a policy they know was AI-generated, or will they treat it as a red flag regardless of its content? That one isn't fully in PolicyForge's control to fix through better product design — it depends on how a third party chooses to react, which makes it worth validating early rather than discovering it after customers are already relying on the outcome.
 
-To find out honestly rather than guess, the plan is to track this directly rather than infer it indirectly: watching whether early users submit their generated policies as-is, or quietly go find a human to validate them anyway despite having the tool in hand, and then following up with short conversations to ask why. If people keep reaching for a human safety net even after using the product, that's the real signal...far more honest than a satisfaction survey score.
+To find out honestly rather than guess, the plan is to track this directly rather than infer it indirectly: watching whether early users submit their generated policies as-is, or quietly go find a human to validate them anyway despite having the tool in hand, and then following up with short conversations to ask why. If people keep reaching for a human safety net even after using the product, that's the real signal . . . far more honest than a satisfaction survey score.
 
 ## The Verdict
 

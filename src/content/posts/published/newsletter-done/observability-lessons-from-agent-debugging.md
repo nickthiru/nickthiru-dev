@@ -66,7 +66,7 @@ INFO: agent called tool
 INFO: agent returned response
 ```
 
-…and it tells you nothing that helps you answer the question you actually care about:
+. . . and it tells you nothing that helps you answer the question you actually care about:
 
 **Why did it do that?**
 

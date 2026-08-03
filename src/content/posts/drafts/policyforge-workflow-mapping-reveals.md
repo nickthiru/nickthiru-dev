@@ -14,7 +14,7 @@ series_slug: "policy-forge"
 series_phase: "strategy"
 series_position: 7
 linkedin_url: "https://lnkd.in/p/gFaBDpRZ"
-x_url: ""
+x_url: "https://x.com/nickthiru/status/2084300067897585990"
 pinned: false
 pinned_order:
 newsletter_hook: "I picked the one workflow I could test alone, and called it the product's riskiest bet. Then I actually mapped it step by step, and found out exactly where that bet could break. Here's what four hidden failure points taught me about where AI should stop and a human should start."

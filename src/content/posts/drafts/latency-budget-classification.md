@@ -1,7 +1,7 @@
 ---
 subtitle: "Your Latency Budget Is Lying to You"
 description: "Why cycle-bound products need their own latency model instead of borrowing real-time P95 conventions."
-publishedAt: "2026-02-08"
+publishedAt: "2026-08-02"
 slug: "latency-budget-classification"
 image: "/posts/latency-budget-classification.png"
 image_size: "lg"

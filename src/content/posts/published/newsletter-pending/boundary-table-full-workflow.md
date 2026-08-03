@@ -30,7 +30,7 @@ I'd already worked out the fix for a debate I kept running into: instead of argu
 
 That framing held up well when I checked it against isolated actions: a churn alert here, a payment retry there, one formatting step in a compliance product that almost slipped through as harmless when it wasn't. Each of those is a single, self-contained decision. Ask the five questions, get an answer, move to the next capability.
 
-Then I had a different kind of test case that I had to deal with: not one capability, but a full workflow . . . seven connected steps in a single chain, where the guided-interview-to-draft-policy chain actually gets built (See: [_PolicyForge — Why the first workflow we build determines everything after_](/writing/policyforge-first-workflow-decision)). And I had to find out something the single-capability cases never forced me to ask: does the same test still work when the decisions aren't independent, when what happens at step two changes what step five is even capable of catching?
+Then I had a different kind of test case that I had to deal with: not one capability, but a full workflow...seven connected steps in a single chain, where the guided-interview-to-draft-policy chain actually gets built (See: [_PolicyForge — Why the first workflow we build determines everything after_](/writing/policyforge-first-workflow-decision)). And I had to find out something the single-capability cases never forced me to ask: does the same test still work when the decisions aren't independent, when what happens at step two changes what step five is even capable of catching?
 
 ## The Stakes
 

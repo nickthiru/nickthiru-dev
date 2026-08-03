@@ -27,7 +27,7 @@ newsletter_date: ""
 
 ## The User Moment
 
-Last time, I told you which workflow I was building first for PolicyForge and why: the guided-interview-to-draft-policy chain, because it was the one piece of the product I could test without waiting on anyone else. [INTERNAL LINK: relevant post on choosing PolicyForge's first workflow]
+Last time, I told you which workflow I was building first for PolicyForge and why: the guided-interview-to-draft-policy chain, because it was the one piece of the product I could test without waiting on anyone else. (See: [_PolicyForge — Why the first workflow we build determines everything after_](/posts/policyforge-first-workflow-decision.md)).
 
 That decision felt clean on paper. Michael answers questions about his environment, the system reasons its way to a compliance-mapped draft, done. But "build the workflow that tests the riskiest bet" is a sentence you can write in an afternoon. Actually mapping that workflow, step by step, with every decision point named and every AI/human boundary drawn in ink instead of implied, is a different kind of work. It's the difference between saying "I trust the process" and being able to point to exactly where trust has to be earned.
 
@@ -51,8 +51,6 @@ Take the very first checkpoint: is Michael's interview response complete enough 
 
 Compare that to a checkpoint much further along: does the framework mapping actually match Michael's real environment? Here I did not let the system decide alone, even though it does the heavy lifting of proposing the mapping and showing its reasoning. The reason isn't that the task is harder computationally. It's that the knowledge required to catch a wrong mapping, real familiarity with your own identity provider configuration, your own access controls, the messy specifics of what you actually run, lives entirely with Michael. No amount of pattern-matching gives the system access to that. So the system proposes, and a human has to be the one who can actually catch it being wrong.
 
-> `[ARTIFACT: user to confirm format and content before publishing]` — a simplified version of the workflow diagram could sit here, showing the seven steps as a single path with four marked checkpoints, stripped of internal labels, just showing where the flow pauses for a human decision versus where it continues on its own.
-
 That same question, "who can actually catch this being wrong," turned out to be the real dividing line across the whole workflow, more useful than any general rule about task difficulty.
 
 ## The Build
@@ -60,8 +58,6 @@ That same question, "who can actually catch this being wrong," turned out to be 
 By the end of walking the workflow, I'd found four points where this question mattered enough to become an explicit, designed checkpoint rather than something left implicit and hoped for.
 
 Two of them are worth describing directly, because they show the range. One is the completeness checkpoint I mentioned: the system decides on its own whether Michael's answers are sufficient to proceed, because a wrong call there is cheap and easy to correct. The other is close to its opposite: a point deep in the workflow where the system has flagged a possible gap in coverage, and Michael has to either fill it in or explicitly override the flag before moving forward. I didn't let that one default to autonomous, because a silently accepted gap in a compliance document isn't a minor inconvenience, it's the exact failure mode the whole product exists to prevent.
-
-> `[ARTIFACT: user to confirm format and content before publishing]` — a short illustrative comparison of two decision points from the underlying analysis (completeness threshold vs. gap-override) could be included here as a two-row example, framed explicitly as "two of the four checkpoints, illustrative only," not the full internal table.
 
 What surprised me, honestly, was how uneven the reasoning turned out to be once I looked closely. I went in expecting a fairly clean split, roughly "early steps are low-stakes, later steps are high-stakes." That's not actually what happened. The interview-completion checkpoint is early and autonomous, sure. But so is a later step where I let the system's judgment stand on its own, because even though it comes late in the flow, the downside of it being wrong is still small and easy to catch downstream. Meanwhile, one of the highest-stakes checkpoints, the framework-mapping accuracy check, sits in the middle of the workflow, not at the end. Sequence turned out to be a weak predictor. What actually predicted where a human needed to be in the loop was whether the knowledge to catch a mistake existed anywhere outside that one person's head.
 

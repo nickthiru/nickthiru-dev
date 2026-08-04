@@ -33,9 +33,9 @@ But every one of those outcomes traces back to decisions nobody outside the buil
 
 This was the week I locked in those choices for PolicyForge. Not the vision, not the roadmap — both of which had already been created at earlier stages — but the actual, load-bearing infrastructure the product will run on. It's a less glamorous milestone than announcing a feature or a launch date, but it's the one that determines whether everything built afterward has somewhere solid to stand.
 
-(See: _[PolicyForge — The Product Vision](/writing/policyforge-product-vision)_)
+(See: _[PolicyForge Product Vision](/writing/policyforge-product-vision)_)
 
-(See: _[PolicyForge — Roadmap](/writing/policyforge-impact-map)_)
+(See: _[PolicyForge Roadmap](/writing/policyforge-impact-map)_)
 
 ## The Design Problem
 

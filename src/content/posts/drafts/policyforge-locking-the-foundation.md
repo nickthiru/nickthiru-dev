@@ -14,7 +14,7 @@ series_slug: "policy-forge"
 series_phase: "strategy"
 series_position: 8
 linkedin_url: "https://lnkd.in/p/gsHb29Tz"
-x_url: ""
+x_url: "https://x.com/nickthiru/status/2084604449755103732"
 pinned: false
 pinned_order:
 newsletter_hook: "Every product hits a moment where the ideas have to become actual choices: this framework, that database, this fallback plan. For PolicyForge, that moment meant locking a stack, a cost model, and a hard question we hadn't answered yet: what happens when the thing you're relying on goes down?"

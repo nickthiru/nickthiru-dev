@@ -2,7 +2,7 @@
 subtitle: "How Impact Mapping Built the MVP Roadmap"
 description: "How turning a product vision into an impact map exposed the real risk to PolicyForge's launch, and reshaped what actually made the MVP cut."
 publishedAt: "2026-07-21"
-slug: "policy-forge-impact-mapping"
+slug: "policyforge-impact-map"
 image: "/posts/policy-forge-impact-mapping.png"
 image_size: "lg"
 draft: false

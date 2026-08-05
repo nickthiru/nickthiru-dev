@@ -13,7 +13,7 @@ series_slug: ""
 series_phase: ""
 series_position:
 linkedin_url: "https://lnkd.in/p/g4XwYRaR"
-x_url: "https://x.com/nickthiru/status/2077782314235601051"
+# x_url: "https://x.com/nickthiru/status/2077782314235601051"
 pinned: false
 pinned_order:
 newsletter_hook: 'Most product features start life as reasonable requests: "Make it faster." "Track outcomes." "Don''t publish without my approval." Each sounds sensible, but a sensible request differs from a root business outcome — build to the request and you may solve the wrong thing. During the Social Engagement Radar vision session, I used a technique from BDD in Action: keep asking "why?" until the answer stops changing. Three goal chains, three moments where the surface request dissolved into something more fundamental.'

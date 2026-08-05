@@ -13,7 +13,7 @@ series_slug: "policy-forge"
 series_phase: "strategy"
 series_position: 1
 linkedin_url: "https://www.linkedin.com/posts/nick-thiru_policyforge-compliance-cybersecurity-activity-7483958958458626048-4_J5?utm_source=share&utm_medium=member_desktop&rcm=ACoAAArlnX4BlgP7Imj9jDqmmDropzzOvYwJoaY"
-x_url: "https://x.com/nickthiru/status/2078193579412078679"
+# x_url: "https://x.com/nickthiru/status/2078193579412078679"
 pinned: false
 pinned_order:
 newsletter_hook: 'Picture getting a letter that says your company''s cyber insurance won''t renew unless you produce a full set of written security policies — in under three weeks. No compliance team. No budget for a $15k consultant. Just you, a deadline, and a blank page. That''s the exact moment PolicyForge was built for. Here''s the vision behind it, and why "in minutes, not weeks" isn''t just a tagline.'

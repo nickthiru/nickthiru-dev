@@ -15,7 +15,7 @@ series_slug: ""
 series_phase: ""
 series_position:
 linkedin_url: "https://www.linkedin.com/feed/update/urn:li:activity:7480664898247503872/"
-x_url: "https://x.com/nickthiru/status/2074899815113359780"
+# x_url: "https://x.com/nickthiru/status/2074899815113359780"
 pinned: true
 pinned_order: 1
 newsletter_hook: "Someone asked me this week: 'Wait, what's an AI agent? Isn't

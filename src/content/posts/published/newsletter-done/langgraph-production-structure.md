@@ -15,7 +15,7 @@ series_slug: ""
 series_phase: ""
 series_position:
 linkedin_url: "https://www.linkedin.com/feed/update/urn:li:activity:7480662466293702656/"
-x_url: "https://x.com/nickthiru/status/2074897387848597825"
+# x_url: "https://x.com/nickthiru/status/2074897387848597825"
 newsletter_hook: "The first time I shipped a LangGraph agent to
   production, I thought I was done. Then the incident happened. Not
   catastrophic. Just enough weird behavior to make me realize the gap

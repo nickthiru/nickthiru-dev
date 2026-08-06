@@ -19,7 +19,7 @@ series_name: ""
 series_slug: ""
 series_phase: ""
 series_position:
-linkedin_url: ""
+linkedin_url: "https://lnkd.in/p/gYfT9xys"
 x_url: ""
 pinned: false
 pinned_order:

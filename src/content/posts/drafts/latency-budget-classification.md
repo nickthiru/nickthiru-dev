@@ -1,12 +1,19 @@
 ---
-subtitle: "Your Latency Budget Is Lying to You"
+subtitle: "Your Latency Budget May Be Lying to You"
 description: "Why cycle-bound products need their own latency model instead of borrowing real-time P95 conventions."
 publishedAt: "2026-08-02"
 slug: "latency-budget-classification"
 image: "/posts/latency-budget-classification.png"
 image_size: "lg"
-draft: true
-hashtags: ["#buildinpublic", "#solofounder", "#softwareengineering"]
+draft: false
+hashtags:
+  [
+    "#BuildInPublic",
+    "#SoloFounder",
+    "#AIEngineering",
+    "#AIAgents",
+    "#ProductDevelopment",
+  ]
 track: "engineering"
 series_name: ""
 series_slug: ""
@@ -71,8 +78,6 @@ If you're building anything where the user's unit of value spans multiple steps 
 (See: _[PolicyForge — Inside the MVP Technical Stack](/writing/policyforge-locking-the-foundation)_)
 
 <!-- [INTERNAL LINK: relevant post on architecture constraints and human-in-the-loop design] -->
-
-[ALT: Diagram contrasting a real-time single-interaction latency curve against a cycle-bound multi-step deadline window]
 
 ## Your Turn
 

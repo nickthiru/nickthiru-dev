@@ -50,7 +50,7 @@ The fix wasn't to find better numbers. It was to stop treating "latency" as one 
 
 Is the thing I'm measuring bound by a single interaction the user is watching, or by an outcome the user is waiting for across multiple steps? If it's the former, real-time P95 conventions are the right tool. If it's the latter, the metric that matters is closer to a deadline than a percentile — did the cycle complete inside a window the user considers acceptable, not did any individual step feel snappy.
 
-That distinction became a permanent field in how I classify parts of the product now: a simple tag on each interaction point, marking whether it's cycle-bound or real-time-bound. It sounds almost too small to matter. But once it existed, every latency conversation after that got easier, because I was no longer trying to force one measurement philosophy onto every part of the system. The retrieval step, for example, still benefits from a tight per-request target, because it happens inside a loop the user can perceive slowing down. The overall interview-to-output cycle doesn't need a P95 at all — it needs a maximum acceptable wait, which is a completely different design constraint with a completely different failure mode.
+That distinction became a permanent field in how I classify parts of the product now: a simple tag on each interaction point, marking whether it's cycle-bound or real-time-bound. It sounds almost too small to matter. But once it exists, every latency conversation after that should get easier, because I was no longer trying to force one measurement philosophy onto every part of the system. The retrieval step, for example, still benefits from a tight per-request target, because it happens inside a loop the user can perceive slowing down. The _overall_ interview-to-output cycle doesn't need a P95 at all...it needs a maximum acceptable wait, which is a completely different design constraint with a completely different failure mode.
 
 ## A second example, because the two-category model still had a gap
 
@@ -62,17 +62,18 @@ That's a third category I hadn't accounted for: not real-time, not cycle-bound, 
 
 ## Where the old numbers went
 
-The original targets I wrote down at the start weren't wasted. Retrieval and generation retained something close to those figures, because those are the pieces a user actually experiences moment to moment. The end-to-end number stopped being a P95 statistic and became something closer to a service-level promise: the cycle either finishes inside a bounded window or it doesn't, and that binary matters more than any percentile distribution would. The approval-gate number got reclassified entirely, out of the performance-metrics conversation and into the workflow-design conversation, where it actually belonged.
+The original targets I wrote down at the start weren't wasted. Retrieval and generation retained something close to those figures, because those are the pieces a user actually experiences moment to moment. The end-to-end number stopped being a P95 statistic and became something closer to a service-level promise: the cycle either finishes inside a bounded window or it doesn't, and that choice matters more than any percentile distribution would. The approval-gate number got reclassified entirely, out of the performance-metrics conversation and into the workflow-design conversation, where it actually belonged.
 
 ## The generalizable lesson
 
 If you're building anything where the user's unit of value spans multiple steps rather than one request, don't inherit your latency model from products where it doesn't. Ask, for every timed thing in your system, whether a human is watching it happen in the moment, waiting for an outcome that only exists once several things have happened in sequence, or controlling the clock themselves through a decision you can't automate around. The first deserves a percentile. The second deserves a deadline. The third deserves a UX answer, not a performance target at all. Treating all three the same doesn't just produce bad numbers, it produces a latency budget that answers nothing, because it was built to answer a question your product never actually asks its users.
 
+(See: _[PolicyForge — Inside the MVP Technical Stack](/writing/policyforge-locking-the-foundation)_)
+
+<!-- [INTERNAL LINK: relevant post on architecture constraints and human-in-the-loop design] -->
+
+[ALT: Diagram contrasting a real-time single-interaction latency curve against a cycle-bound multi-step deadline window]
+
 ## Your Turn
 
 If you've set a latency or performance target for your own product, was it measuring what the user actually experiences, or was it borrowed from a category your product doesn't quite belong to?
-
-[INTERNAL LINK: relevant post on PolicyForge's technical stack decisions]  
-[INTERNAL LINK: relevant post on architecture constraints and human-in-the-loop design]
-
-[ALT: Diagram contrasting a real-time single-interaction latency curve against a cycle-bound multi-step deadline window]

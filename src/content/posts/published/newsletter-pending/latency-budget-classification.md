@@ -26,7 +26,7 @@ pinned_order:
 newsletter_hook: "I spent an afternoon trying to set a latency budget for my product, using the same P95 conventions every real-time app uses. The numbers didn't lie — they just didn't mean anything. Here's why cycle-bound products need a completely different way to measure 'fast enough,' and the small classification fix that made the problem disappear."
 summary_two_sentence: "I tried to set latency targets for PolicyForge using standard real-time P95 conventions, and the numbers came out meaningless. The fix wasn't better numbers — it was recognizing that cycle-bound products need their own latency classification model entirely."
 build_logs:
-  - "[to be updated by user]"
+  - "thiru-ai-labs/apps/secure-stack/policy-forge/docs/build/phase-1/step-1-6/build-log.md"
 newsletter_sent: false
 newsletter_date: ""
 ---

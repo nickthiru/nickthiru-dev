@@ -27,8 +27,8 @@ newsletter_hook: "I spent an afternoon trying to set a latency budget for my pro
 summary_two_sentence: "I tried to set latency targets for PolicyForge using standard real-time P95 conventions, and the numbers came out meaningless. The fix wasn't better numbers — it was recognizing that cycle-bound products need their own latency classification model entirely."
 build_logs:
   - "thiru-ai-labs/apps/secure-stack/policy-forge/docs/build/phase-1/step-1-6/build-log.md"
-newsletter_sent: false
-newsletter_date: ""
+newsletter_sent: true
+newsletter_date: "2026-08-08"
 ---
 
 I was staring at a blank latency budget document, trying to fill in a P95 target for retrieval, and I couldn't do it. Not because I didn't know how fast my system should respond. Because the question itself was wrong.

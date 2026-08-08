@@ -21,8 +21,8 @@ newsletter_hook: "I picked the one workflow I could test alone, and called it th
 summary_two_sentence: "After choosing which workflow to build first, I mapped it step by step and found four exact places where the AI-to-human handoff could fail. Each one became a designed checkpoint, not an afterthought."
 build_logs:
   - "thiru-ai-labs/apps/secure-stack/policy-forge/docs/build/phase-1/step-1-5/build-log.md"
-newsletter_sent: false
-newsletter_date: ""
+newsletter_sent: true
+newsletter_date: "2026-08-08"
 ---
 
 ## The User Moment

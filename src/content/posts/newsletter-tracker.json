@@ -36,6 +36,18 @@
         "wrong-ai-category-question"
       ],
       "status": "sent"
+    },
+    {
+      "date": "2026-08-08",
+      "campaign_name": "Newsletter — Week of 2026-08-08",
+      "subject": "Four hidden failure points, one broken latency assumption, and the stack I finally locked in",
+      "articles": [
+        "boundary-table-full-workflow",
+        "latency-budget-classification",
+        "policyforge-locking-the-foundation",
+        "policyforge-workflow-mapping-reveals"
+      ],
+      "status": "sent"
     }
   ]
 }

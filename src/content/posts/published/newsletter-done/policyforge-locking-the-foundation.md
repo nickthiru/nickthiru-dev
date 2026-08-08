@@ -21,8 +21,8 @@ newsletter_hook: "Every product hits a moment where the ideas have to become act
 summary_two_sentence: "Turning PolicyForge's MVP vision into a real technical foundation meant making concrete, sometimes uncomfortable tradeoffs on stack, cost, and risk. Here's what we locked in, what we rejected, and the one gap that almost slipped through."
 build_logs:
   - "thiru-ai-labs/apps/secure-stack/policy-forge/docs/build/phase-1/step-1-6/build-log.md"
-newsletter_sent: false
-newsletter_date: ""
+newsletter_sent: true
+newsletter_date: "2026-08-08"
 ---
 
 ## The User Moment

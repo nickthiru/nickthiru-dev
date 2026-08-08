@@ -20,8 +20,8 @@ newsletter_hook: "The five-question test told me what a single AI capability sho
 summary_two_sentence: "A five-question boundary test works cleanly on one AI capability at a time, but a connected workflow raises a harder question: does the same logic hold once decisions depend on each other? Running it end to end surfaced a sharper rule than 'harder tasks need more oversight.'"
 build_logs:
   - "thiru-ai-labs/apps/secure-stack/policy-forge/docs/build/phase-1/step-1-5/build-log.md"
-newsletter_sent: false
-newsletter_date: ""
+newsletter_sent: true
+newsletter_date: "2026-08-08"
 ---
 
 ## The Situation

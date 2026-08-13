@@ -5,7 +5,7 @@ publishedAt: "2026-08-13"
 slug: "ser-phase-1-locked-decision-log"
 image: "/writing/ser-phase-1-locked-decision-log.png"
 image_size: "lg"
-draft: true
+draft: false
 hashtags:
   [
     "#SocialListening",

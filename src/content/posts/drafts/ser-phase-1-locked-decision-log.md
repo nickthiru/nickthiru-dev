@@ -3,7 +3,7 @@ subtitle: "Sixteen decisions locked before Phase 2 engineering began"
 description: "How Social Engagement Radar's strategy phase turned a validated vision into sixteen locked decisions across workflow, capability, stack, and risk."
 publishedAt: "2026-08-13"
 slug: "ser-phase-1-locked-decision-log"
-image: "/writing/ser-phase-1-locked-decision-log.png"
+image: "/posts/ser-phase-1-locked-decision-log.png"
 image_size: "lg"
 draft: false
 hashtags:

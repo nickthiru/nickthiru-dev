@@ -1,16 +1,20 @@
 import { z } from "zod";
 
-// Known products (must match src/lib/data/series.json)
+// Known products (must match src/lib/config/projects.ts)
 const productName = z.enum([
   "Social Engagement Radar",
   "OpsPilot",
   "PolicyForge",
+  "GovCon Leads Radar",
+  "SecureStack Suite",
 ]);
 
 const productSlug = z.enum([
   "social-engagement-radar",
   "ops-pilot",
   "policy-forge",
+  "govcon-leads-radar",
+  "secure-stack",
 ]);
 
 const phase = z.enum([

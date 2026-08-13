@@ -5,7 +5,7 @@ publishedAt: "2026-08-13"
 slug: "govcon-radar-not-lead-list"
 image: "/posts/govcon-radar-not-lead-list.png"
 image_size: "lg"
-draft: true
+draft: false
 hashtags:
   ["#GovCon", "#FederalContracting", "#SalesIntelligence", "#B2B", "#AI"]
 track: "product"

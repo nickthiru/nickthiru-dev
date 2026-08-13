@@ -97,6 +97,26 @@ export const projects: Project[] = [
 
   {
     type: "product",
+    id: "govcon-leads-radar",
+    name: "GovCon Leads Radar",
+    tagline: "Now Building",
+    description:
+      "Turn raw USA federal contracting data into ranked, actionable lead lists. AI-driven tiering of USAspending.gov prospects, automated SAM.gov cross-referencing for compliance flags and POC data. Identify best-fit government sales prospects in minutes, not hours.",
+    status: "Building",
+    url: "https://thiruailabs.com/products/govcon-leads-radar",
+    productUrl: "https://thiruailabs.com/products/govcon-leads-radar",
+    defaultHashtags: [
+      "#GovCon",
+      "#FederalContracting",
+      "#SalesIntelligence",
+      "#B2B",
+      "#AI",
+    ],
+    featured: true,
+  },
+
+  {
+    type: "product",
     id: "secure-stack",
     name: "SecureStack Suite",
     tagline: "Now Building",

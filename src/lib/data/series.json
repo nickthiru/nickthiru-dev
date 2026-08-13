@@ -13,5 +13,10 @@
     "name": "PolicyForge",
     "slug": "policy-forge",
     "description": "Generate compliant cybersecurity policies in minutes instead of weeks."
+  },
+  {
+    "name": "GovCon Leads Radar",
+    "slug": "govcon-leads-radar",
+    "description": "Turn raw USA federal contracting data into ranked, actionable lead lists with AI-driven tiering and automated SAM.gov cross-referencing."
   }
 ]

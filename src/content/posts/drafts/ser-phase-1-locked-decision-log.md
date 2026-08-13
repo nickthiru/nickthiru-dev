@@ -92,7 +92,40 @@ What I'd do if I were starting today: pull the risk and privacy work earlier in 
 
 <!-- [INTERNAL LINK: relevant post on choosing a managed tech stack for an AI MVP] -->
 
-[ALT: A single-page decision log with sixteen numbered entries, each showing a short decision statement, its rationale, and a review trigger]
+**Table 1 — Resolved Strategic Decisions (D-01 through D-16)**
+
+| #    | Decision                                                                                     | Rationale (short)                                                                                                   | Review Trigger                                                       |
+| ---- | -------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| D-01 | Target cognitive problem, not capability gap                                                 | Bottlenecks are cognitive (relevance triage, timing, voice filtering), not feature gaps                             | MVP beta gate                                                        |
+| D-02 | GDPR as baseline (strictest regime)                                                          | Global users, no geo-restriction; conversation participants may be EU/UK/CA residents                               | Before Phase 5                                                       |
+| D-04 | Product category locked: **Copilot**                                                         | Every AI capability surfaces recommendations; Engager reviews, edits, and decides — 0 unintended publishes required | Phase 4 gate, or if autonomous capability (Cap 19) pulled into scope |
+| D-05 | Architecture: Overlay with proxy-pattern approval gates                                      | Copilot UX demands review-and-edit, not chat-first or silent automation                                             | Phase 2 design review                                                |
+| D-06 | Tech stack locked: SvelteKit, LangGraph.js, Supabase (Postgres + pgvector), TypeScript-first | Pre-decided constraints; downstream artifacts inherit without re-derivation                                         | First Scale Trigger event or Phase 2 gate                            |
+| D-07 | Success metric: ≥60% of users self-report ≥1 hr/week saved                                   | Primary go/no-go signal for BG-001, measured via weekly survey                                                      | Beta midpoint                                                        |
+| D-08 | Cost posture: free-tier MVP, human-review at 80% quota                                       | Prevents silent overage; no automatic scale-up                                                                      | Continuous (usage-triggered); formally at Phase 2 gate               |
+| D-09 | Four explicit scale migration triggers                                                       | Removes ambiguity about when to act; prevents "we'll deal with it later" debt                                       | Continuous; at each Scale Trigger event                              |
+| D-10 | Requesty Gateway as sole LLM path, no confirmed fallback yet                                 | Critical operational gap flagged, not resolved                                                                      | Before Phase 3 orchestration lock                                    |
+| D-11 | Tenant identifiers: server-side only, never trusted from client                              | Multi-tenant RLS is only as safe as its tenant-resolution boundary                                                  | Phase 2 security review, before BFF ships                            |
+| D-12 | WF-B (Daily Engagement Cycle) is highest-ranked workflow                                     | Scores highest on business value, cognitive-load reduction, AI-fit; depends on WF-A and WF-F                        | Phase 2 sprint-planning gate                                         |
+| D-14 | Two data-subject categories: Engager + third-party participants                              | Capability 10 processes third-party profile data without approval gate on scoring step                              | Before Phase 5; immediately if scoring use expands                   |
+| D-15 | Semantic caching **disabled** for personal data                                              | Caching would persist third-party data outside residency/retention controls                                         | Only if encrypted, TTL-bound, access-logged cache becomes available  |
+| D-16 | Incident vs. silent-error boundary defined                                                   | Prevents alert fatigue; not every error pages a human                                                               | Phase 3 evaluation, or if alert-fatigue patterns emerge              |
+
+**Table 2 — Open / Blocking Items (Tracked, Not Resolved)**
+
+| #    | Item                                                | Status                                                                                      | Gate                       | Contingency                                                     |
+| ---- | --------------------------------------------------- | ------------------------------------------------------------------------------------------- | -------------------------- | --------------------------------------------------------------- |
+| D-03 | Target jurisdiction / data residency                | **UNRESOLVED** — acknowledged gap, not deferred                                             | Before Phase 5 (hard gate) | Freeze onboarding pending legal/founder input                   |
+| D-13 | Sub-processor register (Supabase, Requesty, Vercel) | **Incomplete — blocking gap** — DPA status, residency, personal-data categories not sourced | Before Phase 5 (hard gate) | Freeze onboarding; parallel legal review of Cap 10 lawful basis |
+
+**Table 3 — Incident Management Decisions (IM-001 through IM-004)**
+
+| #      | Decision                                                    | Rationale (short)                                                    | Review Trigger                                    |
+| ------ | ----------------------------------------------------------- | -------------------------------------------------------------------- | ------------------------------------------------- |
+| IM-001 | Incident severity taxonomy (SEV0–SEV3) as shared constant   | Privacy-triggering events hard-mapped to SEV0 per GDPR Art. 33/34    | 3 months from Phase 1 close                       |
+| IM-002 | Incident infrastructure: Sentry → Incident.io → Slack       | Shared operational infrastructure, not product-specific design       | Only if tooling vendor changes                    |
+| IM-003 | Privacy breach escalation: Nick as Privacy Officer          | 72-hour regulatory clock requires named authority                    | 6 months from Phase 1 close, or first test-breach |
+| IM-004 | Escalation ownership: Nick holds all roles (single-founder) | Acceptable for MVP-stage; flagged as concentration-of-authority risk | Phase 4 gate, or if second team member joins      |
 
 ## Your Turn
 

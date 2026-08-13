@@ -183,6 +183,36 @@
           "publishedAt": "2026-08-02"
         }
       ]
+    },
+    {
+      "name": "GovCon Leads Radar",
+      "slug": "govcon-leads-radar",
+      "description": "Turn raw federal contracting data into ranked, actionable lead lists with AI-driven tiering and automated SAM.gov cross-referencing.",
+      "status": "active",
+      "current_phase": "strategy",
+      "current_position": "0",
+      "total_planned_posts": "unknown",
+      "phases": {
+        "strategy": {
+          "posts_published": 0
+        },
+        "design": {
+          "posts_published": 0
+        },
+        "engineering": {
+          "posts_published": 0
+        },
+        "deployment": {
+          "posts_published": 0
+        },
+        "maintenance": {
+          "posts_published": 0
+        },
+        "community": {
+          "posts_published": 0
+        }
+      },
+      "posts": []
     }
   ]
 }

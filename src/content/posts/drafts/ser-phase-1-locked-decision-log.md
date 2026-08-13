@@ -19,7 +19,7 @@ series_name: "Social Engagement Radar"
 series_slug: "social-engagement-radar"
 series_phase: "strategy"
 series_position: 3
-linkedin_url: ""
+linkedin_url: "https://lnkd.in/p/gDCa5yfy"
 x_url: ""
 pinned: false
 pinned_order:

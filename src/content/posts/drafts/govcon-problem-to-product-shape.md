@@ -5,7 +5,7 @@ publishedAt: "2026-08-14"
 slug: "govcon-radar-problem-to-product-shape"
 image: "/posts/govcon-radar-problem-to-product-shape.png"
 image_size: "lg"
-draft: true
+draft: false
 hashtags:
   ["#GovCon", "#FederalContracting", "#SalesIntelligence", "#B2B", "#AI"]
 track: "product"

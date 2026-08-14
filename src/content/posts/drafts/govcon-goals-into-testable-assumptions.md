@@ -13,7 +13,7 @@ series_name: "GovCon Leads Radar"
 series_slug: "govcon-leads-radar"
 series_phase: "strategy"
 series_position: 2
-linkedin_url: ""
+linkedin_url: "https://lnkd.in/p/gtSiGt4w"
 x_url: ""
 pinned: false
 pinned_order:

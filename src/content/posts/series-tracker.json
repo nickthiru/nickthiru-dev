@@ -197,11 +197,11 @@
       "description": "Turn raw federal contracting data into ranked, actionable lead lists with AI-driven tiering and automated SAM.gov cross-referencing.",
       "status": "active",
       "current_phase": "strategy",
-      "current_position": "3",
+      "current_position": "4",
       "total_planned_posts": "unknown",
       "phases": {
         "strategy": {
-          "posts_published": 3
+          "posts_published": 4
         },
         "design": {
           "posts_published": 0
@@ -240,6 +240,13 @@
           "phase": "strategy",
           "position": "3",
           "publishedAt": "2026-08-14"
+        },
+        {
+          "slug": "govcon-radar-first-workflow-mapped",
+          "title": "Choosing the first workflow to build, and mapping it",
+          "phase": "strategy",
+          "position": "4",
+          "publishedAt": "2026-08-17"
         }
       ]
     }

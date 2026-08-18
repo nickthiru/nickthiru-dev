@@ -22,8 +22,8 @@ summary_two_sentence: "Before building anything, I had to decide whether GovCon 
 build_logs:
   - "thiru-ai-labs/apps/govcon-leads-radar/docs/build/discovery/product-vision/build-log.md"
   - "thiru-ai-labs/apps/govcon-leads-radar/docs/build/discovery/product-vision/output/product-vision.md"
-newsletter_sent: false
-newsletter_date: ""
+newsletter_sent: true
+newsletter_date: "2026-08-18"
 ---
 
 ## The User Moment

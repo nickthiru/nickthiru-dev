@@ -31,8 +31,8 @@ build_logs:
   - "06-success-metrics-scorecard.md"
   - "07-measurement-strategy.md"
   - "08-assumption-register.md"
-newsletter_sent: false
-newsletter_date: ""
+newsletter_sent: true
+newsletter_date: "2026-08-18"
 ---
 
 ## The User Moment

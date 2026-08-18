@@ -48,6 +48,18 @@
         "policyforge-workflow-mapping-reveals"
       ],
       "status": "sent"
+    },
+    {
+      "date": "2026-08-18",
+      "campaign_name": "Newsletter — Week of 2026-08-18",
+      "subject": "The bottleneck wasn't data — it was judgment (and 16 other decisions locked this week)",
+      "articles": [
+        "govcon-goals-into-testable-assumptions",
+        "govcon-radar-problem-to-product-shape",
+        "govcon-radar-not-lead-list",
+        "ser-phase-1-locked-decision-log"
+      ],
+      "status": "sent"
     }
   ]
 }

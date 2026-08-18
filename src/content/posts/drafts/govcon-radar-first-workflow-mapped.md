@@ -1,7 +1,7 @@
 ---
 subtitle: "Choosing the first workflow to build, and mapping it"
 description: "Why I picked one daily workflow first, and what mapping it revealed about the judgment calls sellers actually make."
-publishedAt: "2026-08-20"
+publishedAt: "2026-08-17"
 slug: "govcon-radar-first-workflow-mapped"
 image: "/posts/govcon-radar-first-workflow-mapped.png"
 image_size: "lg"

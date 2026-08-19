@@ -1,6 +1,6 @@
 ---
-subtitle: "Locking the stack, closing the phase"
-description: "How I closed out planning for GovCon Leads Radar by locking the stack, budgets, and a risk register before writing a line of build code."
+subtitle: "Locking the stack, closing the first phase"
+description: "How I closed out the strategy phase for GovCon Leads Radar by locking the stack, budgets, and a risk register before writing a line of build code."
 publishedAt: "2026-08-18"
 slug: "govcon-locking-the-foundation-for-build"
 image: "/posts/govcon-locking-the-foundation-for-build.png"

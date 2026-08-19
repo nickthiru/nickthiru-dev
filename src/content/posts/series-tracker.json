@@ -197,11 +197,11 @@
       "description": "Turn raw federal contracting data into ranked, actionable lead lists with AI-driven tiering and automated SAM.gov cross-referencing.",
       "status": "active",
       "current_phase": "strategy",
-      "current_position": "4",
+      "current_position": "5",
       "total_planned_posts": "unknown",
       "phases": {
         "strategy": {
-          "posts_published": 4
+          "posts_published": 5
         },
         "design": {
           "posts_published": 0
@@ -247,6 +247,13 @@
           "phase": "strategy",
           "position": "4",
           "publishedAt": "2026-08-17"
+        },
+        {
+          "slug": "govcon-locking-the-foundation-for-build",
+          "title": "Locking the stack, closing the phase",
+          "phase": "strategy",
+          "position": "5",
+          "publishedAt": "2026-08-18"
         }
       ]
     }

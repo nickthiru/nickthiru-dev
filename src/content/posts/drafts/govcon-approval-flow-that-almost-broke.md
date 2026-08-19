@@ -5,7 +5,7 @@ publishedAt: "2026-08-19"
 slug: "govcon-approval-flow-that-almost-broke"
 image: "/posts/govcon-approval-flow-that-almost-broke.png"
 image_size: "lg"
-draft: true
+draft: false
 hashtags:
   ["#GovCon", "#FederalContracting", "#SalesIntelligence", "#B2B", "#AI"]
 track: "product"

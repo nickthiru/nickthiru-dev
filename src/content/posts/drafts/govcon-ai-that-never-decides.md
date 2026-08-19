@@ -2,7 +2,7 @@
 subtitle: "Designing an AI that proposes, never decides"
 description: "How I built GovCon Leads Radar's AI layer to support judgment without ever making the call for the seller."
 publishedAt: "2026-08-19"
-slug: "govecon-ai-that-never-decides"
+slug: "govcon-ai-that-never-decides"
 image: "/posts/govcon-ai-that-never-decides.png"
 image_size: "lg"
 draft: false

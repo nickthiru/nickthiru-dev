@@ -197,14 +197,14 @@
       "description": "Turn raw federal contracting data into ranked, actionable lead lists with AI-driven tiering and automated SAM.gov cross-referencing.",
       "status": "active",
       "current_phase": "design",
-      "current_position": "6",
+      "current_position": "7",
       "total_planned_posts": "unknown",
       "phases": {
         "strategy": {
           "posts_published": 5
         },
         "design": {
-          "posts_published": 1
+          "posts_published": 2
         },
         "engineering": {
           "posts_published": 0
@@ -260,6 +260,13 @@
           "title": "Designing an AI that proposes, never decides",
           "phase": "design",
           "position": "6",
+          "publishedAt": "2026-08-19"
+        },
+        {
+          "slug": "govcon-approval-flow-that-almost-broke",
+          "title": "When a design step assumes a robot that doesn't exist",
+          "phase": "design",
+          "position": "7",
           "publishedAt": "2026-08-19"
         }
       ]

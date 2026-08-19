@@ -5,7 +5,7 @@ publishedAt: "2026-08-19"
 slug: "govecon-ai-that-never-decides"
 image: "/posts/govcon-ai-that-never-decides.png"
 image_size: "lg"
-draft: true
+draft: false
 hashtags:
   ["#GovCon", "#FederalContracting", "#SalesIntelligence", "#B2B", "#AI"]
 track: "product"

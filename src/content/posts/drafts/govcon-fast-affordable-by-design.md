@@ -1,5 +1,5 @@
 ---
-subtitle: "Fast and cheap, guaranteed — not just promised"
+subtitle: "Fast and cheap, not just promised but guaranteed"
 description: "How GovCon Leads Radar turned speed and cost promises into enforceable, measurable guarantees users can hold it to."
 publishedAt: "2026-08-21"
 slug: "govcon-fast-affordable-by-design"

@@ -197,14 +197,14 @@
       "description": "Turn raw federal contracting data into ranked, actionable lead lists with AI-driven tiering and automated SAM.gov cross-referencing.",
       "status": "active",
       "current_phase": "design",
-      "current_position": "8",
+      "current_position": "9",
       "total_planned_posts": "unknown",
       "phases": {
         "strategy": {
           "posts_published": 5
         },
         "design": {
-          "posts_published": 3
+          "posts_published": 4
         },
         "engineering": {
           "posts_published": 0
@@ -274,6 +274,13 @@
           "title": "When 'safe AI' means knowing when it's wrong",
           "phase": "design",
           "position": "8",
+          "publishedAt": "2026-08-21"
+        },
+        {
+          "slug": "govcon-fast-affordable-by-design",
+          "title": "Fast and cheap, not just promised but guaranteed",
+          "phase": "design",
+          "position": "9",
           "publishedAt": "2026-08-21"
         }
       ]

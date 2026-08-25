@@ -60,6 +60,20 @@
         "ser-phase-1-locked-decision-log"
       ],
       "status": "sent"
+    },
+    {
+      "date": "2026-08-25",
+      "campaign_name": "Newsletter — Week of 2026-08-25",
+      "subject": "The rule that shaped this week's product decisions: the AI layer proposes, never decides",
+      "articles": [
+        "govcon-ai-that-fails-safely",
+        "govcon-ai-that-never-decides",
+        "govcon-approval-flow-that-almost-broke",
+        "govcon-fast-affordable-by-design",
+        "govcon-locking-the-foundation-for-build",
+        "govcon-radar-first-workflow-mapped"
+      ],
+      "status": "sent"
     }
   ]
 }

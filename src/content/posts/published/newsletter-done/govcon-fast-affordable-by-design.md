@@ -21,8 +21,8 @@ newsletter_hook: "Every product says it'll be fast and cheap. Almost none of the
 summary_two_sentence: "Sellers using a daily lead-triage tool don't just want speed and low cost as a slogan — they need to know exactly what 'fast enough' and 'cheap enough' mean, and what happens when the system is under pressure. This is the story of turning those promises into concrete, enforced commitments instead of vague reassurance."
 build_logs:
   - "thiru-ai-labs/apps/govcon-leads-radar/docs/build/phase-3/step-3-3/build-log.md"
-newsletter_sent: false
-newsletter_date: ""
+newsletter_sent: true
+newsletter_date: "2026-08-25"
 ---
 
 ## The User Moment

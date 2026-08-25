@@ -21,8 +21,8 @@ newsletter_hook: "I was designing an approval flow for GovCon Leads Radar and hi
 summary_two_sentence: "GovCon Leads Radar's approval flow was supposed to gate a system action — except the product never lets the AI act on its own. The fix wasn't a workaround, it was redefining what 'approval' means when a human's decision is the only action that ever happens."
 build_logs:
   - "thiru-ai-labs/apps/govcon-leads-radar/docs/build/phase-2/step-2-5/build-log.md"
-newsletter_sent: false
-newsletter_date: ""
+newsletter_sent: true
+newsletter_date: "2026-08-25"
 ---
 
 ## The User Moment

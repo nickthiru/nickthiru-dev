@@ -22,8 +22,8 @@ summary_two_sentence: "Instead of building broadly, I picked the one daily habit
 build_logs:
   - "thiru-ai-labs/apps/govcon-leads-radar/docs/build/phase-1/step-1-4/build-log.md"
   - "thiru-ai-labs/apps/govcon-leads-radar/docs/build/phase-1/step-1-5/build-log.md"
-newsletter_sent: false
-newsletter_date: ""
+newsletter_sent: true
+newsletter_date: "2026-08-25"
 ---
 
 ## The User Moment

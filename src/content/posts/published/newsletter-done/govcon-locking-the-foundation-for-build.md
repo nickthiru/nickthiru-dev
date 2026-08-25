@@ -23,8 +23,8 @@ build_logs:
   - "thiru-ai-labs/apps/govcon-leads-radar/docs/build/phase-1/step-1-6/build-log.md"
   - "thiru-ai-labs/apps/govcon-leads-radar/docs/build/phase-1/step-1-7/build-log.md"
   - "thiru-ai-labs/apps/govcon-leads-radar/docs/build/phase-1/step-1-8/build-log.md"
-newsletter_sent: false
-newsletter_date: ""
+newsletter_sent: true
+newsletter_date: "2026-08-25"
 ---
 
 ## The User Moment

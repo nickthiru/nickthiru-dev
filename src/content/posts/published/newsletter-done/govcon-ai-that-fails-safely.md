@@ -22,8 +22,8 @@ summary_two_sentence: "An AI copilot that quietly nudges a seller's judgment in 
 build_logs:
   - "thiru-ai-labs/apps/govcon-leads-radar/docs/build/phase-3/step-3-2/build-log.md"
   - "thiru-ai-labs/apps/govcon-leads-radar/docs/build/phase-3/step-3-1/build-log.md"
-newsletter_sent: false
-newsletter_date: ""
+newsletter_sent: true
+newsletter_date: "2026-08-25"
 ---
 
 ## The User Moment

@@ -5,7 +5,7 @@ publishedAt: "2026-08-25"
 slug: "policyforge-ranking-first"
 image: "/posts/policyforge-ranking-first.png"
 image_size: "lg"
-draft: true
+draft: false
 hashtags:
   ["#CMMC", "#NIST800-171", "#CybersecurityCompliance", "#DFARS", "#Compliance"]
 track: "product"

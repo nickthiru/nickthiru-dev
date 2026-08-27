@@ -5,7 +5,7 @@ publishedAt: "2026-08-26"
 slug: "policyforge-generation-engine"
 image: "/posts/policyforge-generation-engine.png"
 image_size: "lg"
-draft: true
+draft: false
 hashtags:
   ["#CMMC", "#NIST800-171", "#CybersecurityCompliance", "#DFARS", "#Compliance"]
 track: "product"

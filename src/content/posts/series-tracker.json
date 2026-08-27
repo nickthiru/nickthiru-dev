@@ -117,7 +117,7 @@
           "posts_published": 9
         },
         "design": {
-          "posts_published": 1
+          "posts_published": 2
         },
         "engineering": {
           "posts_published": 0
@@ -202,6 +202,13 @@
           "phase": "design",
           "position": "10",
           "publishedAt": "2026-08-25"
+        },
+        {
+          "slug": "policyforge-generation-engine",
+          "title": "Real options, not one draft",
+          "phase": "design",
+          "position": "11",
+          "publishedAt": "2026-08-26"
         }
       ]
     },

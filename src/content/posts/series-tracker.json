@@ -110,11 +110,11 @@
       "description": "Generate compliant cybersecurity policies in minutes instead of weeks.",
       "status": "active",
       "current_phase": "strategy",
-      "current_position": "8",
+      "current_position": "9",
       "total_planned_posts": "unknown",
       "phases": {
         "strategy": {
-          "posts_published": 8
+          "posts_published": 9
         },
         "design": {
           "posts_published": 0
@@ -188,6 +188,13 @@
           "phase": "strategy",
           "position": "8",
           "publishedAt": "2026-08-02"
+        },
+        {
+          "slug": "policyforge-risk-register-before-code",
+          "title": "Naming every way PolicyForge could fail, before writing code",
+          "phase": "strategy",
+          "position": "9",
+          "publishedAt": "2026-08-25"
         }
       ]
     },

@@ -13,7 +13,7 @@ series_name: "PolicyForge"
 series_slug: "policy-forge"
 series_phase: "design"
 series_position: 11
-linkedin_url: ""
+linkedin_url: "https://lnkd.in/p/g7KhBV_Y"
 x_url: ""
 pinned: false
 pinned_order:

@@ -117,7 +117,7 @@
           "posts_published": 9
         },
         "design": {
-          "posts_published": 2
+          "posts_published": 3
         },
         "engineering": {
           "posts_published": 0
@@ -209,6 +209,13 @@
           "phase": "design",
           "position": "11",
           "publishedAt": "2026-08-26"
+        },
+        {
+          "slug": "policyforge-human-approval",
+          "title": "Why you'll always have the final say",
+          "phase": "design",
+          "position": "12",
+          "publishedAt": "2026-08-28"
         }
       ]
     },

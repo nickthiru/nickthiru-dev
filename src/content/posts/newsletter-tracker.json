@@ -74,6 +74,18 @@
         "govcon-radar-first-workflow-mapped"
       ],
       "status": "sent"
+    },
+    {
+      "date": "2026-09-04",
+      "campaign_name": "Newsletter — Week of 2026-09-04",
+      "subject": "This week: AI confidence, accountability, and ranking",
+      "articles": [
+        "policyforge-generation-engine",
+        "policyforge-human-approval",
+        "policyforge-ranking-first",
+        "policyforge-risk-register-before-code"
+      ],
+      "status": "sent"
     }
   ]
 }

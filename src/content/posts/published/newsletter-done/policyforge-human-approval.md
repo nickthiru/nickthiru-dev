@@ -21,8 +21,8 @@ newsletter_hook: "Every compliance buyer asks the same question about AI tools: 
 summary_two_sentence: "Compliance buyers keep asking whether an AI tool can publish a policy without anyone noticing. PolicyForge's answer is a recorded, reviewable human decision at every step, and building it forced a rethink of what the product actually does."
 build_logs:
   - "thiru-ai-labs/apps/secure-stack/policy-forge/docs/build/phase-2/step-2-5/build-log.md"
-newsletter_sent: false
-newsletter_date: ""
+newsletter_sent: true
+newsletter_date: "2026-09-04"
 ---
 
 ### The User Moment

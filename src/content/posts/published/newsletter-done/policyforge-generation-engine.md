@@ -22,8 +22,8 @@ summary_two_sentence: "PolicyForge's generation engine doesn't just spit out a s
 build_logs:
   - "thiru-ai-labs/apps/secure-stack/policy-forge/docs/build/phase-2/step-2-4/build-log.md"
   - "thiru-ai-labs/apps/secure-stack/policy-forge/docs/build/phase-2/step-2-3/build-log.md"
-newsletter_sent: false
-newsletter_date: ""
+newsletter_sent: true
+newsletter_date: "2026-09-04"
 ---
 
 ### The User Moment

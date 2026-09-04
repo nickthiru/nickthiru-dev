@@ -21,8 +21,8 @@ newsletter_hook: "I hadn't written a line of code yet, and I was already arguing
 summary_two_sentence: "Before building anything, I forced myself to name every way PolicyForge could quietly fail a customer, including risks with real regulatory weight. That taxonomy now shapes how trust and reliability get surfaced to users from day one."
 build_logs:
   - "thiru-ai-labs/apps/secure-stack/policy-forge/docs/build/phase-1/step-1-7/build-log.md"
-newsletter_sent: false
-newsletter_date: ""
+newsletter_sent: true
+newsletter_date: "2026-09-04"
 ---
 
 ### The User Moment

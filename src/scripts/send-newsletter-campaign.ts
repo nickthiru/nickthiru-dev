@@ -15,6 +15,7 @@ interface ArticleEntry {
   url: string;
   slug: string;
   filePath: string;
+  publishedAt: string;
 }
 
 interface NewsletterMeta {
@@ -144,6 +145,7 @@ async function discoverArticles(): Promise<ArticleEntry[]> {
     const title = seriesName ? `${seriesName} — ${baseTitle}` : baseTitle;
     const slug = (fm.slug as string) || "";
     const hook = (fm.newsletter_hook as string) || "";
+    const publishedAt = (fm.publishedAt as string) || "";
 
     if (!title || !slug) {
       console.log(`⚠️  Skipping ${file} (missing title or slug)`);
@@ -156,6 +158,7 @@ async function discoverArticles(): Promise<ArticleEntry[]> {
       hook: hook || "[No newsletter_hook found in frontmatter]",
       url: `${BASE_URL}${slug}`,
       filePath,
+      publishedAt,
     });
   }
 
@@ -271,7 +274,18 @@ async function createDraft(metaPath: string) {
   // Step 3: Build params (articles from frontmatter)
   const params = {
     personal_note: meta.personal_note,
-    articles: articles.map(({ title, hook, url }) => ({ title, hook, url })),
+    articles: articles.map(({ title, hook, url, publishedAt }) => {
+      let formattedDate = "";
+      if (publishedAt) {
+        const date = new Date(publishedAt);
+        formattedDate = date.toLocaleDateString("en-US", {
+          month: "short",
+          day: "numeric",
+          year: "numeric",
+        });
+      }
+      return { title, hook, url, publishedAt: formattedDate };
+    }),
   };
 
   const today = new Date().toISOString().split("T")[0];
@@ -293,7 +307,7 @@ async function createDraft(metaPath: string) {
     const response = await brevo.emailCampaigns.createEmailCampaign({
       name: campaignName,
       sender: {
-        name: "Nick",
+        name: "Nick Thiru Dev Notes",
         email: "newsletter@nickthiru.dev",
       },
       subject: meta.subject,

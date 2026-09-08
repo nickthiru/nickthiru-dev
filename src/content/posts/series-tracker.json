@@ -117,7 +117,7 @@
           "posts_published": 9
         },
         "design": {
-          "posts_published": 4
+          "posts_published": 5
         },
         "engineering": {
           "posts_published": 0
@@ -222,6 +222,13 @@
           "title": "Turning AI hallucinations into a manageable process, not a hidden risk",
           "phase": "design",
           "position": "13",
+          "publishedAt": "2026-09-07"
+        },
+        {
+          "slug": "policyforge-performance-commitments",
+          "title": "The exact numbers PolicyForge commits to",
+          "phase": "design",
+          "position": "14",
           "publishedAt": "2026-09-07"
         }
       ]

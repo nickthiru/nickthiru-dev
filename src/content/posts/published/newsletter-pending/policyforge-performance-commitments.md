@@ -1,5 +1,5 @@
 ---
-subtitle: "The exact numbers PolicyForge commits to"
+subtitle: "The exact numbers it commits to"
 description: "Here are the exact latency, cost-per-unit, and uptime numbers PolicyForge holds itself to, and why loose budget language wasn't good enough."
 publishedAt: "2026-09-07"
 slug: "policyforge-performance-commitments"

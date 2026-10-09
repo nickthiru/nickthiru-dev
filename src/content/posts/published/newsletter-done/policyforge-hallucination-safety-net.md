@@ -21,8 +21,8 @@ newsletter_hook: "An AI that generates compliance policy is only trustworthy if 
 summary_two_sentence: "Building an AI that drafts compliance policy meant confronting, in detail, every way it could quietly generate something wrong. So I built a layer that catches each failure the moment it happens and hands it straight to a human who can fix it."
 build_logs:
   - "thiru-ai-labs/apps/secure-stack/policy-forge/docs/build/phase-3/step-3-2/build-log.md"
-newsletter_sent: false
-newsletter_date: ""
+newsletter_sent: true
+newsletter_date: "2026-10-09"
 ---
 
 ## The User Moment

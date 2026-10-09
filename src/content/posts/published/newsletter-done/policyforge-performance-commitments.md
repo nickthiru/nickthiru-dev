@@ -21,8 +21,8 @@ newsletter_hook: "Saying a product will be 'fast' and 'affordable' is easy. Sayi
 summary_two_sentence: "PolicyForge had cost and speed budgets in loose language, not enforceable numbers a reader could verify. Turning that language into exact latency, cost, and availability thresholds forced decisions I'd been avoiding, and gave the product hard floors it can't quietly cross."
 build_logs:
   - "thiru-ai-labs/apps/secure-stack/policy-forge/docs/build/phase-3/step-3-3/build-log.md"
-newsletter_sent: false
-newsletter_date: ""
+newsletter_sent: true
+newsletter_date: "2026-10-09"
 ---
 
 ## The User Moment

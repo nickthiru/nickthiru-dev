@@ -21,8 +21,8 @@ newsletter_hook: "A policy draft came back wrong, and the only honest answer to 
 summary_two_sentence: "When a compliance draft comes back wrong, the useless answer is that the AI got it wrong, because it hides which part of the system actually broke. PolicyForge splits the pipeline into five layers so every failure has an owner and a recovery path, which matters more than raw speed for a product people sign their name to."
 build_logs:
   - "thiru-ai-labs/apps/secure-stack/policy-forge/docs/build/phase-4/step-4-1/build-log.md"
-newsletter_sent: false
-newsletter_date: ""
+newsletter_sent: true
+newsletter_date: "2026-10-09"
 ---
 
 ## The User Moment

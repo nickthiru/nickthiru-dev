@@ -86,6 +86,18 @@
         "policyforge-risk-register-before-code"
       ],
       "status": "sent"
+    },
+    {
+      "date": "2026-10-09",
+      "campaign_name": "Newsletter — Week of 2026-10-09",
+      "subject": "Layers, hallucinations, and hard numbers",
+      "articles": [
+        "govcon-layered-architecture-lead-triage",
+        "policyforge-five-layer-architecture",
+        "policyforge-hallucination-safety-net",
+        "policyforge-performance-commitments"
+      ],
+      "status": "sent"
     }
   ]
 }

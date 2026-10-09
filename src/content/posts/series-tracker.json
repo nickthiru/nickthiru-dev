@@ -33,7 +33,7 @@
           "slug": "social-engagement-radar-product-vision",
           "title": "Social Engagement Radar — Inside the Product Vision",
           "phase": "strategy",
-          "position": 1,
+          "position": "1",
           "publishedAt": "2026-07-15"
         },
         {
@@ -85,7 +85,7 @@
           "slug": "opspilot-product-vision",
           "title": "OpsPilot - Inside the Product Vision",
           "phase": "strategy",
-          "position": 1,
+          "position": "1",
           "publishedAt": "2026-07-17"
         },
         {
@@ -137,7 +137,7 @@
           "slug": "policyforge-product-vision",
           "title": "PolicyForge - Inside the Product Vision",
           "phase": "strategy",
-          "position": 1,
+          "position": "1",
           "publishedAt": "2026-07-17"
         },
         {

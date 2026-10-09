@@ -117,7 +117,7 @@
           "posts_published": 9
         },
         "design": {
-          "posts_published": 6
+          "posts_published": 7
         },
         "engineering": {
           "posts_published": 0
@@ -237,6 +237,13 @@
           "phase": "design",
           "position": "15",
           "publishedAt": "2026-09-08"
+        },
+        {
+          "slug": "policyforge-approval-gates-in-code",
+          "title": "Approval gates that live in the code",
+          "phase": "design",
+          "position": "16",
+          "publishedAt": "2026-10-09"
         }
       ]
     },

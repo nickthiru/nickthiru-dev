@@ -11,7 +11,7 @@ hashtags:
 track: "product"
 series_name: "PolicyForge"
 series_slug: "policy-forge"
-series_phase: "design"
+series_phase: "engineering"
 series_position: 16
 linkedin_url: "https://lnkd.in/p/gs4nmkkt"
 x_url: ""

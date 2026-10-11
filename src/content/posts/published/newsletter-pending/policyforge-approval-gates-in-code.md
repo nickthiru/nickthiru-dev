@@ -54,7 +54,7 @@ The same problem applied to privacy. During design I had committed to five speci
 
 So the problem going into this step was simple to state but more complex to solve. I had eighteen design artifacts covering data models, generation logic, workflow, observability and incident handling. Every one of them needed to become something that implementation could consume directly, with the approval gates and privacy rules embedded in the artifact itself rather than referenced from a document nobody re-reads .
 
-The stakes were practical. Without that transformation, there would be no machine-readable specification to build from, and the privacy obligations would be invisible at exactly the moment they matter most, which is when someone is writing the code .
+The stakes were practical. Without that transformation, there would be no machine-readable specification to build from, and the privacy obligations would be invisible at exactly the moment they matter most, which is when someone is writing the code.
 
 ## The Options
 
